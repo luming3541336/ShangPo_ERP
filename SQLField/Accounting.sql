@@ -1,0 +1,2 @@
+SELECT CaseData.InsertTime,CaseData.Contact,ProdSet.[Name],PurchaseProd.Width,PurchaseProd.Length,SaleProd.[Count] FROM CaseData, ProdSet, PurchaseProd, SaleProd,SaleData WHERE CaseData.CaseID = SaleData.CaseID 
+AND ProdSet.ProdID = PurchaseProd.ProdID AND SaleData.SaleID = SaleProd.SaleID AND PurchaseProd.PurchasePID = SaleProd.PurchasePID AND SaleData.InsertTime > '2017/8/30' Group by CaseData.InsertTime,CaseData.Contact,ProdSet.[Name],PurchaseProd.Width,PurchaseProd.Length,SaleProd.[Count] 

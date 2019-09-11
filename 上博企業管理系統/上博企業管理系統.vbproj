@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44DD4C71-8E85-43C8-9B11-0C6EF052C0D7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>上博企業管理系統.My.MyApplication</StartupObject>
+    <RootNamespace>上博企業管理系統</RootNamespace>
+    <AssemblyName>上博企業管理系統</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Alex\Desktop\ShongPoBackup\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\DBSERVER\AppInstall\</UpdateUrl>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.6.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>上博企業管理系統.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>上博企業管理系統.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon-20170305104137212.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C6C7ABA8D03EC489F06880621CE142DCA8AA610A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files\Microsoft Office\root\Office16\ADDINS\PowerPivot Excel Add-in\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\Data_Case_Controller.vb" />
+    <Compile Include="Controller\Data_User_Controller.vb" />
+    <Compile Include="Controller\Data_Supplier_Controller.vb" />
+    <Compile Include="Controller\Data_Product_Controller.vb" />
+    <Compile Include="Controller\Data_Order_Controller.vb" />
+    <Compile Include="Controller\Data_Stock_Controller.vb" />
+    <Compile Include="Controller\Set_Purchase_Controller.vb" />
+    <Compile Include="Controller\DBController.vb" />
+    <Compile Include="Controller\Data_Fit_Controller.vb" />
+    <Compile Include="Controller\Output_SaleReport_Controller.vb" />
+    <Compile Include="Controller\Search_Controller.vb" />
+    <Compile Include="Controller\Data_Specification_Controller.vb" />
+    <Compile Include="Controller\Set_Sale_Controller.vb" />
+    <Compile Include="Controller\Set_WorkProgress_Controller.vb" />
+    <Compile Include="Controller\Set_WorkDetail_Controller.vb" />
+    <Compile Include="Model\Data_Case_Model.vb" />
+    <Compile Include="Model\Data_Search_Model.vb" />
+    <Compile Include="Model\Data_Supplier_Model.vb" />
+    <Compile Include="Model\Data_Product_Model.vb" />
+    <Compile Include="Model\Data_Order_Model.vb" />
+    <Compile Include="Model\Data_Stock_Model.vb" />
+    <Compile Include="Model\Data_User_Model.vb" />
+    <Compile Include="Model\Search_Model.vb" />
+    <Compile Include="Controller\Set_PasswordRevise_Controller.vb" />
+    <Compile Include="Model\Set_PasswordRevise_Model.vb" />
+    <Compile Include="Model\Set_Purchase_Model.vb" />
+    <Compile Include="Model\Data_Fit_Model.vb" />
+    <Compile Include="Model\Output_SaleReport_Model.vb" />
+    <Compile Include="Model\Data_Specification_Model.vb" />
+    <Compile Include="Model\Set_Sale_Model.vb" />
+    <Compile Include="Model\Set_WorkProgress_Model.vb" />
+    <Compile Include="Model\Set_WorkDetail_Model.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetail.vb" />
+    <Compile Include="View\BillBoardForm.Designer.vb">
+      <DependentUpon>BillBoardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\BillBoardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Data_Accounting_Form.Designer.vb">
+      <DependentUpon>Data_Accounting_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Data_Accounting_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Data_Case_Form.Designer.vb">
+      <DependentUpon>Data_Case_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Data_Case_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Data_Search_Form.Designer.vb">
+      <DependentUpon>Data_Search_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Data_Search_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Data_Supplier_Form.Designer.vb">
+      <DependentUpon>Data_Supplier_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Data_Supplier_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Data_Product_Form.Designer.vb">
+      <DependentUpon>Data_Product_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Data_Product_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Data_User_From.Designer.vb">
+      <DependentUpon>Data_User_From.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Data_User_From.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MyCheckBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Set_PasswordRevise_Form.Designer.vb">
+      <DependentUpon>Set_PasswordRevise_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_PasswordRevise_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Set_WorkProgress_Form.Designer.vb">
+      <DependentUpon>Set_WorkProgress_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_WorkProgress_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Set_WorkDetail_Form.Designer.vb">
+      <DependentUpon>Set_WorkDetail_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_WorkDetail_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Set_Case_Form.Designer.vb">
+      <DependentUpon>Set_Case_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_Case_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Set_Sale_Form.Designer.vb">
+      <DependentUpon>Set_Sale_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_Sale_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Set_Purchase_Form.Designer.vb">
+      <DependentUpon>Set_Purchase_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_Purchase_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Output_SaleReport_Form.Designer.vb">
+      <DependentUpon>Output_SaleReport_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Output_SaleReport_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Data_Stock_Form.Designer.vb">
+      <DependentUpon>Data_Stock_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Data_Stock_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Data_Specification_Form.Designer.vb">
+      <DependentUpon>Data_Specification_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Data_Specification_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Status_ProcessBar_Form.Designer.vb">
+      <DependentUpon>Status_ProcessBar_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Status_ProcessBar_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Data_Order_Form.Designer.vb">
+      <DependentUpon>Data_Order_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Data_Order_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Search_Form.Designer.vb">
+      <DependentUpon>Search_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Search_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Set_Specification_Form.Designer.vb">
+      <DependentUpon>Set_Specification_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_Specification_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Status_Normal_Form.Designer.vb">
+      <DependentUpon>Status_Normal_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Status_Normal_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Set_Fitting_Form.Designer.vb">
+      <DependentUpon>Set_Fitting_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_Fitting_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Set_Supplier_Form.Designer.vb">
+      <DependentUpon>Set_Supplier_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_Supplier_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controller\Connection.vb" />
+    <Compile Include="View\Data_Fit_Form.Designer.vb">
+      <DependentUpon>Data_Fit_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Data_Fit_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Main_Form.Designer.vb">
+      <DependentUpon>Main_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Model\SQLDataModel.vb" />
+    <Compile Include="View\List_Control_View.Designer.vb">
+      <DependentUpon>List_Control_View.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\List_Control_View.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\View_Form.Designer.vb">
+      <DependentUpon>View_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\View_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\BillBoardForm.resx">
+      <DependentUpon>BillBoardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Data_Accounting_Form.resx">
+      <DependentUpon>Data_Accounting_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Data_Case_Form.resx">
+      <DependentUpon>Data_Case_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Data_Search_Form.resx">
+      <DependentUpon>Data_Search_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Data_Supplier_Form.resx">
+      <DependentUpon>Data_Supplier_Form.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Data_Product_Form.resx">
+      <DependentUpon>Data_Product_Form.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Data_User_From.resx">
+      <DependentUpon>Data_User_From.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MyCheckBox.resx">
+      <DependentUpon>MyCheckBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_PasswordRevise_Form.resx">
+      <DependentUpon>Set_PasswordRevise_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_WorkProgress_Form.resx">
+      <DependentUpon>Set_WorkProgress_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_WorkDetail_Form.resx">
+      <DependentUpon>Set_WorkDetail_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_Case_Form.resx">
+      <DependentUpon>Set_Case_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_Sale_Form.resx">
+      <DependentUpon>Set_Sale_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_Purchase_Form.resx">
+      <DependentUpon>Set_Purchase_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Output_SaleReport_Form.resx">
+      <DependentUpon>Output_SaleReport_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Status_ProcessBar_Form.resx">
+      <DependentUpon>Status_ProcessBar_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Data_Stock_Form.resx">
+      <DependentUpon>Data_Stock_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Data_Specification_Form.resx">
+      <DependentUpon>Data_Specification_Form.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Data_Order_Form.resx">
+      <DependentUpon>Data_Order_Form.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Search_Form.resx">
+      <DependentUpon>Search_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_Specification_Form.resx">
+      <DependentUpon>Set_Specification_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Status_Normal_Form.resx">
+      <DependentUpon>Status_Normal_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_Fitting_Form.resx">
+      <DependentUpon>Set_Fitting_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_Supplier_Form.resx">
+      <DependentUpon>Set_Supplier_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Data_Fit_Form.resx">
+      <DependentUpon>Data_Fit_Form.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Main_Form.resx">
+      <DependentUpon>Main_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\List_Control_View.resx">
+      <DependentUpon>List_Control_View.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\View_Form.resx">
+      <DependentUpon>View_Form.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <Content Include="Resources\cancel.png" />
+    <Content Include="Resources\loading.gif" />
+    <Content Include="Resources\note_add.png" />
+    <Content Include="Resources\note_del.png" />
+    <Content Include="Resources\note_revise.png" />
+    <Content Include="Resources\refresh.png" />
+    <Content Include="Resources\Save.png" />
+    <Content Include="Resources\出貨總表.xltx" />
+    <Content Include="Resources\工程進度表.xltx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shangpo_Logo_Final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Set_Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon-20170305104137212.ico" />
+    <Content Include="Resources\add-icon.png" />
+    <Content Include="Resources\delete-icon.png" />
+    <Content Include="Resources\favicon-20170305104137212.ico" />
+    <Content Include="Resources\pencil-red-icon.png" />
+    <Content Include="Resources\stock.png" />
+    <Content Include="Resources\供應商資訊.png" />
+    <Content Include="Resources\產品資訊.png" />
+    <Content Include="Resources\用戶設定.png" />
+    <Content Include="Resources\規格設定.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="MetroFramework.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
