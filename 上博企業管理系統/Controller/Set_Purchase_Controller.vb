@@ -47,6 +47,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
             dataReader.Read()
             Return dataReader(0)
         End If
+        Return Nothing
     End Function
     '透過關鍵字(代號或名稱)搜尋到目標產品
     '  ->依照產品或配件分別存入prodSetArray或fittingSetArray

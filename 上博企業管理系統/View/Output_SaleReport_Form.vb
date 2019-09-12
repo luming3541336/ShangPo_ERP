@@ -166,7 +166,9 @@ Public Class Output_SaleReport_Form
 
             ElseIf sheets = 1 Then
                 workSheet = workBook.Worksheets(2)
-                If strFilter <> Nothing Then
+                If strFilter.Equals("-1") Then
+                    arrShipRecord = controller.Select_UnSale_Fit(caseID)
+                ElseIf strFilter <> Nothing Then
                     arrShipRecord = controller.Select_ShipRecord_Fit(caseID, strFilter)
                 Else
                     arrShipRecord = controller.Select_ShipRecord_Fit(caseID)
@@ -251,10 +253,6 @@ Public Class Output_SaleReport_Form
             Next
         End If
         Print_WorkProgress()
-
-    End Sub
-
-    Private Sub Sale_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles Sale_CheckBox.CheckedChanged
 
     End Sub
 

@@ -223,6 +223,22 @@ Public Class Output_SaleReport_Controller
         conDB.close()
         Return listData
     End Function
+    Public Function Select_UnSale_Fit(ByVal intCaseID As Integer) As List(Of ShipRecord)
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = SELECT_FIT_STOCK_BY_CASEID
+        strSQL = strSQL.Replace("@caseID", intCaseID)
+        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
+        Dim listData As List(Of ShipRecord) = New List(Of ShipRecord)
+        If dataReader.HasRows Then
+            Do While dataReader.Read
+                listData.Add(New ShipRecord With {.PurchaseID = dataReader("PurchaseDetailID"), .ProductName = dataReader("Name"),
+                               .SupplierName = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"),
+                               .PurchaseCount = dataReader("RemainAmount"), .Specification = dataReader("Specification"), .PurchaseTime = "", .SaleCount = "", .SaleTime = "", .PIC = "", .Remark = dataReader("Remark")})
+            Loop
+        End If
+        conDB.close()
+        Return listData
+    End Function
     Public Function Select_ShipRecord_Prod(ByVal intCaseID As Integer, ByVal strStatement As String) As List(Of ShipRecord)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_SHIPRECORD_PROD_SQL
