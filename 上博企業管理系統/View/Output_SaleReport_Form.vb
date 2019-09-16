@@ -156,22 +156,22 @@ Public Class Output_SaleReport_Form
         For sheets As Integer = 0 To 1
             If sheets = 0 Then
                 workSheet = workBook.Worksheets(1)
-                If strFilter.Equals("-1") Then
+                If strFilter = Nothing Then
+                    arrShipRecord = controller.Select_ShipRecord_Prod(caseID)
+                ElseIf strFilter.Equals("-1") Then
                     arrShipRecord = controller.Select_UnSale_Prod(caseID)
                 ElseIf strFilter <> Nothing Then
                     arrShipRecord = controller.Select_ShipRecord_Prod(caseID, strFilter)
-                Else
-                    arrShipRecord = controller.Select_ShipRecord_Prod(caseID)
                 End If
 
             ElseIf sheets = 1 Then
                 workSheet = workBook.Worksheets(2)
-                If strFilter.Equals("-1") Then
+                If strFilter = Nothing Then
+                    arrShipRecord = controller.Select_ShipRecord_Fit(caseID)
+                ElseIf strFilter.Equals("-1") Then
                     arrShipRecord = controller.Select_UnSale_Fit(caseID)
                 ElseIf strFilter <> Nothing Then
                     arrShipRecord = controller.Select_ShipRecord_Fit(caseID, strFilter)
-                Else
-                    arrShipRecord = controller.Select_ShipRecord_Fit(caseID)
                 End If
 
             End If
