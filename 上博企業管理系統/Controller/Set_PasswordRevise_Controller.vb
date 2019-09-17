@@ -23,7 +23,7 @@ Public Class Set_PasswordRevise_Controller
                 Return False
             End If
         End If
-        conDB.close()
+        conDB.Close()
     End Function
     Public Function Update_Password(ByVal pd As String) As Boolean
         Dim conDB As Connection = New Connection

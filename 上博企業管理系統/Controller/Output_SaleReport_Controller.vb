@@ -15,7 +15,7 @@ Public Class Output_SaleReport_Controller
                                .Count = dataReader("Count"), .Specification = dataReader("Specification"), .InsertTime = dataReader("InsertTime"), .Remark = dataReader("Remark")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return returnList
     End Function
     Public Function Load_Purchase_Fit_Form_CaseID(ByVal intCaseID As Integer) As List(Of PurchaseFit)
@@ -31,7 +31,7 @@ Public Class Output_SaleReport_Controller
                                .Count = dataReader("Count"), .Specification = dataReader("Specification"), .InsertTime = dataReader("InsertTime"), .Remark = dataReader("Remark")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return returnList
     End Function
     Public Function Load_Sale_Prod_From_PID(ByVal intPID As Integer) As List(Of SaleProd)
@@ -45,7 +45,7 @@ Public Class Output_SaleReport_Controller
                 returnList.Add(New SaleProd With {.Count = dataReader("Count"), .InsertTime = dataReader("InsertTime"), .PIC = dataReader("PIC")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return returnList
     End Function
     Public Function Load_Sale_Fit_From_FID(ByVal intFID As Integer) As List(Of SaleFit)
@@ -59,7 +59,7 @@ Public Class Output_SaleReport_Controller
                 returnList.Add(New SaleFit With {.Count = dataReader("Count"), .InsertTime = dataReader("InsertTime"), .PIC = dataReader("PIC")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return returnList
     End Function
     '搜尋指定案件編號之資訊
@@ -74,7 +74,7 @@ Public Class Output_SaleReport_Controller
                 result = New CaseData With {.Place = dataReader("Place"), .CaseID = dataReader("CaseID"), .Address = dataReader("Address"), .Phone = dataReader("Phone"), .State = dataReader("State"), .SalesName = dataReader("SalesName")}
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return result
     End Function
     Public Function Get_WorkDetail(ByVal caseID As Integer) As List(Of WorkDetail)
@@ -88,7 +88,7 @@ Public Class Output_SaleReport_Controller
                 returnList.Add(New WorkDetail With {.WorkDate = dataReader("WorkDate"), .Detail = dataReader("Detail"), .SalesName = dataReader("SalesName")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return returnList
     End Function
     Public Function Get_CaseID(ByVal index As Integer) As Integer
@@ -204,7 +204,7 @@ Public Class Output_SaleReport_Controller
                                .PurchaseCount = dataReader("PurchaseCount"), .Specification = dataReader("Specification"), .PurchaseTime = dataReader("PurchaseTime"), .SaleCount = If(IsDBNull(dataReader("SaleCount")), "", dataReader("SaleCount")), .SaleTime = If(IsDBNull(dataReader("SaleTime")), "", dataReader("SaleTime")), .PIC = If(IsDBNull(dataReader("PIC")), "", dataReader("PIC")), .Remark = dataReader("Remark")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return listData
     End Function
     Public Function Select_UnSale_Prod(ByVal intCaseID As Integer) As List(Of ShipRecord)
@@ -220,7 +220,7 @@ Public Class Output_SaleReport_Controller
                                .PurchaseCount = dataReader("RemainAmount"), .Specification = dataReader("Specification"), .PurchaseTime = "", .SaleCount = "", .SaleTime = "", .PIC = "", .Remark = dataReader("Remark")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return listData
     End Function
     Public Function Select_UnSale_Fit(ByVal intCaseID As Integer) As List(Of ShipRecord)
@@ -236,7 +236,7 @@ Public Class Output_SaleReport_Controller
                                .PurchaseCount = dataReader("RemainAmount"), .Specification = dataReader("Specification"), .PurchaseTime = "", .SaleCount = "", .SaleTime = "", .PIC = "", .Remark = dataReader("Remark")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return listData
     End Function
     Public Function Select_ShipRecord_Prod(ByVal intCaseID As Integer, ByVal strStatement As String) As List(Of ShipRecord)
@@ -253,7 +253,7 @@ Public Class Output_SaleReport_Controller
                                .PurchaseCount = dataReader("PurchaseCount"), .Specification = dataReader("Specification"), .PurchaseTime = dataReader("PurchaseTime"), .SaleCount = If(IsDBNull(dataReader("SaleCount")), "", dataReader("SaleCount")), .SaleTime = If(IsDBNull(dataReader("SaleTime")), "", dataReader("SaleTime")), .PIC = If(IsDBNull(dataReader("PIC")), "", dataReader("PIC")), .Remark = dataReader("Remark")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return listData
     End Function
 
@@ -271,7 +271,7 @@ Public Class Output_SaleReport_Controller
                               .PurchaseCount = dataReader("PurchaseCount"), .Specification = dataReader("Specification"), .PurchaseTime = dataReader("PurchaseTime"), .SaleCount = If(IsDBNull(dataReader("SaleCount")), "", dataReader("SaleCount")), .SaleTime = If(IsDBNull(dataReader("SaleTime")), "", dataReader("SaleTime")), .PIC = If(IsDBNull(dataReader("PIC")), "", dataReader("PIC")), .Remark = dataReader("Remark")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return listData
     End Function
     Public Function Select_ShipRecord_Fit(ByVal intCaseID As Integer, ByVal strStatement As String) As List(Of ShipRecord)
@@ -288,7 +288,7 @@ Public Class Output_SaleReport_Controller
                               .PurchaseCount = dataReader("PurchaseCount"), .Specification = dataReader("Specification"), .PurchaseTime = dataReader("PurchaseTime"), .SaleCount = If(IsDBNull(dataReader("SaleCount")), "", dataReader("SaleCount")), .SaleTime = If(IsDBNull(dataReader("SaleTime")), "", dataReader("SaleTime")), .PIC = If(IsDBNull(dataReader("PIC")), "", dataReader("PIC")), .Remark = dataReader("Remark")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return listData
     End Function
 End Class

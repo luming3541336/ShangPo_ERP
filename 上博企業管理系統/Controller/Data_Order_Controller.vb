@@ -83,7 +83,7 @@ Public Class Data_Order_Controller
                 detailArray.Add(New FitDetail With {.FitID = dataReader("FitID"), .SupplierName = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Name = dataReader("Name"), .Specification = dataReader("Specification"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Count = dataReader("Count"), .Remark = dataReader("Remark"), .PIC = If(dataType = TYPE_SALE, dataReader("PIC"), Nothing)})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return detailArray
     End Function
     Public Function Get_Order_Data(ByVal index As Integer) As OrderData

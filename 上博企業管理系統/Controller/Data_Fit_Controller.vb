@@ -29,7 +29,7 @@ Public Class Data_Fit_Controller
                 returnList.Add(New FittingSet With {.FitID = dataReader("FitID"), .Name = dataReader("Name"), .Number = dataReader("Number"), .Specification = dataReader("Specification")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return returnList
     End Function
     Public Function Add_FittingSet(ByVal name As String, ByVal number As String, ByVal specification As String) As Integer
@@ -48,7 +48,7 @@ Public Class Data_Fit_Controller
                 intReturn = dataReader("id")
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return intReturn
     End Function
     Public Function Del_FittingSet(ByVal fitID) As Integer
@@ -56,7 +56,7 @@ Public Class Data_Fit_Controller
         Dim strSQL As String = DEL_FITTINGSET_SQL
         strSQL = strSQL.Replace("@fitID", fitID)
         Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
-        conDB.close()
+        conDB.Close()
         Return intReturn
     End Function
     Public Function Revise_Name_To_SQL(ByVal name As String, ByVal fitID As Integer) As Integer
@@ -67,7 +67,7 @@ Public Class Data_Fit_Controller
         strSQL = strSQL.Replace("@suID", suID)
         strSQL = strSQL.Replace("@fitID", fitID)
         Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
-        conDB.close()
+        conDB.Close()
         Return intReturn
     End Function
     Public Function Revise_Number_To_SQL(ByVal number As String, ByVal fitID As Integer) As Integer
@@ -78,7 +78,7 @@ Public Class Data_Fit_Controller
         strSQL = strSQL.Replace("@suID", suID)
         strSQL = strSQL.Replace("@fitID", fitID)
         Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
-        conDB.close()
+        conDB.Close()
         Return intReturn
     End Function
     Public Function Revise_Specification_To_SQL(ByVal specification As String, ByVal fitID As Integer) As Integer
@@ -89,7 +89,7 @@ Public Class Data_Fit_Controller
         strSQL = strSQL.Replace("@suID", suID)
         strSQL = strSQL.Replace("@fitID", fitID)
         Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
-        conDB.close()
+        conDB.Close()
         Return intReturn
     End Function
     Public Function Get_Mode() As Integer

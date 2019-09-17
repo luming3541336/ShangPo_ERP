@@ -13,7 +13,7 @@ Public Class Data_Case_Controller
                 arrayList.Add(New CaseData With {.CaseID = dataReader("CaseID"), .CaseNo = dataReader("CaseNo"), .InsertTime = dataReader("InsertTime"), .LoginID = dataReader("LoginID"), .Place = dataReader("Place"), .State = dataReader("State"), .UpdateTime = dataReader("UpdateTime"), .SalesName = dataReader("SalesName")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return arrayList
     End Function
     Public Function Select_CaseData(ByVal strSearchSQL As String) As List(Of CaseData)
@@ -26,7 +26,7 @@ Public Class Data_Case_Controller
                 arrayList.Add(New CaseData With {.CaseID = dataReader("CaseID"), .CaseNo = dataReader("CaseNo"), .InsertTime = dataReader("InsertTime"), .LoginID = dataReader("LoginID"), .Place = dataReader("Place"), .State = dataReader("State"), .UpdateTime = dataReader("UpdateTime"), .SalesName = dataReader("SalesName")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return arrayList
     End Function
     Public Function Select_PurchaseProd(ByVal caseID As Integer) As List(Of PurchaseProd)
@@ -41,7 +41,7 @@ Public Class Data_Case_Controller
                               .Count = dataReader("Count"), .Length = dataReader("Length"), .Remark = dataReader("Remark")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return arrayList
     End Function
     Public Function Select_PurchaseFit(ByVal caseID As Integer) As List(Of PurchaseFit)
@@ -56,7 +56,7 @@ Public Class Data_Case_Controller
                               .Count = dataReader("Count"), .Length = dataReader("Length"), .Remark = dataReader("Remark")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return arrayList
     End Function
     Public Function Select_SaleFit(ByVal caseID As Integer) As List(Of SaleFit)
@@ -71,7 +71,7 @@ Public Class Data_Case_Controller
                               .Count = dataReader("Count"), .Length = dataReader("Length"), .Remark = dataReader("Remark"), .PIC = dataReader("PIC")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return arrayList
     End Function
     Public Function Select_SaleProd(ByVal caseID As Integer) As List(Of SaleProd)
@@ -86,7 +86,7 @@ Public Class Data_Case_Controller
                               .Count = dataReader("Count"), .Length = dataReader("Length"), .Remark = dataReader("Remark"), .PIC = dataReader("PIC")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return arrayList
     End Function
     Public Function Select_UnSaleProd(ByVal caseID As Integer) As List(Of UnsaleProd)
@@ -101,7 +101,7 @@ Public Class Data_Case_Controller
                                .Length = dataReader("Length"), .RemainAmount = dataReader("RemainAmount")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return arrayList
     End Function
     Public Function Select_UnSaleFit(ByVal caseID As Integer) As List(Of UnsaleFit)
@@ -116,7 +116,7 @@ Public Class Data_Case_Controller
                                .Length = dataReader("Length"), .RemainAmount = dataReader("RemainAmount")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return arrayList
     End Function
     Public Function Update_Case_Complete(ByVal caseID As Integer) As Integer
@@ -126,7 +126,7 @@ Public Class Data_Case_Controller
         strSQL = strSQL.Replace("@caseID", caseID)
         strSQL = strSQL.Replace("@state", 1)
         intResult = conDB.ExecuteSQL(strSQL).ExecuteNonQuery()
-        conDB.close()
+        conDB.Close()
         Return intResult
     End Function
     Public Function Update_Case_Void(ByVal caseID As Integer) As Integer
@@ -136,7 +136,7 @@ Public Class Data_Case_Controller
         strSQL = strSQL.Replace("@caseID", caseID)
         strSQL = strSQL.Replace("@state", 2)
         intResult = conDB.ExecuteSQL(strSQL).ExecuteNonQuery()
-        conDB.close()
+        conDB.Close()
         Return intResult
     End Function
     Public Function Update_Case_CancelComplete(ByVal caseID As Integer) As Integer
@@ -146,7 +146,7 @@ Public Class Data_Case_Controller
         strSQL = strSQL.Replace("@caseID", caseID)
         strSQL = strSQL.Replace("@state", 0)
         intResult = conDB.ExecuteSQL(strSQL).ExecuteNonQuery()
-        conDB.close()
+        conDB.Close()
         Return intResult
     End Function
     Public Function Get_PurchaseCase_Count(ByVal caseID As Integer) As Integer
@@ -158,7 +158,7 @@ Public Class Data_Case_Controller
         If dataReader.Read Then
             intResult = dataReader("Count")
         End If
-        conDB.close()
+        conDB.Close()
         Return intResult
     End Function
     Public Function Get_SaleCase_Count(ByVal caseID As Integer) As Integer
@@ -170,7 +170,7 @@ Public Class Data_Case_Controller
         If dataReader.Read Then
             intResult = dataReader("Count")
         End If
-        conDB.close()
+        conDB.Close()
         Return intResult
     End Function
     Public Function Get_PurchaseID_For_Prod(ByVal PID As Integer) As Integer
@@ -182,7 +182,7 @@ Public Class Data_Case_Controller
         If dataReader.Read Then
             intResult = dataReader("PurchaseID")
         End If
-        conDB.close()
+        conDB.Close()
         Return intResult
     End Function
     Public Function Get_SaleID_For_Prod(ByVal PID As Integer) As Integer
@@ -194,7 +194,7 @@ Public Class Data_Case_Controller
         If dataReader.Read Then
             intResult = dataReader("SaleID")
         End If
-        conDB.close()
+        conDB.Close()
         Return intResult
     End Function
     Public Function Get_PurchaseID_For_Fit(ByVal FID As Integer) As Integer
@@ -206,7 +206,7 @@ Public Class Data_Case_Controller
         If dataReader.Read Then
             intResult = dataReader("PurchaseID")
         End If
-        conDB.close()
+        conDB.Close()
         Return intResult
     End Function
     Public Function Get_SaleID_For_Fit(ByVal FID As Integer) As Integer
@@ -218,7 +218,7 @@ Public Class Data_Case_Controller
         If dataReader.Read Then
             intResult = dataReader("SaleID")
         End If
-        conDB.close()
+        conDB.Close()
         Return intResult
     End Function
     Public Function Select_WorkDetail(ByVal caseID As Integer) As List(Of Set_WorkDetail_Model.WorkDetail)

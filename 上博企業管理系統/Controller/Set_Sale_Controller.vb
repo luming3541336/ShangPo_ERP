@@ -35,7 +35,7 @@ Public Class Set_Sale_Controller
                     Return dataReader(0)
                 End If
         End Select
-        conDB.close()
+        conDB.Close()
         Return "連線錯誤"
     End Function
     Public Function Load_Stock(ByVal item As Integer) As List(Of Stock)
@@ -55,7 +55,7 @@ Public Class Set_Sale_Controller
                 returnList.Add(New Stock With {.PurchaseDetailID = dataReader("PurchaseDetailID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Specification = dataReader("Specification"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Remark = dataReader("Remark"), .RemainAmount = dataReader("RemainAmount")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return returnList
     End Function
     Public Function Search_Order(ByVal item As Integer) As List(Of SaleData)
@@ -75,7 +75,7 @@ Public Class Set_Sale_Controller
                 returnList.Add(New SaleData With {.SaleDetailID = dataReader("SaleDetailID"), .PurchaseDetailID = dataReader("PurchaseDetailID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Specification = dataReader("Specification"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Remark = dataReader("Remark"), .count = dataReader("Count"), .RemainAmount = dataReader("RemainAmount"), .PIC = dataReader("PIC")})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return returnList
     End Function
     Public Function Insert_SaleData(ByVal saleNo As String, insertTime As DateTime) As Integer

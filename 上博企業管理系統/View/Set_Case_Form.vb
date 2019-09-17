@@ -86,7 +86,7 @@ Public Class Set_Case_Form
         End If
 
 
-        conDB.close()
+        conDB.Close()
         statusForm.Dispose()
         Me.Show()
     End Sub

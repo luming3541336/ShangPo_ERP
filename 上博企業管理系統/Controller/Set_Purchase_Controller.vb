@@ -62,7 +62,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
                 dataArray.Add(New ProdData With {.ID = dataReader("ProdID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr"))})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return dataArray
     End Function
     Public Function Search_Fit(ByVal strName As String) As List(Of ProdData)
@@ -76,7 +76,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
                 dataArray.Add(New ProdData With {.ID = dataReader("FitID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr"))})
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return dataArray
     End Function
     '透過訂單ID搜尋到產品庫存
@@ -105,7 +105,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
                 End If
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return dataArray
     End Function
     '讀取所有供應商資料
@@ -280,7 +280,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
                             If i <> 1 Then
                                 Return "Error： insert PurchaseProd that count <> 1."
                             End If
-                            conDB.close()
+                            conDB.Close()
                         End If
                     End If
             Next
@@ -311,7 +311,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
                         If i <> 1 Then
                             Return "Error： insert PurchaseFit that count <> 1."
                         End If
-                        conDB.close()
+                        conDB.Close()
                     End If
                 End If
             Next
@@ -324,7 +324,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
                     If i <> 1 Then
                         Return "Error： Delete PurchaseProd that count <> 1."
                     End If
-                    conDB.close()
+                    conDB.Close()
                 Next
                 For Each data As Integer In editRemoveFit
                     strSql = DEL_PURCHASEFIT_BY_PURCHASEFID
@@ -333,7 +333,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
                     If i <> 1 Then
                         Return "Error： Delete PurchaseFit that count <> 1."
                     End If
-                    conDB.close()
+                    conDB.Close()
                 Next
             End If
         End If

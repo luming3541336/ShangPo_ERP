@@ -29,7 +29,7 @@ Public Class Search_Controller
                 End If
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return dataArray
     End Function
     '透過關鍵字(代號或名稱)搜尋到目標產品
@@ -56,7 +56,7 @@ Public Class Search_Controller
                 End If
             Loop
         End If
-        conDB.close()
+        conDB.Close()
         Return dataArray
     End Function
     '讀取所有類別資料

@@ -83,11 +83,11 @@ Public Class Data_Case_Form
         Next
         DetailDGV.Rows.Clear()
         For Each data As Set_WorkDetail_Model.WorkDetail In listWorkDetail
-            DetailDGV.Rows.Add(data.WDID, data.WorkDate, data.SalesName, data.Detail)
+            DetailDGV.Rows.Add(data.WDID, Format(data.WorkDate, "yyyy/MM/dd"), data.SalesName, data.Detail)
         Next
         WorkProgressDGV.Rows.Clear()
         For Each data As Set_WorkProgress_Model.WorkProgress In listWorkProgress
-            WorkProgressDGV.Rows.Add(data.WPID, If(data.WPClass = 0, "門框、窗框", "門扇"), data.WPDate, data.Supplier, data.ProdName, data.Specification, data.Count, data.Unit, data.Remark)
+            WorkProgressDGV.Rows.Add(data.WPID, If(data.WPClass = 0, "門框、窗框", "門扇"), Format(data.WPDate, "yyyy/MM/dd"), data.Supplier, data.ProdName, data.Specification, data.Count, data.Unit, data.Remark)
         Next
         PurchaseCountLabel.Text = intPurchaseCount
         SaleCountLabel.Text = intSaleCount
@@ -311,7 +311,7 @@ Public Class Data_Case_Form
             DetailDGV.Rows.Clear()
             Dim listData As List(Of Set_WorkDetail_Model.WorkDetail) = controller.Select_WorkDetail(CaseDGV.CurrentRow.Cells("CaseID").Value)
             For Each data As Set_WorkDetail_Model.WorkDetail In listData
-                DetailDGV.Rows.Add(data.WDID, data.WorkDate, data.SalesName, data.Detail)
+                DetailDGV.Rows.Add(data.WDID, Format(data.WorkDate, "yyyy/MM/dd"), data.SalesName, data.Detail)
             Next
         End If
     End Sub
@@ -497,7 +497,7 @@ Public Class Data_Case_Form
             WorkProgressDGV.Rows.Clear()
             Dim listData As List(Of Set_WorkProgress_Model.WorkProgress) = controller.Select_WorkProgress(CaseDGV.CurrentRow.Cells("CaseID").Value)
             For Each data As Set_WorkProgress_Model.WorkProgress In listData
-                WorkProgressDGV.Rows.Add(data.WPID, If(data.WPClass = 0, "門框、窗框", "門扇"), data.WPDate, data.Supplier, data.ProdName, data.Specification, data.Count, data.Unit, data.Remark)
+                WorkProgressDGV.Rows.Add(data.WPID, If(data.WPClass = 0, "門框、窗框", "門扇"), Format(data.WPDate, "yyyy/MM/dd"), data.Supplier, data.ProdName, data.Specification, data.Count, data.Unit, data.Remark)
             Next
         End If
     End Sub
@@ -677,5 +677,13 @@ Public Class Data_Case_Form
         Next
         Dim testView As Output_SaleReport_Form = New Output_SaleReport_Form(UserName, CaseDGV.CurrentRow.Cells("CaseID").Value, CaseDGV.CurrentRow.Cells("Place").Value, listProdData, listFitData, listWorkDetail)
         testView.Show()
+    End Sub
+
+    Private Sub WorkProgressDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles WorkProgressDGV.CellDoubleClick
+        ReviseWPBtn_Click(Me, New EventArgs)
+    End Sub
+
+    Private Sub DetailDGV_DoubleClick(sender As Object, e As EventArgs) Handles DetailDGV.DoubleClick
+        ReviseDetailBtn_Click(Me, New EventArgs)
     End Sub
 End Class
