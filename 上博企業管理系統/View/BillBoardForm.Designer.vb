@@ -34,16 +34,17 @@ Partial Class BillBoardForm
         Me.TableLayoutPanel1.BackColor = System.Drawing.Color.LightSkyBlue
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.BoardText, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.ExitBtn, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(809, 421)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1753, 842)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'BoardText
@@ -51,12 +52,13 @@ Partial Class BillBoardForm
         Me.BoardText.BackColor = System.Drawing.Color.White
         Me.BoardText.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BoardText.Font = New System.Drawing.Font("微軟正黑體", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.BoardText.Location = New System.Drawing.Point(3, 3)
+        Me.BoardText.Location = New System.Drawing.Point(7, 6)
+        Me.BoardText.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.BoardText.Multiline = True
         Me.BoardText.Name = "BoardText"
         Me.BoardText.ReadOnly = True
         Me.BoardText.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
-        Me.BoardText.Size = New System.Drawing.Size(803, 372)
+        Me.BoardText.Size = New System.Drawing.Size(1739, 744)
         Me.BoardText.TabIndex = 0
         Me.BoardText.Text = resources.GetString("BoardText.Text")
         '
@@ -65,20 +67,22 @@ Partial Class BillBoardForm
         Me.ExitBtn.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ExitBtn.Font = New System.Drawing.Font("微軟正黑體", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.ExitBtn.Location = New System.Drawing.Point(368, 381)
+        Me.ExitBtn.Location = New System.Drawing.Point(798, 762)
+        Me.ExitBtn.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.ExitBtn.Name = "ExitBtn"
-        Me.ExitBtn.Size = New System.Drawing.Size(72, 37)
+        Me.ExitBtn.Size = New System.Drawing.Size(156, 74)
         Me.ExitBtn.TabIndex = 1
         Me.ExitBtn.Text = "關閉"
         Me.ExitBtn.UseVisualStyleBackColor = True
         '
         'BillBoardForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(809, 421)
+        Me.ClientSize = New System.Drawing.Size(1753, 842)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.Name = "BillBoardForm"
         Me.Opacity = 0.95R
         Me.ShowIcon = False
