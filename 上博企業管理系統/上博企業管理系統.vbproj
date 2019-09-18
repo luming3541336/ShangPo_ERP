@@ -125,7 +125,6 @@
     <Compile Include="Controller\Data_Stock_Controller.vb" />
     <Compile Include="Controller\Set_Purchase_Controller.vb" />
     <Compile Include="Controller\DBController.vb" />
-    <Compile Include="Controller\Data_Fit_Controller.vb" />
     <Compile Include="Controller\Output_SaleReport_Controller.vb" />
     <Compile Include="Controller\Search_Controller.vb" />
     <Compile Include="Controller\Data_Specification_Controller.vb" />
@@ -143,7 +142,6 @@
     <Compile Include="Controller\Set_PasswordRevise_Controller.vb" />
     <Compile Include="Model\Set_PasswordRevise_Model.vb" />
     <Compile Include="Model\Set_Purchase_Model.vb" />
-    <Compile Include="Model\Data_Fit_Model.vb" />
     <Compile Include="Model\Output_SaleReport_Model.vb" />
     <Compile Include="Model\Data_Specification_Model.vb" />
     <Compile Include="Model\Set_Sale_Model.vb" />
@@ -284,12 +282,6 @@
     <Compile Include="View\Status_Normal_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Set_Fitting_Form.Designer.vb">
-      <DependentUpon>Set_Fitting_Form.vb</DependentUpon>
-    </Compile>
-    <Compile Include="View\Set_Fitting_Form.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="View\Set_Supplier_Form.Designer.vb">
       <DependentUpon>Set_Supplier_Form.vb</DependentUpon>
     </Compile>
@@ -297,12 +289,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controller\Connection.vb" />
-    <Compile Include="View\Data_Fit_Form.Designer.vb">
-      <DependentUpon>Data_Fit_Form.vb</DependentUpon>
-    </Compile>
-    <Compile Include="View\Data_Fit_Form.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="View\Main_Form.Designer.vb">
       <DependentUpon>Main_Form.vb</DependentUpon>
     </Compile>
@@ -404,15 +390,8 @@
     <EmbeddedResource Include="View\Status_Normal_Form.resx">
       <DependentUpon>Status_Normal_Form.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Set_Fitting_Form.resx">
-      <DependentUpon>Set_Fitting_Form.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Set_Supplier_Form.resx">
       <DependentUpon>Set_Supplier_Form.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Data_Fit_Form.resx">
-      <DependentUpon>Data_Fit_Form.vb</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Main_Form.resx">
       <DependentUpon>Main_Form.vb</DependentUpon>
