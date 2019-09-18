@@ -6,7 +6,7 @@ Public Class DBController
     Private objCon As SqlConnection
     'Private strDbCon As String = "Data Source=DBSERVER,1433;Initial Catalog=ERPShongPo;User ID=ShongPoUser;Password=1234"
     'Private strDbCon As String = "Data Source=DESKTOP-96CGOU8;Initial Catalog=ERPShongPo;Integrated Security=SSPI;"
-    Private strDbCon As String = "Data Source=ALEXLUCD48\SQLEXPRESS02;Initial Catalog=ERPShongPo;Integrated Security=SSPI;"
+    Private strDbCon As String = "Data Source=DESKTOP-SNRFQUA\SQLEXPRESS;Initial Catalog=ERPShongPo;Integrated Security=SSPI;"
     Private objCmd As SqlCommand
     Private type As Integer = 0
     Private selectSQL As String = Nothing
