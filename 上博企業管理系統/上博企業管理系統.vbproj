@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Data_Case_Controller.vb" />
+    <Compile Include="Controller\Data_Supplier_Controller.vb" />
     <Compile Include="Controller\Data_User_Controller.vb" />
     <Compile Include="Controller\Data_Product_Controller.vb" />
     <Compile Include="Controller\Data_Order_Controller.vb" />
@@ -135,6 +136,7 @@
     <Compile Include="Model\Data_Product_Model.vb" />
     <Compile Include="Model\Data_Order_Model.vb" />
     <Compile Include="Model\Data_Stock_Model.vb" />
+    <Compile Include="Model\Data_Supplier_Model.vb" />
     <Compile Include="Model\Data_User_Model.vb" />
     <Compile Include="Model\Search_Model.vb" />
     <Compile Include="Controller\Set_PasswordRevise_Controller.vb" />
