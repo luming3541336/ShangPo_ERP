@@ -119,12 +119,11 @@
   <ItemGroup>
     <Compile Include="Controller\Data_Case_Controller.vb" />
     <Compile Include="Controller\Data_User_Controller.vb" />
-    <Compile Include="Controller\Data_Supplier_Controller.vb" />
     <Compile Include="Controller\Data_Product_Controller.vb" />
     <Compile Include="Controller\Data_Order_Controller.vb" />
     <Compile Include="Controller\Data_Stock_Controller.vb" />
+    <Compile Include="Controller\Main_Controller.vb" />
     <Compile Include="Controller\Set_Purchase_Controller.vb" />
-    <Compile Include="Controller\DBController.vb" />
     <Compile Include="Controller\Output_SaleReport_Controller.vb" />
     <Compile Include="Controller\Search_Controller.vb" />
     <Compile Include="Controller\Data_Specification_Controller.vb" />
@@ -133,7 +132,6 @@
     <Compile Include="Controller\Set_WorkDetail_Controller.vb" />
     <Compile Include="Model\Data_Case_Model.vb" />
     <Compile Include="Model\Data_Search_Model.vb" />
-    <Compile Include="Model\Data_Supplier_Model.vb" />
     <Compile Include="Model\Data_Product_Model.vb" />
     <Compile Include="Model\Data_Order_Model.vb" />
     <Compile Include="Model\Data_Stock_Model.vb" />
@@ -282,12 +280,6 @@
     <Compile Include="View\Status_Normal_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Set_Supplier_Form.Designer.vb">
-      <DependentUpon>Set_Supplier_Form.vb</DependentUpon>
-    </Compile>
-    <Compile Include="View\Set_Supplier_Form.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Controller\Connection.vb" />
     <Compile Include="View\Main_Form.Designer.vb">
       <DependentUpon>Main_Form.vb</DependentUpon>
@@ -389,9 +381,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Status_Normal_Form.resx">
       <DependentUpon>Status_Normal_Form.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Set_Supplier_Form.resx">
-      <DependentUpon>Set_Supplier_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Main_Form.resx">
       <DependentUpon>Main_Form.vb</DependentUpon>

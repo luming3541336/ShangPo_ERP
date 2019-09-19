@@ -7,7 +7,7 @@ Public Class Main_Form
     Private oOriginalRegion As Region = Nothing
     Private bFormDragging As Boolean = False
     Private oPointClicked As Point
-    Private conDB As DBController = New DBController
+
 
     '主畫面讀取
     '   1.先去判斷先前使用者是否有設定"記住我"，並且有正確登入，如有，資料將會記錄在Application.log內
@@ -19,10 +19,6 @@ Public Class Main_Form
             VerText.Text = "開發程式階段"
         End Try
 
-
-        If Not conDB.ConTry Then
-            MsgBox("連線錯誤，請通知管理員")
-        End If
         '使用者如有按下"記住我"按鈕將會讀取資料
         If File.Exists(USER_RECORD_FILE) Then
             Dim fileReader As TextFieldParser = New TextFieldParser(USER_RECORD_FILE) With {
@@ -69,23 +65,20 @@ Public Class Main_Form
         End If
     End Sub
     Private Sub OKButton_Click(sender As Object, e As EventArgs) Handles OKButton.Click
-        conDB._select({"*"}, "LoginData")
-        conDB._where("UserID", userIDText.Text, "AND")
-        conDB._where("Password", passwordText.Text, Nothing)
-        Dim dataReader As SqlDataReader = conDB.toSelect.ExecuteReader
 
-        If dataReader.HasRows Then
-            dataReader.Read()
-            UserName = dataReader("UserName")
-            Access = dataReader("Access")
-            LoginID = dataReader("LoginID")
-            L0 = dataReader("L0")
-            L1 = dataReader("L1")
-            L2 = dataReader("L2")
-            L3 = dataReader("L3")
-            L4 = dataReader("L4")
-            L5 = dataReader("L5")
-            L6 = dataReader("L6")
+        Dim controller As Main_Controller = New Main_Controller
+        Dim loginData As Data_User_Model.LoginData = controller.Select_User(userIDText.Text, passwordText.Text)
+        If loginData.ToString <> Nothing Then
+            UserName = loginData.UserName
+            Access = loginData.Access
+            LoginID = loginData.LoginID
+            L0 = loginData.L0
+            L1 = loginData.L1
+            L2 = loginData.L2
+            L3 = loginData.L3
+            L4 = loginData.L4
+            L5 = loginData.L5
+            L6 = loginData.L6
             Dim userControl As List_Control_View = New List_Control_View()
             Timer1.Start()
             RevisePasswordLabel.Visible = True
@@ -109,6 +102,7 @@ Public Class Main_Form
         Else
             MsgBox("帳號或密碼錯誤")
         End If
+
     End Sub
 
     Private Sub passwordText_TextChanged(sender As Object, e As EventArgs) Handles passwordText.TextChanged
