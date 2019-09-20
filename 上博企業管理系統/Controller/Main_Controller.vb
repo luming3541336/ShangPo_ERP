@@ -12,7 +12,7 @@ Public Class Main_Controller
         If dataReader.HasRows Then
             listData = New LoginData
             While dataReader.Read
-                listData = New LoginData With {.LoginID = dataReader("LoginID"), .UserName = dataReader("UserName"), .UserID = dataReader("UserID"), .Password = dataReader("Password"), .Access = dataReader("Access"), .L0 = dataReader("L0"), .L1 = dataReader("L1"), .L2 = dataReader("L2"), .L3 = dataReader("L3"), .L4 = dataReader("L4").L5 = dataReader("L5"), .L6 = dataReader("L6")}
+                listData = New LoginData With {.LoginID = dataReader("LoginID"), .UserName = dataReader("UserName"), .UserID = dataReader("UserID"), .Password = dataReader("Password"), .Access = dataReader("Access"), .L0 = dataReader("L0"), .L1 = dataReader("L1"), .L2 = dataReader("L2"), .L3 = dataReader("L3"), .L4 = dataReader("L4"), .L5 = dataReader("L5"), .L6 = dataReader("L6")}
             End While
         End If
         Return listData
