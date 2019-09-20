@@ -86,12 +86,14 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>C:\Program Files\Microsoft Office\root\Office16\ADDINS\PowerPivot Excel Add-in\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -193,6 +195,12 @@
       <DependentUpon>Data_User_From.vb</DependentUpon>
     </Compile>
     <Compile Include="View\Data_User_From.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login_Form.Designer.vb">
+      <DependentUpon>Login_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login_Form.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\MyCheckBox.vb">
@@ -306,6 +314,12 @@
     <Compile Include="View\List_Control_View.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="View\UserControl.Designer.vb">
+      <DependentUpon>UserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="View\View_Form.Designer.vb">
       <DependentUpon>View_Form.vb</DependentUpon>
     </Compile>
@@ -336,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Data_User_From.resx">
       <DependentUpon>Data_User_From.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login_Form.resx">
+      <DependentUpon>Login_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MyCheckBox.resx">
       <DependentUpon>MyCheckBox.vb</DependentUpon>
@@ -396,6 +413,9 @@
     <EmbeddedResource Include="View\List_Control_View.resx">
       <DependentUpon>List_Control_View.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControl.resx">
+      <DependentUpon>UserControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\View_Form.resx">
       <DependentUpon>View_Form.vb</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +445,7 @@
     <Content Include="Resources\工程進度表.xltx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\Shangpo_Logo_Final.png" />
   </ItemGroup>
   <ItemGroup>
