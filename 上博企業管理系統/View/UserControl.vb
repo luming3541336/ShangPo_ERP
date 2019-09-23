@@ -1,22 +1,25 @@
 ﻿Public Class UserControl
-    Dim a = 0
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If a = 0 Then
-            FlowLayoutPanel2.Visible = True
-            a = 1
+        If Panel1.Visible Then
+            Panel1.Visible = False
         Else
-            FlowLayoutPanel2.Visible = False
-            a = 0
+            Panel1.Visible = True
         End If
 
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If Panel2.Visible Then
+            Panel2.Visible = False
+        Else
+            Panel2.Visible = True
+        End If
 
     End Sub
 
     Private Sub UserControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FlowLayoutPanel2.Visible = False
+        Me.SetStyle(ControlStyles.SupportsTransparentBackColor, True)
+        Me.BackColor = Color.FromArgb(50, Color.SlateGray)
     End Sub
 End Class

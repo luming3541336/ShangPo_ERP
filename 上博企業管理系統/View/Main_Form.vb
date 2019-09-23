@@ -38,7 +38,7 @@ Public Class Main_Form
 
     End Sub
 
-    Private Sub RevisePasswordLabel_Click(sender As Object, e As EventArgs) Handles RevisePasswordLabel.Click
+    Private Sub RevisePasswordLabel_Click(sender As Object, e As EventArgs)
         Dim reviseForm As Set_PasswordRevise_Form = New Set_PasswordRevise_Form
         reviseForm.ShowDialog()
     End Sub
