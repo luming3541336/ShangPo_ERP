@@ -26,24 +26,21 @@ Partial Class Main_Form
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Form))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.MainPanel = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TimeLabel = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.NameLabel = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.VerText = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.RevisePasswordLabel = New System.Windows.Forms.Label()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.NameLabel = New System.Windows.Forms.Label()
-        Me.TimeLabel = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.UserControl1 = New 上博企業管理系統.UserControl()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MainPanel.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -55,7 +52,6 @@ Partial Class Main_Form
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.MainPanel, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(1, 64)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(1)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -71,20 +67,63 @@ Partial Class Main_Form
         Me.MainPanel.BackgroundImage = Global.上博企業管理系統.My.Resources.Resources.Shangpo_Logo_Final
         Me.MainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.MainPanel.Controls.Add(Me.UserControl1)
+        Me.MainPanel.Controls.Add(Me.Panel1)
         Me.MainPanel.Controls.Add(Me.Panel2)
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MainPanel.Location = New System.Drawing.Point(1, 55)
-        Me.MainPanel.Margin = New System.Windows.Forms.Padding(1)
+        Me.MainPanel.Location = New System.Drawing.Point(0, 0)
+        Me.MainPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(1137, 644)
+        Me.MainPanel.Size = New System.Drawing.Size(1139, 700)
         Me.MainPanel.TabIndex = 1
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(121, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.TimeLabel)
+        Me.Panel1.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Panel1.Location = New System.Drawing.Point(-1, -1)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(222, 97)
+        Me.Panel1.TabIndex = 3
+        '
+        'TimeLabel
+        '
+        Me.TimeLabel.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.TimeLabel.ForeColor = System.Drawing.Color.White
+        Me.TimeLabel.Location = New System.Drawing.Point(0, 26)
+        Me.TimeLabel.Name = "TimeLabel"
+        Me.TimeLabel.Size = New System.Drawing.Size(219, 20)
+        Me.TimeLabel.TabIndex = 1
+        Me.TimeLabel.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Controls.Add(Me.NameLabel)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(222, 26)
+        Me.FlowLayoutPanel1.TabIndex = 0
+        '
+        'NameLabel
+        '
+        Me.NameLabel.AutoSize = True
+        Me.NameLabel.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.NameLabel.ForeColor = System.Drawing.Color.White
+        Me.NameLabel.Location = New System.Drawing.Point(2, 0)
+        Me.NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.NameLabel.Name = "NameLabel"
+        Me.NameLabel.Size = New System.Drawing.Size(0, 20)
+        Me.NameLabel.TabIndex = 0
+        Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Panel2
         '
         Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.VerText)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(979, 3)
+        Me.Panel2.Location = New System.Drawing.Point(981, 3)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(155, 24)
         Me.Panel2.TabIndex = 1
@@ -111,88 +150,11 @@ Partial Class Main_Form
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Ver.:"
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.TableLayoutPanel2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(2, 2)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1135, 50)
-        Me.Panel1.TabIndex = 2
-        '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel2.AutoSize = True
-        Me.TableLayoutPanel2.ColumnCount = 1
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.FlowLayoutPanel1, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.TimeLabel, 0, 1)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(774, 0)
-        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(0)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(361, 50)
-        Me.TableLayoutPanel2.TabIndex = 1
-        '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.Controls.Add(Me.RevisePasswordLabel)
-        Me.FlowLayoutPanel1.Controls.Add(Me.NameLabel)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(361, 25)
-        Me.FlowLayoutPanel1.TabIndex = 0
-        '
-        'RevisePasswordLabel
-        '
-        Me.RevisePasswordLabel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.RevisePasswordLabel.Font = New System.Drawing.Font("微軟正黑體", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.RevisePasswordLabel.ForeColor = System.Drawing.Color.Blue
-        Me.RevisePasswordLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.RevisePasswordLabel.ImageIndex = 0
-        Me.RevisePasswordLabel.ImageList = Me.ImageList1
-        Me.RevisePasswordLabel.Location = New System.Drawing.Point(282, 0)
-        Me.RevisePasswordLabel.Name = "RevisePasswordLabel"
-        Me.RevisePasswordLabel.Size = New System.Drawing.Size(76, 24)
-        Me.RevisePasswordLabel.TabIndex = 1
-        Me.RevisePasswordLabel.Text = "變更密碼"
-        Me.RevisePasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'ImageList1
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         Me.ImageList1.Images.SetKeyName(0, "Set_Image.png")
-        '
-        'NameLabel
-        '
-        Me.NameLabel.AutoSize = True
-        Me.NameLabel.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.NameLabel.ForeColor = System.Drawing.Color.Black
-        Me.NameLabel.Location = New System.Drawing.Point(277, 0)
-        Me.NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(0, 20)
-        Me.NameLabel.TabIndex = 0
-        Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'TimeLabel
-        '
-        Me.TimeLabel.AutoSize = True
-        Me.TimeLabel.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.TimeLabel.Location = New System.Drawing.Point(358, 25)
-        Me.TimeLabel.Name = "TimeLabel"
-        Me.TimeLabel.Size = New System.Drawing.Size(0, 20)
-        Me.TimeLabel.TabIndex = 1
-        Me.TimeLabel.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Timer1
         '
@@ -200,19 +162,20 @@ Partial Class Main_Form
         '
         'UserControl1
         '
-        Me.UserControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.UserControl1.AutoSize = True
-        Me.UserControl1.Location = New System.Drawing.Point(3, 3)
+        Me.UserControl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.UserControl1.Font = New System.Drawing.Font("新細明體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.UserControl1.Location = New System.Drawing.Point(-1, 95)
         Me.UserControl1.Name = "UserControl1"
-        Me.UserControl1.Size = New System.Drawing.Size(199, 638)
-        Me.UserControl1.TabIndex = 2
+        Me.UserControl1.Size = New System.Drawing.Size(222, 897)
+        Me.UserControl1.TabIndex = 4
         '
         'Main_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoSize = True
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1139, 764)
         Me.Controls.Add(Me.TableLayoutPanel1)
@@ -227,30 +190,25 @@ Partial Class Main_Form
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.MainPanel.ResumeLayout(False)
         Me.MainPanel.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents MainPanel As Panel
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents NameLabel As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents VerText As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents RevisePasswordLabel As Label
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents TimeLabel As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents UserControl1 As UserControl
 End Class
