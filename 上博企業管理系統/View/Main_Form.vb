@@ -24,6 +24,7 @@ Public Class Main_Form
 
     Private Sub VerText_Click(sender As Object, e As EventArgs) Handles VerText.Click
         BillBoardForm.Show()
+        '        Panel1.stSetStyle(ControlStyles.SupportsTransparentBackColor, True)
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -43,4 +44,7 @@ Public Class Main_Form
         reviseForm.ShowDialog()
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 End Class

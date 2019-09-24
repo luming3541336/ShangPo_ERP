@@ -89,7 +89,7 @@ Partial Class Main_Form
         '
         'TimeLabel
         '
-        Me.TimeLabel.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.TimeLabel.Font = New System.Drawing.Font("微軟正黑體 Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.TimeLabel.ForeColor = System.Drawing.Color.White
         Me.TimeLabel.Location = New System.Drawing.Point(0, 26)
         Me.TimeLabel.Name = "TimeLabel"
@@ -104,18 +104,18 @@ Partial Class Main_Form
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(222, 26)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(222, 46)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
         'NameLabel
         '
         Me.NameLabel.AutoSize = True
-        Me.NameLabel.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.NameLabel.Font = New System.Drawing.Font("微軟正黑體 Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.NameLabel.ForeColor = System.Drawing.Color.White
         Me.NameLabel.Location = New System.Drawing.Point(220, 0)
         Me.NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(0, 20)
+        Me.NameLabel.Size = New System.Drawing.Size(0, 24)
         Me.NameLabel.TabIndex = 0
         Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
@@ -188,7 +188,6 @@ Partial Class Main_Form
         Me.Name = "Main_Form"
         Me.ShowInTaskbar = False
         Me.Text = "上博企業管理系統"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.MainPanel.ResumeLayout(False)
         Me.MainPanel.PerformLayout()
