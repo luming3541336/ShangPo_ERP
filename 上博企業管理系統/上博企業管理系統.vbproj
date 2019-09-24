@@ -434,6 +434,8 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <Content Include="Resources\baseline_Down.png" />
+    <Content Include="Resources\baseline_right.png" />
     <Content Include="Resources\cancel.png" />
     <Content Include="Resources\loading.gif" />
     <Content Include="Resources\note_add.png" />
