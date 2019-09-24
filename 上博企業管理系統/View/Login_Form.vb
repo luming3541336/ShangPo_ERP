@@ -68,4 +68,8 @@ Public Class Login_Form
             ErrorLabel.Visible = True
         End If
     End Sub
+
+    Private Sub RememberCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles RememberCheckBox.CheckedChanged
+
+    End Sub
 End Class

@@ -26,12 +26,14 @@ Partial Class UserControl
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserControl))
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button14 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
@@ -42,8 +44,6 @@ Partial Class UserControl
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -76,6 +76,7 @@ Partial Class UserControl
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.ImageIndex = 1
@@ -87,6 +88,13 @@ Partial Class UserControl
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "估價系統"
         Me.Button1.UseVisualStyleBackColor = False
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "baseline_Down.png")
+        Me.ImageList1.Images.SetKeyName(1, "baseline_right.png")
         '
         'Panel1
         '
@@ -105,6 +113,7 @@ Partial Class UserControl
         Me.Button3.BackColor = System.Drawing.Color.SlateGray
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Location = New System.Drawing.Point(44, 29)
         Me.Button3.Margin = New System.Windows.Forms.Padding(0)
@@ -119,6 +128,7 @@ Partial Class UserControl
         Me.Button2.BackColor = System.Drawing.Color.SlateGray
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(44, 0)
         Me.Button2.Margin = New System.Windows.Forms.Padding(0)
@@ -133,6 +143,7 @@ Partial Class UserControl
         Me.Button7.BackColor = System.Drawing.Color.SlateGray
         Me.Button7.FlatAppearance.BorderSize = 0
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.White
         Me.Button7.Location = New System.Drawing.Point(44, 60)
         Me.Button7.Margin = New System.Windows.Forms.Padding(0)
@@ -147,6 +158,7 @@ Partial Class UserControl
         Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.White
         Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button4.ImageKey = "baseline_right.png"
@@ -171,11 +183,27 @@ Partial Class UserControl
         Me.Panel2.TabIndex = 1
         Me.Panel2.Visible = False
         '
+        'Button14
+        '
+        Me.Button14.BackColor = System.Drawing.Color.SlateGray
+        Me.Button14.FlatAppearance.BorderSize = 0
+        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button14.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Button14.ForeColor = System.Drawing.Color.White
+        Me.Button14.Location = New System.Drawing.Point(44, 62)
+        Me.Button14.Margin = New System.Windows.Forms.Padding(0)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(178, 31)
+        Me.Button14.TabIndex = 2
+        Me.Button14.Text = "庫存紀錄"
+        Me.Button14.UseVisualStyleBackColor = False
+        '
         'Button5
         '
         Me.Button5.BackColor = System.Drawing.Color.SlateGray
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.White
         Me.Button5.Location = New System.Drawing.Point(44, 31)
         Me.Button5.Margin = New System.Windows.Forms.Padding(0)
@@ -190,6 +218,7 @@ Partial Class UserControl
         Me.Button6.BackColor = System.Drawing.Color.SlateGray
         Me.Button6.FlatAppearance.BorderSize = 0
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.White
         Me.Button6.Location = New System.Drawing.Point(44, 0)
         Me.Button6.Margin = New System.Windows.Forms.Padding(0)
@@ -204,6 +233,7 @@ Partial Class UserControl
         Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Button8.FlatAppearance.BorderSize = 0
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button8.ForeColor = System.Drawing.Color.White
         Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button8.ImageIndex = 1
@@ -232,6 +262,7 @@ Partial Class UserControl
         Me.Button9.BackColor = System.Drawing.Color.SlateGray
         Me.Button9.FlatAppearance.BorderSize = 0
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button9.ForeColor = System.Drawing.Color.White
         Me.Button9.Location = New System.Drawing.Point(44, 30)
         Me.Button9.Margin = New System.Windows.Forms.Padding(0)
@@ -246,6 +277,7 @@ Partial Class UserControl
         Me.Button10.BackColor = System.Drawing.Color.SlateGray
         Me.Button10.FlatAppearance.BorderSize = 0
         Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button10.ForeColor = System.Drawing.Color.White
         Me.Button10.Location = New System.Drawing.Point(44, 0)
         Me.Button10.Margin = New System.Windows.Forms.Padding(0)
@@ -260,6 +292,7 @@ Partial Class UserControl
         Me.Button11.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Button11.FlatAppearance.BorderSize = 0
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button11.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button11.ForeColor = System.Drawing.Color.White
         Me.Button11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button11.ImageIndex = 1
@@ -288,6 +321,7 @@ Partial Class UserControl
         Me.Button12.BackColor = System.Drawing.Color.SlateGray
         Me.Button12.FlatAppearance.BorderSize = 0
         Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button12.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button12.ForeColor = System.Drawing.Color.White
         Me.Button12.Location = New System.Drawing.Point(44, 31)
         Me.Button12.Margin = New System.Windows.Forms.Padding(0)
@@ -302,6 +336,7 @@ Partial Class UserControl
         Me.Button13.BackColor = System.Drawing.Color.SlateGray
         Me.Button13.FlatAppearance.BorderSize = 0
         Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button13.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button13.ForeColor = System.Drawing.Color.White
         Me.Button13.Location = New System.Drawing.Point(44, 0)
         Me.Button13.Margin = New System.Windows.Forms.Padding(0)
@@ -310,27 +345,6 @@ Partial Class UserControl
         Me.Button13.TabIndex = 1
         Me.Button13.Text = "帳戶設定"
         Me.Button13.UseVisualStyleBackColor = False
-        '
-        'Button14
-        '
-        Me.Button14.BackColor = System.Drawing.Color.SlateGray
-        Me.Button14.FlatAppearance.BorderSize = 0
-        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button14.ForeColor = System.Drawing.Color.White
-        Me.Button14.Location = New System.Drawing.Point(44, 62)
-        Me.Button14.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(178, 31)
-        Me.Button14.TabIndex = 2
-        Me.Button14.Text = "庫存紀錄"
-        Me.Button14.UseVisualStyleBackColor = False
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "baseline_Down.png")
-        Me.ImageList1.Images.SetKeyName(1, "baseline_right.png")
         '
         'UserControl
         '

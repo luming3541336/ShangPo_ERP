@@ -23,8 +23,7 @@
     End Sub
 
     Private Sub UserControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.SetStyle(ControlStyles.SupportsTransparentBackColor, True)
-        Me.BackColor = Color.FromArgb(50, Color.SlateGray)
+
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
