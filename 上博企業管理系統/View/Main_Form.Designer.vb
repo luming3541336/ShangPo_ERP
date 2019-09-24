@@ -100,6 +100,7 @@ Partial Class Main_Form
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Controls.Add(Me.NameLabel)
+        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
@@ -111,7 +112,7 @@ Partial Class Main_Form
         Me.NameLabel.AutoSize = True
         Me.NameLabel.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.NameLabel.ForeColor = System.Drawing.Color.White
-        Me.NameLabel.Location = New System.Drawing.Point(2, 0)
+        Me.NameLabel.Location = New System.Drawing.Point(220, 0)
         Me.NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.NameLabel.Name = "NameLabel"
         Me.NameLabel.Size = New System.Drawing.Size(0, 20)
@@ -154,7 +155,8 @@ Partial Class Main_Form
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "Set_Image.png")
+        Me.ImageList1.Images.SetKeyName(0, "baseline_Down.png")
+        Me.ImageList1.Images.SetKeyName(1, "baseline_right.png")
         '
         'Timer1
         '
