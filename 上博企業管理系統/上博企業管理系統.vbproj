@@ -307,7 +307,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Model\SQLDataModel.vb" />
     <Compile Include="View\List_Control_View.Designer.vb">
       <DependentUpon>List_Control_View.vb</DependentUpon>
     </Compile>

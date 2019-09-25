@@ -72,4 +72,8 @@ Public Class Login_Form
     Private Sub RememberCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles RememberCheckBox.CheckedChanged
 
     End Sub
+
+    Private Sub BindingSource1_CurrentChanged(sender As Object, e As EventArgs) Handles BindingSource1.CurrentChanged
+
+    End Sub
 End Class

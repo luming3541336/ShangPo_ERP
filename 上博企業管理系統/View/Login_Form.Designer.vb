@@ -22,6 +22,7 @@ Partial Class Login_Form
     '請勿使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.UserIDText = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.PasswordText = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.RememberCheckBox = New MaterialSkin.Controls.MaterialCheckBox()
@@ -34,7 +35,7 @@ Partial Class Login_Form
         Me.UserIDText.Depth = 0
         Me.UserIDText.Hint = "帳號"
         Me.UserIDText.Location = New System.Drawing.Point(49, 90)
-        Me.UserIDText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.UserIDText.Margin = New System.Windows.Forms.Padding(2)
         Me.UserIDText.MouseState = MaterialSkin.MouseState.HOVER
         Me.UserIDText.Name = "UserIDText"
         Me.UserIDText.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -50,7 +51,7 @@ Partial Class Login_Form
         Me.PasswordText.Depth = 0
         Me.PasswordText.Hint = "密碼"
         Me.PasswordText.Location = New System.Drawing.Point(49, 117)
-        Me.PasswordText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PasswordText.Margin = New System.Windows.Forms.Padding(2)
         Me.PasswordText.MouseState = MaterialSkin.MouseState.HOVER
         Me.PasswordText.Name = "PasswordText"
         Me.PasswordText.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -66,7 +67,7 @@ Partial Class Login_Form
         Me.RememberCheckBox.AutoSize = True
         Me.RememberCheckBox.BackColor = System.Drawing.Color.Transparent
         Me.RememberCheckBox.Depth = 0
-        Me.RememberCheckBox.Font = New System.Drawing.Font("Roboto", 10.0!)
+        Me.RememberCheckBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.RememberCheckBox.Location = New System.Drawing.Point(49, 159)
         Me.RememberCheckBox.Margin = New System.Windows.Forms.Padding(0)
         Me.RememberCheckBox.MouseLocation = New System.Drawing.Point(-1, -1)
@@ -83,7 +84,7 @@ Partial Class Login_Form
         Me.LoginBtn.BackColor = System.Drawing.Color.Maroon
         Me.LoginBtn.Depth = 0
         Me.LoginBtn.Location = New System.Drawing.Point(187, 158)
-        Me.LoginBtn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.LoginBtn.Margin = New System.Windows.Forms.Padding(2)
         Me.LoginBtn.MouseState = MaterialSkin.MouseState.HOVER
         Me.LoginBtn.Name = "LoginBtn"
         Me.LoginBtn.Primary = True
@@ -105,6 +106,10 @@ Partial Class Login_Form
         Me.ErrorLabel.Text = "*帳號或密碼錯誤"
         Me.ErrorLabel.Visible = False
         '
+        'BindingSource1
+        '
+        '
+
         'Login_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -116,7 +121,7 @@ Partial Class Login_Form
         Me.Controls.Add(Me.PasswordText)
         Me.Controls.Add(Me.UserIDText)
         Me.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Login_Form"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "使用者登入"
@@ -129,4 +134,5 @@ Partial Class Login_Form
     Friend WithEvents RememberCheckBox As MaterialSkin.Controls.MaterialCheckBox
     Friend WithEvents LoginBtn As MaterialSkin.Controls.MaterialRaisedButton
     Friend WithEvents ErrorLabel As Label
+    Friend WithEvents BindingSource1 As BindingSource
 End Class

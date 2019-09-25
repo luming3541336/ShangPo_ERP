@@ -33,17 +33,17 @@ Partial Class UserControl
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.StockViewBtn = New System.Windows.Forms.Button()
+        Me.CaseSearchBtn = New System.Windows.Forms.Button()
+        Me.CasrViewBtn = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
+        Me.RevisePWBtn = New System.Windows.Forms.Button()
+        Me.UserSetBtn = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -73,7 +73,6 @@ Partial Class UserControl
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
@@ -110,52 +109,51 @@ Partial Class UserControl
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.SlateGray
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(89, Byte), Integer))
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(44, 29)
+        Me.Button3.Location = New System.Drawing.Point(0, 29)
         Me.Button3.Margin = New System.Windows.Forms.Padding(0)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(178, 31)
+        Me.Button3.Size = New System.Drawing.Size(222, 31)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "新增估價"
         Me.Button3.UseVisualStyleBackColor = False
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.SlateGray
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(89, Byte), Integer))
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(44, 0)
+        Me.Button2.Location = New System.Drawing.Point(0, 0)
         Me.Button2.Margin = New System.Windows.Forms.Padding(0)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(178, 31)
+        Me.Button2.Size = New System.Drawing.Size(222, 31)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "估價總覽"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Button7
         '
-        Me.Button7.BackColor = System.Drawing.Color.SlateGray
+        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(89, Byte), Integer))
         Me.Button7.FlatAppearance.BorderSize = 0
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button7.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(44, 60)
+        Me.Button7.Location = New System.Drawing.Point(0, 60)
         Me.Button7.Margin = New System.Windows.Forms.Padding(0)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(178, 31)
+        Me.Button7.Size = New System.Drawing.Size(222, 31)
         Me.Button7.TabIndex = 2
         Me.Button7.Text = "列印報價單"
         Me.Button7.UseVisualStyleBackColor = False
         '
         'Button4
         '
-        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
@@ -173,9 +171,9 @@ Partial Class UserControl
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Button14)
-        Me.Panel2.Controls.Add(Me.Button5)
-        Me.Panel2.Controls.Add(Me.Button6)
+        Me.Panel2.Controls.Add(Me.StockViewBtn)
+        Me.Panel2.Controls.Add(Me.CaseSearchBtn)
+        Me.Panel2.Controls.Add(Me.CasrViewBtn)
         Me.Panel2.Location = New System.Drawing.Point(0, 153)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel2.Name = "Panel2"
@@ -183,54 +181,53 @@ Partial Class UserControl
         Me.Panel2.TabIndex = 1
         Me.Panel2.Visible = False
         '
-        'Button14
+        'StockViewBtn
         '
-        Me.Button14.BackColor = System.Drawing.Color.SlateGray
-        Me.Button14.FlatAppearance.BorderSize = 0
-        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button14.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Button14.ForeColor = System.Drawing.Color.White
-        Me.Button14.Location = New System.Drawing.Point(44, 62)
-        Me.Button14.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(178, 31)
-        Me.Button14.TabIndex = 2
-        Me.Button14.Text = "庫存紀錄"
-        Me.Button14.UseVisualStyleBackColor = False
+        Me.StockViewBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.StockViewBtn.FlatAppearance.BorderSize = 0
+        Me.StockViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.StockViewBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.StockViewBtn.ForeColor = System.Drawing.Color.White
+        Me.StockViewBtn.Location = New System.Drawing.Point(0, 62)
+        Me.StockViewBtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.StockViewBtn.Name = "StockViewBtn"
+        Me.StockViewBtn.Size = New System.Drawing.Size(222, 31)
+        Me.StockViewBtn.TabIndex = 2
+        Me.StockViewBtn.Text = "庫存紀錄"
+        Me.StockViewBtn.UseVisualStyleBackColor = False
         '
-        'Button5
+        'CaseSearchBtn
         '
-        Me.Button5.BackColor = System.Drawing.Color.SlateGray
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Location = New System.Drawing.Point(44, 31)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(178, 31)
-        Me.Button5.TabIndex = 2
-        Me.Button5.Text = "案件查詢"
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.CaseSearchBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.CaseSearchBtn.FlatAppearance.BorderSize = 0
+        Me.CaseSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CaseSearchBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.CaseSearchBtn.ForeColor = System.Drawing.Color.White
+        Me.CaseSearchBtn.Location = New System.Drawing.Point(0, 31)
+        Me.CaseSearchBtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.CaseSearchBtn.Name = "CaseSearchBtn"
+        Me.CaseSearchBtn.Size = New System.Drawing.Size(222, 31)
+        Me.CaseSearchBtn.TabIndex = 2
+        Me.CaseSearchBtn.Text = "案件查詢"
+        Me.CaseSearchBtn.UseVisualStyleBackColor = False
         '
-        'Button6
+        'CasrViewBtn
         '
-        Me.Button6.BackColor = System.Drawing.Color.SlateGray
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(44, 0)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(178, 31)
-        Me.Button6.TabIndex = 1
-        Me.Button6.Text = "案件總覽"
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.CasrViewBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.CasrViewBtn.FlatAppearance.BorderSize = 0
+        Me.CasrViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CasrViewBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.CasrViewBtn.ForeColor = System.Drawing.Color.White
+        Me.CasrViewBtn.Location = New System.Drawing.Point(0, 0)
+        Me.CasrViewBtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.CasrViewBtn.Name = "CasrViewBtn"
+        Me.CasrViewBtn.Size = New System.Drawing.Size(222, 31)
+        Me.CasrViewBtn.TabIndex = 1
+        Me.CasrViewBtn.Text = "案件總覽"
+        Me.CasrViewBtn.UseVisualStyleBackColor = False
         '
         'Button8
         '
-        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Button8.FlatAppearance.BorderSize = 0
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button8.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
@@ -259,37 +256,36 @@ Partial Class UserControl
         '
         'Button9
         '
-        Me.Button9.BackColor = System.Drawing.Color.SlateGray
+        Me.Button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(89, Byte), Integer))
         Me.Button9.FlatAppearance.BorderSize = 0
         Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button9.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Location = New System.Drawing.Point(44, 30)
+        Me.Button9.Location = New System.Drawing.Point(0, 30)
         Me.Button9.Margin = New System.Windows.Forms.Padding(0)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(178, 31)
+        Me.Button9.Size = New System.Drawing.Size(222, 31)
         Me.Button9.TabIndex = 2
         Me.Button9.Text = "應收帳款"
         Me.Button9.UseVisualStyleBackColor = False
         '
         'Button10
         '
-        Me.Button10.BackColor = System.Drawing.Color.SlateGray
+        Me.Button10.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(89, Byte), Integer))
         Me.Button10.FlatAppearance.BorderSize = 0
         Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button10.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.Button10.ForeColor = System.Drawing.Color.White
-        Me.Button10.Location = New System.Drawing.Point(44, 0)
+        Me.Button10.Location = New System.Drawing.Point(0, 0)
         Me.Button10.Margin = New System.Windows.Forms.Padding(0)
         Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(178, 31)
+        Me.Button10.Size = New System.Drawing.Size(222, 31)
         Me.Button10.TabIndex = 1
         Me.Button10.Text = "應收應付總覽"
         Me.Button10.UseVisualStyleBackColor = False
         '
         'Button11
         '
-        Me.Button11.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Button11.FlatAppearance.BorderSize = 0
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button11.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
@@ -307,8 +303,8 @@ Partial Class UserControl
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.Button12)
-        Me.Panel4.Controls.Add(Me.Button13)
+        Me.Panel4.Controls.Add(Me.RevisePWBtn)
+        Me.Panel4.Controls.Add(Me.UserSetBtn)
         Me.Panel4.Location = New System.Drawing.Point(0, 369)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel4.Name = "Panel4"
@@ -316,35 +312,35 @@ Partial Class UserControl
         Me.Panel4.TabIndex = 4
         Me.Panel4.Visible = False
         '
-        'Button12
+        'RevisePWBtn
         '
-        Me.Button12.BackColor = System.Drawing.Color.SlateGray
-        Me.Button12.FlatAppearance.BorderSize = 0
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Button12.ForeColor = System.Drawing.Color.White
-        Me.Button12.Location = New System.Drawing.Point(44, 31)
-        Me.Button12.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(178, 31)
-        Me.Button12.TabIndex = 2
-        Me.Button12.Text = "修改密碼"
-        Me.Button12.UseVisualStyleBackColor = False
+        Me.RevisePWBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.RevisePWBtn.FlatAppearance.BorderSize = 0
+        Me.RevisePWBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RevisePWBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.RevisePWBtn.ForeColor = System.Drawing.Color.White
+        Me.RevisePWBtn.Location = New System.Drawing.Point(0, 31)
+        Me.RevisePWBtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.RevisePWBtn.Name = "RevisePWBtn"
+        Me.RevisePWBtn.Size = New System.Drawing.Size(222, 31)
+        Me.RevisePWBtn.TabIndex = 2
+        Me.RevisePWBtn.Text = "修改密碼"
+        Me.RevisePWBtn.UseVisualStyleBackColor = False
         '
-        'Button13
+        'UserSetBtn
         '
-        Me.Button13.BackColor = System.Drawing.Color.SlateGray
-        Me.Button13.FlatAppearance.BorderSize = 0
-        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button13.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Button13.ForeColor = System.Drawing.Color.White
-        Me.Button13.Location = New System.Drawing.Point(44, 0)
-        Me.Button13.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(178, 31)
-        Me.Button13.TabIndex = 1
-        Me.Button13.Text = "帳戶設定"
-        Me.Button13.UseVisualStyleBackColor = False
+        Me.UserSetBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(89, Byte), Integer))
+        Me.UserSetBtn.FlatAppearance.BorderSize = 0
+        Me.UserSetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.UserSetBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.UserSetBtn.ForeColor = System.Drawing.Color.White
+        Me.UserSetBtn.Location = New System.Drawing.Point(0, 0)
+        Me.UserSetBtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserSetBtn.Name = "UserSetBtn"
+        Me.UserSetBtn.Size = New System.Drawing.Size(222, 31)
+        Me.UserSetBtn.TabIndex = 1
+        Me.UserSetBtn.Text = "帳戶設定"
+        Me.UserSetBtn.UseVisualStyleBackColor = False
         '
         'UserControl
         '
@@ -372,16 +368,16 @@ Partial Class UserControl
     Friend WithEvents Button4 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
+    Friend WithEvents CaseSearchBtn As Button
+    Friend WithEvents CasrViewBtn As Button
     Friend WithEvents Button8 As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Button9 As Button
     Friend WithEvents Button10 As Button
     Friend WithEvents Button11 As Button
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Button12 As Button
-    Friend WithEvents Button13 As Button
-    Friend WithEvents Button14 As Button
+    Friend WithEvents RevisePWBtn As Button
+    Friend WithEvents UserSetBtn As Button
+    Friend WithEvents StockViewBtn As Button
     Friend WithEvents ImageList1 As ImageList
 End Class

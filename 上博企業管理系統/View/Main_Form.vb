@@ -10,6 +10,7 @@ Public Class Main_Form
         skinManager.AddFormToManage(Me)
         skinManager.Theme = MaterialSkinManager.Themes.DARK
         skinManager.ColorScheme = New ColorScheme(Primary.Teal700, Primary.Teal700, Primary.Teal700, Accent.Teal700, TextShade.WHITE)
+        FlowLayoutPanel1.BackColor = Color.FromArgb(150, 7, 80, 133)
         Try
             VerText.Text = Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString()
         Catch ex As Exception
@@ -44,7 +45,7 @@ Public Class Main_Form
         reviseForm.ShowDialog()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 End Class
