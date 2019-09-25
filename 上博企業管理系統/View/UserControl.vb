@@ -22,9 +22,6 @@
 
     End Sub
 
-    Private Sub UserControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         If Panel3.Visible Then
@@ -46,5 +43,11 @@
             sender.imageIndex = 0
         End If
 
+    End Sub
+
+
+    Private Sub CasrViewBtn_Click(sender As Object, e As EventArgs) Handles CasrViewBtn.Click
+        Dim View As Data_Case_Form = New Data_Case_Form
+        View.Show()
     End Sub
 End Class
