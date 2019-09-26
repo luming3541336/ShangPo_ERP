@@ -61,7 +61,7 @@ Public Class Data_Order_Controller
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                detailArray.Add(New ProdDetail With {.ProdID = dataReader("ProdID"), .SupplierName = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Name = dataReader("Name"), .Specification = dataReader("Specification"),
+                detailArray.Add(New ProdDetail With {.ProdPartID = dataReader("ProdPartID"), .SupplierName = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Name = dataReader("Name"), .Specification = dataReader("Specification"),
                                 .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Count = dataReader("Count"), .Remark = dataReader("Remark"), .PIC = If(dataType = TYPE_SALE, dataReader("PIC"), Nothing)})
             Loop
         End If
@@ -80,7 +80,7 @@ Public Class Data_Order_Controller
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                detailArray.Add(New FitDetail With {.FitID = dataReader("FitID"), .SupplierName = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Name = dataReader("Name"), .Specification = dataReader("Specification"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Count = dataReader("Count"), .Remark = dataReader("Remark"), .PIC = If(dataType = TYPE_SALE, dataReader("PIC"), Nothing)})
+                detailArray.Add(New FitDetail With {.ProdPart2ID = dataReader("ProdPart2ID"), .SupplierName = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Name = dataReader("Name"), .Specification = dataReader("Specification"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Count = dataReader("Count"), .Remark = dataReader("Remark"), .PIC = If(dataType = TYPE_SALE, dataReader("PIC"), Nothing)})
             Loop
         End If
         conDB.Close()

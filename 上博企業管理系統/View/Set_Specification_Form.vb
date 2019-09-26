@@ -25,23 +25,23 @@ Public Class Set_Specification_Form
     '  ↳此方法主要是顯示產品的對應類別，因此在Specification內省略紀錄SuID
     '  ↳OtherClassArray主要提供給ProdDGV內的prodClass顯示用，資料只需暫存，使用完畢即可刪除
     Private Sub LoadOtherClassForProd(ByVal prodID As Integer)
-        Dim strSql As String = "Select Specification.SpecID, Specification.ClassName FROM ProdSet,Specification WHERE ProdSet.ProdID = @ProdID AND (ProdSet.SuID = Specification.SuID OR Specification.SuID = 0)"
-        strSql = strSql.Replace("@ProdID", prodID)
+        Dim strSql As String = "Select Specification.SpecID, Specification.ClassName FROM ProdPartData,Specification WHERE ProdPartData.ProdPartID = @ProdPartID AND (ProdPartData.SuID = Specification.SuID OR Specification.SuID = 0)"
+        strSql = strSql.Replace("@ProdPartID", prodID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSql).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                otherClassArray.Add(New Specification(dataReader("SpecID"), Nothing, dataReader("ClassName")))
+                otherClassArray.Add(New Specification With {.SpecID = dataReader("SpecID"), .ClassName = dataReader("ClassName")})
             Loop
         End If
         selectedClassArray = New String(otherClassArray.Count) {}
     End Sub
     Private Sub LoadOtherClassForFit(ByVal fitID As Integer)
-        Dim strSql As String = "Select Specification.SpecID, Specification.ClassName FROM FittingSet,Specification WHERE FittingSet.FitID = @fitID AND (FittingSet.SuID = Specification.SuID OR Specification.SuID = 0)"
-        strSql = strSql.Replace("@fitID", fitID)
+        Dim strSql As String = "Select Specification.SpecID, Specification.ClassName FROM ProdPartData2,Specification WHERE ProdPartData2.ProdPart2ID = @prodPart2ID AND (ProdPartData2.SuID = Specification.SuID OR Specification.SuID = 0)"
+        strSql = strSql.Replace("@prodPart2ID", fitID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSql).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                otherClassArray.Add(New Specification(dataReader("SpecID"), Nothing, dataReader("ClassName")))
+                otherClassArray.Add(New Specification With {.SpecID = dataReader("SpecID"), .ClassName = dataReader("ClassName")})
             Loop
         End If
         selectedClassArray = New String(otherClassArray.Count) {}
@@ -148,3 +148,7 @@ Public Class Set_Specification_Form
         Return arrSpec
     End Function
 End Class
+Public Structure Specification
+    Dim SpecID As Integer
+    Dim ClassName As String
+End Structure

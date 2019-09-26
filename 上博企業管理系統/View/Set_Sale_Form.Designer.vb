@@ -61,11 +61,11 @@ Partial Class Set_Sale_Form
         Me.Label3 = New System.Windows.Forms.Label()
         Me.saleTime = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.CurrentCaseLabel = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.loadBackGround = New System.ComponentModel.BackgroundWorker()
-        Me.CurrentCaseLabel = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -310,6 +310,13 @@ Partial Class Set_Sale_Form
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Name = "Label2"
         '
+        'CurrentCaseLabel
+        '
+        resources.ApplyResources(Me.CurrentCaseLabel, "CurrentCaseLabel")
+        Me.CurrentCaseLabel.BackColor = System.Drawing.Color.White
+        Me.CurrentCaseLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CurrentCaseLabel.Name = "CurrentCaseLabel"
+        '
         'FlowLayoutPanel2
         '
         resources.ApplyResources(Me.FlowLayoutPanel2, "FlowLayoutPanel2")
@@ -337,13 +344,6 @@ Partial Class Set_Sale_Form
         '
         'loadBackGround
         '
-        '
-        'CurrentCaseLabel
-        '
-        resources.ApplyResources(Me.CurrentCaseLabel, "CurrentCaseLabel")
-        Me.CurrentCaseLabel.BackColor = System.Drawing.Color.White
-        Me.CurrentCaseLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CurrentCaseLabel.Name = "CurrentCaseLabel"
         '
         'Set_Sale_Form
         '

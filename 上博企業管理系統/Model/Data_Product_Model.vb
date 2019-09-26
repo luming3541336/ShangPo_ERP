@@ -3,22 +3,22 @@
     Public Const INSERT_MODE = 1
     Public Const REVISE_MODE = 2
     Public Const NORMAL_MODE = 3
-    Protected Const SELECT_PRODSET_SQL = "SELECT ProdID,ProdSet.SuID,ProdSet.Name as ProdName,ProdSet.Number as ProdNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM ProdSet, SupplierData WHERE ProdSet.SuID = SupplierData.SuID"
-    Protected Const SELECT_FITTINGSET_SQL = "SELECT FitID,FittingSet.SuID,FittingSet.Name as FitName,FittingSet.Number as FitNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM FittingSet, SupplierData WHERE FittingSet.SuID = SupplierData.SuID"
-    Protected Const SELECT_PRODSET_FOR_STATEMENT_SQL = "SELECT ProdID,ProdSet.SuID,ProdSet.Name as ProdName,ProdSet.Number as ProdNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM ProdSet, SupplierData WHERE ProdSet.SuID = SupplierData.SuID @statement"
-    Protected Const SELECT_FITTING_FOR_STATEMENT_SQL = "SELECT FitID,FittingSet.SuID,FittingSet.Name as FitName,FittingSet.Number as FitNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM FittingSet, SupplierData WHERE FittingSet.SuID = SupplierData.SuID @statement"
-    Protected Const UPDATE_PRODSET_SQL = "UPDATE ProdSet SET SuID = '@suID', Name = N'@prodName', Number = N'@prodNumber'  WHERE ProdID = @prodID"
-    Protected Const UPDATE_FITTINGSET_SQL = "UPDATE FittingSet SET SuID = '@suID', Name = N'@fitName', Number = N'@fitNumber' WHERE FitID = @fitID"
-    Protected Const INSERT_PRODSET_SQL = "INSERT INTO ProdSet (SuID,Name,Number) VALUES('@suID',N'@prodName',N'@prodNumber'); SELECT @@IDENTITY"
-    Protected Const INSERT_FITTINGSET_SQL = "INSERT INTO FittingSet (SuID,Name,Number) VALUES('@suID',N'@fitName',N'@fitNumber'); SELECT @@IDENTITY"
-    Protected Const DELETE_PRODSET_SQL = "DELETE FROM ProdSet WHERE ProdID = @prodID"
-    Protected Const DELETE_FITTINGSET_SQL = "DELETE FROM FittingSet WHERE FitID = @fitID"
+    Protected Const SELECT_PRODPARTDATA_SQL = "SELECT ProdPartID,ProdPartData.SuID,ProdPartData.Name as ProdName,ProdPartData.Number as ProdNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM ProdPartData, SupplierData WHERE ProdPartData.SuID = SupplierData.SuID"
+    Protected Const SELECT_FITTINGSET_SQL = "SELECT ProdPart2ID,ProdPartData2.SuID,ProdPartData2.Name as FitName,ProdPartData2.Number as FitNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM ProdPartData2, SupplierData WHERE ProdPartData2.SuID = SupplierData.SuID"
+    Protected Const SELECT_PRODPARTDATA_FOR_STATEMENT_SQL = "SELECT ProdPartID,ProdPartData.SuID,ProdPartData.Name as ProdName,ProdPartData.Number as ProdNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM ProdPartData, SupplierData WHERE ProdPartData.SuID = SupplierData.SuID @statement"
+    Protected Const SELECT_FITTING_FOR_STATEMENT_SQL = "SELECT ProdPart2ID,ProdPartData2.SuID,ProdPartData2.Name as FitName,ProdPartData2.Number as FitNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM ProdPartData2, SupplierData WHERE ProdPartData2.SuID = SupplierData.SuID @statement"
+    Protected Const UPDATE_PRODPARTDATA_SQL = "UPDATE ProdPartData SET SuID = '@suID', Name = N'@prodName', Number = N'@prodNumber'  WHERE ProdPartID = @prodPartID"
+    Protected Const UPDATE_FITTINGSET_SQL = "UPDATE ProdPartData2 SET SuID = '@suID', Name = N'@fitName', Number = N'@fitNumber' WHERE ProdPart2ID = @prodPart2ID"
+    Protected Const INSERT_PRODPARTDATA_SQL = "INSERT INTO ProdPartData (SuID,Name,Number) VALUES('@suID',N'@prodName',N'@prodNumber'); SELECT @@IDENTITY"
+    Protected Const INSERT_FITTINGSET_SQL = "INSERT INTO ProdPartData2 (SuID,Name,Number) VALUES('@suID',N'@fitName',N'@fitNumber'); SELECT @@IDENTITY"
+    Protected Const DELETE_PRODPARTDATA_SQL = "DELETE FROM ProdPartData WHERE ProdPartID = @prodPartID"
+    Protected Const DELETE_FITTINGSET_SQL = "DELETE FROM ProdPartData2 WHERE ProdPart2ID = @prodPart2ID"
     Protected Const SELECT_SUPPLIERDATA_SQL = "SELECT * FROM SupplierData"
-    Protected Const SELECT_PURCHASEDATA_FOR_PRODID_SQL = "SELECT TOP 3 PurchaseProd.PurchaseID,PurchaseData.PurchaseNO,PurchaseProd.Specification,PurchaseProd.[Count],PurchaseData.InsertTime,PurchaseData.CaseID, CaseData.Place FROM PurchaseProd,PurchaseData,CaseData WHERE PurchaseProd.ProdID = @prodID AND PurchaseData.PurchaseID = PurchaseProd.PurchaseID AND CaseData.CaseID = PurchaseData.CaseID ORDER BY PurchaseData.InsertTime DESC"
-    Protected Const SELECT_PURCHASEDATA_FOR_FITID_SQL = "SELECT TOP 3 PurchaseFit.PurchaseID,PurchaseData.PurchaseNO,PurchaseFit.Specification,PurchaseFit.[Count],PurchaseData.InsertTime,PurchaseData.CaseID, CaseData.Place FROM PurchaseFit,PurchaseData,CaseData WHERE PurchaseFit.FitID = @fitID AND PurchaseData.PurchaseID = PurchaseFit.PurchaseID AND caseData.CaseID = PurchaseData.CaseID ORDER BY PurchaseData.InsertTime DESC"
+    Protected Const SELECT_PURCHASEDATA_FOR_PRODID_SQL = "SELECT TOP 3 PurchaseProd.PurchaseID,PurchaseData.PurchaseNO,PurchaseProd.Specification,PurchaseProd.[Count],PurchaseData.InsertTime,PurchaseData.CaseID, CaseData.Place FROM PurchaseProd,PurchaseData,CaseData WHERE PurchaseProd.ProdPartID = @prodPartID AND PurchaseData.PurchaseID = PurchaseProd.PurchaseID AND CaseData.CaseID = PurchaseData.CaseID ORDER BY PurchaseData.InsertTime DESC"
+    Protected Const SELECT_PURCHASEDATA_FOR_FITID_SQL = "SELECT TOP 3 PurchaseFit.PurchaseID,PurchaseData.PurchaseNO,PurchaseFit.Specification,PurchaseFit.[Count],PurchaseData.InsertTime,PurchaseData.CaseID, CaseData.Place FROM PurchaseFit,PurchaseData,CaseData WHERE PurchaseFit.ProdPart2ID = @prodPart2ID AND PurchaseData.PurchaseID = PurchaseFit.PurchaseID AND caseData.CaseID = PurchaseData.CaseID ORDER BY PurchaseData.InsertTime DESC"
     Protected listSuID As List(Of Integer) = New List(Of Integer)
     Public Structure Prod
-        Dim ProdID As Integer
+        Dim ProdPartID As Integer
         Dim ProdName As String
         Dim SupplierName As String
         Dim ProdNumber As String

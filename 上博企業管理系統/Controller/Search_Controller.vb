@@ -9,15 +9,15 @@ Public Class Search_Controller
     Public Function SearchStock(ByVal item As Integer) As ArrayList
         Dim conDB As Connection = New Connection
         Dim dataArray As ArrayList = New ArrayList
-        Dim strSql As String() = {"SELECT PurchaseProd.PurchasePID,ProdSet.[Name],SupplierData.[Name] AS Supplier, SupplierData.Abbr,PurchaseProd.Specification,PurchaseProd.[Count],Width,[Length],CBM,Remark,([PurchaseProd].[Count] - SUM(ISNULL(SaleProd.[Count], 0))) AS RemainAmount
-                                              From PurchaseProd LEFT JOIN SaleProd ON PurchaseProd.PurchasePID = SaleProd.PurchasePID, ProdSet,SupplierData
-                                              WHERE PurchaseProd.ProdID = ProdSet.ProdID AND ProdSet.SuID = SupplierData.SuID 
+        Dim strSql As String() = {"SELECT PurchaseProd.PurchasePID,ProdPartData.[Name],SupplierData.[Name] AS Supplier, SupplierData.Abbr,PurchaseProd.Specification,PurchaseProd.[Count],Width,[Length],CBM,Remark,([PurchaseProd].[Count] - SUM(ISNULL(SaleProd.[Count], 0))) AS RemainAmount
+                                              From PurchaseProd LEFT JOIN SaleProd ON PurchaseProd.PurchasePID = SaleProd.PurchasePID, ProdPartData,SupplierData
+                                              WHERE PurchaseProd.ProdPartID = ProdPartData.ProdPartID AND ProdPartData.SuID = SupplierData.SuID 
                                               GROUP BY PurchaseProd.PurchasePID,prodSet.[Name],PurchaseProd.Specification,PurchaseProd.[Count],Width,[Length],CBM,Remark,SupplierData.[Name],SupplierData.Abbr
                                               Having ([PurchaseProd].[Count] - SUM(ISNULL(SaleProd.[Count], 0))) > 0",
-                                              "SELECT PurchaseFit.PurchaseFID,FittingSet.[Name],SupplierData.[Name] AS Supplier,SupplierData.Abbr,PurchaseFit.Width,PurchaseFit.[Length],PurchaseFit.CBM,PurchaseFit.Specification,PurchaseFit.[Count],Remark,(PurchaseFit.[Count] - SUM(ISNULL(SaleFit.[Count], 0))) AS RemainAmount
-                                               FROM PurchaseFit LEFT JOIN SaleFit ON PurchaseFit.PurchaseFID = SaleFit.PurchaseFID, FittingSet,SupplierData
-                                               WHERE PurchaseFit.FitID = FittingSet.FitID AND FittingSet.SuID = SupplierData.SuID 
-                                               GROUP BY PurchaseFit.PurchaseFID,FittingSet.[Name],PurchaseFit.Specification,PurchaseFit.[Count],Remark,SupplierData.[Name],PurchaseFit.Width,PurchaseFit.[Length],PurchaseFit.CBM,SupplierData.Abbr
+                                              "SELECT PurchaseFit.PurchaseFID,ProdPartData2.[Name],SupplierData.[Name] AS Supplier,SupplierData.Abbr,PurchaseFit.Width,PurchaseFit.[Length],PurchaseFit.CBM,PurchaseFit.Specification,PurchaseFit.[Count],Remark,(PurchaseFit.[Count] - SUM(ISNULL(SaleFit.[Count], 0))) AS RemainAmount
+                                               FROM PurchaseFit LEFT JOIN SaleFit ON PurchaseFit.PurchaseFID = SaleFit.PurchaseFID, ProdPartData2,SupplierData
+                                               WHERE PurchaseFit.ProdPart2ID = ProdPartData2.ProdPart2ID AND ProdPartData2.SuID = SupplierData.SuID 
+                                               GROUP BY PurchaseFit.PurchaseFID,ProdPartData2.[Name],PurchaseFit.Specification,PurchaseFit.[Count],Remark,SupplierData.[Name],PurchaseFit.Width,PurchaseFit.[Length],PurchaseFit.CBM,SupplierData.Abbr
                                                Having (PurchaseFit.[Count] - SUM(ISNULL(SaleFit.[Count], 0))) > 0"}
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSql(item)).ExecuteReader
         If dataReader.HasRows Then
@@ -40,19 +40,19 @@ Public Class Search_Controller
     Public Function SearchProd(ByVal intClass As Integer) As ArrayList
         Dim conDB As Connection = New Connection
         Dim dataArray As ArrayList = New ArrayList
-        Dim strSql As String() = {"Select Prodset.ProdID,ProdSet.Name,SupplierData.Name As Supplier ,SupplierData.Abbr
-                           From ProdSet, SupplierData
-                           Where ProdSet.SuID = SupplierData.SuID",
-                           "SELECT FittingSet.FitID,FittingSet.Name,SupplierData.Name as Supplier ,SupplierData.Abbr
-                           From FittingSet, SupplierData
-                           Where FittingSet.SuID = SupplierData.SuID"}
+        Dim strSql As String() = {"Select Prodset.ProdPartID,ProdPartData.Name,SupplierData.Name As Supplier ,SupplierData.Abbr
+                           From ProdPartData, SupplierData
+                           Where ProdPartData.SuID = SupplierData.SuID",
+                           "SELECT ProdPartData2.ProdPart2ID,ProdPartData2.Name,SupplierData.Name as Supplier ,SupplierData.Abbr
+                           From ProdPartData2, SupplierData
+                           Where ProdPartData2.SuID = SupplierData.SuID"}
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSql(intClass)).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
                 If intClass = 0 Then
-                    dataArray.Add({dataReader("ProdID"), dataReader("Name"), If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr"))})
+                    dataArray.Add({dataReader("ProdPartID"), dataReader("Name"), If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr"))})
                 ElseIf intClass = 1 Then
-                    dataArray.Add({dataReader("FitID"), dataReader("Name"), If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr"))})
+                    dataArray.Add({dataReader("ProdPart2ID"), dataReader("Name"), If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr"))})
                 End If
             Loop
         End If
@@ -88,7 +88,7 @@ Public Class Search_Controller
     Public Function SelectProdDataCount(ByVal name As String, ByVal suID As Integer) As Integer
         Dim conDB As Connection = New Connection
         Dim data As Integer = 0
-        Dim strSql As String = "SELECT Count(*) FROM ProdSet WHERE Name = N'@name' AND SuID = @suID"
+        Dim strSql As String = "SELECT Count(*) FROM ProdPartData WHERE Name = N'@name' AND SuID = @suID"
         strSql = strSql.Replace("@name", name)
         strSql = strSql.Replace("@suID", suID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSql).ExecuteReader
@@ -101,7 +101,7 @@ Public Class Search_Controller
     Public Function SelectFitDataCount(ByVal name As String, ByVal suID As Integer) As Integer
         Dim conDB As Connection = New Connection
         Dim data As Integer = 0
-        Dim strSql As String = "SELECT Count(*) FROM FittingSet WHERE Name = N'@name' AND SuID = @suID"
+        Dim strSql As String = "SELECT Count(*) FROM ProdPartData2 WHERE Name = N'@name' AND SuID = @suID"
         strSql = strSql.Replace("@name", name)
         strSql = strSql.Replace("@suID", suID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSql).ExecuteReader
@@ -114,8 +114,8 @@ Public Class Search_Controller
     '將設定產品或配件資料新增至資料庫
     Public Function InsertData(ByVal type As Integer, ByVal name As String, ByVal suID As Integer) As Integer
         Dim conDB As Connection = New Connection
-        Dim typeArray As String() = {"INSERT INTO ProdSet(Name,SuID) VALUES(N'@name', @suID); SELECT id = SCOPE_IDENTITY();",
-            "INSERT INTO FittingSet(Name,SuID) VALUES(N'@name', @suID); SELECT id = SCOPE_IDENTITY();"}
+        Dim typeArray As String() = {"INSERT INTO ProdPartData(Name,SuID) VALUES(N'@name', @suID); SELECT id = SCOPE_IDENTITY();",
+            "INSERT INTO ProdPartData2(Name,SuID) VALUES(N'@name', @suID); SELECT id = SCOPE_IDENTITY();"}
         Dim strSQL As String = typeArray(type)
         Dim id As Integer = Nothing
         strSQL = strSQL.Replace("@name", name)

@@ -10,15 +10,15 @@ Public Class Data_Product_Form
         Select Case tabName
             Case "ProdTab"
                 If e.Argument Is Nothing Then
-                    e.Result = controller.Select_ProdSet
+                    e.Result = controller.Select_ProdPartData
                 Else
-                    e.Result = controller.Select_ProdSet(e.Argument(0), e.Argument(1))
+                    e.Result = controller.Select_ProdPartData(e.Argument(0), e.Argument(1))
                 End If
             Case "FitTab"
                 If e.Argument Is Nothing Then
-                    e.Result = controller.Select_FittingSet
+                    e.Result = controller.Select_ProdPartData2
                 Else
-                    e.Result = controller.Select_FittingSet(e.Argument(0), e.Argument(1))
+                    e.Result = controller.Select_ProdPartData2(e.Argument(0), e.Argument(1))
                 End If
 
         End Select
@@ -30,13 +30,13 @@ Public Class Data_Product_Form
             Case ProdTab.Name
                 ViewDGV.Rows.Clear()
                 For Each data As Data_Product_Model.Prod In e.Result
-                    ViewDGV.Rows.Add(data.ProdID, data.SuID, data.SupplierName, data.ProdName, data.ProdNumber)
+                    ViewDGV.Rows.Add(data.ProdPartID, data.SuID, data.SupplierName, data.ProdName, data.ProdNumber)
                 Next
                 LoadingPic.Visible = False
             Case FitTab.Name
                 ViewFDGV.Rows.Clear()
                 For Each data As Data_Product_Model.Prod In e.Result
-                    ViewFDGV.Rows.Add(data.ProdID, data.SuID, data.SupplierName, data.ProdName, data.ProdNumber)
+                    ViewFDGV.Rows.Add(data.ProdPartID, data.SuID, data.SupplierName, data.ProdName, data.ProdNumber)
                 Next
                 LoadingFPic.Visible = False
         End Select
@@ -51,7 +51,7 @@ Public Class Data_Product_Form
                     ProdNameText.Text = ViewDGV.CurrentRow.Cells("ProdName").Value
                     ProdNumberText.Text = ViewDGV.CurrentRow.Cells("ProdNumber").Value
                     ProdDetailDGV.Rows.Clear()
-                    For Each data As Data_Product_Model.PuchaseData In controller.Select_PurchaseData(ViewDGV.CurrentRow.Cells("ProdID").Value)
+                    For Each data As Data_Product_Model.PuchaseData In controller.Select_PurchaseData(ViewDGV.CurrentRow.Cells("ProdPartID").Value)
                         ProdDetailDGV.Rows.Add(data.PurchaseID, data.CaseID, data.CaseName, data.PurchaseNo, data.Specification, data.Count, data.InsertTime)
                     Next
                 End If
@@ -61,7 +61,7 @@ Public Class Data_Product_Form
                     FitNameText.Text = ViewFDGV.CurrentRow.Cells("FitName").Value
                     FitNumberText.Text = ViewFDGV.CurrentRow.Cells("FitNumber").Value
                     FitDetailDGV.Rows.Clear()
-                    For Each data As Data_Product_Model.PuchaseData In controller.Select_PurchaseFData(ViewFDGV.CurrentRow.Cells("FitID").Value)
+                    For Each data As Data_Product_Model.PuchaseData In controller.Select_PurchaseFData(ViewFDGV.CurrentRow.Cells("ProdPart2ID").Value)
                         FitDetailDGV.Rows.Add(data.PurchaseID, data.CaseID, data.CaseName, data.PurchaseNo, data.Specification, data.Count, data.InsertTime)
                     Next
                 End If
@@ -121,14 +121,14 @@ Public Class Data_Product_Form
             Case ProdTab.Name
                 Select Case controller.Get_Mode
                     Case Data_Product_Model.INSERT_MODE
-                        Dim index As Integer = controller.Insert_ProdSet(controller.Get_listSuID(SupplierNameCB.SelectedIndex), ProdNameText.Text, ProdNumberText.Text)
-                        ViewDGV.CurrentRow.Cells("ProdID").Value = index
+                        Dim index As Integer = controller.Insert_ProdPartData(controller.Get_listSuID(SupplierNameCB.SelectedIndex), ProdNameText.Text, ProdNumberText.Text)
+                        ViewDGV.CurrentRow.Cells("ProdPartID").Value = index
                         ViewDGV.CurrentRow.Cells("ProdSupplierName").Value = SupplierNameCB.SelectedItem
                         ViewDGV.CurrentRow.Cells("ProdName").Value = ProdNameText.Text
                         ViewDGV.CurrentRow.Cells("ProdNumber").Value = ProdNumberText.Text
                         ViewDGV.CurrentRow.Cells("ProdSuID").Value = controller.Get_listSuID(SupplierNameCB.SelectedIndex)
                     Case Data_Product_Model.REVISE_MODE
-                        Dim index As Integer = controller.Update_ProdSet(ViewDGV.CurrentRow.Cells("ProdID").Value, controller.Get_listSuID(SupplierNameCB.SelectedIndex), ProdNameText.Text, ProdNumberText.Text)
+                        Dim index As Integer = controller.Update_ProdPartData(ViewDGV.CurrentRow.Cells("ProdPartID").Value, controller.Get_listSuID(SupplierNameCB.SelectedIndex), ProdNameText.Text, ProdNumberText.Text)
                         ViewDGV.CurrentRow.Cells("ProdSupplierName").Value = SupplierNameCB.SelectedItem
                         ViewDGV.CurrentRow.Cells("ProdName").Value = ProdNameText.Text
                         ViewDGV.CurrentRow.Cells("ProdNumber").Value = ProdNumberText.Text
@@ -147,14 +147,14 @@ Public Class Data_Product_Form
             Case FitTab.Name
                 Select Case controller.Get_Mode
                     Case Data_Product_Model.INSERT_MODE
-                        Dim index As Integer = controller.Insert_FittingSet(controller.Get_listSuID(SupplierFCB.SelectedIndex), FitNameText.Text, FitNumberText.Text)
-                        ViewFDGV.CurrentRow.Cells("FitID").Value = index
+                        Dim index As Integer = controller.Insert_ProdPartData2(controller.Get_listSuID(SupplierFCB.SelectedIndex), FitNameText.Text, FitNumberText.Text)
+                        ViewFDGV.CurrentRow.Cells("ProdPart2ID").Value = index
                         ViewFDGV.CurrentRow.Cells("FitSupplierName").Value = SupplierFCB.SelectedItem
                         ViewFDGV.CurrentRow.Cells("FitName").Value = FitNameText.Text
                         ViewFDGV.CurrentRow.Cells("FitNumber").Value = FitNumberText.Text
                         ViewFDGV.CurrentRow.Cells("FitSuID").Value = controller.Get_listSuID(SupplierFCB.SelectedIndex)
                     Case Data_Product_Model.REVISE_MODE
-                        Dim index As Integer = controller.Update_FittingSet(ViewFDGV.CurrentRow.Cells("FitID").Value, controller.Get_listSuID(SupplierFCB.SelectedIndex), FitNameText.Text, FitNumberText.Text)
+                        Dim index As Integer = controller.Update_ProdPartData2(ViewFDGV.CurrentRow.Cells("ProdPart2ID").Value, controller.Get_listSuID(SupplierFCB.SelectedIndex), FitNameText.Text, FitNumberText.Text)
                         ViewFDGV.CurrentRow.Cells("FitSupplierName").Value = SupplierFCB.SelectedItem
                         ViewFDGV.CurrentRow.Cells("FitName").Value = FitNameText.Text
                         ViewFDGV.CurrentRow.Cells("FitNumber").Value = FitNumberText.Text
@@ -211,10 +211,10 @@ Public Class Data_Product_Form
             Try
                 Select Case TabControl1.SelectedTab.Name
                     Case ProdTab.Name
-                        controller.Del_ProdSet(ViewDGV("ProdID", ViewDGV.CurrentRow.Index).Value)
+                        controller.Del_ProdPartData(ViewDGV("ProdPartID", ViewDGV.CurrentRow.Index).Value)
                         ViewDGV.Rows.RemoveAt(ViewDGV.CurrentRow.Index)
                     Case FitTab.Name
-                        controller.Del_ProdSet(ViewFDGV("FitID", ViewFDGV.CurrentRow.Index).Value)
+                        controller.Del_ProdPartData(ViewFDGV("ProdPart2ID", ViewFDGV.CurrentRow.Index).Value)
                         ViewFDGV.Rows.RemoveAt(ViewFDGV.CurrentRow.Index)
                 End Select
             Catch ex As Exception
