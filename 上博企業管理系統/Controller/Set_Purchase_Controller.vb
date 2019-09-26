@@ -59,7 +59,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSql).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                dataArray.Add(New ProdData With {.ID = dataReader("ProdID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr"))})
+                dataArray.Add(New ProdData With {.ID = dataReader("ProdPartID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr"))})
             Loop
         End If
         conDB.Close()
@@ -73,7 +73,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSql).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                dataArray.Add(New ProdData With {.ID = dataReader("FitID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr"))})
+                dataArray.Add(New ProdData With {.ID = dataReader("ProdPart2ID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr"))})
             Loop
         End If
         conDB.Close()
@@ -99,9 +99,9 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
         If dataReader.HasRows Then
             Do While dataReader.Read
                 If intClass = PRODUCT Then
-                    dataArray.Add(New PurchaseData With {.PurchaseID = dataReader("PurchasePID"), .DataID = dataReader("ProdID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Spicification = dataReader("Specification"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Count = dataReader("Count"), .Remark = dataReader("Remark")})
+                    dataArray.Add(New PurchaseData With {.PurchaseID = dataReader("PurchasePID"), .DataID = dataReader("ProdPartID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Spicification = dataReader("Specification"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Count = dataReader("Count"), .Remark = dataReader("Remark")})
                 ElseIf intClass = FIT Then
-                    dataArray.Add(New PurchaseData With {.PurchaseID = dataReader("PurchaseFID"), .DataID = dataReader("FitID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Spicification = dataReader("Specification"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Count = dataReader("Count"), .Remark = dataReader("Remark")})
+                    dataArray.Add(New PurchaseData With {.PurchaseID = dataReader("PurchaseFID"), .DataID = dataReader("ProdPart2ID"), .Name = dataReader("Name"), .Supplier = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Spicification = dataReader("Specification"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Count = dataReader("Count"), .Remark = dataReader("Remark")})
                 End If
             Loop
         End If
@@ -124,11 +124,11 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
     '讀取產品的規格
     '  ↳此方法主要是顯示產品的對應類別，因此在Specification內省略紀錄SuID
     '  ↳OtherClassArray主要提供給ProdDGV內的prodClass顯示用，資料只需暫存，使用完畢即可刪除
-    Public Function Load_Specification(ByVal index As Integer, ByVal ProdID As Integer) As List(Of SpecificationData)
+    Public Function Load_Specification(ByVal index As Integer, ByVal ProdPartID As Integer) As List(Of SpecificationData)
         Dim conDB As Connection = New Connection
         Dim dataArray As List(Of SpecificationData) = New List(Of SpecificationData) '產品類別陣列
         Dim strSql As String = SELECT_SPECIFICATION_SQL
-        strSql = strSql.Replace("@ProdID", ProdID)
+        strSql = strSql.Replace("@ProdPartID", ProdPartID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSql).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
@@ -178,12 +178,12 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
     '             ↳表示修改已存在的產品的值
     Public Sub Set_PurchasePItem(ByVal index As Integer, ByVal PurchasePID As Integer, ByVal ID As Integer, ByVal Specification As String, ByVal Width As Double, ByVal Length As Double, ByVal CBM As Double, ByVal Count As Integer, ByVal Remark As String)
         If index >= purchaseProdArray.Count Then
-            purchaseProdArray.Add(New ProdDetail With {.PurchasePID = PurchasePID, .PurchaseID = editID, .ProdID = ID, .Count = Count, .Specification = Specification, .Width = Width, .Length = Length, .CBM = CBM, .Remark = Remark})
+            purchaseProdArray.Add(New ProdDetail With {.PurchasePID = PurchasePID, .PurchaseID = editID, .ProdPartID = ID, .Count = Count, .Specification = Specification, .Width = Width, .Length = Length, .CBM = CBM, .Remark = Remark})
         Else
             Dim bufArray As ProdDetail = New ProdDetail
             'bufArray.PurchasePID = IIf(PurchasePID = Nothing, purchaseProdArray.Item(index).PurchasePID, PurchasePID)
             'bufArray.PurchaseID = IIf(editID = Nothing, purchaseProdArray.Item(index).PurchaseID, editID)
-            'bufArray.ProdID = IIf(ID = Nothing, purchaseProdArray.Item(index).ProdID, ID)
+            'bufArray.ProdPartID = IIf(ID = Nothing, purchaseProdArray.Item(index).ProdPartID, ID)
             'bufArray.Count = IIf(Count = Nothing, purchaseProdArray.Item(index).Count, Count)
             'bufArray.Specification = IIf(Specification = Nothing, purchaseProdArray.Item(index).Specification, Specification)
             'bufArray.Width = IIf(Width = Nothing, purchaseProdArray.Item(index).Width, Width)
@@ -192,7 +192,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
             'bufArray.Remark = IIf(Remark = Nothing, purchaseProdArray.Item(index).Remark, Remark)
             bufArray.PurchasePID = IIf(PurchasePID = Nothing, purchaseProdArray.Item(index).PurchasePID, PurchasePID)
             bufArray.PurchaseID = editID
-            bufArray.ProdID = ID
+            bufArray.ProdPartID = ID
             bufArray.Count = Count
             bufArray.Specification = Specification
             bufArray.Width = Width
@@ -204,21 +204,12 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
     End Sub
     Public Sub Set_PurchaseFItem(ByVal index As Integer, ByVal PurchaseFID As Integer, ByVal ID As Integer, ByVal Specification As String, ByVal Count As Integer, ByVal Remark As String, ByVal Width As Double, ByVal Length As Double, ByVal CBM As Double)
         If index >= purchaseFitArray.Count Then
-            purchaseFitArray.Add(New FitDetail With {.PurchaseFID = PurchaseFID, .PurchaseID = editID, .FitID = ID, .Count = Count, .Specification = Specification, .Width = Width, .Length = Length, .CBM = CBM, .Remark = Remark})
+            purchaseFitArray.Add(New FitDetail With {.PurchaseFID = PurchaseFID, .PurchaseID = editID, .ProdPart2ID = ID, .Count = Count, .Specification = Specification, .Width = Width, .Length = Length, .CBM = CBM, .Remark = Remark})
         Else
             Dim bufArray As FitDetail = New FitDetail
-            'bufArray.PurchaseFID = IIf(PurchaseFID = Nothing, purchaseFitArray.Item(index).PurchaseFID, PurchaseFID)
-            'bufArray.PurchaseID = IIf(editID = Nothing, purchaseFitArray.Item(index).PurchaseID, editID)
-            'bufArray.FitID = IIf(ID = Nothing, purchaseFitArray.Item(index).FitID, ID)
-            'bufArray.Count = IIf(Count = Nothing, purchaseFitArray.Item(index).Count, Count)
-            'bufArray.Specification = IIf(Specification = Nothing, purchaseFitArray.Item(index).Specification, Specification)
-            'bufArray.Width = IIf(Width = Nothing, purchaseFitArray.Item(index).Width, Width)
-            'bufArray.Length = IIf(Length = Nothing, purchaseFitArray.Item(index).Length, Length)
-            'bufArray.CBM = IIf(CBM = Nothing, purchaseFitArray.Item(index).CBM, CBM)
-            'bufArray.Remark = IIf(Remark = Nothing, purchaseFitArray.Item(index).Remark, Remark)
             bufArray.PurchaseFID = IIf(PurchaseFID = Nothing, purchaseFitArray.Item(index).PurchaseFID, PurchaseFID)
             bufArray.PurchaseID = editID
-            bufArray.FitID = ID
+            bufArray.ProdPart2ID = ID
             bufArray.Count = Count
             bufArray.Specification = Specification
             bufArray.Width = Width
@@ -256,7 +247,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
         If id <> Nothing Then
             For Each data As ProdDetail In purchaseProdArray
                 If data.Count > 0 Then
-                    If data.ProdID <> Nothing Then
+                    If data.ProdPartID <> Nothing Then
                         If data.PurchasePID = Nothing Then
                             strSql = INSERT_PURCHASEPROD_SQL
                         Else
@@ -264,7 +255,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
                         End If
                         strSql = strSql.Replace("@PID", data.PurchasePID)
                         strSql = strSql.Replace("@id", id)
-                        strSql = strSql.Replace("@prodID", data.ProdID)
+                        strSql = strSql.Replace("@prodPartID", data.ProdPartID)
                         strSql = strSql.Replace("@specification", data.Specification)
                         strSql = strSql.Replace("@width", data.Width)
                         strSql = strSql.Replace("@length", data.Length)
@@ -276,17 +267,17 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
                             sRemark = sRemark.Replace("'", "''")
                         End If
                         strSql = strSql.Replace("@remark", sRemark)
-                            Dim i As Integer = conDB.ExecuteSQL(strSql).ExecuteNonQuery
-                            If i <> 1 Then
-                                Return "Error： insert PurchaseProd that count <> 1."
-                            End If
-                            conDB.Close()
+                        Dim i As Integer = conDB.ExecuteSQL(strSql).ExecuteNonQuery
+                        If i <> 1 Then
+                            Return "Error： insert PurchaseProd that count <> 1."
                         End If
+                        conDB.Close()
                     End If
+                End If
             Next
             For Each data As FitDetail In purchaseFitArray
                 If data.Count > 0 Then
-                    If data.FitID <> Nothing Then
+                    If data.ProdPart2ID <> Nothing Then
                         If data.PurchaseFID = Nothing Then
                             strSql = INSERT_PURCHASEFIT_SQL
                         Else
@@ -294,7 +285,7 @@ Public Class Set_Purchase_Controller : Inherits Set_Purchase_Model
                         End If
                         strSql = strSql.Replace("@FID", data.PurchaseFID)
                         strSql = strSql.Replace("@id", id)
-                        strSql = strSql.Replace("@fitID", data.FitID)
+                        strSql = strSql.Replace("@prodPart2ID", data.ProdPart2ID)
                         strSql = strSql.Replace("@specification", data.Specification)
                         strSql = strSql.Replace("@width", data.Width)
                         strSql = strSql.Replace("@length", data.Length)

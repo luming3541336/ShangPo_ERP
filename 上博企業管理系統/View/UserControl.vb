@@ -50,4 +50,9 @@
         Dim View As Data_Case_Form = New Data_Case_Form
         View.Show()
     End Sub
+
+    Private Sub ProdPartBtn_Click(sender As Object, e As EventArgs) Handles ProdPartBtn.Click
+        Dim View As Data_Product_Form = New Data_Product_Form
+        View.Show()
+    End Sub
 End Class

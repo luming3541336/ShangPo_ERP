@@ -6,30 +6,30 @@
     Protected Const COUNT_PURCHASEDATA_SQL = "SELECT COUNT(PurchaseNO)  FROM PurchaseData WHERE PurchaseNO LIKE 'P@dateStr%'"
     Protected Const SELECT_PURCHASENO_BY_PURCHASEID_SQL = "SELECT PurchaseNO FROM PurchaseData WHERE PurchaseID = @editID"
     Protected Const SELECT_INSERTTIME_BY_PURCHASEDATA_SQL = "SELECT InsertTime FROM PurchaseData WHERE PurchaseID = @editID"
-    Protected Const SELECT_PROD_SQL = "Select Prodset.ProdID,ProdSet.Name,SupplierData.Name As Supplier, SupplierData.Abbr From ProdSet, SupplierData 
-                           Where ProdSet.SuID = SupplierData.SuID  AND (ProdSet.Name LIKE N'%@strName%' OR ProdSet.Number Like N'%@strName%')"
-    Protected Const SELECT_FIT_SQL = "SELECT FittingSet.FitID,FittingSet.Name,SupplierData.Name as Supplier, SupplierData.Abbr
-                           From FittingSet, SupplierData Where FittingSet.SuID = SupplierData.SuID AND 
-                           (FittingSet.Name LIKE N'%@strName%' OR FittingSet.Number Like N'%@strName%')"
-    Protected Const SELECT_PROD_BY_PURCHAEID = "Select PurchaseProd.*,ProdSet.Name,SupplierData.Name As Supplier, SupplierData.Abbr
-                           From ProdSet, SupplierData,PurchaseProd Where ProdSet.SuID = SupplierData.SuID AND PurchaseProd.ProdID = ProdSet.ProdID AND PurchaseProd.PurchaseID = @editID"
-    Protected Const SELECT_FIT_BY_PURCHASEID = "SELECT PurchaseFIt.*,FittingSet.FitID,FittingSet.Name,SupplierData.Name as Supplier, SupplierData.Abbr 
-                           From FittingSet, SupplierData,PurchaseFIt Where FittingSet.SuID = SupplierData.SuID AND PurchaseFIt.FitID = FittingSet.FitID 
+    Protected Const SELECT_PROD_SQL = "Select Prodset.ProdPartID,ProdPartData.Name,SupplierData.Name As Supplier, SupplierData.Abbr From ProdPartData, SupplierData 
+                           Where ProdPartData.SuID = SupplierData.SuID  AND (ProdPartData.Name LIKE N'%@strName%' OR ProdPartData.Number Like N'%@strName%')"
+    Protected Const SELECT_FIT_SQL = "SELECT ProdPartData2.ProdPart2ID,ProdPartData2.Name,SupplierData.Name as Supplier, SupplierData.Abbr
+                           From ProdPartData2, SupplierData Where ProdPartData2.SuID = SupplierData.SuID AND 
+                           (ProdPartData2.Name LIKE N'%@strName%' OR ProdPartData2.Number Like N'%@strName%')"
+    Protected Const SELECT_PROD_BY_PURCHAEID = "Select PurchaseProd.*,ProdPartData.Name,SupplierData.Name As Supplier, SupplierData.Abbr
+                           From ProdPartData, SupplierData,PurchaseProd Where ProdPartData.SuID = SupplierData.SuID AND PurchaseProd.ProdPartID = ProdPartData.ProdPartID AND PurchaseProd.PurchaseID = @editID"
+    Protected Const SELECT_FIT_BY_PURCHASEID = "SELECT PurchaseFIt.*,ProdPartData2.ProdPart2ID,ProdPartData2.Name,SupplierData.Name as Supplier, SupplierData.Abbr 
+                           From ProdPartData2, SupplierData,PurchaseFIt Where ProdPartData2.SuID = SupplierData.SuID AND PurchaseFIt.ProdPart2ID = ProdPartData2.ProdPart2ID 
                            AND PurchaseFIt.PurchaseID = @editID"
     Protected Const SELECT_SUPPLIERDATA_SQL = "SELECT SuID,Name,Abbr FROM SupplierData"
-    Protected Const SELECT_SPECIFICATION_SQL = "SELECT SpecDetail.SpecID, Spec.ClassName, SpecificationForProd.ProdID 
+    Protected Const SELECT_SPECIFICATION_SQL = "SELECT SpecDetail.SpecID, Spec.ClassName, SpecificationForProd.ProdPartID 
                                                 FROM OtherClassDetail CROSS JOIN SpecificationForProd INNER JOIN Specification ON 
-                                                OtherClassDetail.SpecID = Specification.SpecID AND SpecificationForProd.ProdID = @ProdID
-                                                GROUP BY   OtherClassDetail.SpecID, Specification.ClassName, SpecificationForProd.ProdID"
-    Protected Const INSERT_PRDOSET_SQL = "INSERT INTO ProdSet(Name,SuID) VALUES(N'@name', @suID); SELECT id = SCOPE_IDENTITY();"
-    Protected Const INSERT_FITTING_SQL = "INSERT INTO FittingSet(Name,SuID) VALUES(N'@name', @suID); SELECT id = SCOPE_IDENTITY();"
+                                                OtherClassDetail.SpecID = Specification.SpecID AND SpecificationForProd.ProdPartID = @ProdPartID
+                                                GROUP BY   OtherClassDetail.SpecID, Specification.ClassName, SpecificationForProd.ProdPartID"
+    Protected Const INSERT_PRDOSET_SQL = "INSERT INTO ProdPartData(Name,SuID) VALUES(N'@name', @suID); SELECT id = SCOPE_IDENTITY();"
+    Protected Const INSERT_FITTING_SQL = "INSERT INTO ProdPartData2(Name,SuID) VALUES(N'@name', @suID); SELECT id = SCOPE_IDENTITY();"
     Protected Const UPDATE_CASEDATA_SQL = "UPDATE CaseData SET UpdateTime = GETDATE() WHERE CaseID = @caseID"
     Protected Const INSERT_PURCHASEDATA_SQL = "INSERT INTO  PurchaseData(CaseID, PurchaseNO,InsertTime) VALUES(@caseID,N'@purchaseNO','@time'); SELECT id = SCOPE_IDENTITY() "
     Protected Const UPDATE_PURCHASEDATA_BY_PURCHASEID_SQL = "UPDATE PurchaseData SET InsertTime = '@time' WHERE PurchaseID = @id"
-    Protected Const INSERT_PURCHASEPROD_SQL = "INSERT INTO PurchaseProd(PurchaseID, ProdID, Specification, Width, Length, CBM, Count, Remark) VALUES(@id,@prodID,N'@specification',@width ,@length ,@cbm ,@count, N'@remark')"
-    Protected Const UPDATE_PURCHASEPROD_SQL = "UPDATE PurchaseProd SET ProdID = @prodID, Specification = N'@specification', Width = @width,Length = @length, CBM = @cbm, Count = @count, Remark = N'@remark' WHERE PurchasePID = @PID"
-    Protected Const INSERT_PURCHASEFIT_SQL = "INSERT INTO PurchaseFit(PurchaseID, FitID, Specification, Width, Length, CBM, Count, Remark) VALUES(@id,@fitID,N'@specification',@width ,@length ,@cbm ,@count,N'@remark')"
-    Protected Const UPDATE_PURCHASEFIT_SQL = "UPDATE PurchaseFit SET FitID = @fitID, Specification = N'@specification',Width = @width,Length = @length, CBM = @cbm, Count = @count, Remark = N'@remark' WHERE PurchaseFID = @FID"
+    Protected Const INSERT_PURCHASEPROD_SQL = "INSERT INTO PurchaseProd(PurchaseID, ProdPartID, Specification, Width, Length, CBM, Count, Remark) VALUES(@id,@prodPartID,N'@specification',@width ,@length ,@cbm ,@count, N'@remark')"
+    Protected Const UPDATE_PURCHASEPROD_SQL = "UPDATE PurchaseProd SET ProdPartID = @prodPartID, Specification = N'@specification', Width = @width,Length = @length, CBM = @cbm, Count = @count, Remark = N'@remark' WHERE PurchasePID = @PID"
+    Protected Const INSERT_PURCHASEFIT_SQL = "INSERT INTO PurchaseFit(PurchaseID, ProdPartData2, Specification, Width, Length, CBM, Count, Remark) VALUES(@id,@prodPart2ID,N'@specification',@width ,@length ,@cbm ,@count,N'@remark')"
+    Protected Const UPDATE_PURCHASEFIT_SQL = "UPDATE PurchaseFit SET ProdPartData2 = @prodPart2ID, Specification = N'@specification',Width = @width,Length = @length, CBM = @cbm, Count = @count, Remark = N'@remark' WHERE PurchaseFID = @FID"
     Protected Const DEL_PURCHASEPROD_BY_PURCHASEPID = "DELETE FROM PurchaseProd WHERE PurchasePID = @PID"
     Protected Const DEL_PURCHASEFIT_BY_PURCHASEFID = "DELETE FROM PurchaseFit WHERE PurchaseFID = @FID"
     Protected editIndex As Integer = Nothing ' 修改中的欄位
@@ -70,7 +70,7 @@
     Public Structure ProdDetail
         Dim PurchasePID As Integer
         Dim PurchaseID As Integer
-        Dim ProdID As Integer
+        Dim ProdPartID As Integer
         Dim Specification As String
         Dim ClassName As String
         Dim Width As Double
@@ -82,7 +82,7 @@
     Public Structure FitDetail
         Dim PurchaseFID As Integer
         Dim PurchaseID As Integer
-        Dim FitID As Integer
+        Dim ProdPart2ID As Integer
         Dim Specification As String
         Dim Width As Double
         Dim Length As Double

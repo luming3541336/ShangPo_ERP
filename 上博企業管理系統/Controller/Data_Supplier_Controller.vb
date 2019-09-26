@@ -16,7 +16,7 @@ Public Class Data_Supplier_Controller
         Return listData
     End Function
 
-    Public Function Select_FittingSet(ByVal searchitem As Integer, ByVal statement As String) As List(Of SupplierData)
+    Public Function Select_ProdPartData2(ByVal searchitem As Integer, ByVal statement As String) As List(Of SupplierData)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_SUPPLIERDATA_FOR_STATEMENT_SQL
 

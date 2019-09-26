@@ -23,12 +23,12 @@
         Dim RemainAmount As Integer
     End Structure
     Public Structure SearchProd
-        Dim ProdID As Integer
+        Dim ProdPartID As Integer
         Dim Name As String
         Dim Supplier As String
     End Structure
     Public Structure SearchFit
-        Dim FitID As Integer
+        Dim ProdPart2ID As Integer
         Dim Name As String
         Dim Supplier As String
     End Structure

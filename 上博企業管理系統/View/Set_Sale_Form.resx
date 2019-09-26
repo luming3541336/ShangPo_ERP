@@ -421,7 +421,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="fitDGV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>992, 379</value>
+    <value>942, 358</value>
   </data>
   <data name="fitDGV.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -445,7 +445,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>998, 385</value>
+    <value>948, 364</value>
   </data>
   <data name="TabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

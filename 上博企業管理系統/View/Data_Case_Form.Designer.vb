@@ -973,7 +973,7 @@ Partial Class Data_Case_Form
         '
         'SaleFID
         '
-        Me.SaleFID.HeaderText = "saleFitID"
+        Me.SaleFID.HeaderText = "saleProdPartData2"
         Me.SaleFID.Name = "SaleFID"
         Me.SaleFID.ReadOnly = True
         Me.SaleFID.Visible = False

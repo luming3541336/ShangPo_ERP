@@ -11,7 +11,7 @@ Public Class Data_Supplier_Form
         If e.Argument Is Nothing Then
             e.Result = controller.Select_Supplier
         Else
-            e.Result = controller.Select_FittingSet(e.Argument(0), e.Argument(1))
+            e.Result = controller.Select_ProdPartData2(e.Argument(0), e.Argument(1))
         End If
 
     End Sub
