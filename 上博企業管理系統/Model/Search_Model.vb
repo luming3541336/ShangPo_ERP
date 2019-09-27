@@ -12,7 +12,7 @@
         Dim RemainAmount As Integer
     End Structure
     Public Structure StockFit
-        Dim PurchaseFID As Integer
+        Dim PurchaseP2ID As Integer
         Dim Name As String
         Dim Supplier As String
         Dim Specification As String

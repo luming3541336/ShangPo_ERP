@@ -9,23 +9,23 @@ Public Class Search_Controller
     Public Function SearchStock(ByVal item As Integer) As ArrayList
         Dim conDB As Connection = New Connection
         Dim dataArray As ArrayList = New ArrayList
-        Dim strSql As String() = {"SELECT PurchaseProd.PurchasePID,ProdPartData.[Name],SupplierData.[Name] AS Supplier, SupplierData.Abbr,PurchaseProd.Specification,PurchaseProd.[Count],Width,[Length],CBM,Remark,([PurchaseProd].[Count] - SUM(ISNULL(SaleProd.[Count], 0))) AS RemainAmount
-                                              From PurchaseProd LEFT JOIN SaleProd ON PurchaseProd.PurchasePID = SaleProd.PurchasePID, ProdPartData,SupplierData
-                                              WHERE PurchaseProd.ProdPartID = ProdPartData.ProdPartID AND ProdPartData.SuID = SupplierData.SuID 
-                                              GROUP BY PurchaseProd.PurchasePID,prodSet.[Name],PurchaseProd.Specification,PurchaseProd.[Count],Width,[Length],CBM,Remark,SupplierData.[Name],SupplierData.Abbr
-                                              Having ([PurchaseProd].[Count] - SUM(ISNULL(SaleProd.[Count], 0))) > 0",
-                                              "SELECT PurchaseFit.PurchaseFID,ProdPartData2.[Name],SupplierData.[Name] AS Supplier,SupplierData.Abbr,PurchaseFit.Width,PurchaseFit.[Length],PurchaseFit.CBM,PurchaseFit.Specification,PurchaseFit.[Count],Remark,(PurchaseFit.[Count] - SUM(ISNULL(SaleFit.[Count], 0))) AS RemainAmount
-                                               FROM PurchaseFit LEFT JOIN SaleFit ON PurchaseFit.PurchaseFID = SaleFit.PurchaseFID, ProdPartData2,SupplierData
-                                               WHERE PurchaseFit.ProdPart2ID = ProdPartData2.ProdPart2ID AND ProdPartData2.SuID = SupplierData.SuID 
-                                               GROUP BY PurchaseFit.PurchaseFID,ProdPartData2.[Name],PurchaseFit.Specification,PurchaseFit.[Count],Remark,SupplierData.[Name],PurchaseFit.Width,PurchaseFit.[Length],PurchaseFit.CBM,SupplierData.Abbr
-                                               Having (PurchaseFit.[Count] - SUM(ISNULL(SaleFit.[Count], 0))) > 0"}
+        Dim strSql As String() = {"SELECT PurchasePart.PurchasePID,ProdPartData.[Name],SupplierData.[Name] AS Supplier, SupplierData.Abbr,PurchasePart.Specification,PurchasePart.[Count],Width,[Length],CBM,Remark,([PurchasePart].[Count] - SUM(ISNULL(ShipmentPart.[Count], 0))) AS RemainAmount
+                                              From PurchasePart LEFT JOIN ShipmentPart ON PurchasePart.PurchasePID = ShipmentPart.PurchasePID, ProdPartData,SupplierData
+                                              WHERE PurchasePart.ProdPartID = ProdPartData.ProdPartID AND ProdPartData.SuID = SupplierData.SuID 
+                                              GROUP BY PurchasePart.PurchasePID,prodSet.[Name],PurchasePart.Specification,PurchasePart.[Count],Width,[Length],CBM,Remark,SupplierData.[Name],SupplierData.Abbr
+                                              Having ([PurchasePart].[Count] - SUM(ISNULL(ShipmentPart.[Count], 0))) > 0",
+                                              "SELECT PurchasePart2.PurchaseP2ID,ProdPartData2.[Name],SupplierData.[Name] AS Supplier,SupplierData.Abbr,PurchasePart2.Width,PurchasePart2.[Length],PurchasePart2.CBM,PurchasePart2.Specification,PurchasePart2.[Count],Remark,(PurchasePart2.[Count] - SUM(ISNULL(ShipmentPart2.[Count], 0))) AS RemainAmount
+                                               FROM PurchasePart2 LEFT JOIN ShipmentPart2 ON PurchasePart2.PurchaseP2ID = ShipmentPart2.PurchaseP2ID, ProdPartData2,SupplierData
+                                               WHERE PurchasePart2.ProdPart2ID = ProdPartData2.ProdPart2ID AND ProdPartData2.SuID = SupplierData.SuID 
+                                               GROUP BY PurchasePart2.PurchaseP2ID,ProdPartData2.[Name],PurchasePart2.Specification,PurchasePart2.[Count],Remark,SupplierData.[Name],PurchasePart2.Width,PurchasePart2.[Length],PurchasePart2.CBM,SupplierData.Abbr
+                                               Having (PurchasePart2.[Count] - SUM(ISNULL(ShipmentPart2.[Count], 0))) > 0"}
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSql(item)).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
                 If item = 0 Then
                     dataArray.Add({dataReader("PurchasePID"), dataReader("Name"), If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), dataReader("Specification"), dataReader("Width"), dataReader("Length"), dataReader("CBM"), dataReader("Remark"), dataReader("RemainAmount")})
                 ElseIf item = 1 Then
-                    dataArray.Add({dataReader("PurchaseFID"), dataReader("Name"), If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), dataReader("Specification"), dataReader("Width"), dataReader("Length"), dataReader("CBM"), dataReader("Remark"), dataReader("RemainAmount")})
+                    dataArray.Add({dataReader("PurchaseP2ID"), dataReader("Name"), If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), dataReader("Specification"), dataReader("Width"), dataReader("Length"), dataReader("CBM"), dataReader("Remark"), dataReader("RemainAmount")})
                 End If
             Loop
         End If
@@ -40,7 +40,7 @@ Public Class Search_Controller
     Public Function SearchProd(ByVal intClass As Integer) As ArrayList
         Dim conDB As Connection = New Connection
         Dim dataArray As ArrayList = New ArrayList
-        Dim strSql As String() = {"Select Prodset.ProdPartID,ProdPartData.Name,SupplierData.Name As Supplier ,SupplierData.Abbr
+        Dim strSql As String() = {"Select ProdPartData.ProdPartID,ProdPartData.Name,SupplierData.Name As Supplier ,SupplierData.Abbr
                            From ProdPartData, SupplierData
                            Where ProdPartData.SuID = SupplierData.SuID",
                            "SELECT ProdPartData2.ProdPart2ID,ProdPartData2.Name,SupplierData.Name as Supplier ,SupplierData.Abbr

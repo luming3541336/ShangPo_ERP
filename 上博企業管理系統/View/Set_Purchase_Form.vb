@@ -29,7 +29,7 @@ Public Class Set_Purchase_Form
                 If e.ColumnIndex() = 1 Then '產品名稱
                     ProdDGV.Rows(e.RowIndex).ErrorText = String.Empty
                 Else
-                    If controller.Get_PurchaseProdCount > e.RowIndex Then
+                    If controller.Get_PurchasePartCount > e.RowIndex Then
                         '進入此欄位代表已有存在的欄位做了變更，並執行以下程序：
                         ' ﹂>先去偵測寬與長的欄位是否有資料，若有資料將會去透過公式換算成CBM
                         '       ﹂>因為換算CBM需要長跟寬才可換算，若其中一個值為NULL則會出現警告要求使用者輸入
@@ -88,8 +88,8 @@ Public Class Set_Purchase_Form
                     '    strRemark = strRemark.Replace("'", "''")
                     'End If
 
-                    If controller.Get_PurchaseFitCount > e.RowIndex Then
-                        controller.Set_PurchaseFItem(editIndex, Nothing, IIf(FitDGV.CurrentRow.Cells("fitID").EditedFormattedValue.ToString = "", 0, FitDGV.CurrentRow.Cells("fitID").EditedFormattedValue.ToString),
+                    If controller.Get_PurchasePart2Count > e.RowIndex Then
+                        controller.Set_PurchasePart2em(editIndex, Nothing, IIf(FitDGV.CurrentRow.Cells("fitID").EditedFormattedValue.ToString = "", 0, FitDGV.CurrentRow.Cells("fitID").EditedFormattedValue.ToString),
                                              IIf(FitDGV.CurrentRow.Cells("fitSpecification").EditedFormattedValue.ToString = "", "", FitDGV.CurrentRow.Cells("fitSpecification").EditedFormattedValue.ToString),
                                               IIf(FitDGV.CurrentRow.Cells("fitCount").EditedFormattedValue.ToString = "", 0, FitDGV.CurrentRow.Cells("fitCount").EditedFormattedValue.ToString),
                                              IIf(FitDGV.CurrentRow.Cells("fitRemark").EditedFormattedValue.ToString = "", Nothing, FitDGV.CurrentRow.Cells("fitRemark").EditedFormattedValue.ToString),
@@ -109,7 +109,7 @@ Public Class Set_Purchase_Form
     Private Sub ProdDGV_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProdDGV.CellClick
         If e.ColumnIndex() = 3 Then
             Dim Form As Set_Specification_Form = New Set_Specification_Form(ProdDGV.CurrentRow.Cells(0).Value, 0, ProdDGV.CurrentRow.Cells("prodClass").Value)
-            If e.RowIndex < controller.Get_PurchaseProdCount And e.RowIndex <> -1 Then
+            If e.RowIndex < controller.Get_PurchasePartCount And e.RowIndex <> -1 Then
                 If Form.ShowDialog = DialogResult.OK Then
                     ProdDGV.Item(3, e.RowIndex).Value = Form.strClassName
                     controller.Set_PurchasePItem(e.RowIndex, Nothing, Nothing, Form.strClassName, Nothing, Nothing, Nothing, Nothing, Nothing)
@@ -120,18 +120,18 @@ Public Class Set_Purchase_Form
     Private Sub DGV_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles ProdDGV.RowsRemoved, FitDGV.RowsRemoved
         Select Case sender.Name
             Case "ProdDGV"
-                If controller.Get_PurchaseProdCount > e.RowIndex Then
-                    If controller.Mode = 1 And controller.Get_PurchaseProd(e.RowIndex).PurchasePID <> Nothing Then
+                If controller.Get_PurchasePartCount > e.RowIndex Then
+                    If controller.Mode = 1 And controller.Get_PurchasePart(e.RowIndex).PurchasePID <> Nothing Then
                         controller.Add_EditRemoveProd(e.RowIndex)
                     End If
-                    controller.Remove_PurchaseProd(e.RowIndex)
+                    controller.Remove_PurchasePart(e.RowIndex)
                 End If
             Case "FitDGV"
-                If controller.Get_PurchaseFitCount > e.RowIndex Then
-                    If controller.Mode = 1 And controller.Get_PurchaseFit(e.RowIndex).PurchaseFID <> Nothing Then
+                If controller.Get_PurchasePart2Count > e.RowIndex Then
+                    If controller.Mode = 1 And controller.Get_PurchasePart2(e.RowIndex).PurchaseP2ID <> Nothing Then
                         controller.Add_EditRemoveFit(e.RowIndex)
                     End If
-                    controller.Remove_PurchaseFit(e.RowIndex)
+                    controller.Remove_PurchasePart2(e.RowIndex)
 
                 End If
         End Select
@@ -170,7 +170,7 @@ Public Class Set_Purchase_Form
             index = 0
             For Each data As Set_Purchase_Model.PurchaseData In fitArray
                 FitDGV.Rows.Add(data.DataID, data.Name, data.Supplier, data.Spicification, data.Width, data.Length, data.CBM, data.Count, data.Remark)
-                controller.Set_PurchaseFItem(index, data.PurchaseID, data.DataID, data.Spicification, data.Count, data.Remark, data.Width, data.Length, data.CBM)
+                controller.Set_PurchasePart2em(index, data.PurchaseID, data.DataID, data.Spicification, data.Count, data.Remark, data.Width, data.Length, data.CBM)
                 index += 1
             Next
         End If
@@ -222,10 +222,10 @@ Public Class Set_Purchase_Form
     Private Sub FitDGV_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles FitDGV.CellClick
         If e.ColumnIndex() = 3 Then
             Dim Form As Set_Specification_Form = New Set_Specification_Form(FitDGV.CurrentRow.Cells(0).Value, 1, FitDGV.CurrentRow.Cells("fitSpecification").Value)
-            If e.RowIndex < controller.Get_PurchaseFitCount And e.RowIndex <> -1 Then
+            If e.RowIndex < controller.Get_PurchasePart2Count And e.RowIndex <> -1 Then
                 If Form.ShowDialog = DialogResult.OK Then
                     FitDGV.Item(3, e.RowIndex).Value = Form.strClassName
-                    controller.Set_PurchaseFItem(e.RowIndex, Nothing, Nothing, Form.strClassName, Nothing, Nothing, Nothing, Nothing, Nothing)
+                    controller.Set_PurchasePart2em(e.RowIndex, Nothing, Nothing, Form.strClassName, Nothing, Nothing, Nothing, Nothing, Nothing)
                 End If
             End If
         End If
@@ -265,12 +265,12 @@ Public Class Set_Purchase_Form
         If TabControl1.SelectedIndex = 0 Then
             If ProdDGV.CurrentRow.Index <> -1 Then
                 ProdDGV.Rows.Insert(ProdDGV.CurrentRow.Index, New DataGridViewRow())
-                controller.Insert_PurchaseProd(ProdDGV.CurrentRow.Index)
+                controller.Insert_PurchasePart(ProdDGV.CurrentRow.Index)
             End If
         ElseIf TabControl1.SelectedIndex = 1 Then
             If FitDGV.CurrentRow.Index <> -1 Then
                 FitDGV.Rows.Insert(FitDGV.CurrentRow.Index, New DataGridViewRow())
-                controller.Insert_PurchaseFit(FitDGV.CurrentRow.Index)
+                controller.Insert_PurchasePart2(FitDGV.CurrentRow.Index)
             End If
         End If
 
@@ -294,7 +294,7 @@ Public Class Set_Purchase_Form
             If FitDGV.SelectedCells.Count > 0 Then
                 Dim Form As Search_Form = New Search_Form(1, 0)
                 If Form.ShowDialog = DialogResult.OK Then
-                    controller.Set_PurchaseFItem(FitDGV.CurrentRow.Index, Nothing, Form.ID, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+                    controller.Set_PurchasePart2em(FitDGV.CurrentRow.Index, Nothing, Form.ID, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
                     FitDGV.Item(0, FitDGV.CurrentRow.Index).Value = Form.ID
                     FitDGV.Item(1, FitDGV.CurrentRow.Index).Value = Form.prodName
                     FitDGV.Item(2, FitDGV.CurrentRow.Index).Value = Form.suName
@@ -332,7 +332,7 @@ Public Class Set_Purchase_Form
             End If
         ElseIf TabControl1.SelectedIndex = 1 Then
             If FitDGV.SelectedCells.Count > 0 Then
-                controller.Set_PurchaseFItem(FitDGV.CurrentRow.Index, Nothing, controller.Paste_Row.ID, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+                controller.Set_PurchasePart2em(FitDGV.CurrentRow.Index, Nothing, controller.Paste_Row.ID, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
                 FitDGV.Item(0, FitDGV.CurrentRow.Index).Value = controller.Paste_Row.ID
                 FitDGV.Item(1, FitDGV.CurrentRow.Index).Value = controller.Paste_Row.Name
                 FitDGV.Item(2, FitDGV.CurrentRow.Index).Value = controller.Paste_Row.Supplier
@@ -353,12 +353,12 @@ Public Class Set_Purchase_Form
         If TabControl1.SelectedIndex = 0 Then
             ProdDGV.RowCount += rowCount
             For i As Integer = 0 To rowCount - 1
-                controller.Set_PurchasePItem(controller.Get_PurchaseProdCount + 1, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+                controller.Set_PurchasePItem(controller.Get_PurchasePartCount + 1, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
             Next
         ElseIf TabControl1.SelectedIndex = 1 Then
             FitDGV.RowCount += rowCount
             For i As Integer = 0 To rowCount - 1
-                controller.Set_PurchaseFItem(controller.Get_PurchaseFitCount + 1, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+                controller.Set_PurchasePart2em(controller.Get_PurchasePart2Count + 1, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
             Next
         End If
 

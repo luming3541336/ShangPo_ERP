@@ -2,15 +2,15 @@
 
 Public Class Output_SaleReport_Controller
     Inherits Output_SaleReport_Model
-    Public Function Load_Purchase_Prod_Form_CaseID(ByVal intCaseID As Integer) As List(Of PurchaseProd)
+    Public Function Load_Purchase_Prod_Form_CaseID(ByVal intCaseID As Integer) As List(Of PurchasePart)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SEARCH_PURCHASE_PROD_SQL
         strSQL = strSQL.Replace("@caseID", intCaseID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        Dim returnList As List(Of PurchaseProd) = New List(Of PurchaseProd)
+        Dim returnList As List(Of PurchasePart) = New List(Of PurchasePart)
         If dataReader.HasRows Then
             Do While dataReader.Read
-                returnList.Add(New PurchaseProd With {.PurchasePID = dataReader("PurchasePID"), .ProdName = dataReader("ProdName"),
+                returnList.Add(New PurchasePart With {.PurchasePID = dataReader("PurchasePID"), .ProdName = dataReader("ProdName"),
                                .SupplierName = If(dataReader("Abbr") = "", dataReader("SupplierName"), dataReader("Abbr")), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"),
                                .Count = dataReader("Count"), .Specification = dataReader("Specification"), .InsertTime = dataReader("InsertTime"), .Remark = dataReader("Remark")})
             Loop
@@ -18,15 +18,15 @@ Public Class Output_SaleReport_Controller
         conDB.Close()
         Return returnList
     End Function
-    Public Function Load_Purchase_Fit_Form_CaseID(ByVal intCaseID As Integer) As List(Of PurchaseFit)
+    Public Function Load_Purchase_Fit_Form_CaseID(ByVal intCaseID As Integer) As List(Of PurchasePart2)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SEARCH_PURCHASE_FIT_SQL
         strSQL = strSQL.Replace("@caseID", intCaseID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        Dim returnList As List(Of PurchaseFit) = New List(Of PurchaseFit)
+        Dim returnList As List(Of PurchasePart2) = New List(Of PurchasePart2)
         If dataReader.HasRows Then
             Do While dataReader.Read
-                returnList.Add(New PurchaseFit With {.PurchaseFID = dataReader("PurchaseFID"), .FitName = dataReader("FitName"),
+                returnList.Add(New PurchasePart2 With {.PurchaseP2ID = dataReader("PurchaseP2ID"), .FitName = dataReader("FitName"),
                                .SupplierName = If(dataReader("Abbr") = "", dataReader("SupplierName"), dataReader("Abbr")), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"),
                                .Count = dataReader("Count"), .Specification = dataReader("Specification"), .InsertTime = dataReader("InsertTime"), .Remark = dataReader("Remark")})
             Loop
@@ -34,29 +34,29 @@ Public Class Output_SaleReport_Controller
         conDB.Close()
         Return returnList
     End Function
-    Public Function Load_Sale_Prod_From_PID(ByVal intPID As Integer) As List(Of SaleProd)
+    Public Function Load_Sale_Prod_From_PID(ByVal intPID As Integer) As List(Of ShipmentPart)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SEARCH_SALE_PROD_SQL
         strSQL = strSQL.Replace("@PurchasePID", intPID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        Dim returnList As List(Of SaleProd) = New List(Of SaleProd)
+        Dim returnList As List(Of ShipmentPart) = New List(Of ShipmentPart)
         If dataReader.HasRows Then
             Do While dataReader.Read
-                returnList.Add(New SaleProd With {.Count = dataReader("Count"), .InsertTime = dataReader("InsertTime"), .PIC = dataReader("PIC")})
+                returnList.Add(New ShipmentPart With {.Count = dataReader("Count"), .InsertTime = dataReader("InsertTime"), .PIC = dataReader("PIC")})
             Loop
         End If
         conDB.Close()
         Return returnList
     End Function
-    Public Function Load_Sale_Fit_From_FID(ByVal intFID As Integer) As List(Of SaleFit)
+    Public Function Load_Sale_Fit_From_FID(ByVal intFID As Integer) As List(Of ShipmentPart2)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SEARCH_SALE_FIT_SQL
-        strSQL = strSQL.Replace("@PurchaseFID", intFID)
+        strSQL = strSQL.Replace("@PurchaseP2ID", intFID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        Dim returnList As List(Of SaleFit) = New List(Of SaleFit)
+        Dim returnList As List(Of ShipmentPart2) = New List(Of ShipmentPart2)
         If dataReader.HasRows Then
             Do While dataReader.Read
-                returnList.Add(New SaleFit With {.Count = dataReader("Count"), .InsertTime = dataReader("InsertTime"), .PIC = dataReader("PIC")})
+                returnList.Add(New ShipmentPart2 With {.Count = dataReader("Count"), .InsertTime = dataReader("InsertTime"), .PIC = dataReader("PIC")})
             Loop
         End If
         conDB.Close()
@@ -105,9 +105,9 @@ Public Class Output_SaleReport_Controller
         Return Nothing
     End Function
     '產生工程進度表門框部分資料
-    Public Function Analysis_WorkProgress_Prod(ByVal purchaseProdList As List(Of PurchaseProd)) As List(Of WorkProgress)
+    Public Function Analysis_WorkProgress_Prod(ByVal purchaseProdList As List(Of PurchasePart)) As List(Of WorkProgress)
         Dim listData As List(Of WorkProgress) = New List(Of WorkProgress)
-        For Each data As PurchaseProd In purchaseProdList
+        For Each data As PurchasePart In purchaseProdList
             If listData.Count = 0 Then
                 listData.Add(New WorkProgress With {.DateTime = data.InsertTime, .ProdName = New List(Of String), .Specification = New List(Of String), .Supplier = data.SupplierName, .Count = New List(Of String)})
                 listData(listData.Count - 1).ProdName.Add(data.ProdName.Split("(")(0))
@@ -148,9 +148,9 @@ Public Class Output_SaleReport_Controller
         Return listData
     End Function
     '產生工程進度表門扇部分資料
-    Public Function Analysis_WorkProgress_Fit(ByVal purchaseFitList As List(Of PurchaseFit)) As List(Of WorkProgress)
+    Public Function Analysis_WorkProgress_Fit(ByVal purchaseFitList As List(Of PurchasePart2)) As List(Of WorkProgress)
         Dim listData As List(Of WorkProgress) = New List(Of WorkProgress)
-        For Each data As PurchaseFit In purchaseFitList
+        For Each data As PurchasePart2 In purchaseFitList
             If listData.Count = 0 Then
                 listData.Add(New WorkProgress With {.DateTime = data.InsertTime, .Count = New List(Of String), .ProdName = New List(Of String), .Specification = New List(Of String), .Supplier = data.SupplierName})
                 listData(listData.Count - 1).ProdName.Add(data.FitName.Split("(")(0))
@@ -266,7 +266,7 @@ Public Class Output_SaleReport_Controller
         Dim listData As List(Of ShipRecord) = New List(Of ShipRecord)
         If dataReader.HasRows Then
             Do While dataReader.Read
-                listData.Add(New ShipRecord With {.PurchaseID = dataReader("PurchaseFID"), .ProductName = dataReader("ProductName"),
+                listData.Add(New ShipRecord With {.PurchaseID = dataReader("PurchaseP2ID"), .ProductName = dataReader("ProductName"),
                                .SupplierName = dataReader("SupplierName"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"),
                               .PurchaseCount = dataReader("PurchaseCount"), .Specification = dataReader("Specification"), .PurchaseTime = dataReader("PurchaseTime"), .SaleCount = If(IsDBNull(dataReader("SaleCount")), "", dataReader("SaleCount")), .SaleTime = If(IsDBNull(dataReader("SaleTime")), "", dataReader("SaleTime")), .PIC = If(IsDBNull(dataReader("PIC")), "", dataReader("PIC")), .Remark = dataReader("Remark")})
             Loop
@@ -283,7 +283,7 @@ Public Class Output_SaleReport_Controller
         Dim listData As List(Of ShipRecord) = New List(Of ShipRecord)
         If dataReader.HasRows Then
             Do While dataReader.Read
-                listData.Add(New ShipRecord With {.PurchaseID = dataReader("PurchaseFID"), .ProductName = dataReader("ProductName"),
+                listData.Add(New ShipRecord With {.PurchaseID = dataReader("PurchaseP2ID"), .ProductName = dataReader("ProductName"),
                                .SupplierName = dataReader("SupplierName"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"),
                               .PurchaseCount = dataReader("PurchaseCount"), .Specification = dataReader("Specification"), .PurchaseTime = dataReader("PurchaseTime"), .SaleCount = If(IsDBNull(dataReader("SaleCount")), "", dataReader("SaleCount")), .SaleTime = If(IsDBNull(dataReader("SaleTime")), "", dataReader("SaleTime")), .PIC = If(IsDBNull(dataReader("PIC")), "", dataReader("PIC")), .Remark = dataReader("Remark")})
             Loop
