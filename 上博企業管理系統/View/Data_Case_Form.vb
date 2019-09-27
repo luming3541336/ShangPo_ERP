@@ -9,10 +9,10 @@ Public Class Data_Case_Form
     Dim app As Microsoft.Office.Interop.Excel.Application 'app 是操作 Excel 的變數
     Dim workSheet As Microsoft.Office.Interop.Excel.Worksheet 'Worksheet 代表的是 Excel 工作表
     Dim workBook As Microsoft.Office.Interop.Excel.Workbook 'Workbook 代表的是一個 Excel 本體
-    Dim listPurchaseProd As List(Of Data_Case_Model.PurchaseProd) = Nothing
-    Dim listPurchaseFit As List(Of Data_Case_Model.PurchaseFit) = Nothing
-    'Dim listSaleProd As List(Of Data_Case_Model.SaleProd) = Nothing
-    'Dim listSaleFit As List(Of Data_Case_Model.SaleFit) = Nothing
+    Dim listPurchasePart As List(Of Data_Case_Model.PurchasePart) = Nothing
+    Dim listPurchasePart2 As List(Of Data_Case_Model.PurchasePart2) = Nothing
+    'Dim listShipmentPart As List(Of Data_Case_Model.ShipmentPart) = Nothing
+    'Dim listShipmentPart2 As List(Of Data_Case_Model.ShipmentPart2) = Nothing
     Private Sub LoadingBackground_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles LoadingBackground.DoWork
         Dim arrayList As List(Of Data_Case_Model.CaseData) = New List(Of Data_Case_Model.CaseData)
         If strSearchSQL = Nothing Then
@@ -51,35 +51,35 @@ Public Class Data_Case_Form
 
     Private Sub LoadingDetailBackground_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles LoadingDetailBackground.DoWork
 
-        e.Result = {controller.Select_PurchaseProd(e.Argument), controller.Select_PurchaseFit(e.Argument), controller.Select_SaleProd(e.Argument), controller.Select_SaleFit(e.Argument), controller.Get_PurchaseCase_Count(e.Argument), controller.Get_SaleCase_Count(e.Argument), controller.Select_WorkDetail(e.Argument), controller.Select_WorkProgress(e.Argument)}
+        e.Result = {controller.Select_PurchasePart(e.Argument), controller.Select_PurchasePart2(e.Argument), controller.Select_ShipmentPart(e.Argument), controller.Select_ShipmentPart2(e.Argument), controller.Get_PurchaseCase_Count(e.Argument), controller.Get_SaleCase_Count(e.Argument), controller.Select_WorkDetail(e.Argument), controller.Select_WorkProgress(e.Argument)}
     End Sub
 
     Private Sub LoadingDetailBackground_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles LoadingDetailBackground.RunWorkerCompleted
-        listPurchaseProd = e.Result(0)
-        listPurchaseFit = e.Result(1)
-        'listSaleProd = e.Result(2)
-        'listSaleFit = e.Result(3)
-        Dim listSaleProd As List(Of Data_Case_Model.SaleProd) = e.Result(2)
-        Dim listSaleFit As List(Of Data_Case_Model.SaleFit) = e.Result(3)
+        listPurchasePart = e.Result(0)
+        listPurchasePart2 = e.Result(1)
+        'listShipmentPart = e.Result(2)
+        'listShipmentPart2 = e.Result(3)
+        Dim listShipmentPart As List(Of Data_Case_Model.ShipmentPart) = e.Result(2)
+        Dim listShipmentPart2 As List(Of Data_Case_Model.ShipmentPart2) = e.Result(3)
         Dim intPurchaseCount As Integer = e.Result(4)
         Dim intSaleCount As Integer = e.Result(5)
         Dim listWorkDetail As List(Of Set_WorkDetail_Model.WorkDetail) = e.Result(6)
         Dim listWorkProgress As List(Of Set_WorkProgress_Model.WorkProgress) = e.Result(7)
-        PurchaseProdDGV.Rows.Clear()
-        For Each data As Data_Case_Model.PurchaseProd In listPurchaseProd '取得PurchaseProd並放入purchaseProdDGV內
-            PurchaseProdDGV.Rows.Add(data.PurchasePID, data.InsertTime, data.Supplier, data.ProdName, data.Specification, data.Width, data.Length, data.CBM, data.Count, data.Remark)
+        PurchasePartDGV.Rows.Clear()
+        For Each data As Data_Case_Model.PurchasePart In listPurchasePart '取得PurchasePart並放入purchaseProdDGV內
+            PurchasePartDGV.Rows.Add(data.PurchasePID, data.InsertTime, data.Supplier, data.ProdName, data.Specification, data.Width, data.Length, data.CBM, data.Count, data.Remark)
         Next
-        PurchaseFitDGV.Rows.Clear()
-        For Each data As Data_Case_Model.PurchaseFit In listPurchaseFit '取得PurchaseFit並放入purchaseFitDGV內
-            PurchaseFitDGV.Rows.Add(data.PurchaseFID, data.InsertTime, data.Supplier, data.FitName, data.Specification, data.Width, data.Length, data.Count, data.Remark)
+        PurchasePart2DGV.Rows.Clear()
+        For Each data As Data_Case_Model.PurchasePart2 In listPurchasePart2 '取得PurchasePart2並放入purchaseFitDGV內
+            PurchasePart2DGV.Rows.Add(data.PurchaseP2ID, data.InsertTime, data.Supplier, data.FitName, data.Specification, data.Width, data.Length, data.Count, data.Remark)
         Next
-        SaleProdDGV.Rows.Clear()
-        For Each data As Data_Case_Model.SaleProd In listSaleProd '取得SaleProd並放入SaleProdDGV內
-            SaleProdDGV.Rows.Add(data.SalePID, data.InsertTime, data.Supplier, data.ProdName, data.Specification, data.Width, data.Length, data.CBM, data.Count, data.PIC, data.Remark)
+        ShipmentPartDGV.Rows.Clear()
+        For Each data As Data_Case_Model.ShipmentPart In listShipmentPart '取得ShipmentPart並放入ShipmentPartDGV內
+            ShipmentPartDGV.Rows.Add(data.ShipmentPID, data.InsertTime, data.Supplier, data.ProdName, data.Specification, data.Width, data.Length, data.CBM, data.Count, data.PIC, data.Remark)
         Next
-        SaleFitDGV.Rows.Clear()
-        For Each data As Data_Case_Model.SaleFit In listSaleFit '取得PurchaseFit並放入SaleFitDGV內
-            SaleFitDGV.Rows.Add(data.SaleFID, data.InsertTime, data.Supplier, data.FitName, data.Specification, data.Width, data.Length, data.Count, data.PIC, data.Remark)
+        ShipmentPart2DGV.Rows.Clear()
+        For Each data As Data_Case_Model.ShipmentPart2 In listShipmentPart2 '取得PurchasePart2並放入ShipmentPart2DGV內
+            ShipmentPart2DGV.Rows.Add(data.ShipmentP2ID, data.InsertTime, data.Supplier, data.FitName, data.Specification, data.Width, data.Length, data.Count, data.PIC, data.Remark)
         Next
         DetailDGV.Rows.Clear()
         For Each data As Set_WorkDetail_Model.WorkDetail In listWorkDetail
@@ -151,8 +151,8 @@ Public Class Data_Case_Form
     End Sub
 
     Private Sub ConpleteBtn_Click(sender As Object, e As EventArgs) Handles ConpleteBtn.Click
-        Dim listUnsaleProd As List(Of Data_Case_Model.UnsaleProd) = controller.Select_UnSaleProd(CaseDGV.CurrentRow.Cells("CaseID").Value)
-        Dim listUnsaleFit As List(Of Data_Case_Model.UnsaleFit) = controller.Select_UnSaleFit(CaseDGV.CurrentRow.Cells("CaseID").Value)
+        Dim listUnsaleProd As List(Of Data_Case_Model.UnsaleProd) = controller.Select_UnShipmentPart(CaseDGV.CurrentRow.Cells("CaseID").Value)
+        Dim listUnsaleFit As List(Of Data_Case_Model.UnsaleFit) = controller.Select_UnShipmentPart2(CaseDGV.CurrentRow.Cells("CaseID").Value)
         If CaseDGV.CurrentRow.Cells("success").Value = "作廢" Then
             MsgBox("此案件已作廢，無法結案。")
         ElseIf CaseDGV.CurrentRow.Cells("success").Value = "已結案" Then
@@ -202,10 +202,10 @@ Public Class Data_Case_Form
 
     Private Sub caseDGV_SelectionChanged(sender As Object, e As EventArgs) Handles CaseDGV.SelectionChanged
         If CaseDGV.CurrentRow IsNot Nothing Then
-            'PurchaseProdDGV.Rows.Clear()
-            'PurchaseFitDGV.Rows.Clear()
-            'SaleProdDGV.Rows.Clear()
-            'SaleFitDGV.Rows.Clear()
+            'PurchasePartDGV.Rows.Clear()
+            'PurchasePart2DGV.Rows.Clear()
+            'ShipmentPartDGV.Rows.Clear()
+            'ShipmentPart2DGV.Rows.Clear()
             'DetailDGV.Rows.Clear()
             'WorkProgressDGV.Rows.Clear()
             AddDetailBtn.Enabled = True
@@ -255,36 +255,36 @@ Public Class Data_Case_Form
 
     End Sub
 
-    Private Sub purchaseProdDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles PurchaseProdDGV.CellDoubleClick
+    Private Sub purchaseProdDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles PurchasePartDGV.CellDoubleClick
         If e.RowIndex <> -1 Then
-            Dim toViewOrderForm As Data_Order_Form = New Data_Order_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, 0, controller.Get_PurchaseID_For_Prod(PurchaseProdDGV.CurrentRow.Cells("PurchasePID").Value), CaseDGV.CurrentRow.Cells("place").Value) '查詢進貨資料
+            Dim toViewOrderForm As Data_Order_Form = New Data_Order_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, 0, controller.Get_PurchaseID_For_Prod(PurchasePartDGV.CurrentRow.Cells("PurchasePID").Value), CaseDGV.CurrentRow.Cells("place").Value) '查詢進貨資料
             If toViewOrderForm.ShowDialog = DialogResult.OK Then
                 LoadingDetailBackground.RunWorkerAsync(CaseDGV.CurrentRow.Cells("CaseID").Value)
             End If
         End If
     End Sub
 
-    Private Sub purchaseFitDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles PurchaseFitDGV.CellDoubleClick
+    Private Sub purchaseFitDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles PurchasePart2DGV.CellDoubleClick
         If e.RowIndex <> -1 Then
-            Dim toViewOrderForm As Data_Order_Form = New Data_Order_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, 0, controller.Get_PurchaseID_For_Fit(PurchaseFitDGV.CurrentRow.Cells("PurchaseFID").Value), CaseDGV.CurrentRow.Cells("place").Value) '查詢進貨資料
+            Dim toViewOrderForm As Data_Order_Form = New Data_Order_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, 0, controller.Get_PurchaseID_For_Fit(PurchasePart2DGV.CurrentRow.Cells("PurchaseP2ID").Value), CaseDGV.CurrentRow.Cells("place").Value) '查詢進貨資料
             If toViewOrderForm.ShowDialog = DialogResult.OK Then
                 LoadingDetailBackground.RunWorkerAsync(CaseDGV.CurrentRow.Cells("CaseID").Value)
             End If
         End If
     End Sub
 
-    Private Sub saleProdDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles SaleProdDGV.CellDoubleClick
+    Private Sub saleProdDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles ShipmentPartDGV.CellDoubleClick
         If e.RowIndex <> -1 Then
-            Dim toViewOrderForm As Data_Order_Form = New Data_Order_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, 1, controller.Get_SaleID_For_Prod(SaleProdDGV.CurrentRow.Cells("SalePID").Value), CaseDGV.CurrentRow.Cells("place").Value) '查詢進貨資料
+            Dim toViewOrderForm As Data_Order_Form = New Data_Order_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, 1, controller.Get_ShipmentID_For_Prod(ShipmentPartDGV.CurrentRow.Cells("ShipmentPID").Value), CaseDGV.CurrentRow.Cells("place").Value) '查詢進貨資料
             If toViewOrderForm.ShowDialog = DialogResult.OK Then
                 LoadingDetailBackground.RunWorkerAsync(CaseDGV.CurrentRow.Cells("CaseID").Value)
             End If
         End If
     End Sub
 
-    Private Sub saleFitDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles SaleFitDGV.CellDoubleClick
+    Private Sub saleFitDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles ShipmentPart2DGV.CellDoubleClick
         If e.RowIndex <> -1 Then
-            Dim toViewOrderForm As Data_Order_Form = New Data_Order_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, 1, controller.Get_SaleID_For_Fit(SaleFitDGV.CurrentRow.Cells("SaleFID").Value), CaseDGV.CurrentRow.Cells("place").Value) '查詢進貨資料
+            Dim toViewOrderForm As Data_Order_Form = New Data_Order_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, 1, controller.Get_ShipmentID_For_Fit(ShipmentPart2DGV.CurrentRow.Cells("ShipmentP2ID").Value), CaseDGV.CurrentRow.Cells("place").Value) '查詢進貨資料
             If toViewOrderForm.ShowDialog = DialogResult.OK Then
                 LoadingDetailBackground.RunWorkerAsync(CaseDGV.CurrentRow.Cells("CaseID").Value)
             End If
@@ -364,48 +364,48 @@ Public Class Data_Case_Form
     End Sub
     Private Sub PrintShippingRecordBackground_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles PrintShippingRecordBackground.DoWork
         Dim index As Integer = 10 '工作進度表表格第一欄位置
-        Dim listSaleProd As List(Of Output_SaleReport_Model.SaleProd)
-        Dim listSaleFit As List(Of Output_SaleReport_Model.SaleFit)
+        Dim listShipmentPart As List(Of Output_SaleReport_Model.ShipmentPart)
+        Dim listShipmentPart2 As List(Of Output_SaleReport_Model.ShipmentPart2)
         workSheet = workBook.Worksheets(1)
-        If listPurchaseProd.Count > 19 Then '預設資料筆數為20筆，若大於需要增加欄位
+        If listPurchasePart.Count > 19 Then '預設資料筆數為20筆，若大於需要增加欄位
 
-            For i As Integer = 0 To listPurchaseProd.Count - 19
+            For i As Integer = 0 To listPurchasePart.Count - 19
                 workSheet.Rows(20).insert
             Next
             workSheet.Rows(11).Copy
-            For i As Integer = 0 To listPurchaseProd.Count - 19
+            For i As Integer = 0 To listPurchasePart.Count - 19
                 workSheet.Rows(20 + i).PasteSpecial
             Next
         End If
-        For i As Integer = 0 To listPurchaseProd.Count - 1
-            listSaleProd = controller_SaleReport.Load_Sale_Prod_From_PID(listPurchaseProd(i).PurchasePID)
-            If listSaleProd.Count > 1 Then '出貨次數大於1筆時，若大於需要增加欄位
-                For i2 As Integer = 1 To listSaleProd.Count - 1
+        For i As Integer = 0 To listPurchasePart.Count - 1
+            listShipmentPart = controller_SaleReport.Load_Sale_Prod_From_PID(listPurchasePart(i).PurchasePID)
+            If listShipmentPart.Count > 1 Then '出貨次數大於1筆時，若大於需要增加欄位
+                For i2 As Integer = 1 To listShipmentPart.Count - 1
                     workSheet.Rows(index + 2).insert
                 Next
                 workSheet.Rows(index + 1).Copy
-                For i2 As Integer = 1 To listSaleProd.Count - 1
+                For i2 As Integer = 1 To listShipmentPart.Count - 1
                     workSheet.Rows(index + i2 + 1).PasteSpecial
                 Next
             End If
             workSheet.Cells(index, 1) = i + 1
-            workSheet.Cells(index, 2) = listPurchaseProd(i).Supplier
-            workSheet.Cells(index, 3) = listPurchaseProd(i).ProdName
-            workSheet.Cells(index, 5) = listPurchaseProd(i).Specification
-            If listPurchaseProd(i).Width = 0 And listPurchaseProd(i).Length = 0 Then
+            workSheet.Cells(index, 2) = listPurchasePart(i).Supplier
+            workSheet.Cells(index, 3) = listPurchasePart(i).ProdName
+            workSheet.Cells(index, 5) = listPurchasePart(i).Specification
+            If listPurchasePart(i).Width = 0 And listPurchasePart(i).Length = 0 Then
                 workSheet.Range("F" & index & ":" & "H" & index).MergeCells = True
                 workSheet.Cells(index, 6) = "共"
             Else
-                workSheet.Cells(index, 6) = listPurchaseProd(i).Width
-                workSheet.Cells(index, 7) = listPurchaseProd(i).Length
-                workSheet.Cells(index, 8) = listPurchaseProd(i).CBM
+                workSheet.Cells(index, 6) = listPurchasePart(i).Width
+                workSheet.Cells(index, 7) = listPurchasePart(i).Length
+                workSheet.Cells(index, 8) = listPurchasePart(i).CBM
             End If
-            workSheet.Cells(index, 9) = listPurchaseProd(i).InsertTime
-            workSheet.Cells(index, 10) = listPurchaseProd(i).Count
-            workSheet.Cells(index, 15) = listPurchaseProd(i).Remark
+            workSheet.Cells(index, 9) = listPurchasePart(i).InsertTime
+            workSheet.Cells(index, 10) = listPurchasePart(i).Count
+            workSheet.Cells(index, 15) = listPurchasePart(i).Remark
 
-            If listSaleProd.Count <> 0 Then
-                For Each data As Output_SaleReport_Model.SaleProd In listSaleProd
+            If listShipmentPart.Count <> 0 Then
+                For Each data As Output_SaleReport_Model.ShipmentPart In listShipmentPart
                     workSheet.Cells(index, 11) = data.InsertTime
                     workSheet.Cells(index, 12) = data.Count
                     workSheet.Cells(index, 13) = data.PIC
@@ -418,44 +418,44 @@ Public Class Data_Case_Form
         Next
         index = 10
         workSheet = workBook.Worksheets(2)
-        If listPurchaseFit.Count > 19 Then '預設資料筆數為20筆，若大於需要增加欄位
-            For i As Integer = 0 To listPurchaseFit.Count - 19
+        If listPurchasePart2.Count > 19 Then '預設資料筆數為20筆，若大於需要增加欄位
+            For i As Integer = 0 To listPurchasePart2.Count - 19
                 workSheet.Rows(20).insert
             Next
             workSheet.Rows(11).Copy
-            For i As Integer = 0 To listPurchaseFit.Count - 19
+            For i As Integer = 0 To listPurchasePart2.Count - 19
                 workSheet.Rows(20).PasteSpecial
             Next
         End If
 
-        For i As Integer = 0 To listPurchaseFit.Count - 1
-            listSaleFit = controller_SaleReport.Load_Sale_Fit_From_FID(listPurchaseFit(i).PurchaseFID)
-            If listSaleFit.Count > 1 Then '出貨次數大於1筆時，若大於需要增加欄位
-                For i2 As Integer = 1 To listSaleFit.Count
+        For i As Integer = 0 To listPurchasePart2.Count - 1
+            listShipmentPart2 = controller_SaleReport.Load_Sale_Fit_From_FID(listPurchasePart2(i).PurchaseP2ID)
+            If listShipmentPart2.Count > 1 Then '出貨次數大於1筆時，若大於需要增加欄位
+                For i2 As Integer = 1 To listShipmentPart2.Count
                     workSheet.Rows(index + 2).insert
                 Next
                 workSheet.Rows(index + 1).Copy
-                For i2 As Integer = 1 To listSaleFit.Count
+                For i2 As Integer = 1 To listShipmentPart2.Count
                     workSheet.Rows(index + i2 + 1).PasteSpecial
                 Next
             End If
             workSheet.Cells(index, 1) = i + 1
-            workSheet.Cells(index, 2) = listPurchaseFit(i).Supplier
-            workSheet.Cells(index, 3) = listPurchaseFit(i).FitName
-            workSheet.Cells(index, 5) = listPurchaseFit(i).Specification
-            If listPurchaseFit(i).Width = 0 And listPurchaseFit(i).Length = 0 Then
+            workSheet.Cells(index, 2) = listPurchasePart2(i).Supplier
+            workSheet.Cells(index, 3) = listPurchasePart2(i).FitName
+            workSheet.Cells(index, 5) = listPurchasePart2(i).Specification
+            If listPurchasePart2(i).Width = 0 And listPurchasePart2(i).Length = 0 Then
                 workSheet.Range("F" & index & ":" & "H" & index).MergeCells = True
                 workSheet.Cells(index, 6) = "共"
             Else
-                workSheet.Cells(index, 6) = listPurchaseFit(i).Width
-                workSheet.Cells(index, 7) = listPurchaseFit(i).Length
+                workSheet.Cells(index, 6) = listPurchasePart2(i).Width
+                workSheet.Cells(index, 7) = listPurchasePart2(i).Length
             End If
 
-            workSheet.Cells(index, 9) = listPurchaseFit(i).InsertTime
-            workSheet.Cells(index, 10) = listPurchaseFit(i).Count
-            workSheet.Cells(index, 15) = listPurchaseFit(i).Remark
-            If listSaleFit.Count <> 0 Then
-                For Each data As Output_SaleReport_Model.SaleFit In listSaleFit
+            workSheet.Cells(index, 9) = listPurchasePart2(i).InsertTime
+            workSheet.Cells(index, 10) = listPurchasePart2(i).Count
+            workSheet.Cells(index, 15) = listPurchasePart2(i).Remark
+            If listShipmentPart2.Count <> 0 Then
+                For Each data As Output_SaleReport_Model.ShipmentPart2 In listShipmentPart2
                     workSheet.Cells(index, 11) = data.InsertTime
                     workSheet.Cells(index, 12) = data.Count
                     workSheet.Cells(index, 13) = data.PIC
@@ -479,7 +479,7 @@ Public Class Data_Case_Form
     End Sub
 
     Private Sub PrintShippingRecordItem_Click(sender As Object, e As EventArgs) Handles PrintShippingRecordItem.Click
-        formStatusProcessBar = New Status_ProcessBar_Form("報表生產中....請稍後", listPurchaseProd.Count + listPurchaseFit.Count)
+        formStatusProcessBar = New Status_ProcessBar_Form("報表生產中....請稍後", listPurchasePart.Count + listPurchasePart2.Count)
         formStatusProcessBar.Show()
         Print_ShippingRecord() '列印出貨總表
     End Sub

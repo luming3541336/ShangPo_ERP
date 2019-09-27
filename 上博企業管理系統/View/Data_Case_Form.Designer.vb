@@ -43,9 +43,9 @@ Partial Class Data_Case_Form
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.PurchaseProdDGV = New System.Windows.Forms.DataGridView()
+        Me.PurchasePartDGV = New System.Windows.Forms.DataGridView()
         Me.PurchasePID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchaseProdTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.purchaseProdSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.purchaseProdName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.purchaseProdSpecification = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,7 +55,7 @@ Partial Class Data_Case_Form
         Me.purchaseprodCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.purchaseProdRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.PurchaseFitDGV = New System.Windows.Forms.DataGridView()
+        Me.PurchasePart2DGV = New System.Windows.Forms.DataGridView()
         Me.purchaseFID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fitPurchaseTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.purchaseFitSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -90,7 +90,7 @@ Partial Class Data_Case_Form
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.SaleProdDGV = New System.Windows.Forms.DataGridView()
+        Me.ShipmentPartDGV = New System.Windows.Forms.DataGridView()
         Me.salePID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.prodSaleTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.saleProdSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -103,8 +103,8 @@ Partial Class Data_Case_Form
         Me.prodPIC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.saleProdRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.SaleFitDGV = New System.Windows.Forms.DataGridView()
-        Me.SaleFID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2DGV = New System.Windows.Forms.DataGridView()
+        Me.ShipmentP2ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fitSaleTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.saleSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.saleFitName = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -157,9 +157,9 @@ Partial Class Data_Case_Form
         Me.Panel3.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage4.SuspendLayout()
-        CType(Me.PurchaseProdDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PurchasePartDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
-        CType(Me.PurchaseFitDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PurchasePart2DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.FlowLayoutPanel5.SuspendLayout()
@@ -170,9 +170,9 @@ Partial Class Data_Case_Form
         Me.Panel8.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage6.SuspendLayout()
-        CType(Me.SaleProdDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ShipmentPartDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage7.SuspendLayout()
-        CType(Me.SaleFitDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ShipmentPart2DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage8.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.FlowLayoutPanel4.SuspendLayout()
@@ -338,7 +338,7 @@ Partial Class Data_Case_Form
         '
         'TabPage4
         '
-        Me.TabPage4.Controls.Add(Me.PurchaseProdDGV)
+        Me.TabPage4.Controls.Add(Me.PurchasePartDGV)
         Me.TabPage4.Location = New System.Drawing.Point(4, 33)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
@@ -347,28 +347,28 @@ Partial Class Data_Case_Form
         Me.TabPage4.Text = "門框/窗框"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
-        'PurchaseProdDGV
+        'PurchasePartDGV
         '
-        Me.PurchaseProdDGV.AllowUserToAddRows = False
-        Me.PurchaseProdDGV.AllowUserToDeleteRows = False
-        Me.PurchaseProdDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.PurchaseProdDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.PurchaseProdDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PurchaseProdDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PurchasePID, Me.PurchaseProdTime, Me.purchaseProdSupplierName, Me.purchaseProdName, Me.purchaseProdSpecification, Me.purchaseProdWidth, Me.purchaseProdLength, Me.purchaseProdCBM, Me.purchaseprodCount, Me.purchaseProdRemark})
-        Me.PurchaseProdDGV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PurchaseProdDGV.Location = New System.Drawing.Point(3, 3)
-        Me.PurchaseProdDGV.Margin = New System.Windows.Forms.Padding(2)
-        Me.PurchaseProdDGV.Name = "PurchaseProdDGV"
-        Me.PurchaseProdDGV.ReadOnly = True
+        Me.PurchasePartDGV.AllowUserToAddRows = False
+        Me.PurchasePartDGV.AllowUserToDeleteRows = False
+        Me.PurchasePartDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.PurchasePartDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.PurchasePartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.PurchasePartDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PurchasePID, Me.PurchasePartTime, Me.purchaseProdSupplierName, Me.purchaseProdName, Me.purchaseProdSpecification, Me.purchaseProdWidth, Me.purchaseProdLength, Me.purchaseProdCBM, Me.purchaseprodCount, Me.purchaseProdRemark})
+        Me.PurchasePartDGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PurchasePartDGV.Location = New System.Drawing.Point(3, 3)
+        Me.PurchasePartDGV.Margin = New System.Windows.Forms.Padding(2)
+        Me.PurchasePartDGV.Name = "PurchasePartDGV"
+        Me.PurchasePartDGV.ReadOnly = True
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        Me.PurchaseProdDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.PurchaseProdDGV.RowTemplate.Height = 38
-        Me.PurchaseProdDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.PurchaseProdDGV.Size = New System.Drawing.Size(924, 187)
-        Me.PurchaseProdDGV.TabIndex = 2
+        Me.PurchasePartDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.PurchasePartDGV.RowTemplate.Height = 38
+        Me.PurchasePartDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.PurchasePartDGV.Size = New System.Drawing.Size(924, 187)
+        Me.PurchasePartDGV.TabIndex = 2
         '
         'PurchasePID
         '
@@ -378,12 +378,12 @@ Partial Class Data_Case_Form
         Me.PurchasePID.Visible = False
         Me.PurchasePID.Width = 147
         '
-        'PurchaseProdTime
+        'PurchasePartTime
         '
-        Me.PurchaseProdTime.HeaderText = "進貨日期"
-        Me.PurchaseProdTime.Name = "PurchaseProdTime"
-        Me.PurchaseProdTime.ReadOnly = True
-        Me.PurchaseProdTime.Width = 111
+        Me.PurchasePartTime.HeaderText = "進貨日期"
+        Me.PurchasePartTime.Name = "PurchasePartTime"
+        Me.PurchasePartTime.ReadOnly = True
+        Me.PurchasePartTime.Width = 111
         '
         'purchaseProdSupplierName
         '
@@ -443,7 +443,7 @@ Partial Class Data_Case_Form
         '
         'TabPage5
         '
-        Me.TabPage5.Controls.Add(Me.PurchaseFitDGV)
+        Me.TabPage5.Controls.Add(Me.PurchasePart2DGV)
         Me.TabPage5.Location = New System.Drawing.Point(4, 33)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
@@ -452,28 +452,28 @@ Partial Class Data_Case_Form
         Me.TabPage5.Text = "門扇"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
-        'PurchaseFitDGV
+        'PurchasePart2DGV
         '
-        Me.PurchaseFitDGV.AllowUserToAddRows = False
-        Me.PurchaseFitDGV.AllowUserToDeleteRows = False
-        Me.PurchaseFitDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.PurchaseFitDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.PurchaseFitDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PurchaseFitDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.purchaseFID, Me.fitPurchaseTime, Me.purchaseFitSupplierName, Me.purchaseFitName, Me.purchaseFitSpecification, Me.purchaseFitWidth, Me.purchaseFitLength, Me.purchaseFitCount, Me.purchaseFitRemark})
-        Me.PurchaseFitDGV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PurchaseFitDGV.Location = New System.Drawing.Point(3, 3)
-        Me.PurchaseFitDGV.Margin = New System.Windows.Forms.Padding(2)
-        Me.PurchaseFitDGV.Name = "PurchaseFitDGV"
-        Me.PurchaseFitDGV.ReadOnly = True
+        Me.PurchasePart2DGV.AllowUserToAddRows = False
+        Me.PurchasePart2DGV.AllowUserToDeleteRows = False
+        Me.PurchasePart2DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.PurchasePart2DGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.PurchasePart2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.PurchasePart2DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.purchaseFID, Me.fitPurchaseTime, Me.purchaseFitSupplierName, Me.purchaseFitName, Me.purchaseFitSpecification, Me.purchaseFitWidth, Me.purchaseFitLength, Me.purchaseFitCount, Me.purchaseFitRemark})
+        Me.PurchasePart2DGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PurchasePart2DGV.Location = New System.Drawing.Point(3, 3)
+        Me.PurchasePart2DGV.Margin = New System.Windows.Forms.Padding(2)
+        Me.PurchasePart2DGV.Name = "PurchasePart2DGV"
+        Me.PurchasePart2DGV.ReadOnly = True
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.PurchaseFitDGV.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.PurchaseFitDGV.RowTemplate.Height = 38
-        Me.PurchaseFitDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.PurchaseFitDGV.Size = New System.Drawing.Size(926, 217)
-        Me.PurchaseFitDGV.TabIndex = 3
+        Me.PurchasePart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.PurchasePart2DGV.RowTemplate.Height = 38
+        Me.PurchasePart2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.PurchasePart2DGV.Size = New System.Drawing.Size(926, 217)
+        Me.PurchasePart2DGV.TabIndex = 3
         '
         'purchaseFID
         '
@@ -828,7 +828,7 @@ Partial Class Data_Case_Form
         '
         'TabPage6
         '
-        Me.TabPage6.Controls.Add(Me.SaleProdDGV)
+        Me.TabPage6.Controls.Add(Me.ShipmentPartDGV)
         Me.TabPage6.Location = New System.Drawing.Point(4, 33)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
@@ -837,28 +837,28 @@ Partial Class Data_Case_Form
         Me.TabPage6.Text = "門框/窗框"
         Me.TabPage6.UseVisualStyleBackColor = True
         '
-        'SaleProdDGV
+        'ShipmentPartDGV
         '
-        Me.SaleProdDGV.AllowUserToAddRows = False
-        Me.SaleProdDGV.AllowUserToDeleteRows = False
-        Me.SaleProdDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.SaleProdDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.SaleProdDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SaleProdDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.salePID, Me.prodSaleTime, Me.saleProdSupplierName, Me.saleProdName, Me.saleProdSpecification, Me.saleProdWidth, Me.saleProdLength, Me.saleProdCBM, Me.saleProdCount, Me.prodPIC, Me.saleProdRemark})
-        Me.SaleProdDGV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SaleProdDGV.Location = New System.Drawing.Point(3, 3)
-        Me.SaleProdDGV.Margin = New System.Windows.Forms.Padding(2)
-        Me.SaleProdDGV.Name = "SaleProdDGV"
-        Me.SaleProdDGV.ReadOnly = True
+        Me.ShipmentPartDGV.AllowUserToAddRows = False
+        Me.ShipmentPartDGV.AllowUserToDeleteRows = False
+        Me.ShipmentPartDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.ShipmentPartDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.ShipmentPartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ShipmentPartDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.salePID, Me.prodSaleTime, Me.saleProdSupplierName, Me.saleProdName, Me.saleProdSpecification, Me.saleProdWidth, Me.saleProdLength, Me.saleProdCBM, Me.saleProdCount, Me.prodPIC, Me.saleProdRemark})
+        Me.ShipmentPartDGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ShipmentPartDGV.Location = New System.Drawing.Point(3, 3)
+        Me.ShipmentPartDGV.Margin = New System.Windows.Forms.Padding(2)
+        Me.ShipmentPartDGV.Name = "ShipmentPartDGV"
+        Me.ShipmentPartDGV.ReadOnly = True
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        Me.SaleProdDGV.RowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.SaleProdDGV.RowTemplate.Height = 38
-        Me.SaleProdDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.SaleProdDGV.Size = New System.Drawing.Size(926, 217)
-        Me.SaleProdDGV.TabIndex = 2
+        Me.ShipmentPartDGV.RowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.ShipmentPartDGV.RowTemplate.Height = 38
+        Me.ShipmentPartDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.ShipmentPartDGV.Size = New System.Drawing.Size(926, 217)
+        Me.ShipmentPartDGV.TabIndex = 2
         '
         'salePID
         '
@@ -939,7 +939,7 @@ Partial Class Data_Case_Form
         '
         'TabPage7
         '
-        Me.TabPage7.Controls.Add(Me.SaleFitDGV)
+        Me.TabPage7.Controls.Add(Me.ShipmentPart2DGV)
         Me.TabPage7.Location = New System.Drawing.Point(4, 33)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
@@ -948,36 +948,36 @@ Partial Class Data_Case_Form
         Me.TabPage7.Text = "門扇"
         Me.TabPage7.UseVisualStyleBackColor = True
         '
-        'SaleFitDGV
+        'ShipmentPart2DGV
         '
-        Me.SaleFitDGV.AllowUserToAddRows = False
-        Me.SaleFitDGV.AllowUserToDeleteRows = False
-        Me.SaleFitDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.SaleFitDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.SaleFitDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SaleFitDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SaleFID, Me.fitSaleTime, Me.saleSupplierName, Me.saleFitName, Me.saleFitSpecification, Me.saleFitWidth, Me.saleFitLength, Me.saleFitCount, Me.fitPIC, Me.saleFitRemark})
-        Me.SaleFitDGV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SaleFitDGV.Location = New System.Drawing.Point(3, 3)
-        Me.SaleFitDGV.Margin = New System.Windows.Forms.Padding(2)
-        Me.SaleFitDGV.Name = "SaleFitDGV"
-        Me.SaleFitDGV.ReadOnly = True
+        Me.ShipmentPart2DGV.AllowUserToAddRows = False
+        Me.ShipmentPart2DGV.AllowUserToDeleteRows = False
+        Me.ShipmentPart2DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.ShipmentPart2DGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.ShipmentPart2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ShipmentPart2DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShipmentP2ID, Me.fitSaleTime, Me.saleSupplierName, Me.saleFitName, Me.saleFitSpecification, Me.saleFitWidth, Me.saleFitLength, Me.saleFitCount, Me.fitPIC, Me.saleFitRemark})
+        Me.ShipmentPart2DGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ShipmentPart2DGV.Location = New System.Drawing.Point(3, 3)
+        Me.ShipmentPart2DGV.Margin = New System.Windows.Forms.Padding(2)
+        Me.ShipmentPart2DGV.Name = "ShipmentPart2DGV"
+        Me.ShipmentPart2DGV.ReadOnly = True
         DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        Me.SaleFitDGV.RowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.SaleFitDGV.RowTemplate.Height = 38
-        Me.SaleFitDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.SaleFitDGV.Size = New System.Drawing.Size(926, 217)
-        Me.SaleFitDGV.TabIndex = 3
+        Me.ShipmentPart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.ShipmentPart2DGV.RowTemplate.Height = 38
+        Me.ShipmentPart2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.ShipmentPart2DGV.Size = New System.Drawing.Size(926, 217)
+        Me.ShipmentPart2DGV.TabIndex = 3
         '
-        'SaleFID
+        'ShipmentP2ID
         '
-        Me.SaleFID.HeaderText = "saleProdPartData2"
-        Me.SaleFID.Name = "SaleFID"
-        Me.SaleFID.ReadOnly = True
-        Me.SaleFID.Visible = False
-        Me.SaleFID.Width = 111
+        Me.ShipmentP2ID.HeaderText = "saleProdPartData2"
+        Me.ShipmentP2ID.Name = "ShipmentP2ID"
+        Me.ShipmentP2ID.ReadOnly = True
+        Me.ShipmentP2ID.Visible = False
+        Me.ShipmentP2ID.Width = 111
         '
         'fitSaleTime
         '
@@ -1476,9 +1476,9 @@ Partial Class Data_Case_Form
         Me.Panel3.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage4.ResumeLayout(False)
-        CType(Me.PurchaseProdDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PurchasePartDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
-        CType(Me.PurchaseFitDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PurchasePart2DGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.FlowLayoutPanel5.ResumeLayout(False)
@@ -1493,9 +1493,9 @@ Partial Class Data_Case_Form
         Me.Panel8.PerformLayout()
         Me.TabControl2.ResumeLayout(False)
         Me.TabPage6.ResumeLayout(False)
-        CType(Me.SaleProdDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ShipmentPartDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage7.ResumeLayout(False)
-        CType(Me.SaleFitDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ShipmentPart2DGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage8.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.FlowLayoutPanel4.ResumeLayout(False)
@@ -1528,9 +1528,9 @@ Partial Class Data_Case_Form
     Friend WithEvents Label4 As Label
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage4 As TabPage
-    Friend WithEvents PurchaseProdDGV As DataGridView
+    Friend WithEvents PurchasePartDGV As DataGridView
     Friend WithEvents TabPage5 As TabPage
-    Friend WithEvents PurchaseFitDGV As DataGridView
+    Friend WithEvents PurchasePart2DGV As DataGridView
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
@@ -1539,9 +1539,9 @@ Partial Class Data_Case_Form
     Friend WithEvents Label9 As Label
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents TabPage6 As TabPage
-    Friend WithEvents SaleProdDGV As DataGridView
+    Friend WithEvents ShipmentPartDGV As DataGridView
     Friend WithEvents TabPage7 As TabPage
-    Friend WithEvents SaleFitDGV As DataGridView
+    Friend WithEvents ShipmentPart2DGV As DataGridView
     Friend WithEvents TabPage8 As TabPage
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
@@ -1557,7 +1557,7 @@ Partial Class Data_Case_Form
     Friend WithEvents UpdateTime As DataGridViewTextBoxColumn
     Friend WithEvents success As DataGridViewTextBoxColumn
     Friend WithEvents PurchasePID As DataGridViewTextBoxColumn
-    Friend WithEvents PurchaseProdTime As DataGridViewTextBoxColumn
+    Friend WithEvents PurchasePartTime As DataGridViewTextBoxColumn
     Friend WithEvents purchaseProdSupplierName As DataGridViewTextBoxColumn
     Friend WithEvents purchaseProdName As DataGridViewTextBoxColumn
     Friend WithEvents purchaseProdSpecification As DataGridViewTextBoxColumn
@@ -1609,7 +1609,7 @@ Partial Class Data_Case_Form
     Friend WithEvents purchaseFitLength As DataGridViewTextBoxColumn
     Friend WithEvents purchaseFitCount As DataGridViewTextBoxColumn
     Friend WithEvents purchaseFitRemark As DataGridViewTextBoxColumn
-    Friend WithEvents SaleFID As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentP2ID As DataGridViewTextBoxColumn
     Friend WithEvents fitSaleTime As DataGridViewTextBoxColumn
     Friend WithEvents saleSupplierName As DataGridViewTextBoxColumn
     Friend WithEvents saleFitName As DataGridViewTextBoxColumn

@@ -16,13 +16,13 @@ Public Class Data_Order_Controller
             Case TYPE_PURCHASE
                 strSQL = SEARCH_PURCHASEDATA_FROM_CASEID
             Case TYPE_SALE
-                strSQL = SEARCH_SALEDATA_FROM_CASEID
+                strSQL = SEARCH_SHIPMENTDATA_FROM_CASEID
         End Select
         strSQL = strSQL.Replace("@caseID", caseID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                listOrder.Add(New OrderData With {.ID = dataReader("ID"), .Number = dataReader("Number"), .InsertTime = dataReader("InsertTime")}) 'InsertTime欄位在PurchaseData為4，SaleData為3
+                listOrder.Add(New OrderData With {.ID = dataReader("ID"), .Number = dataReader("Number"), .InsertTime = dataReader("InsertTime")}) 'InsertTime欄位在PurchaseData為4，ShipmentData為3
             Loop
         End If
         Return listOrder.Count
@@ -53,7 +53,7 @@ Public Class Data_Order_Controller
             Throw NullTypeException()
         End If
         If dataType = TYPE_PURCHASE Then '進貨
-            strSQL = SEARCH_PURCHASEPROD_FROM_PURCHASEID
+            strSQL = SEARCH_PURCHASEPART_FROM_PURCHASEID
         ElseIf dataType = TYPE_SALE Then ' 出貨
             strSQL = SEARCH_SALEPROD_FROM_SALEID
         End If
@@ -72,7 +72,7 @@ Public Class Data_Order_Controller
         Dim conDB As Connection = New Connection
         Dim strSQL As String = Nothing
         If dataType = TYPE_PURCHASE Then '進貨
-            strSQL = SEARCH_PURCHASEFIT_FROM_PURCHASEID
+            strSQL = SEARCH_PURCHASEPART2_FROM_PURCHASEID
         ElseIf dataType = TYPE_SALE Then '出貨
             strSQL = SEARCH_SALEFIT_FROM_SALEID
         End If
@@ -103,10 +103,10 @@ Public Class Data_Order_Controller
         Dim conDB As Connection = New Connection
         Dim strSQL As String = Nothing
         Try
-            strSQL = DELETE_PURCHASEPROD_FROM_PURCHASEID
+            strSQL = DELETE_PURCHASEPART_FROM_PURCHASEID
             strSQL = strSQL.Replace("@id", id)
             conDB.ExecuteSQL(strSQL).ExecuteNonQuery()
-            strSQL = DELETE_PURCHASEFIT_FROM_PURCHASEID
+            strSQL = DELETE_PURCHASEPART2_FROM_PURCHASEID
             strSQL = strSQL.Replace("@id", id)
             conDB.ExecuteSQL(strSQL).ExecuteNonQuery()
             strSQL = DELETE_PURCHASEDATA_FROM_PURCHASEID
@@ -126,7 +126,7 @@ Public Class Data_Order_Controller
             strSQL = DELETE_SALEFIT_FROM_SALEID
             strSQL = strSQL.Replace("@id", id)
             conDB.ExecuteSQL(strSQL).ExecuteNonQuery()
-            strSQL = DELETE_SALEDATA_FROM_SALEID
+            strSQL = DELETE_SHIPMENTDATA_FROM_SALEID
             strSQL = strSQL.Replace("@id", id)
             Return conDB.ExecuteSQL(strSQL).ExecuteNonQuery()
         Catch ex As Exception

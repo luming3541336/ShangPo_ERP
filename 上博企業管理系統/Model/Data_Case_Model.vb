@@ -1,33 +1,33 @@
 ﻿Public Class Data_Case_Model
     Protected Const SELECT_CASEDATA_FOR_STATE_SQL = "SELECT * FROM CaseData WHERE State = @state"
-    Protected Const SELECT_PURCHASEPROD_FOR_CASEID_SQL = "SELECT  Convert(varchar(10),InsertTime,111) AS InsertTime,PurchasePID ,ProdPartData.[Name] as ProdName,SupplierData.Abbr as Supplier,Specification,[Count],Width ,[Length],CBM,Remark
-                                                                                                                       FROM PurchaseProd,PurchaseData,ProdPartData,SupplierData WHERE ProdPartData.SuID = SupplierData.SuID AND PurchaseData.PurchaseID = PurchaseProd.PurchaseID AND PurchaseProd.ProdPartID = ProdPartData.ProdPartID 
+    Protected Const SELECT_PURCHASEPART_FOR_CASEID_SQL = "SELECT  Convert(varchar(10),InsertTime,111) AS InsertTime,PurchasePID ,ProdPartData.[Name] as ProdName,SupplierData.Abbr as Supplier,Specification,[Count],Width ,[Length],CBM,Remark
+                                                                                                                       FROM PurchasePart,PurchaseData,ProdPartData,SupplierData WHERE ProdPartData.SuID = SupplierData.SuID AND PurchaseData.PurchaseID = PurchasePart.PurchaseID AND PurchasePart.ProdPartID = ProdPartData.ProdPartID 
                                                                                                                        AND PurchaseData.CaseID = @caseID"
-    Protected Const SELECT_SALEPROD_FOR_CASEID_SQL = "SELECT  Convert(varchar(10),InsertTime,111) AS InsertTime,SaleProd.SalePID ,ProdPartData.[Name] as ProdName,SupplierData.Abbr as Supplier, Specification ,SUM(SaleProd.[Count]) AS [Count]
-                                                                                                          ,Width ,[Length] ,CBM ,Remark,PIC FROM PurchaseProd,ProdPartData,SupplierData,SaleProd,SaleData WHERE ProdPartData.SuID = SupplierData.SuID  AND PurchaseProd.ProdPartID = ProdPartData.ProdPartID AND SaleData.CaseID = @caseID  AND SaleData.SaleID = SaleProd.SaleID 
-                                                                                                           AND SaleProd.PurchasePID = PurchaseProd.PurchasePID Group by SaleProd.SalePID,InsertTime,ProdPartData.[Name],SupplierData.abbr ,Specification ,Width ,[Length],CBM,Remark,PIC,abbr"
-    Protected Const SELECT_PURCHASEFIT_FOR_CASEID_SQL = "SELECT  Convert(varchar(10),InsertTime,111) AS InsertTime,PurchaseFID ,ProdPartData2.[Name] as FitName ,SupplierData.Abbr as Supplier, PurchaseFit.Specification,Width ,[Length],CBM,[Count],Remark
-                                                                                                                 FROM PurchaseFIt,PurchaseData,ProdPartData2,SupplierData WHERE ProdPartData2.SuID = SupplierData.SuID AND PurchaseData.PurchaseID = PurchaseFIt.PurchaseID AND PurchaseFIt.ProdPart2ID = ProdPartData2.ProdPart2ID  AND PurchaseData.CaseID = @caseID"
-    Protected Const SELECT_SALEFIT_FOR_CASEID_SQL = "SELECT  Convert(varchar(10),InsertTime,111) AS InsertTime,SaleFit.SaleFID  ,ProdPartData2.[Name] as FitName , SupplierData.Abbr as Supplier,PurchaseFit.Specification,Sum(SaleFit.[Count]) AS [Count],Width ,[Length],CBM,Remark,PIC
-                                                                                                     FROM PurchaseFit,SaleData,ProdPartData2,SupplierData,SaleFit WHERE ProdPartData2.SuID = SupplierData.SuID AND SaleFit.PurchaseFID = PurchaseFit.PurchaseFID AND PurchaseFit.ProdPart2ID = ProdPartData2.ProdPart2ID AND SaleData.CaseID = @caseID AND SaleData.SaleID = SaleFit.SaleID
-                                                                                                     GROUP BY SaleFit.SaleFID,InsertTime ,ProdPartData2.[Name] ,SupplierData.abbr,PurchaseFit.Specification,Remark,Width ,[Length],CBM,PIC,abbr"
+    Protected Const SELECT_SALEPROD_FOR_CASEID_SQL = "SELECT  Convert(varchar(10),InsertTime,111) AS InsertTime,ShipmentPart.ShipmentPID ,ProdPartData.[Name] as ProdName,SupplierData.Abbr as Supplier, Specification ,SUM(ShipmentPart.[Count]) AS [Count]
+                                                                                                          ,Width ,[Length] ,CBM ,Remark,PIC FROM PurchasePart,ProdPartData,SupplierData,ShipmentPart,ShipmentData WHERE ProdPartData.SuID = SupplierData.SuID  AND PurchasePart.ProdPartID = ProdPartData.ProdPartID AND ShipmentData.CaseID = @caseID  AND ShipmentData.ShipmentID = ShipmentPart.ShipmentID 
+                                                                                                           AND ShipmentPart.PurchasePID = PurchasePart.PurchasePID Group by ShipmentPart.ShipmentPID,InsertTime,ProdPartData.[Name],SupplierData.abbr ,Specification ,Width ,[Length],CBM,Remark,PIC,abbr"
+    Protected Const SELECT_PURCHASEPART2_FOR_CASEID_SQL = "SELECT  Convert(varchar(10),InsertTime,111) AS InsertTime,PurchaseP2ID ,ProdPartData2.[Name] as FitName ,SupplierData.Abbr as Supplier, PurchasePart2.Specification,Width ,[Length],CBM,[Count],Remark
+                                                                                                                 FROM PurchasePart2,PurchaseData,ProdPartData2,SupplierData WHERE ProdPartData2.SuID = SupplierData.SuID AND PurchaseData.PurchaseID = PurchasePart2.PurchaseID AND PurchasePart2.ProdPart2ID = ProdPartData2.ProdPart2ID  AND PurchaseData.CaseID = @caseID"
+    Protected Const SELECT_SALEFIT_FOR_CASEID_SQL = "SELECT  Convert(varchar(10),InsertTime,111) AS InsertTime,ShipmentPart2.ShipmentP2ID  ,ProdPartData2.[Name] as FitName , SupplierData.Abbr as Supplier,PurchasePart2.Specification,Sum(ShipmentPart2.[Count]) AS [Count],Width ,[Length],CBM,Remark,PIC
+                                                                                                     FROM PurchasePart2,ShipmentData,ProdPartData2,SupplierData,ShipmentPart2 WHERE ProdPartData2.SuID = SupplierData.SuID AND ShipmentPart2.PurchaseP2ID = PurchasePart2.PurchaseP2ID AND PurchasePart2.ProdPart2ID = ProdPartData2.ProdPart2ID AND ShipmentData.CaseID = @caseID AND ShipmentData.ShipmentID = ShipmentPart2.ShipmentID
+                                                                                                     GROUP BY ShipmentPart2.ShipmentP2ID,InsertTime ,ProdPartData2.[Name] ,SupplierData.abbr,PurchasePart2.Specification,Remark,Width ,[Length],CBM,PIC,abbr"
     Protected Const SELECT_PURCHASE_COUNT_SQL = "SELECT Count(CaseID)as Count FROM PurchaseData WHERE CaseID = @caseID"
-    Protected Const SELECT_SALE_COUNT_SQL = "SELECT Count(CaseID)as Count FROM SaleData WHERE CaseID = @caseID"
-    Protected Const SELECT_PROD_UNSALE_ITEM_SQL = "SELECT PurchaseProd.PurchasePID,ProdPartData.[Name] AS ProdName,SupplierData.[Name] AS Supplier,PurchaseProd.Specification,PurchaseProd.[Count],Width,[Length],CBM,PurchaseProd.Remark,([PurchaseProd].[Count] - SUM(ISNULL(SaleProd.[Count], 0))) AS RemainAmount
-                                              FROM PurchaseProd LEFT JOIN SaleProd ON PurchaseProd.PurchasePID = SaleProd.PurchasePID, ProdPartData,SupplierData,CaseData,PurchaseData
-                                              WHERE PurchaseProd.ProdPartID = ProdPartData.ProdPartID AND ProdPartData.SuID = SupplierData.SuID AND CaseData.CaseID = @caseID AND PurchaseData.CaseID = CaseData.CaseID AND PurchaseData.PurchaseID = PurchaseProd.PurchaseID
-                                              GROUP BY PurchaseProd.PurchasePID,prodSet.[Name],PurchaseProd.Specification,PurchaseProd.[Count],Width,[Length],CBM,PurchaseProd.Remark,SupplierData.[Name]
-                                              Having ([PurchaseProd].[Count] - SUM(ISNULL(SaleProd.[Count], 0))) > 0"
-    Protected Const SELECT_FIT_UNSALE_ITEM_SQL = "SELECT PurchaseFit.PurchaseFID, ProdPartData2.[Name] AS FitName,SupplierData.[Name] As Supplier,PurchaseFit.Specification,PurchaseFit.[Count],PurchaseFit.Width,PurchaseFit.Length,PurchaseFit.Remark,(PurchaseFit.[Count] - SUM(ISNULL(SaleFit.[Count], 0))) As RemainAmount
-                                               From PurchaseFit LEFT Join SaleFit ON PurchaseFit.PurchaseFID = SaleFit.PurchaseFID, ProdPartData2,SupplierData,CaseData,PurchaseData
-                                               Where PurchaseFit.ProdPart2ID = ProdPartData2.ProdPart2ID And ProdPartData2.SuID = SupplierData.SuID And CaseData.CaseID = @caseID And PurchaseData.CaseID = CaseData.CaseID And PurchaseData.PurchaseID = PurchaseFit.PurchaseID
-                                               Group By PurchaseFit.PurchaseFID, ProdPartData2.[Name], PurchaseFit.Specification, PurchaseFit.[Count],PurchaseFit.Width,PurchaseFit.Length, PurchaseFit.Remark, SupplierData.[Name]
-                                               Having(PurchaseFit.[Count] - SUM(ISNULL(SaleFit.[Count], 0))) > 0"
+    Protected Const SELECT_SALE_COUNT_SQL = "SELECT Count(CaseID)as Count FROM ShipmentData WHERE CaseID = @caseID"
+    Protected Const SELECT_PROD_UNSALE_ITEM_SQL = "SELECT PurchasePart.PurchasePID,ProdPartData.[Name] AS ProdName,SupplierData.[Name] AS Supplier,PurchasePart.Specification,PurchasePart.[Count],Width,[Length],CBM,PurchasePart.Remark,([PurchasePart].[Count] - SUM(ISNULL(ShipmentPart.[Count], 0))) AS RemainAmount
+                                              FROM PurchasePart LEFT JOIN ShipmentPart ON PurchasePart.PurchasePID = ShipmentPart.PurchasePID, ProdPartData,SupplierData,CaseData,PurchaseData
+                                              WHERE PurchasePart.ProdPartID = ProdPartData.ProdPartID AND ProdPartData.SuID = SupplierData.SuID AND CaseData.CaseID = @caseID AND PurchaseData.CaseID = CaseData.CaseID AND PurchaseData.PurchaseID = PurchasePart.PurchaseID
+                                              GROUP BY PurchasePart.PurchasePID,prodSet.[Name],PurchasePart.Specification,PurchasePart.[Count],Width,[Length],CBM,PurchasePart.Remark,SupplierData.[Name]
+                                              Having ([PurchasePart].[Count] - SUM(ISNULL(ShipmentPart.[Count], 0))) > 0"
+    Protected Const SELECT_FIT_UNSALE_ITEM_SQL = "SELECT PurchasePart2.PurchaseP2ID, ProdPartData2.[Name] AS FitName,SupplierData.[Name] As Supplier,PurchasePart2.Specification,PurchasePart2.[Count],PurchasePart2.Width,PurchasePart2.Length,PurchasePart2.Remark,(PurchasePart2.[Count] - SUM(ISNULL(ShipmentPart2.[Count], 0))) As RemainAmount
+                                               From PurchasePart2 LEFT Join ShipmentPart2 ON PurchasePart2.PurchaseP2ID = ShipmentPart2.PurchaseP2ID, ProdPartData2,SupplierData,CaseData,PurchaseData
+                                               Where PurchasePart2.ProdPart2ID = ProdPartData2.ProdPart2ID And ProdPartData2.SuID = SupplierData.SuID And CaseData.CaseID = @caseID And PurchaseData.CaseID = CaseData.CaseID And PurchaseData.PurchaseID = PurchasePart2.PurchaseID
+                                               Group By PurchasePart2.PurchaseP2ID, ProdPartData2.[Name], PurchasePart2.Specification, PurchasePart2.[Count],PurchasePart2.Width,PurchasePart2.Length, PurchasePart2.Remark, SupplierData.[Name]
+                                               Having(PurchasePart2.[Count] - SUM(ISNULL(ShipmentPart2.[Count], 0))) > 0"
     Protected Const UPDATE_CASEDATA_STATE_SQL = "Update CaseData SET State = @state, UpdateTime = GetDate() WHERE (CaseID = @caseID)"
-    Protected Const SELECT_PURCHASEID_FOR_PROD_SQL = "SELECT PurchaseID FROM PurchaseProd WHERE PurchasePID = @PID"
-    Protected Const SELECT_SALEID_FOR_PROD_SQL = "SELECT SaleID FROM SaleProd WHERE SalePID = @PID"
-    Protected Const SELECT_PURCHASEID_FOR_FIT_SQL = "SELECT PurchaseID FROM PurchaseFit WHERE PurchaseFID = @FID"
-    Protected Const SELECT_SALEID_FOR_FIT_SQL = "SELECT SaleID FROM SaleFit WHERE SaleFID = @FID"
+    Protected Const SELECT_PURCHASEID_FOR_PROD_SQL = "SELECT PurchaseID FROM PurchasePart WHERE PurchasePID = @PID"
+    Protected Const SELECT_SALEID_FOR_PROD_SQL = "SELECT ShipmentID FROM ShipmentPart WHERE ShipmentPID = @PID"
+    Protected Const SELECT_PURCHASEID_FOR_FIT_SQL = "SELECT PurchaseID FROM PurchasePart2 WHERE PurchaseP2ID = @FID"
+    Protected Const SELECT_SALEID_FOR_FIT_SQL = "SELECT ShipmentID FROM ShipmentPart2 WHERE ShipmentP2ID = @FID"
     Public Const UNSUCCESS_STATE = 0
     Public Const SUCCESS_STATE = 1
     Public Const CANCELCASE_STATE = 2
@@ -42,7 +42,7 @@
         Dim SalesName As String
         Dim State As Integer
     End Structure
-    Public Structure PurchaseProd
+    Public Structure PurchasePart
         Dim PurchasePID As Integer
         Dim InsertTime As String
         Dim Supplier As String
@@ -54,8 +54,8 @@
         Dim Count As Integer
         Dim Remark As String
     End Structure
-    Public Structure PurchaseFit
-        Dim PurchaseFID As Integer
+    Public Structure PurchasePart2
+        Dim PurchaseP2ID As Integer
         Dim InsertTime As String
         Dim Supplier As String
         Dim FitName As String
@@ -65,8 +65,8 @@
         Dim Count As Integer
         Dim Remark As String
     End Structure
-    Public Structure SaleProd
-        Dim SalePID As Integer
+    Public Structure ShipmentPart
+        Dim ShipmentPID As Integer
         Dim InsertTime As String
         Dim Supplier As String
         Dim ProdName As String
@@ -78,8 +78,8 @@
         Dim PIC As String
         Dim Remark As String
     End Structure
-    Public Structure SaleFit
-        Dim SaleFID As Integer
+    Public Structure ShipmentPart2
+        Dim ShipmentP2ID As Integer
         Dim InsertTime As String
         Dim Supplier As String
         Dim FitName As String

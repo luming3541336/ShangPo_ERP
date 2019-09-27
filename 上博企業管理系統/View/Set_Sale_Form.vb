@@ -15,7 +15,7 @@ Public Class Set_Sale_Form
         InitializeComponent()
         ' 在 InitializeComponent() 呼叫之後加入所有初始設定。
         controller.Set_CaseID(caseID)
-        controller.Set_SaleID(editID)
+        controller.Set_ShipmentID(editID)
         controller.Set_Mode(Set_Sale_Model.EDIT_MODE)
         CurrentCaseLabel.Text = currentCaseName
     End Sub
@@ -84,36 +84,36 @@ Public Class Set_Sale_Form
         Dim id As Integer = Nothing '作為新增出貨資料時產生流水號暫存使用
         Dim strSql As String = Nothing
         If controller.Get_Mode = Set_Sale_Model.INSERT_MODE Then
-            controller.Insert_SaleData(purchaseNoText.Text, saleTime.Value)
+            controller.Insert_ShipmentData(purchaseNoText.Text, saleTime.Value)
         ElseIf controller.Get_Mode = Set_Sale_Model.EDIT_MODE Then
-            controller.Update_SaleData_For_InsertTime(saleTime.Value)
+            controller.Update_ShipmentData_For_InsertTime(saleTime.Value)
         End If
         For i As Integer = 0 To prodDGV.Rows.Count - 1
             If prodDGV.Rows(i).Cells("prodCount").Value <> 0 Then
                 If prodDGV.Rows(i).Cells("salePID").Value = 0 Then
-                    controller.Insert_SaleProd(prodDGV.Rows(i).Cells("purchasePID").Value, prodDGV.Rows(i).Cells("prodCount").Value, prodDGV.Rows(0).Cells("prodPIC").Value)
+                    controller.Insert_ShipmentPart(prodDGV.Rows(i).Cells("purchasePID").Value, prodDGV.Rows(i).Cells("prodCount").Value, prodDGV.Rows(0).Cells("prodPIC").Value)
                 Else
-                    controller.Update_SaleProd(prodDGV.Rows(i).Cells("salePID").Value, prodDGV.Rows(i).Cells("purchasePID").Value, prodDGV.Rows(i).Cells("prodCount").Value, prodDGV.Rows(0).Cells("prodPIC").Value)
+                    controller.Update_ShipmentPart(prodDGV.Rows(i).Cells("salePID").Value, prodDGV.Rows(i).Cells("purchasePID").Value, prodDGV.Rows(i).Cells("prodCount").Value, prodDGV.Rows(0).Cells("prodPIC").Value)
                 End If
             End If
         Next
         For i As Integer = 0 To fitDGV.Rows.Count - 1
             If fitDGV.Rows(i).Cells("fitCount").Value <> 0 Then
                 If fitDGV.Rows(i).Cells("saleFID").Value = 0 Then
-                    controller.Insert_SaleFit(fitDGV.Rows(i).Cells("purchaseFID").Value, fitDGV.Rows(i).Cells("fitCount").Value, fitDGV.Rows(0).Cells("fitPIC").Value)
+                    controller.Insert_ShipmentPart2(fitDGV.Rows(i).Cells("purchaseFID").Value, fitDGV.Rows(i).Cells("fitCount").Value, fitDGV.Rows(0).Cells("fitPIC").Value)
                 Else
-                    controller.Update_SaleFit(fitDGV.Rows(i).Cells("saleFID").Value, fitDGV.Rows(i).Cells("purchaseFID").Value, fitDGV.Rows(i).Cells("fitCount").Value, fitDGV.Rows(0).Cells("fitPIC").Value)
+                    controller.Update_ShipmentPart2(fitDGV.Rows(i).Cells("saleFID").Value, fitDGV.Rows(i).Cells("purchaseFID").Value, fitDGV.Rows(i).Cells("fitCount").Value, fitDGV.Rows(0).Cells("fitPIC").Value)
                 End If
             End If
         Next
         If controller.Get_Remove_Prod_DGV.Count <> 0 Then
             For Each data As Integer In controller.Get_Remove_Prod_DGV
-                controller.Del_SaleProd(data)
+                controller.Del_ShipmentPart(data)
             Next
         End If
         If controller.Get_Remove_Fit_DGV.Count <> 0 Then
             For Each data As Integer In controller.Get_Remove_Fit_DGV
-                controller.Del_SaleFit(data)
+                controller.Del_ShipmentPart2(data)
             Next
         End If
         Me.DialogResult = DialogResult.OK
@@ -124,7 +124,7 @@ Public Class Set_Sale_Form
             Case Set_Sale_Model.INSERT_MODE
                 e.Result = {controller.Load_Stock(Set_Sale_Model.PRODUCT), controller.Load_Stock(Set_Sale_Model.FIT)}
             Case Set_Sale_Model.EDIT_MODE
-                e.Result = {controller.Search_Order(Set_Sale_Model.PRODUCT), controller.Search_Order(Set_Sale_Model.FIT), controller.Get_SaleData_InsertTime}
+                e.Result = {controller.Search_Order(Set_Sale_Model.PRODUCT), controller.Search_Order(Set_Sale_Model.FIT), controller.Get_ShipmentData_InsertTime}
         End Select
     End Sub
 
@@ -140,11 +140,11 @@ Public Class Set_Sale_Form
                                      data.Width, data.Length, data.CBM, data.PIC, 0, data.RemainAmount, data.Remark)
                 Next
             Case Set_Sale_Model.EDIT_MODE
-                For Each data As Set_Sale_Model.SaleData In e.Result(0)
+                For Each data As Set_Sale_Model.ShipmentData In e.Result(0)
                     prodDGV.Rows.Add(data.PurchaseDetailID, data.SaleDetailID, data.Name, data.Supplier, data.Specification,
                                      data.Width, data.Length, data.CBM, data.PIC, data.count, data.RemainAmount, data.Remark)
                 Next
-                For Each data As Set_Sale_Model.SaleData In e.Result(1)
+                For Each data As Set_Sale_Model.ShipmentData In e.Result(1)
                     fitDGV.Rows.Add(data.PurchaseDetailID, data.SaleDetailID, data.Name, data.Supplier, data.Specification,
                                      data.Width, data.Length, data.CBM, data.PIC, data.count, data.RemainAmount, data.Remark)
                 Next

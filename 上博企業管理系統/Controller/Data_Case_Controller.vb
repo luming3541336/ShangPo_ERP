@@ -29,67 +29,67 @@ Public Class Data_Case_Controller
         conDB.Close()
         Return arrayList
     End Function
-    Public Function Select_PurchaseProd(ByVal caseID As Integer) As List(Of PurchaseProd)
+    Public Function Select_PurchasePart(ByVal caseID As Integer) As List(Of PurchasePart)
         Dim conDB As Connection = New Connection
-        Dim strSQL As String = SELECT_PURCHASEPROD_FOR_CASEID_SQL
-        Dim arrayList As List(Of PurchaseProd) = New List(Of PurchaseProd)
+        Dim strSQL As String = SELECT_PURCHASEPART_FOR_CASEID_SQL
+        Dim arrayList As List(Of PurchasePart) = New List(Of PurchasePart)
         strSQL = strSQL.Replace("@caseID", caseID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                arrayList.Add(New PurchaseProd With {.PurchasePID = dataReader("PurchasePID"), .ProdName = dataReader("ProdName"), .InsertTime = dataReader("InsertTime"), .Specification = dataReader("Specification"), .CBM = dataReader("CBM"), .Width = dataReader("Width"), .Supplier = dataReader("Supplier"),
+                arrayList.Add(New PurchasePart With {.PurchasePID = dataReader("PurchasePID"), .ProdName = dataReader("ProdName"), .InsertTime = dataReader("InsertTime"), .Specification = dataReader("Specification"), .CBM = dataReader("CBM"), .Width = dataReader("Width"), .Supplier = dataReader("Supplier"),
                               .Count = dataReader("Count"), .Length = dataReader("Length"), .Remark = dataReader("Remark")})
             Loop
         End If
         conDB.Close()
         Return arrayList
     End Function
-    Public Function Select_PurchaseFit(ByVal caseID As Integer) As List(Of PurchaseFit)
+    Public Function Select_PurchasePart2(ByVal caseID As Integer) As List(Of PurchasePart2)
         Dim conDB As Connection = New Connection
-        Dim strSQL As String = SELECT_PURCHASEFIT_FOR_CASEID_SQL
-        Dim arrayList As List(Of PurchaseFit) = New List(Of PurchaseFit)
+        Dim strSQL As String = SELECT_PURCHASEPART2_FOR_CASEID_SQL
+        Dim arrayList As List(Of PurchasePart2) = New List(Of PurchasePart2)
         strSQL = strSQL.Replace("@caseID", caseID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                arrayList.Add(New PurchaseFit With {.PurchaseFID = dataReader("PurchaseFID"), .FitName = dataReader("FitName"), .InsertTime = dataReader("InsertTime"), .Specification = dataReader("Specification"), .Width = dataReader("Width"), .Supplier = dataReader("Supplier"),
+                arrayList.Add(New PurchasePart2 With {.PurchaseP2ID = dataReader("PurchaseP2ID"), .FitName = dataReader("FitName"), .InsertTime = dataReader("InsertTime"), .Specification = dataReader("Specification"), .Width = dataReader("Width"), .Supplier = dataReader("Supplier"),
                               .Count = dataReader("Count"), .Length = dataReader("Length"), .Remark = dataReader("Remark")})
             Loop
         End If
         conDB.Close()
         Return arrayList
     End Function
-    Public Function Select_SaleFit(ByVal caseID As Integer) As List(Of SaleFit)
+    Public Function Select_ShipmentPart2(ByVal caseID As Integer) As List(Of ShipmentPart2)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_SALEFIT_FOR_CASEID_SQL
-        Dim arrayList As List(Of SaleFit) = New List(Of SaleFit)
+        Dim arrayList As List(Of ShipmentPart2) = New List(Of ShipmentPart2)
         strSQL = strSQL.Replace("@caseID", caseID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                arrayList.Add(New SaleFit With {.SaleFID = dataReader("SaleFID"), .FitName = dataReader("FitName"), .InsertTime = dataReader("InsertTime"), .Specification = dataReader("Specification"), .Width = dataReader("Width"), .Supplier = dataReader("Supplier"),
+                arrayList.Add(New ShipmentPart2 With {.ShipmentP2ID = dataReader("ShipmentP2ID"), .FitName = dataReader("FitName"), .InsertTime = dataReader("InsertTime"), .Specification = dataReader("Specification"), .Width = dataReader("Width"), .Supplier = dataReader("Supplier"),
                               .Count = dataReader("Count"), .Length = dataReader("Length"), .Remark = dataReader("Remark"), .PIC = dataReader("PIC")})
             Loop
         End If
         conDB.Close()
         Return arrayList
     End Function
-    Public Function Select_SaleProd(ByVal caseID As Integer) As List(Of SaleProd)
+    Public Function Select_ShipmentPart(ByVal caseID As Integer) As List(Of ShipmentPart)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_SALEPROD_FOR_CASEID_SQL
-        Dim arrayList As List(Of SaleProd) = New List(Of SaleProd)
+        Dim arrayList As List(Of ShipmentPart) = New List(Of ShipmentPart)
         strSQL = strSQL.Replace("@caseID", caseID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                arrayList.Add(New SaleProd With {.SalePID = dataReader("SalePID"), .ProdName = dataReader("ProdName"), .InsertTime = dataReader("InsertTime"), .Specification = dataReader("Specification"), .CBM = dataReader("CBM"), .Width = dataReader("Width"), .Supplier = dataReader("Supplier"),
+                arrayList.Add(New ShipmentPart With {.ShipmentPID = dataReader("ShipmentPID"), .ProdName = dataReader("ProdName"), .InsertTime = dataReader("InsertTime"), .Specification = dataReader("Specification"), .CBM = dataReader("CBM"), .Width = dataReader("Width"), .Supplier = dataReader("Supplier"),
                               .Count = dataReader("Count"), .Length = dataReader("Length"), .Remark = dataReader("Remark"), .PIC = dataReader("PIC")})
             Loop
         End If
         conDB.Close()
         Return arrayList
     End Function
-    Public Function Select_UnSaleProd(ByVal caseID As Integer) As List(Of UnsaleProd)
+    Public Function Select_UnShipmentPart(ByVal caseID As Integer) As List(Of UnsaleProd)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_PROD_UNSALE_ITEM_SQL
         Dim arrayList As List(Of UnsaleProd) = New List(Of UnsaleProd)
@@ -104,7 +104,7 @@ Public Class Data_Case_Controller
         conDB.Close()
         Return arrayList
     End Function
-    Public Function Select_UnSaleFit(ByVal caseID As Integer) As List(Of UnsaleFit)
+    Public Function Select_UnShipmentPart2(ByVal caseID As Integer) As List(Of UnsaleFit)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_FIT_UNSALE_ITEM_SQL
         Dim arrayList As List(Of UnsaleFit) = New List(Of UnsaleFit)
@@ -185,14 +185,14 @@ Public Class Data_Case_Controller
         conDB.Close()
         Return intResult
     End Function
-    Public Function Get_SaleID_For_Prod(ByVal PID As Integer) As Integer
+    Public Function Get_ShipmentID_For_Prod(ByVal PID As Integer) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_SALEID_FOR_PROD_SQL
         Dim intResult As Integer = 0
         strSQL = strSQL.Replace("@PID", PID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader()
         If dataReader.Read Then
-            intResult = dataReader("SaleID")
+            intResult = dataReader("ShipmentID")
         End If
         conDB.Close()
         Return intResult
@@ -209,14 +209,14 @@ Public Class Data_Case_Controller
         conDB.Close()
         Return intResult
     End Function
-    Public Function Get_SaleID_For_Fit(ByVal FID As Integer) As Integer
+    Public Function Get_ShipmentID_For_Fit(ByVal FID As Integer) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_SALEID_FOR_FIT_SQL
         Dim intResult As Integer = 0
         strSQL = strSQL.Replace("@FID", FID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader()
         If dataReader.Read Then
-            intResult = dataReader("SaleID")
+            intResult = dataReader("ShipmentID")
         End If
         conDB.Close()
         Return intResult

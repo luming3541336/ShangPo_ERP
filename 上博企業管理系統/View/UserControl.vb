@@ -55,4 +55,9 @@
         Dim View As Data_Product_Form = New Data_Product_Form
         View.Show()
     End Sub
+
+    Private Sub ClassBtn_Click(sender As Object, e As EventArgs) Handles ClassBtn.Click
+        Dim View As Data_Specification_Form = New Data_Specification_Form
+        View.Show()
+    End Sub
 End Class
