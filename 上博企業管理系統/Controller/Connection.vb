@@ -4,7 +4,7 @@
 
 Public Class Connection
     Private Initial_Catalog As String
-
+    '測試變更
     '正式帳號
     Private objCon As SqlConnection
     'Private strDbCon As String = "Data Source= DBSERVER,1433;Initial Catalog=ERPShongPo;User ID=ShongPoUser;Password=1234"
