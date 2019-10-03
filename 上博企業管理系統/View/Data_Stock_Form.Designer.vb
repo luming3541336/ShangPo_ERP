@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class StockForm
+Partial Class Data_Stock_Form
     Inherits System.Windows.Forms.Form
 
     'Form 覆寫 Dispose 以清除元件清單。
@@ -23,13 +23,14 @@ Partial Class StockForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StockForm))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Data_Stock_Form))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.StockDGV = New System.Windows.Forms.DataGridView()
         Me.loadStockBackGround = New System.ComponentModel.BackgroundWorker()
         Me.purchaseDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProdName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Specifiaction = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Width = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -85,16 +86,24 @@ Partial Class StockForm
         Me.StockDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.StockDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.StockDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.StockDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.purchaseDate, Me.Name, Me.SupplierName, Me.Specifiaction, Me.Width, Me.Length, Me.CBM, Me.Count, Me.Remark, Me.CaseName, Me.Success})
+        Me.StockDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.purchaseDate, Me.ProdName, Me.SupplierName, Me.Specifiaction, Me.Width, Me.Length, Me.CBM, Me.Count, Me.Remark, Me.CaseName, Me.Success})
         Me.StockDGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.StockDGV.Location = New System.Drawing.Point(2, 27)
         Me.StockDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.StockDGV.Name = "StockDGV"
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("微軟正黑體", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        Me.StockDGV.RowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.StockDGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        Me.StockDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.StockDGV.RowTemplate.Height = 38
         Me.StockDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.StockDGV.Size = New System.Drawing.Size(1278, 403)
@@ -108,11 +117,11 @@ Partial Class StockForm
         Me.purchaseDate.HeaderText = "進貨日期"
         Me.purchaseDate.Name = "purchaseDate"
         '
-        'Name
+        'ProdName
         '
-        Me.Name.HeaderText = "產品名稱"
-        Me.Name.Name = "Name"
-        Me.Name.ReadOnly = True
+        Me.ProdName.HeaderText = "產品名稱"
+        Me.ProdName.Name = "ProdName"
+        Me.ProdName.ReadOnly = True
         '
         'SupplierName
         '
@@ -161,7 +170,7 @@ Partial Class StockForm
         Me.Success.HeaderText = "狀態"
         Me.Success.Name = "Success"
         '
-        'StockForm
+        'Data_Stock_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
@@ -173,6 +182,7 @@ Partial Class StockForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.Name = "Data_Stock_Form"
         Me.Text = "庫存資料"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -188,7 +198,7 @@ Partial Class StockForm
     Friend WithEvents StockDGV As DataGridView
     Friend WithEvents loadStockBackGround As System.ComponentModel.BackgroundWorker
     Friend WithEvents purchaseDate As DataGridViewTextBoxColumn
-    Friend WithEvents Name As DataGridViewTextBoxColumn
+    Friend WithEvents ProdName As DataGridViewTextBoxColumn
     Friend WithEvents SupplierName As DataGridViewTextBoxColumn
     Friend WithEvents Specifiaction As DataGridViewTextBoxColumn
     Friend WithEvents Width As DataGridViewTextBoxColumn

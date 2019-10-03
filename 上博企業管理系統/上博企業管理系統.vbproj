@@ -191,10 +191,10 @@
     <Compile Include="View\Data_Product_Form.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Data_User_From.Designer.vb">
-      <DependentUpon>Data_User_From.vb</DependentUpon>
+    <Compile Include="View\Data_User_Form.Designer.vb">
+      <DependentUpon>Data_User_Form.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Data_User_From.vb">
+    <Compile Include="View\Data_User_Form.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Login_Form.Designer.vb">
@@ -347,8 +347,8 @@
       <DependentUpon>Data_Product_Form.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Data_User_From.resx">
-      <DependentUpon>Data_User_From.vb</DependentUpon>
+    <EmbeddedResource Include="View\Data_User_Form.resx">
+      <DependentUpon>Data_User_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login_Form.resx">
       <DependentUpon>Login_Form.vb</DependentUpon>

@@ -60,4 +60,9 @@
         Dim View As Data_Specification_Form = New Data_Specification_Form
         View.Show()
     End Sub
+
+    Private Sub StockViewBtn_Click(sender As Object, e As EventArgs) Handles StockViewBtn.Click
+        Dim View As Data_Stock_Form = New Data_Stock_Form
+        View.Show()
+    End Sub
 End Class

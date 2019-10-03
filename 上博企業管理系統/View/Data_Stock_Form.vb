@@ -2,7 +2,7 @@
 
 Imports System.ComponentModel
 
-Public Class StockForm
+Public Class Data_Stock_Form
     Private Sub loadStockBackGround_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles loadStockBackGround.DoWork
         Dim controller As Data_Stock_Controller = New Data_Stock_Controller
         e.Result = {controller.Load_Stock, e.Argument}

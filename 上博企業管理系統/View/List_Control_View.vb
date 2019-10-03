@@ -9,7 +9,7 @@
                 Dim toViewForm As Data_Supplier_Form = New Data_Supplier_Form
                 toViewForm.Show()
             Case "stockButton"
-                Dim toViewForm As StockForm = New StockForm
+                Dim toViewForm As Data_Stock_Form = New Data_Stock_Form
                 toViewForm.Show()
             Case "purchaseSaleBtn"
                 Dim toViewForm As Data_Case_Form = New Data_Case_Form
