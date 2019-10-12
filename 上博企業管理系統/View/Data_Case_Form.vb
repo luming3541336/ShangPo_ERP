@@ -37,9 +37,9 @@ Public Class Data_Case_Form
             CaseDGV.Rows.Add(item.CaseID, item.CaseNo, item.Place, item.SalesName, item.InsertTime, item.UpdateTime, strState)
             Select Case item.State
                 Case 1
-                    CaseDGV.Rows(CaseDGV.Rows.Count - 1).Cells("success").Style.ForeColor = Color.Green
+                    CaseDGV.Rows(CaseDGV.Rows.Count - 1).Cells("Success").Style.ForeColor = Color.Green
                 Case 2
-                    CaseDGV.Rows(CaseDGV.Rows.Count - 1).Cells("success").Style.ForeColor = Color.Red
+                    CaseDGV.Rows(CaseDGV.Rows.Count - 1).Cells("Success").Style.ForeColor = Color.Red
             End Select
         Next
         formStatusNormal.Hide()
@@ -153,10 +153,10 @@ Public Class Data_Case_Form
     Private Sub ConpleteBtn_Click(sender As Object, e As EventArgs) Handles ConpleteBtn.Click
         Dim listUnsaleProd As List(Of Data_Case_Model.UnsaleProd) = controller.Select_UnShipmentPart(CaseDGV.CurrentRow.Cells("CaseID").Value)
         Dim listUnsaleFit As List(Of Data_Case_Model.UnsaleFit) = controller.Select_UnShipmentPart2(CaseDGV.CurrentRow.Cells("CaseID").Value)
-        If CaseDGV.CurrentRow.Cells("success").Value = "作廢" Then
+        If CaseDGV.CurrentRow.Cells("Success").Value = "作廢" Then
             MsgBox("此案件已作廢，無法結案。")
-        ElseIf CaseDGV.CurrentRow.Cells("success").Value = "已結案" Then
-            If MsgBox("取消結案?", vbYesNo, "警告") = MsgBoxResult.Yes Then
+        ElseIf CaseDGV.CurrentRow.Cells("Success").Value = "已結案" Then
+            If MsgBox("您要取消結案嗎?取消結案會影響保固期的計算(會依照結案的日期計算)", vbYesNo, "警告") = MsgBoxResult.Yes Then
                 If controller.Update_Case_CancelComplete(CaseDGV.CurrentRow.Cells("CaseID").Value) = 1 Then
                     MsgBox("操作成功")
                 Else
@@ -217,12 +217,12 @@ Public Class Data_Case_Form
             Do While LoadingDetailBackground.IsBusy
                 Application.DoEvents()
             Loop
-            If CaseDGV.CurrentRow.Cells("success").Value = "已結案" Then
+            If CaseDGV.CurrentRow.Cells("Success").Value = "已結案" Then
                 ConpleteBtn.Text = "取消結案"
                 ConpleteBtn.BackColor = Color.Red
                 ConpleteBtn.Width = 115
                 ConpleteBtn.Enabled = True
-            ElseIf CaseDGV.CurrentRow.Cells("success").Value = "未結案" Then
+            ElseIf CaseDGV.CurrentRow.Cells("Success").Value = "未結案" Then
                 ConpleteBtn.Text = "結案&C"
                 ConpleteBtn.BackColor = Color.SlateGray
                 ConpleteBtn.Width = 90
@@ -235,12 +235,16 @@ Public Class Data_Case_Form
     End Sub
 
     Private Sub ReviseBtn_Click(sender As Object, e As EventArgs) Handles ReviseBtn.Click
-        Dim formSetCase As Set_Case_Form = New Set_Case_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, 1) 'Mode = 1 編輯按鍵
-        formSetCase.ShowDialog()
+        If CaseDGV.CurrentRow.Cells("Success").Value = "已結案" Then
+            MsgBox("此案件已結案，無法修改資料。")
+        Else
+            Dim formSetCase As Set_Case_Form = New Set_Case_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, 1) 'Mode = 1 編輯按鍵
+            formSetCase.ShowDialog()
+        End If
     End Sub
 
     Private Sub VoidBtn_Click(sender As Object, e As EventArgs) Handles VoidBtn.Click
-        If CaseDGV.CurrentRow.Cells("success").Value = "已結案" Then
+        If CaseDGV.CurrentRow.Cells("Success").Value = "已結案" Then
             MsgBox("此案件已結案，無法作廢。")
         Else
             If MsgBox("是否要將此案件作廢?", vbOKCancel, "警告") = MsgBoxResult.Ok Then
@@ -530,9 +534,9 @@ Public Class Data_Case_Form
         Dim listFitData As List(Of Set_WorkProgress_Model.WorkProgress) = New List(Of Set_WorkProgress_Model.WorkProgress)
         For Each rowData As DataGridViewRow In WorkProgressDGV.Rows
             If rowData.Cells("WPClass").Value = "門框、窗框" Then
-                listProdData.Add(New Set_WorkProgress_Model.WorkProgress With {.WPDate = rowData.Cells("WPDate").Value, .Supplier = rowData.Cells("Supplier").Value, .ProdName = rowData.Cells("ProdName").Value, .Specification = rowData.Cells("Specification").Value, .Count = rowData.Cells("Count").Value, .Unit = rowData.Cells("Unit").Value, .Remark = rowData.Cells("Remark").Value})
+                listProdData.Add(New Set_WorkProgress_Model.WorkProgress With {.WPDate = rowData.Cells("WPDate").Value, .Supplier = rowData.Cells("WPSupplier").Value, .ProdName = rowData.Cells("WPPartName").Value, .Specification = rowData.Cells("WPSpecification").Value, .Count = rowData.Cells("WPCount").Value, .Unit = rowData.Cells("WPUnit").Value, .Remark = rowData.Cells("WPRemark").Value})
             Else
-                listFitData.Add(New Set_WorkProgress_Model.WorkProgress With {.WPDate = rowData.Cells("WPDate").Value, .Supplier = rowData.Cells("Supplier").Value, .ProdName = rowData.Cells("ProdName").Value, .Specification = rowData.Cells("Specification").Value, .Count = rowData.Cells("Count").Value, .Unit = rowData.Cells("Unit").Value, .Remark = rowData.Cells("Remark").Value})
+                listFitData.Add(New Set_WorkProgress_Model.WorkProgress With {.WPDate = rowData.Cells("WPDate").Value, .Supplier = rowData.Cells("WPSupplier").Value, .ProdName = rowData.Cells("WPPartName").Value, .Specification = rowData.Cells("WPSpecification").Value, .Count = rowData.Cells("WPCount").Value, .Unit = rowData.Cells("WPUnit").Value, .Remark = rowData.Cells("WPRemark").Value})
             End If
         Next
         Dim listWorkDetail As List(Of Set_WorkDetail_Model.WorkDetail) = New List(Of Set_WorkDetail_Model.WorkDetail)
@@ -666,9 +670,9 @@ Public Class Data_Case_Form
         Dim listFitData As List(Of Set_WorkProgress_Model.WorkProgress) = New List(Of Set_WorkProgress_Model.WorkProgress)
         For Each rowData As DataGridViewRow In WorkProgressDGV.Rows
             If rowData.Cells("WPClass").Value = "門框、窗框" Then
-                listProdData.Add(New Set_WorkProgress_Model.WorkProgress With {.WPDate = rowData.Cells("WPDate").Value, .Supplier = rowData.Cells("Supplier").Value, .ProdName = rowData.Cells("ProdName").Value, .Specification = rowData.Cells("Specification").Value, .Count = rowData.Cells("Count").Value, .Unit = rowData.Cells("Unit").Value, .Remark = rowData.Cells("Remark").Value})
+                listProdData.Add(New Set_WorkProgress_Model.WorkProgress With {.WPDate = rowData.Cells("WPDate").Value, .Supplier = rowData.Cells("WPSupplier").Value, .ProdName = rowData.Cells("WPPartName").Value, .Specification = rowData.Cells("WPSpecification").Value, .Count = rowData.Cells("WPCount").Value, .Unit = rowData.Cells("WPUnit").Value, .Remark = rowData.Cells("WPRemark").Value})
             Else
-                listFitData.Add(New Set_WorkProgress_Model.WorkProgress With {.WPDate = rowData.Cells("WPDate").Value, .Supplier = rowData.Cells("Supplier").Value, .ProdName = rowData.Cells("ProdName").Value, .Specification = rowData.Cells("Specification").Value, .Count = rowData.Cells("Count").Value, .Unit = rowData.Cells("Unit").Value, .Remark = rowData.Cells("Remark").Value})
+                listFitData.Add(New Set_WorkProgress_Model.WorkProgress With {.WPDate = rowData.Cells("WPDate").Value, .Supplier = rowData.Cells("WPSupplier").Value, .ProdName = rowData.Cells("WPPartName").Value, .Specification = rowData.Cells("WPSpecification").Value, .Count = rowData.Cells("WPCount").Value, .Unit = rowData.Cells("WPUnit").Value, .Remark = rowData.Cells("WPRemark").Value})
             End If
         Next
         Dim listWorkDetail As List(Of Set_WorkDetail_Model.WorkDetail) = New List(Of Set_WorkDetail_Model.WorkDetail)

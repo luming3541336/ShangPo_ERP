@@ -14,7 +14,7 @@ Public Class Set_Sale_Controller
     Public Sub Set_ShipmentID(ByVal saleID As Integer)
         Me.saleID = saleID
     End Sub
-    Public Function Create_SaleNO() As String
+    Public Function Create_ShipmentNO() As String
         Dim conDB As Connection = New Connection
         Select Case intMode
             Case INSERT_MODE

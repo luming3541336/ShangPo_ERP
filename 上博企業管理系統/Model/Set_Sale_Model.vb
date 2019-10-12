@@ -18,8 +18,8 @@
                                                Where PurchasePart2.ProdPart2ID = ProdPartData2.ProdPart2ID And ProdPartData2.SuID = SupplierData.SuID And PurchaseData.CaseID = @caseID And PurchaseData.PurchaseID = PurchasePart2.PurchaseID
                                                Group By PurchasePart2.PurchaseP2ID, ProdPartData2.[Name], PurchasePart2.Specification, PurchasePart2.[Count], Remark, SupplierData.[Name],PurchasePart2.Width,PurchasePart2.[Length],PurchasePart2.CBM,SupplierData.Abbr
                                                Having(PurchasePart2.[Count] - SUM(ISNULL(ShipmentPart2.[Count], 0))) > 0"
-    Protected Const INSERT_SHIPMENTDATA_SQL = "INSERT INTO  ShipmentData(CaseID, SaleNO, InsertTime) VALUES(@caseID,N'@saleNO','@time'); SELECT id = SCOPE_IDENTITY() "
-    Protected Const SELECT_SHIPMENTDATA_FOR_SALEID = "SELECT SaleNO FROM ShipmentData WHERE ShipmentID = @editID"
+    Protected Const INSERT_SHIPMENTDATA_SQL = "INSERT INTO  ShipmentData(CaseID, ShipmentNO, InsertTime) VALUES(@caseID,N'@saleNO','@time'); SELECT id = SCOPE_IDENTITY() "
+    Protected Const SELECT_SHIPMENTDATA_FOR_SALEID = "SELECT ShipmentNO FROM ShipmentData WHERE ShipmentID = @editID"
     Protected Const UPDATE_CASEDATA_FOR_UPDATETIME_SQL = "UPDATE CaseData SET UpdateTime = GETDATE() WHERE CaseID = @caseID"
     Protected Const UPDATE_SHIPMENTDATA_FOR_INSERTTIME_SQL = "UPDATE ShipmentData SET InsertTime = '@time' WHERE ShipmentID = @editID"
     Protected Const INSERT_SALEPROD_SQL = "INSERT INTO ShipmentPart(ShipmentID, PurchasePID, Count,PIC) VALUES(@id,N'@purchasePID',@count, N'@pic')"
@@ -29,7 +29,7 @@
     Protected Const DELETE_SALEPROD_SQL = "DELETE FROM ShipmentPart WHERE ShipmentPID = @shipmentPID"
     Protected Const DELETE_SALEFIT_SQL = "DELETE FROM ShipmentPart2 WHERE ShipmentP2ID = @shipmentP2ID"
     Protected Const SELECT_SHIPMENTDATA_FOR_INSERTTIME_SQL = "SELECT InsertTime FROM ShipmentData WHERE ShipmentID = @editID"
-    Protected Const COUNT_SHIPMENTDATA = "SELECT COUNT(SaleNO)  FROM ShipmentData WHERE SaleNO LIKE 'S@dateStr%'"
+    Protected Const COUNT_SHIPMENTDATA = "SELECT COUNT(ShipmentNO)  FROM ShipmentData WHERE ShipmentNO LIKE 'S@dateStr%'"
     Public Const INSERT_MODE = &H147A2
     Public Const EDIT_MODE = &H139CC
     Public Const PRODUCT = &H40FA

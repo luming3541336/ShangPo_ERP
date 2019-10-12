@@ -63,7 +63,7 @@ Public Class Set_Sale_Form
 
     End Sub
     Private Sub AddPurchaseForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        purchaseNoText.Text = controller.Create_SaleNO
+        purchaseNoText.Text = controller.Create_ShipmentNO
         loadBackGround.RunWorkerAsync()
     End Sub
 

@@ -45,8 +45,8 @@ Public Class Data_Order_Controller
     Public Function Get_CaseID() As Integer
         Return caseID
     End Function
-    Public Function Get_Prod_Detail(ByVal id As Integer) As List(Of ProdDetail)
-        Dim detailArray As List(Of ProdDetail) = New List(Of ProdDetail)
+    Public Function Get_Prod_Detail(ByVal id As Integer) As List(Of ProdPartDetail)
+        Dim detailArray As List(Of ProdPartDetail) = New List(Of ProdPartDetail)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = Nothing
         If dataType = Nothing Then
@@ -61,14 +61,14 @@ Public Class Data_Order_Controller
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                detailArray.Add(New ProdDetail With {.ProdPartID = dataReader("ProdPartID"), .SupplierName = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Name = dataReader("Name"), .Specification = dataReader("Specification"),
+                detailArray.Add(New ProdPartDetail With {.ProdPartID = dataReader("ProdPartID"), .SupplierName = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Name = dataReader("Name"), .Specification = dataReader("Specification"),
                                 .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Count = dataReader("Count"), .Remark = dataReader("Remark"), .PIC = If(dataType = TYPE_SALE, dataReader("PIC"), Nothing)})
             Loop
         End If
         Return detailArray
     End Function
-    Public Function Get_Fit_Detail(ByVal id As Integer) As List(Of FitDetail)
-        Dim detailArray As List(Of FitDetail) = New List(Of FitDetail)
+    Public Function Get_Fit_Detail(ByVal id As Integer) As List(Of ProdPart2Detail)
+        Dim detailArray As List(Of ProdPart2Detail) = New List(Of ProdPart2Detail)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = Nothing
         If dataType = TYPE_PURCHASE Then '進貨
@@ -80,7 +80,7 @@ Public Class Data_Order_Controller
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                detailArray.Add(New FitDetail With {.ProdPart2ID = dataReader("ProdPart2ID"), .SupplierName = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Name = dataReader("Name"), .Specification = dataReader("Specification"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Count = dataReader("Count"), .Remark = dataReader("Remark"), .PIC = If(dataType = TYPE_SALE, dataReader("PIC"), Nothing)})
+                detailArray.Add(New ProdPart2Detail With {.ProdPart2ID = dataReader("ProdPart2ID"), .SupplierName = If(dataReader("Abbr") = "", dataReader("Supplier"), dataReader("Abbr")), .Name = dataReader("Name"), .Specification = dataReader("Specification"), .Width = dataReader("Width"), .Length = dataReader("Length"), .CBM = dataReader("CBM"), .Count = dataReader("Count"), .Remark = dataReader("Remark"), .PIC = If(dataType = TYPE_SALE, dataReader("PIC"), Nothing)})
             Loop
         End If
         conDB.Close()

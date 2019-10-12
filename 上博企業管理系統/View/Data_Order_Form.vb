@@ -98,10 +98,10 @@ Public Class Data_Order_Form
     Private Sub getDetailBackGround_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles getDetailBackGround.RunWorkerCompleted
         prodDGV.Rows.Clear()
         FitDGV.Rows.Clear()
-        For Each data As Data_Order_Model.ProdDetail In e.Result(0) 'ProdArray
+        For Each data As Data_Order_Model.ProdPartDetail In e.Result(0) 'ProdArray
             prodDGV.Rows.Add(data.ProdPartID, data.SupplierName, data.Name, data.Specification, data.Width, data.Length, data.CBM, data.Count, data.Remark, data.PIC)
         Next
-        For Each data As Data_Order_Model.FitDetail In e.Result(1) 'FitArray
+        For Each data As Data_Order_Model.ProdPart2Detail In e.Result(1) 'FitArray
             FitDGV.Rows.Add(data.ProdPart2ID, data.SupplierName, data.Name, data.Specification, data.Width, data.Length, data.CBM, data.Count, data.Remark, data.PIC)
         Next
 
