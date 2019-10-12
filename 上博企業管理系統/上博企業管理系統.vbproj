@@ -212,6 +212,12 @@
     <Compile Include="View\Set_PasswordRevise_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\Set_Repair_Form.Designer.vb">
+      <DependentUpon>Set_Repair_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_Repair_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\Set_WorkProgress_Form.Designer.vb">
       <DependentUpon>Set_WorkProgress_Form.vb</DependentUpon>
     </Compile>
@@ -358,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Set_PasswordRevise_Form.resx">
       <DependentUpon>Set_PasswordRevise_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_Repair_Form.resx">
+      <DependentUpon>Set_Repair_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Set_WorkProgress_Form.resx">
       <DependentUpon>Set_WorkProgress_Form.vb</DependentUpon>

@@ -690,4 +690,9 @@ Public Class Data_Case_Form
     Private Sub DetailDGV_DoubleClick(sender As Object, e As EventArgs) Handles DetailDGV.DoubleClick
         ReviseDetailBtn_Click(Me, New EventArgs)
     End Sub
+
+    Private Sub AddRepairBtn_Click(sender As Object, e As EventArgs) Handles AddRepairBtn.Click
+        Dim view As Set_Repair_Form = New Set_Repair_Form
+        view.Show()
+    End Sub
 End Class
