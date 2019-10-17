@@ -130,6 +130,7 @@
     <Compile Include="Controller\Output_SaleReport_Controller.vb" />
     <Compile Include="Controller\Search_Controller.vb" />
     <Compile Include="Controller\Data_Specification_Controller.vb" />
+    <Compile Include="Controller\Set_Repair_Controller.vb" />
     <Compile Include="Controller\Set_Sale_Controller.vb" />
     <Compile Include="Controller\Set_WorkProgress_Controller.vb" />
     <Compile Include="Controller\Set_WorkDetail_Controller.vb" />
@@ -146,6 +147,7 @@
     <Compile Include="Model\Set_Purchase_Model.vb" />
     <Compile Include="Model\Output_SaleReport_Model.vb" />
     <Compile Include="Model\Data_Specification_Model.vb" />
+    <Compile Include="Model\Set_Repair_Model.vb" />
     <Compile Include="Model\Set_Sale_Model.vb" />
     <Compile Include="Model\Set_WorkProgress_Model.vb" />
     <Compile Include="Model\Set_WorkDetail_Model.vb" />

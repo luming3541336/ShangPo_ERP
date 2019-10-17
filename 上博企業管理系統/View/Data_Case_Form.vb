@@ -14,7 +14,7 @@ Public Class Data_Case_Form
     'Dim listShipmentPart As List(Of Data_Case_Model.ShipmentPart) = Nothing
     'Dim listShipmentPart2 As List(Of Data_Case_Model.ShipmentPart2) = Nothing
     Private Sub LoadingBackground_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles LoadingBackground.DoWork
-        Dim arrayList As List(Of Data_Case_Model.CaseData) = New List(Of Data_Case_Model.CaseData)
+        Dim arrayList As List(Of CaseData) = New List(Of CaseData)
         If strSearchSQL = Nothing Then
             arrayList = controller.Select_CaseData(Data_Case_Model.UNSUCCESS_STATE)
         Else
@@ -23,8 +23,8 @@ Public Class Data_Case_Form
         e.Result = arrayList
     End Sub
     Private Sub LoadingBackground_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles LoadingBackground.RunWorkerCompleted
-        Dim arrayList As List(Of Data_Case_Model.CaseData) = e.Result
-        For Each item As Data_Case_Model.CaseData In arrayList
+        Dim arrayList As List(Of CaseData) = e.Result
+        For Each item As CaseData In arrayList
             Dim strState As String = ""
             Select Case item.State
                 Case 0
@@ -692,7 +692,7 @@ Public Class Data_Case_Form
     End Sub
 
     Private Sub AddRepairBtn_Click(sender As Object, e As EventArgs) Handles AddRepairBtn.Click
-        Dim view As Set_Repair_Form = New Set_Repair_Form
+        Dim view As Set_Repair_Form = New Set_Repair_Form(CaseDGV.CurrentRow.Cells("CaseID").Value)
         view.Show()
     End Sub
 End Class

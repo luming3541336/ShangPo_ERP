@@ -48,4 +48,8 @@ Public Class Main_Form
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
+
+    Private Sub Main_Form_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Application.Exit()
+    End Sub
 End Class

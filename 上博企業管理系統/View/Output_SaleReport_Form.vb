@@ -73,7 +73,7 @@ Public Class Output_SaleReport_Form
         app = New Application
         workBook = app.Workbooks.Open(path + "\Resources\工程進度表.xltx") '開啟一張已存在的 Excel 檔案
         workSheet = workBook.Worksheets(1)
-        Dim caseData As Output_SaleReport_Model.CaseData = controller.Load_Case_Data(caseID)
+        Dim caseData As CaseData = controller.Load_Case_Data(caseID)
         workSheet.Cells(1, 1) = caseData.Place
         workSheet.Cells(3, 2) = caseData.Address
         workSheet.Cells(4, 2) = caseData.Phone

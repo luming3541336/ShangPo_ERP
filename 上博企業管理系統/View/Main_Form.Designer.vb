@@ -32,9 +32,9 @@ Partial Class Main_Form
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.VerText = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.UserControl1 = New 上博企業管理系統.UserControl()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.UserControl1 = New 上博企業管理系統.UserControl()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MainPanel.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
@@ -151,17 +151,6 @@ Partial Class Main_Form
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Ver.:"
         '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "baseline_Down.png")
-        Me.ImageList1.Images.SetKeyName(1, "baseline_right.png")
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 1000
-        '
         'UserControl1
         '
         Me.UserControl1.AutoSize = True
@@ -172,6 +161,17 @@ Partial Class Main_Form
         Me.UserControl1.Name = "UserControl1"
         Me.UserControl1.Size = New System.Drawing.Size(222, 700)
         Me.UserControl1.TabIndex = 4
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "baseline_Down.png")
+        Me.ImageList1.Images.SetKeyName(1, "baseline_right.png")
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
         '
         'Main_Form
         '

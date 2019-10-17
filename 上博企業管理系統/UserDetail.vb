@@ -18,4 +18,39 @@
     Public UserID As String = Nothing '使用者帳號
     Public Password As String = Nothing '使用者密碼
     Public readBoard As Boolean = Nothing '是否讀取公告
+
 End Module
+Public Structure CaseData
+    Dim CaseID As Integer
+    Dim CaseNo As String
+    Dim Place As String
+    Dim LoginID As Integer
+    Dim Phone As String
+    Dim Contact As String
+    Dim Address As String
+    Dim SalesName As String
+    Dim InsertTime As String
+    Dim UpdateTime As String
+    Dim Success As Boolean
+    Dim Del As Boolean
+    Dim Remark As String
+    Dim State As Integer
+End Structure
+Public Structure RepairData
+    Dim RepairID As Integer
+    Dim CaseID As Integer
+    Dim RepairOrder As String
+    Dim RepairType As String
+    Dim Place As String
+    Dim Contact As String
+    Dim Address As String
+    Dim Phone As String
+    Dim Warranty As Boolean
+    Dim Remark As String
+    Dim ETA As Date
+    Dim ArchiveDate As Date
+    Dim ArchiveLoginID As Integer
+
+
+
+End Structure

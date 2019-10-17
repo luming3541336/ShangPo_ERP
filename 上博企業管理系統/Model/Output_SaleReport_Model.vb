@@ -48,14 +48,14 @@ Public Class Output_SaleReport_Model
         Dim InsertTime As Date
         Dim PIC As String
     End Structure
-    Public Structure CaseData
-        Dim Place As String
-        Dim CaseID As Integer
-        Dim Address As String
-        Dim Phone As String
-        Dim State As Integer
-        Dim SalesName As String
-    End Structure
+    'Public Structure CaseData
+    '    Dim Place As String
+    '    Dim CaseID As Integer
+    '    Dim Address As String
+    '    Dim Phone As String
+    '    Dim State As Integer
+    '    Dim SalesName As String
+    'End Structure
     Public Structure WorkProgress
         Dim DateTime As Date
         Dim Supplier As String

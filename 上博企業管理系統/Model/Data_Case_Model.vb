@@ -32,16 +32,16 @@
     Public Const SUCCESS_STATE = 1
     Public Const CANCELCASE_STATE = 2
 
-    Public Structure CaseData
-        Dim CaseID As Integer
-        Dim CaseNo As String
-        Dim Place As String
-        Dim LoginID As Integer
-        Dim InsertTime As String
-        Dim UpdateTime As String
-        Dim SalesName As String
-        Dim State As Integer
-    End Structure
+    'Public Structure CaseData
+    '    Dim CaseID As Integer
+    '    Dim CaseNo As String
+    '    Dim Place As String
+    '    Dim LoginID As Integer
+    '    Dim InsertTime As String
+    '    Dim UpdateTime As String
+    '    Dim SalesName As String
+    '    Dim State As Integer
+    'End Structure
     Public Structure PurchasePart
         Dim PurchasePID As Integer
         Dim InsertTime As String
