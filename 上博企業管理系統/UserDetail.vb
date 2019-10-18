@@ -50,7 +50,4 @@ Public Structure RepairData
     Dim ETA As Date
     Dim ArchiveDate As Date
     Dim ArchiveLoginID As Integer
-
-
-
 End Structure

@@ -17,4 +17,13 @@ Public Class Set_Repair_Controller
         Return arrayList
 
     End Function
+    Public Function Updata_RepairData(ByVal data As RepairData, ByVal index As Integer) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = UPDATE_REPAIRDATA
+        strSQL = strSQL.Replace("@repairType", data.RepairType).Replace("@place", data.Place).Replace("@contact", data.Contact).
+                                      Replace("@address", data.Address).Replace("@phone", data.Phone).Replace("@warranty", data.Warranty).
+                                      Replace("@remark", data.Remark).Replace("@eta", data.ETA).Replace("@archiveDate", Format(data.ArchiveDate, "YYYY/mm/DD")).Replace("@loginID", LoginID).Replace("@id", index)
+        Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
+        Return intReturn
+    End Function
 End Class
