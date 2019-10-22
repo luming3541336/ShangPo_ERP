@@ -29,6 +29,20 @@ Public Class Data_Case_Controller
         conDB.Close()
         Return arrayList
     End Function
+    Public Function Select_RepairData(ByVal caseID As Integer) As List(Of RepairData)
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = SELECT_REPAIRDATA_FOR_CASEID_SQL
+        Dim arrayList As List(Of RepairData) = New List(Of RepairData)
+        strSQL = strSQL.Replace("@caseID", caseID)
+        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
+        If dataReader.HasRows Then
+            Do While dataReader.Read
+                arrayList.Add(New RepairData With {.RepairID = dataReader("RepairID"), .ArchiveDate = dataReader("ArchiveDate"), .RepairType = dataReader("RepairType"), .Remark = dataReader("Remark"), .ETA = dataReader("ETA"), .Status = dataReader("Status")})
+            Loop
+        End If
+        conDB.Close()
+        Return arrayList
+    End Function
     Public Function Select_PurchasePart(ByVal caseID As Integer) As List(Of PurchasePart)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_PURCHASEPART_FOR_CASEID_SQL

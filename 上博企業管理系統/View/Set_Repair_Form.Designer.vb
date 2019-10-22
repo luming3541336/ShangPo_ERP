@@ -56,6 +56,7 @@ Partial Class Set_Repair_Form
         Me.ProdPartName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RepairCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RepairRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.RepairAccountID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -65,6 +66,18 @@ Partial Class Set_Repair_Form
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.SaveBtn = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.LogText = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.StatusText = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -73,6 +86,8 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel5.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel1.SuspendLayout()
+        Me.FlowLayoutPanel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -101,6 +116,8 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel1.Controls.Add(Me.ArchiveDate, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.RepairOrderText, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.WarrantyText, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label16, 2, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.StatusText, 3, 4)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -110,7 +127,7 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(735, 195)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(800, 195)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'ETADate
@@ -119,7 +136,7 @@ Partial Class Set_Repair_Form
         Me.ETADate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.ETADate.Location = New System.Drawing.Point(561, 81)
         Me.ETADate.Name = "ETADate"
-        Me.ETADate.Size = New System.Drawing.Size(174, 33)
+        Me.ETADate.Size = New System.Drawing.Size(253, 33)
         Me.ETADate.TabIndex = 21
         '
         'PlaceText
@@ -253,7 +270,7 @@ Partial Class Set_Repair_Form
         Me.ArchiveDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.ArchiveDate.Location = New System.Drawing.Point(561, 3)
         Me.ArchiveDate.Name = "ArchiveDate"
-        Me.ArchiveDate.Size = New System.Drawing.Size(174, 33)
+        Me.ArchiveDate.Size = New System.Drawing.Size(253, 33)
         Me.ArchiveDate.TabIndex = 18
         '
         'RepairOrderText
@@ -289,7 +306,7 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(735, 194)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(800, 194)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'RemarkText
@@ -298,7 +315,7 @@ Partial Class Set_Repair_Form
         Me.RemarkText.Location = New System.Drawing.Point(95, 3)
         Me.RemarkText.Multiline = True
         Me.RemarkText.Name = "RemarkText"
-        Me.RemarkText.Size = New System.Drawing.Size(637, 188)
+        Me.RemarkText.Size = New System.Drawing.Size(702, 188)
         Me.RemarkText.TabIndex = 15
         '
         'Label9
@@ -315,16 +332,18 @@ Partial Class Set_Repair_Form
         '
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.RepairProdDGV, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.TableLayoutPanel4, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.RepairProdDGV, 0, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.Panel2, 0, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 389)
         Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 2
+        Me.TableLayoutPanel3.RowCount = 3
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 7.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(735, 221)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(800, 221)
         Me.TableLayoutPanel3.TabIndex = 2
         '
         'TableLayoutPanel4
@@ -336,14 +355,14 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel4.Controls.Add(Me.Label10, 0, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.UnJudgeCheckBox, 1, 0)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 7)
         Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TableLayoutPanel4.RowCount = 1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(735, 30)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(800, 30)
         Me.TableLayoutPanel4.TabIndex = 16
         '
         'Label10
@@ -364,7 +383,7 @@ Partial Class Set_Repair_Form
         Me.UnJudgeCheckBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.SlateGray
         Me.UnJudgeCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.UnJudgeCheckBox.Font = New System.Drawing.Font("Roboto", 10.0!)
-        Me.UnJudgeCheckBox.Location = New System.Drawing.Point(584, 0)
+        Me.UnJudgeCheckBox.Location = New System.Drawing.Point(649, 0)
         Me.UnJudgeCheckBox.Margin = New System.Windows.Forms.Padding(0)
         Me.UnJudgeCheckBox.MouseLocation = New System.Drawing.Point(-1, -1)
         Me.UnJudgeCheckBox.MouseState = MaterialSkin.MouseState.HOVER
@@ -382,10 +401,10 @@ Partial Class Set_Repair_Form
         Me.RepairProdDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.RepairProdDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RepairProdID, Me.ProdPartType, Me.ProdPartID, Me.ProdPartName, Me.RepairCount, Me.RepairRemark})
         Me.RepairProdDGV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RepairProdDGV.Location = New System.Drawing.Point(3, 33)
+        Me.RepairProdDGV.Location = New System.Drawing.Point(3, 40)
         Me.RepairProdDGV.Name = "RepairProdDGV"
         Me.RepairProdDGV.RowTemplate.Height = 24
-        Me.RepairProdDGV.Size = New System.Drawing.Size(729, 185)
+        Me.RepairProdDGV.Size = New System.Drawing.Size(794, 178)
         Me.RepairProdDGV.TabIndex = 17
         '
         'RepairProdID
@@ -429,6 +448,15 @@ Partial Class Set_Repair_Form
         Me.RepairRemark.Name = "RepairRemark"
         Me.RepairRemark.Width = 229
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Black
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(3, 3)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(794, 1)
+        Me.Panel2.TabIndex = 18
+        '
         'TableLayoutPanel5
         '
         Me.TableLayoutPanel5.ColumnCount = 1
@@ -444,7 +472,7 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(735, 175)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(800, 175)
         Me.TableLayoutPanel5.TabIndex = 3
         '
         'DataGridView2
@@ -457,7 +485,7 @@ Partial Class Set_Repair_Form
         Me.DataGridView2.Location = New System.Drawing.Point(3, 27)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.RowTemplate.Height = 24
-        Me.DataGridView2.Size = New System.Drawing.Size(729, 115)
+        Me.DataGridView2.Size = New System.Drawing.Size(794, 115)
         Me.DataGridView2.TabIndex = 17
         '
         'RepairAccountID
@@ -498,7 +526,7 @@ Partial Class Set_Repair_Form
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 148)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(729, 24)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(794, 24)
         Me.FlowLayoutPanel1.TabIndex = 20
         '
         'Label12
@@ -521,13 +549,144 @@ Partial Class Set_Repair_Form
         Me.Label13.TabIndex = 21
         Me.Label13.Text = "0"
         '
+        'FlowLayoutPanel2
+        '
+        Me.FlowLayoutPanel2.AutoSize = True
+        Me.FlowLayoutPanel2.Controls.Add(Me.SaveBtn)
+        Me.FlowLayoutPanel2.Controls.Add(Me.Button2)
+        Me.FlowLayoutPanel2.Controls.Add(Me.Button3)
+        Me.FlowLayoutPanel2.Controls.Add(Me.Button4)
+        Me.FlowLayoutPanel2.Controls.Add(Me.Button5)
+        Me.FlowLayoutPanel2.Controls.Add(Me.Button1)
+        Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(0, 875)
+        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(800, 42)
+        Me.FlowLayoutPanel2.TabIndex = 4
+        '
+        'SaveBtn
+        '
+        Me.SaveBtn.AutoSize = True
+        Me.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SaveBtn.Location = New System.Drawing.Point(3, 3)
+        Me.SaveBtn.Name = "SaveBtn"
+        Me.SaveBtn.Size = New System.Drawing.Size(95, 36)
+        Me.SaveBtn.TabIndex = 0
+        Me.SaveBtn.Text = "存檔"
+        Me.SaveBtn.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.AutoSize = True
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(104, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(95, 36)
+        Me.Button2.TabIndex = 0
+        Me.Button2.Text = "列印"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.AutoSize = True
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(205, 3)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(95, 36)
+        Me.Button3.TabIndex = 0
+        Me.Button3.Text = "複核"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.AutoSize = True
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Location = New System.Drawing.Point(306, 3)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(98, 36)
+        Me.Button4.TabIndex = 0
+        Me.Button4.Text = "維修確認"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.AutoSize = True
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Location = New System.Drawing.Point(410, 3)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(117, 36)
+        Me.Button5.TabIndex = 0
+        Me.Button5.Text = "簽收單上傳"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.AutoSize = True
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(533, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(98, 36)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "關閉"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label15)
+        Me.Panel1.Controls.Add(Me.LogText)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 785)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(800, 90)
+        Me.Panel1.TabIndex = 5
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(-1, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(86, 24)
+        Me.Label15.TabIndex = 7
+        Me.Label15.Text = "操作紀錄"
+        '
+        'LogText
+        '
+        Me.LogText.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.LogText.Location = New System.Drawing.Point(0, 27)
+        Me.LogText.Multiline = True
+        Me.LogText.Name = "LogText"
+        Me.LogText.Size = New System.Drawing.Size(800, 63)
+        Me.LogText.TabIndex = 6
+        '
+        'Label16
+        '
+        Me.Label16.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(431, 163)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(48, 24)
+        Me.Label16.TabIndex = 22
+        Me.Label16.Text = "狀態"
+        '
+        'StatusText
+        '
+        Me.StatusText.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.StatusText.AutoSize = True
+        Me.StatusText.Location = New System.Drawing.Point(561, 163)
+        Me.StatusText.Name = "StatusText"
+        Me.StatusText.Size = New System.Drawing.Size(86, 24)
+        Me.StatusText.TabIndex = 23
+        Me.StatusText.Text = "尚未建檔"
+        '
         'Set_Repair_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.AutoSize = True
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.SlateGray
-        Me.ClientSize = New System.Drawing.Size(735, 1008)
+        Me.ClientSize = New System.Drawing.Size(817, 707)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.FlowLayoutPanel2)
         Me.Controls.Add(Me.TableLayoutPanel5)
         Me.Controls.Add(Me.TableLayoutPanel3)
         Me.Controls.Add(Me.TableLayoutPanel2)
@@ -536,6 +695,7 @@ Partial Class Set_Repair_Form
         Me.ForeColor = System.Drawing.Color.White
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6)
+        Me.MinimumSize = New System.Drawing.Size(833, 700)
         Me.Name = "Set_Repair_Form"
         Me.Text = "維修單設定"
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -552,6 +712,10 @@ Partial Class Set_Repair_Form
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.PerformLayout()
+        Me.FlowLayoutPanel2.ResumeLayout(False)
+        Me.FlowLayoutPanel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -576,7 +740,6 @@ Partial Class Set_Repair_Form
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents Label10 As Label
     Friend WithEvents UnJudgeCheckBox As MaterialSkin.Controls.MaterialCheckBox
-    Friend WithEvents RepairProdDGV As DataGridView
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Label11 As Label
@@ -590,13 +753,27 @@ Partial Class Set_Repair_Form
     Friend WithEvents ArchiveDate As DateTimePicker
     Friend WithEvents RepairOrderText As Label
     Friend WithEvents WarrantyText As Label
+    Friend WithEvents RepairAccountID As DataGridViewTextBoxColumn
+    Friend WithEvents RepairAccountItem As DataGridViewTextBoxColumn
+    Friend WithEvents RepairAccount As DataGridViewTextBoxColumn
+    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents SaveBtn As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label15 As Label
+    Friend WithEvents LogText As TextBox
+    Friend WithEvents RepairProdDGV As DataGridView
     Friend WithEvents RepairProdID As DataGridViewTextBoxColumn
     Friend WithEvents ProdPartType As DataGridViewTextBoxColumn
     Friend WithEvents ProdPartID As DataGridViewTextBoxColumn
     Friend WithEvents ProdPartName As DataGridViewTextBoxColumn
     Friend WithEvents RepairCount As DataGridViewTextBoxColumn
     Friend WithEvents RepairRemark As DataGridViewTextBoxColumn
-    Friend WithEvents RepairAccountID As DataGridViewTextBoxColumn
-    Friend WithEvents RepairAccountItem As DataGridViewTextBoxColumn
-    Friend WithEvents RepairAccount As DataGridViewTextBoxColumn
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label16 As Label
+    Friend WithEvents StatusText As Label
 End Class

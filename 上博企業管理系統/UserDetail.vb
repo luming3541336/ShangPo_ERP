@@ -45,9 +45,17 @@ Public Structure RepairData
     Dim Contact As String
     Dim Address As String
     Dim Phone As String
-    Dim Warranty As Boolean
+    Dim Warranty As String
     Dim Remark As String
     Dim ETA As Date
     Dim ArchiveDate As Date
     Dim ArchiveLoginID As Integer
+    Dim Status As Integer
+End Structure
+Public Structure RepairLog
+    Dim LogID As Integer
+    Dim RepairID As Integer
+    Dim LoginID As Integer
+    Dim LogDate As Date
+    Dim Remark As String
 End Structure

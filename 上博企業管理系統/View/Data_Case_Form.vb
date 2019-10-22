@@ -51,20 +51,20 @@ Public Class Data_Case_Form
 
     Private Sub LoadingDetailBackground_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles LoadingDetailBackground.DoWork
 
-        e.Result = {controller.Select_PurchasePart(e.Argument), controller.Select_PurchasePart2(e.Argument), controller.Select_ShipmentPart(e.Argument), controller.Select_ShipmentPart2(e.Argument), controller.Get_PurchaseCase_Count(e.Argument), controller.Get_SaleCase_Count(e.Argument), controller.Select_WorkDetail(e.Argument), controller.Select_WorkProgress(e.Argument)}
+        e.Result = {controller.Select_PurchasePart(e.Argument), controller.Select_PurchasePart2(e.Argument), controller.Select_ShipmentPart(e.Argument), controller.Select_ShipmentPart2(e.Argument),
+            controller.Get_PurchaseCase_Count(e.Argument), controller.Get_SaleCase_Count(e.Argument), controller.Select_WorkDetail(e.Argument), controller.Select_WorkProgress(e.Argument), controller.Select_RepairData(e.Argument)}
     End Sub
 
     Private Sub LoadingDetailBackground_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles LoadingDetailBackground.RunWorkerCompleted
         listPurchasePart = e.Result(0)
         listPurchasePart2 = e.Result(1)
-        'listShipmentPart = e.Result(2)
-        'listShipmentPart2 = e.Result(3)
         Dim listShipmentPart As List(Of Data_Case_Model.ShipmentPart) = e.Result(2)
         Dim listShipmentPart2 As List(Of Data_Case_Model.ShipmentPart2) = e.Result(3)
         Dim intPurchaseCount As Integer = e.Result(4)
         Dim intSaleCount As Integer = e.Result(5)
         Dim listWorkDetail As List(Of Set_WorkDetail_Model.WorkDetail) = e.Result(6)
         Dim listWorkProgress As List(Of Set_WorkProgress_Model.WorkProgress) = e.Result(7)
+        Dim listRepairData As List(Of RepairData) = e.Result(8)
         PurchasePartDGV.Rows.Clear()
         For Each data As Data_Case_Model.PurchasePart In listPurchasePart '取得PurchasePart並放入purchaseProdDGV內
             PurchasePartDGV.Rows.Add(data.PurchasePID, data.InsertTime, data.Supplier, data.ProdName, data.Specification, data.Width, data.Length, data.CBM, data.Count, data.Remark)
@@ -88,6 +88,10 @@ Public Class Data_Case_Form
         WorkProgressDGV.Rows.Clear()
         For Each data As Set_WorkProgress_Model.WorkProgress In listWorkProgress
             WorkProgressDGV.Rows.Add(data.WPID, If(data.WPClass = 0, "門框、窗框", "門扇"), Format(data.WPDate, "yyyy/MM/dd"), data.Supplier, data.ProdName, data.Specification, data.Count, data.Unit, data.Remark)
+        Next
+        RepairDGV.Rows.Clear()
+        For Each data As RepairData In listRepairData
+            RepairDGV.Rows.Add(data.RepairID, Format(data.ArchiveDate, "yyyy/MM/dd"), data.RepairType, data.Remark, data.ETA, "未實作", data.Status)
         Next
         PurchaseCountLabel.Text = intPurchaseCount
         SaleCountLabel.Text = intSaleCount
@@ -693,6 +697,11 @@ Public Class Data_Case_Form
 
     Private Sub AddRepairBtn_Click(sender As Object, e As EventArgs) Handles AddRepairBtn.Click
         Dim view As Set_Repair_Form = New Set_Repair_Form(CaseDGV.CurrentRow.Cells("CaseID").Value)
+        view.Show()
+    End Sub
+
+    Private Sub RepairDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles RepairDGV.CellDoubleClick
+        Dim view As Set_Repair_Form = New Set_Repair_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, RepairDGV.CurrentRow.Cells("RepairID").Value)
         view.Show()
     End Sub
 End Class
