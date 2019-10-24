@@ -652,9 +652,11 @@ Partial Class Set_Repair_Form
         'LogText
         '
         Me.LogText.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.LogText.Font = New System.Drawing.Font("微軟正黑體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.LogText.Location = New System.Drawing.Point(0, 27)
         Me.LogText.Multiline = True
         Me.LogText.Name = "LogText"
+        Me.LogText.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.LogText.Size = New System.Drawing.Size(800, 63)
         Me.LogText.TabIndex = 6
         '
