@@ -49,7 +49,7 @@ Public Structure RepairData
     Dim Remark As String
     Dim ETA As Date
     Dim ArchiveDate As Date
-    Dim ArchiveLoginID As Integer
+    Dim RepairResult As String
     Dim Status As Integer
 End Structure
 Public Structure RepairLog
@@ -58,4 +58,20 @@ Public Structure RepairLog
     Dim LoginID As Integer
     Dim LogDate As Date
     Dim Remark As String
+End Structure
+Public Structure RepairProd
+    Dim RepairProdID As Integer
+    Dim RepairID As Integer
+    Dim ProdPartType As Integer
+    Dim ShipmentPID As Integer
+    Dim ProdPartName As String
+    Dim ProdPartCount As Integer
+    Dim RepairRemark As String
+End Structure
+Public Structure RepairAmount
+    Dim RepairAmountID As Integer
+    Dim RepairID As Integer
+    Dim BillItem As String
+    Dim RepairPrice As Integer
+
 End Structure

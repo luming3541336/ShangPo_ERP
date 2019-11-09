@@ -1,0 +1,47 @@
+﻿Public Class FilePath
+    Private RepairForm As Set_Repair_Form
+    Private FilePath As String
+    Private FileID As Integer = 0
+    Public Sub New(ByRef RepairForm As Set_Repair_Form, ByVal FileName As String, FilePath As String)
+
+        ' 設計工具需要此呼叫。
+        InitializeComponent()
+        Me.RepairForm = RepairForm
+        ' 在 InitializeComponent() 呼叫之後加入所有初始設定。
+        FileNameText.Text = FileName
+        Me.FilePath = FilePath
+    End Sub
+    Public Sub New(ByVal ID As Integer, ByRef RepairForm As Set_Repair_Form, ByVal FileName As String, FilePath As Integer)
+
+        ' 設計工具需要此呼叫。
+        InitializeComponent()
+        Me.RepairForm = RepairForm
+        ' 在 InitializeComponent() 呼叫之後加入所有初始設定。
+        FileNameText.Text = FileName
+        Me.FilePath = FilePath
+        FileID = ID
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        RepairForm.RemoveControl(Me)
+    End Sub
+    Private Sub Label1_MouseEnter(sender As Object, e As EventArgs) Handles FileNameText.MouseEnter, Label1.MouseEnter
+        Button1.Visible = True
+    End Sub
+
+    Private Sub FlowLayoutPanel1_MouseLeave(sender As Object, e As EventArgs) Handles FlowLayoutPanel1.MouseLeave, FileNameText.MouseLeave, Button1.MouseLeave, Label1.MouseLeave
+        If Me.ClientRectangle.Contains(Me.PointToClient(Control.MousePosition)) Then
+            Return
+        Else
+            Button1.Visible = False
+        End If
+    End Sub
+    Public Function Get_FileID() As Integer
+        Return FileID
+    End Function
+    Public Function Get_Path() As String
+        Return FilePath
+    End Function
+    Public Function Get_FileName() As String
+        Return FileNameText.Text
+    End Function
+End Class

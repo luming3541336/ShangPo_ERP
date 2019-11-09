@@ -199,6 +199,12 @@
     <Compile Include="View\Data_User_Form.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\FilePath.Designer.vb">
+      <DependentUpon>FilePath.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\FilePath.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="View\Login_Form.Designer.vb">
       <DependentUpon>Login_Form.vb</DependentUpon>
     </Compile>
@@ -358,6 +364,9 @@
     <EmbeddedResource Include="View\Data_User_Form.resx">
       <DependentUpon>Data_User_Form.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FilePath.resx">
+      <DependentUpon>FilePath.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login_Form.resx">
       <DependentUpon>Login_Form.vb</DependentUpon>
     </EmbeddedResource>
@@ -490,12 +499,12 @@
   <ItemGroup>
     <PublishFile Include="MetroFramework.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>False</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
