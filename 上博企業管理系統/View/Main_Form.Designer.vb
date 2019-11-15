@@ -187,6 +187,7 @@ Partial Class Main_Form
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Main_Form"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "上博企業管理系統"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.MainPanel.ResumeLayout(False)

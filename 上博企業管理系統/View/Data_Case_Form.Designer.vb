@@ -151,13 +151,6 @@ Partial Class Data_Case_Form
         Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.RepairDGV = New System.Windows.Forms.DataGridView()
-        Me.RepairID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RepairData = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RepairClass = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RepairDep = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RepairTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RepairMoney = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RepairStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
         Me.AddRepairBtn = New System.Windows.Forms.Button()
         Me.ReviseRepairBtn = New System.Windows.Forms.Button()
@@ -169,6 +162,12 @@ Partial Class Data_Case_Form
         Me.LoadingDetailBackground = New System.ComponentModel.BackgroundWorker()
         Me.PrintShippingRecordBackground = New System.ComponentModel.BackgroundWorker()
         Me.PrintWorkProgressWork = New System.ComponentModel.BackgroundWorker()
+        Me.RepairID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RepairData = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RepairPerson = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RepairDep = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RepairTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RepairStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.PrintMenu.SuspendLayout()
@@ -1517,7 +1516,7 @@ Partial Class Data_Case_Form
         Me.RepairDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.RepairDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.RepairDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.RepairDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RepairID, Me.RepairData, Me.RepairClass, Me.RepairDep, Me.RepairTime, Me.RepairMoney, Me.RepairStatus})
+        Me.RepairDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RepairID, Me.RepairData, Me.RepairPerson, Me.RepairDep, Me.RepairTime, Me.RepairStatus})
         Me.RepairDGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RepairDGV.Location = New System.Drawing.Point(2, 42)
         Me.RepairDGV.Margin = New System.Windows.Forms.Padding(2)
@@ -1532,56 +1531,6 @@ Partial Class Data_Case_Form
         Me.RepairDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.RepairDGV.Size = New System.Drawing.Size(938, 230)
         Me.RepairDGV.TabIndex = 3
-        '
-        'RepairID
-        '
-        Me.RepairID.HeaderText = "RepairID"
-        Me.RepairID.Name = "RepairID"
-        Me.RepairID.ReadOnly = True
-        Me.RepairID.Visible = False
-        Me.RepairID.Width = 73
-        '
-        'RepairData
-        '
-        Me.RepairData.HeaderText = "建檔日期"
-        Me.RepairData.Name = "RepairData"
-        Me.RepairData.ReadOnly = True
-        Me.RepairData.Width = 111
-        '
-        'RepairClass
-        '
-        Me.RepairClass.HeaderText = "類別"
-        Me.RepairClass.Name = "RepairClass"
-        Me.RepairClass.ReadOnly = True
-        Me.RepairClass.Width = 73
-        '
-        'RepairDep
-        '
-        Me.RepairDep.HeaderText = "問題描述"
-        Me.RepairDep.Name = "RepairDep"
-        Me.RepairDep.ReadOnly = True
-        Me.RepairDep.Width = 111
-        '
-        'RepairTime
-        '
-        Me.RepairTime.HeaderText = "預估維修時間"
-        Me.RepairTime.Name = "RepairTime"
-        Me.RepairTime.ReadOnly = True
-        Me.RepairTime.Width = 149
-        '
-        'RepairMoney
-        '
-        Me.RepairMoney.HeaderText = "維修金額"
-        Me.RepairMoney.Name = "RepairMoney"
-        Me.RepairMoney.ReadOnly = True
-        Me.RepairMoney.Width = 111
-        '
-        'RepairStatus
-        '
-        Me.RepairStatus.HeaderText = "狀態"
-        Me.RepairStatus.Name = "RepairStatus"
-        Me.RepairStatus.ReadOnly = True
-        Me.RepairStatus.Width = 73
         '
         'FlowLayoutPanel6
         '
@@ -1696,6 +1645,49 @@ Partial Class Data_Case_Form
         'PrintWorkProgressWork
         '
         Me.PrintWorkProgressWork.WorkerReportsProgress = True
+        '
+        'RepairID
+        '
+        Me.RepairID.HeaderText = "RepairID"
+        Me.RepairID.Name = "RepairID"
+        Me.RepairID.ReadOnly = True
+        Me.RepairID.Visible = False
+        Me.RepairID.Width = 111
+        '
+        'RepairData
+        '
+        Me.RepairData.HeaderText = "建檔日期"
+        Me.RepairData.Name = "RepairData"
+        Me.RepairData.ReadOnly = True
+        Me.RepairData.Width = 111
+        '
+        'RepairPerson
+        '
+        Me.RepairPerson.HeaderText = "維修人員"
+        Me.RepairPerson.Name = "RepairPerson"
+        Me.RepairPerson.ReadOnly = True
+        Me.RepairPerson.Width = 111
+        '
+        'RepairDep
+        '
+        Me.RepairDep.HeaderText = "問題描述"
+        Me.RepairDep.Name = "RepairDep"
+        Me.RepairDep.ReadOnly = True
+        Me.RepairDep.Width = 111
+        '
+        'RepairTime
+        '
+        Me.RepairTime.HeaderText = "維修時間"
+        Me.RepairTime.Name = "RepairTime"
+        Me.RepairTime.ReadOnly = True
+        Me.RepairTime.Width = 111
+        '
+        'RepairStatus
+        '
+        Me.RepairStatus.HeaderText = "狀態"
+        Me.RepairStatus.Name = "RepairStatus"
+        Me.RepairStatus.ReadOnly = True
+        Me.RepairStatus.Width = 73
         '
         'Data_Case_Form
         '
@@ -1889,13 +1881,6 @@ Partial Class Data_Case_Form
     Friend WithEvents TabPage9 As TabPage
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents RepairDGV As DataGridView
-    Friend WithEvents RepairID As DataGridViewTextBoxColumn
-    Friend WithEvents RepairData As DataGridViewTextBoxColumn
-    Friend WithEvents RepairClass As DataGridViewTextBoxColumn
-    Friend WithEvents RepairDep As DataGridViewTextBoxColumn
-    Friend WithEvents RepairTime As DataGridViewTextBoxColumn
-    Friend WithEvents RepairMoney As DataGridViewTextBoxColumn
-    Friend WithEvents RepairStatus As DataGridViewTextBoxColumn
     Friend WithEvents FlowLayoutPanel6 As FlowLayoutPanel
     Friend WithEvents AddRepairBtn As Button
     Friend WithEvents ReviseRepairBtn As Button
@@ -1903,4 +1888,10 @@ Partial Class Data_Case_Form
     Friend WithEvents Panel1 As Panel
     Friend WithEvents RepairTimeLabel As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents RepairID As DataGridViewTextBoxColumn
+    Friend WithEvents RepairData As DataGridViewTextBoxColumn
+    Friend WithEvents RepairPerson As DataGridViewTextBoxColumn
+    Friend WithEvents RepairDep As DataGridViewTextBoxColumn
+    Friend WithEvents RepairTime As DataGridViewTextBoxColumn
+    Friend WithEvents RepairStatus As DataGridViewTextBoxColumn
 End Class

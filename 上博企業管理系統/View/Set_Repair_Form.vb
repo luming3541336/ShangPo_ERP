@@ -1,4 +1,6 @@
-﻿Public Class Set_Repair_Form
+﻿Imports Microsoft.Office.Interop
+
+Public Class Set_Repair_Form
     Dim intCaseID As Integer = 0
     Dim intRepairID As Integer = -1
     Dim controller As Set_Repair_Controller = New Set_Repair_Controller
@@ -9,6 +11,7 @@
     Dim arrRepairAmountEdit As ArrayList = New ArrayList
     Dim arrRepairAmountDel As ArrayList = New ArrayList
     Dim bufRepairAmountEdit As String = Nothing
+    Dim arrRepairFileDel As ArrayList = New ArrayList
 
 
     Public Sub New(ByVal intCaseID As Integer)
@@ -57,19 +60,26 @@
             AddressText.Text = data.Address
             ContactText.Text = data.Contact
             PhoneText.Text = data.Place
-            RepairClassText.Text = data.RepairType
+            RepairPersonText.Text = data.RepairPerson
             ArchiveDate.Text = data.ArchiveDate
             WarrantyText.Text = data.Warranty
             RepairResultText.Text = data.RepairResult
             Select Case data.Status
                 Case 1
                     StatusText.Text = "尚未提交"
+                    SubmitBtn.Visible = True
                 Case 2
                     StatusText.Text = "複核確認中"
+                    ReCheckBtn.Visible = True
+                    PrintBtn.Visible = True
                 Case 3
                     StatusText.Text = "已完成派單，等待執行"
+                    RepairConfirmBtn.Visible = True
+                    PrintBtn.Visible = True
+                    RepairResultDGV.Visible = True
                 Case 4
                     StatusText.Text = "維修已完成"
+                    SaveBtn.Visible = False
             End Select
             '載入維修產品ReapairProd
             Dim listProdData As List(Of RepairProd) = controller.Select_RepairProd(intRepairID)
@@ -84,6 +94,12 @@
                 intCount += AD.RepairPrice
             Next
             TotalAmountText.Text = intCount
+            Dim listFileData As List(Of RepairFile) = controller.Select_RepairFile(intRepairID)
+            For Each FD As RepairFile In listFileData
+                Dim f As FilePath = New FilePath(FD.RepairFileID, Me, FD.RepairFileName, FD.RepairFilePath)
+                f.Name = New Random().Next
+                FlowLayoutPanel3.Controls.Add(f)
+            Next
             '載入維修單之歷史更新紀錄(RepairLog)
             Dim listData As List(Of RepairLog) = controller.Select_RepairLog(intRepairID)
             Dim strMsg As String = ""
@@ -112,7 +128,10 @@
             Dim id As Integer = controller.Insert_RepairData(intCaseID, RepairOrderText.Text)
             If id <> -1 Then
                 intRepairID = id
+                data.RepairID = id
                 flag = True
+                StatusText.Text = "尚未提交"
+                SubmitBtn.Visible = True
             Else
                 MsgBox("新增錯誤，請聯絡工程師")
                 Exit Sub
@@ -153,11 +172,16 @@
         For Each intdata As Integer In arrRepairAmountDel
             controller.Delete_RepairAmount(intdata)
         Next
+        '新增維修單據掃描檔
         For Each controls As Control In FlowLayoutPanel3.Controls
             If CType(controls, FilePath).Get_FileID = 0 Then
                 Dim strFile As String() = Split(CType(controls, FilePath).Get_FileName, ".")
                 controller.Copy_File(CType(controls, FilePath).Get_Path, controls.Name & "." & strFile(1))
+                controller.Insert_RepairFile(intRepairID, CType(controls, FilePath).Get_FileName, Set_Repair_Model.UPLOAD_PATH & controls.Name & "." & strFile(1))
             End If
+        Next
+        For Each arrData As RepairFile In arrRepairFileDel
+            controller.Delete_RepairFile(arrData)
         Next
         If controller.Update_RepairData(data) <> 0 Then
             If flag Then
@@ -232,6 +256,8 @@
             Case MsgBoxResult.Ok
                 controller.Update_RepairDataStatus(2, intRepairID)
                 controller.Insert_RepairLog(intRepairID, "提交維修申請單")
+                MsgBox("資料已更新", MsgBoxStyle.OkOnly, "注意")
+                Me.DialogResult = DialogResult.OK
         End Select
     End Sub
 
@@ -252,6 +278,8 @@
             Case MsgBoxResult.Ok
                 controller.Update_RepairDataStatus(3, intRepairID)
                 controller.Insert_RepairLog(intRepairID, "覆核確認")
+                MsgBox("資料已更新", MsgBoxStyle.OkOnly, "注意")
+                Me.DialogResult = DialogResult.OK
         End Select
     End Sub
 
@@ -324,6 +352,54 @@
     End Sub
     Public Sub RemoveControl(ByRef myControl As Control)
         FlowLayoutPanel3.Focus()
+        arrRepairFileDel.Add(New RepairFile With {.RepairFileID = CType(myControl, FilePath).Get_FileID, .RepairFilePath = CType(myControl, FilePath).Get_Path})
         FlowLayoutPanel3.Controls.Remove(myControl)
+    End Sub
+
+    Private Sub PrintBtn_Click(sender As Object, e As EventArgs) Handles PrintBtn.Click
+        Dim path As String = My.Application.Info.DirectoryPath
+        Dim wordApp As Word.Application = New Word.Application
+        Dim wordDoc As Word.Document = wordApp.Documents.Open(path + "\Resources\維修單.dotx", [ReadOnly]:=True)
+        wordDoc.Content.Find.Execute(FindText:="$ArchiveDate", ReplaceWith:=Format(ArchiveDate.Value, "yyyy/MM/dd"), Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        wordDoc.Content.Find.Execute(FindText:="$ETADate", ReplaceWith:=Format(ETADate.Value, "yyyy/MM/dd"), Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        wordDoc.Content.Find.Execute(FindText:="$RepairOrder", ReplaceWith:=RepairOrderText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        wordDoc.Content.Find.Execute(FindText:="$Place", ReplaceWith:=PlaceText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        wordDoc.Content.Find.Execute(FindText:="$Contact", ReplaceWith:=ContactText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        wordDoc.Content.Find.Execute(FindText:="$Address", ReplaceWith:=AddressText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        wordDoc.Content.Find.Execute(FindText:="$Phone", ReplaceWith:=PhoneText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        wordDoc.Content.Find.Execute(FindText:="$RepairPerson", ReplaceWith:=RepairPersonText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        Dim strRepairProd As String = ""
+        For Each data As DataGridViewRow In RepairProdDGV.Rows
+            If data.Cells("ProdPartName").Value <> Nothing Then
+                strRepairProd += data.Cells("ProdPartName").Value & "*" & data.Cells("RepairCount").Value & IIf(data.Cells("RepairRemark").Value <> Nothing, "(" & data.Cells("RepairRemark").Value & ")", Nothing) & vbCr
+            End If
+        Next
+        strRepairProd = strRepairProd.TrimEnd(vbCr)
+        wordDoc.Content.Find.Execute(FindText:="$RepairProd", ReplaceWith:=strRepairProd, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        Dim strRepairAmount As String = ""
+        For Each data As DataGridViewRow In RepairAmountDGV.Rows
+            If data.Cells("BillItem").Value <> Nothing Then
+                strRepairAmount += data.Cells("BillItem").Value & ":" & data.Cells("RepairPrice").Value & vbCr
+            End If
+        Next
+        strRepairAmount = strRepairAmount.TrimEnd(vbCr)
+        wordDoc.Content.Find.Execute(FindText:="$RepairAmount", ReplaceWith:=strRepairAmount, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+
+        wordApp.DisplayAlerts = True
+        wordApp.Visible = True
+    End Sub
+
+    Private Sub RepairConfirmBtn_Click(sender As Object, e As EventArgs) Handles RepairConfirmBtn.Click
+        Select Case MsgBox("確定資料皆正確?完成後將無法再修正", MsgBoxStyle.OkCancel, "注意")
+            Case MsgBoxResult.Ok
+                controller.Update_RepairDataStatus(4, intRepairID)
+                controller.Insert_RepairLog(intRepairID, "維修確認")
+                MsgBox("資料已更新", MsgBoxStyle.OkOnly, "注意")
+                Me.DialogResult = DialogResult.OK
+        End Select
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
+        Me.DialogResult = DialogResult.Cancel
     End Sub
 End Class

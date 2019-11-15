@@ -37,7 +37,7 @@ Public Class Data_Case_Controller
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                arrayList.Add(New RepairData With {.RepairID = dataReader("RepairID"), .ArchiveDate = dataReader("ArchiveDate"), .RepairType = dataReader("RepairType"), .Remark = dataReader("Remark"), .ETA = dataReader("ETA"), .Status = dataReader("Status")})
+                arrayList.Add(New RepairData With {.RepairID = dataReader("RepairID"), .ArchiveDate = dataReader("ArchiveDate"), .RepairPerson = dataReader("RepairPerson"), .Remark = dataReader("Remark"), .ETA = dataReader("ETA"), .Status = dataReader("Status")})
             Loop
         End If
         conDB.Close()

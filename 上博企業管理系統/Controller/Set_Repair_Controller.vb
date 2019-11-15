@@ -20,7 +20,7 @@ Public Class Set_Repair_Controller
     Public Function Update_RepairData(ByVal data As RepairData) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = UPDATE_REPAIRDATA_SQL
-        strSQL = strSQL.Replace("@repairType", data.RepairType).Replace("@place", data.Place).Replace("@contact", data.Contact).
+        strSQL = strSQL.Replace("@repairPerson", data.RepairPerson).Replace("@place", data.Place).Replace("@contact", data.Contact).
                                       Replace("@address", data.Address).Replace("@phone", data.Phone).Replace("@warranty", data.Warranty).
                                       Replace("@remark", data.Remark).Replace("@eta", data.ETA).Replace("@archiveDate", data.ArchiveDate).Replace("@result", data.RepairResult).Replace("@id", data.RepairID)
         Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
@@ -44,7 +44,7 @@ Public Class Set_Repair_Controller
         If dataReader.HasRows Then
             Do While dataReader.Read
                 data = New RepairData With {.RepairID = dataReader("RepairID"), .Warranty = dataReader("Warranty"), .Address = dataReader("Address"), .Contact = dataReader("Contact"), .Phone = dataReader("Phone"),
-                    .Place = dataReader("Place"), .RepairOrder = dataReader("RepairOrder"), .ArchiveDate = dataReader("ArchiveDate"), .RepairType = dataReader("RepairType"), .Remark = dataReader("Remark"),
+                    .Place = dataReader("Place"), .RepairOrder = dataReader("RepairOrder"), .ArchiveDate = dataReader("ArchiveDate"), .RepairPerson = dataReader("RepairPerson"), .Remark = dataReader("Remark"),
                     .ETA = dataReader("ETA"), .RepairResult = dataReader("RepairResult"), .Status = dataReader("Status")}
             Loop
         End If
@@ -61,6 +61,20 @@ Public Class Set_Repair_Controller
             Do While dataReader.Read
                 data.Add(New RepairProd With {.RepairID = dataReader("RepairID"), .ShipmentPID = dataReader("ShipmentPID"), .ProdPartCount = dataReader("ProdPartCount"), .ProdPartName = dataReader("ProdPartName"), .ProdPartType = dataReader("ProdPartType"),
                     .RepairProdID = dataReader("RepairProdID"), .RepairRemark = dataReader("RepairRemark")})
+            Loop
+        End If
+        conDB.Close()
+        Return data
+    End Function
+    Public Function Select_RepairFile(ByVal repairID As Integer) As List(Of RepairFile)
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = SELECT_REPAIRFILE_SQL
+        Dim data As List(Of RepairFile) = New List(Of RepairFile)
+        strSQL = strSQL.Replace("@id", repairID)
+        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
+        If dataReader.HasRows Then
+            Do While dataReader.Read
+                data.Add(New RepairFile With {.RepairID = dataReader("RepairID"), .RepairFileID = dataReader("RepairFileID"), .RepairFileName = dataReader("RepairFileName"), .RepairFilePath = dataReader("RepairFilePath")})
             Loop
         End If
         conDB.Close()
@@ -164,7 +178,7 @@ Public Class Set_Repair_Controller
         conDB.Close()
         Return intID
     End Function
-    Public Function Insert_RepairAmount(ByVal RepairID As Integer, ByVal BillItem As String, ByVal RepairPrice As Integer)
+    Public Function Insert_RepairAmount(ByVal RepairID As Integer, ByVal BillItem As String, ByVal RepairPrice As Integer) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = INSERT_REPAIRAMOUNT_SQL
         strSQL = strSQL.Replace("@id", RepairID).Replace("@item", BillItem).Replace("@price", RepairPrice)
@@ -178,6 +192,22 @@ Public Class Set_Repair_Controller
         conDB.Close()
         Return intID
     End Function
+
+    Public Function Insert_RepairFile(ByVal RepairID As Integer, ByVal RepairFileName As String, ByVal RepairFilePath As String) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = INSERT_REPAIRFILE_SQL
+        strSQL = strSQL.Replace("@id", RepairID).Replace("@name", RepairFileName).Replace("@path", RepairFilePath)
+        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
+        Dim intID As Integer = -1
+        If dataReader.HasRows Then
+            Do While dataReader.Read
+                intID = dataReader("id")
+            Loop
+        End If
+        conDB.Close()
+        Return intID
+    End Function
+
     Public Function Update_RepairAmount(ByVal data As RepairAmount) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = UPDATE_REPAIRAMOUNT_SQL
@@ -190,6 +220,15 @@ Public Class Set_Repair_Controller
         Dim conDB As Connection = New Connection
         Dim strSQL As String = UPDATE_REPAIRPROD_SQL
         strSQL = strSQL.Replace("@type", data.ProdPartType).Replace("@shipmentPID", data.ShipmentPID).Replace("@id", data.RepairProdID).Replace("@name", data.ProdPartName).Replace("@count", data.ProdPartCount).Replace("@remark", data.RepairRemark)
+        Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
+        conDB.Close()
+        Return intReturn
+    End Function
+    Public Function Delete_RepairFile(ByVal data As RepairFile) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = DELETE_REPAIRFILE_SQL
+        strSQL = strSQL.Replace("@id", data.RepairFileID)
+        My.Computer.FileSystem.DeleteFile(data.RepairFilePath)
         Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
         conDB.Close()
         Return intReturn
@@ -231,6 +270,6 @@ Public Class Set_Repair_Controller
         Return strOrder
     End Function
     Public Sub Copy_File(ByVal D1 As String, ByVal FileName As String)
-        FileSystem.FileCopy(D1, "\\DS916\Alex\" & FileName)
+        FileSystem.FileCopy(D1, UPLOAD_PATH & FileName)
     End Sub
 End Class

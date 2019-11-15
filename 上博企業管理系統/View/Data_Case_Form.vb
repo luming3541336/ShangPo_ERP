@@ -91,7 +91,18 @@ Public Class Data_Case_Form
         Next
         RepairDGV.Rows.Clear()
         For Each data As RepairData In listRepairData
-            RepairDGV.Rows.Add(data.RepairID, Format(data.ArchiveDate, "yyyy/MM/dd"), data.RepairType, data.Remark, data.ETA, "未實作", data.Status)
+            Dim strStatus As String = ""
+            Select Case data.Status
+                Case 1
+                    strStatus = "尚未提交"
+                Case 2
+                    strStatus = "複核確認中"
+                Case 3
+                    strStatus = "已完成派單，等待執行"
+                Case 4
+                    strStatus = "維修已完成"
+            End Select
+            RepairDGV.Rows.Add(data.RepairID, Format(data.ArchiveDate, "yyyy/MM/dd"), data.RepairPerson, data.Remark, data.ETA, strStatus)
         Next
         PurchaseCountLabel.Text = intPurchaseCount
         SaleCountLabel.Text = intSaleCount
@@ -697,11 +708,15 @@ Public Class Data_Case_Form
 
     Private Sub AddRepairBtn_Click(sender As Object, e As EventArgs) Handles AddRepairBtn.Click
         Dim view As Set_Repair_Form = New Set_Repair_Form(CaseDGV.CurrentRow.Cells("CaseID").Value)
-        view.Show()
+        If view.ShowDialog = DialogResult.OK Then
+            RefreshCaseData()
+        End If
     End Sub
 
     Private Sub RepairDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles RepairDGV.CellDoubleClick
         Dim view As Set_Repair_Form = New Set_Repair_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, RepairDGV.CurrentRow.Cells("RepairID").Value)
-        view.Show()
+        If view.ShowDialog = DialogResult.OK Then
+            RefreshCaseData()
+        End If
     End Sub
 End Class

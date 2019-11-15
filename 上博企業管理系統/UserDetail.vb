@@ -40,7 +40,7 @@ Public Structure RepairData
     Dim RepairID As Integer
     Dim CaseID As Integer
     Dim RepairOrder As String
-    Dim RepairType As String
+    Dim RepairPerson As String
     Dim Place As String
     Dim Contact As String
     Dim Address As String
@@ -73,5 +73,10 @@ Public Structure RepairAmount
     Dim RepairID As Integer
     Dim BillItem As String
     Dim RepairPrice As Integer
-
+End Structure
+Public Structure RepairFile
+    Dim RepairFileID As Integer
+    Dim RepairID As Integer
+    Dim RepairFileName As String
+    Dim RepairFilePath As String
 End Structure

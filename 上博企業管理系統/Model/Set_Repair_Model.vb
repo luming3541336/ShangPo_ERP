@@ -1,10 +1,11 @@
 ﻿Public Class Set_Repair_Model
+    Public Const UPLOAD_PATH = "\\DS916\Alex\"
     'CaseData資料表欄位指令
     Protected Const SELECT_CASEDATA_FOR_CASEID_SQL = "SELECT * FROM CaseData WHERE CaseID = @caseID"
     'RepairData資料表欄位指令
     Protected Const SELECT_REPAIRDATA_FOR_REPAIRID_SQL = "SELECT * FROM RepairData WHERE RepairID = @repairID"
     Protected Const UPDATE_REPAIRDATA_STATUS_SQL = "UPDATE RepairData SET Status = @status WHERE RepairID = @id"
-    Protected Const UPDATE_REPAIRDATA_SQL = "UPDATE RepairData SET RepairType = N'@repairType',Place= N'@place',Contact = N'@contact',Address = N'@address', Phone = N'@phone', Warranty = '@warranty', Remark = N'@remark', ETA = '@eta', ArchiveDate = '@archiveDate', RepairResult = N'@result' WHERE RepairID = @id "
+    Protected Const UPDATE_REPAIRDATA_SQL = "UPDATE RepairData SET RepairPerson = N'@repairPerson',Place= N'@place',Contact = N'@contact',Address = N'@address', Phone = N'@phone', Warranty = '@warranty', Remark = N'@remark', ETA = '@eta', ArchiveDate = '@archiveDate', RepairResult = N'@result' WHERE RepairID = @id "
     Protected Const INSERT_REPAIRDATA_SQL = "INSERT INTO RepairData(CaseID,RepairOrder,Status) VALUES('@caseID',N'@repairOrder',1); SELECT @@IDENTITY as id "
     Protected Const SELECT_PAIRORDER_COUNT_SQL = "SELECT COUNT(RepairOrder)  AS OrderCount FROM RepairData WHERE RepairOrder LIKE N'@order%'"
     'RepairLog資料表欄位指令
