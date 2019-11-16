@@ -20,10 +20,10 @@ Public Class Data_Case_Form
         Else
             arrayList = controller.Select_CaseData(strSearchSQL)
         End If
-        e.Result = arrayList
+        e.Result = {arrayList, e.Argument}
     End Sub
     Private Sub LoadingBackground_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles LoadingBackground.RunWorkerCompleted
-        Dim arrayList As List(Of CaseData) = e.Result
+        Dim arrayList As List(Of CaseData) = e.Result(0)
         For Each item As CaseData In arrayList
             Dim strState As String = ""
             Select Case item.State
@@ -41,11 +41,14 @@ Public Class Data_Case_Form
                 Case 2
                     CaseDGV.Rows(CaseDGV.Rows.Count - 1).Cells("Success").Style.ForeColor = Color.Red
             End Select
+
         Next
+        CaseDGV.CurrentCell = CaseDGV.Rows(e.Result(1)).Cells(1)
+        caseDGV_SelectionChanged(sender, e)
         formStatusNormal.Hide()
     End Sub
     Private Sub Data_Case_Form_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        LoadingBackground.RunWorkerAsync()
+        LoadingBackground.RunWorkerAsync(0)
         formStatusNormal.Show()
     End Sub
 
@@ -113,7 +116,7 @@ Public Class Data_Case_Form
         If formDataSearch.ShowDialog = DialogResult.OK Then
             strSearchSQL = formDataSearch.strSQL
             CaseDGV.Rows.Clear()
-            LoadingBackground.RunWorkerAsync()
+            LoadingBackground.RunWorkerAsync(0)
         End If
     End Sub
 
@@ -128,10 +131,12 @@ Public Class Data_Case_Form
         End If
     End Sub
     Private Sub RefreshCaseData()
+        Dim index As Integer = CaseDGV.CurrentRow.Index
         CaseDGV.Rows.Clear()
         If Not LoadingBackground.IsBusy Then
-            LoadingBackground.RunWorkerAsync()
+            LoadingBackground.RunWorkerAsync(index)
         End If
+
     End Sub
 
     Private Sub Data_Case_Form_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
@@ -229,6 +234,8 @@ Public Class Data_Case_Form
             AddWPBtn.Enabled = True
             ReviseWPBtn.Enabled = False
             DelWPBtn.Enabled = False
+            ReviseRepairBtn.Enabled = False
+            DelRepairBtn.Enabled = False
             Do While LoadingDetailBackground.IsBusy
                 Application.DoEvents()
             Loop
@@ -718,5 +725,31 @@ Public Class Data_Case_Form
         If view.ShowDialog = DialogResult.OK Then
             RefreshCaseData()
         End If
+    End Sub
+    Private Sub ReviseRepairBtn_Click(sender As Object, e As EventArgs) Handles ReviseRepairBtn.Click
+        Dim view As Set_Repair_Form = New Set_Repair_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, RepairDGV.CurrentRow.Cells("RepairID").Value)
+        If view.ShowDialog = DialogResult.OK Then
+            RefreshCaseData()
+        End If
+    End Sub
+
+    Private Sub RepairDGV_SelectionChanged(sender As Object, e As EventArgs) Handles RepairDGV.SelectionChanged
+        AddRepairBtn.Enabled = True
+        ReviseRepairBtn.Enabled = True
+        DelRepairBtn.Enabled = True
+    End Sub
+
+    Private Sub DelRepairBtn_Click(sender As Object, e As EventArgs) Handles DelRepairBtn.Click
+        If RepairDGV.CurrentRow IsNot Nothing Then
+            Dim controller As Set_Repair_Controller = New Set_Repair_Controller
+            Dim msgResult As MsgBoxResult = MsgBox("請問確認要刪除案件嗎?刪除後將無法恢復", MsgBoxStyle.OkCancel, "注意")
+            Select Case msgResult
+                Case MsgBoxResult.Ok
+                    controller.Delete_RepairData(RepairDGV.CurrentRow.Cells("RepairID").Value)
+                    MsgBox("刪除完成")
+                    RefreshCaseData()
+            End Select
+        End If
+
     End Sub
 End Class

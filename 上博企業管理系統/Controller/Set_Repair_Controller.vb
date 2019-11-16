@@ -249,6 +249,14 @@ Public Class Set_Repair_Controller
         conDB.Close()
         Return intReturn
     End Function
+    Public Function Delete_RepairData(ByVal RepairID As Integer) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = DELETE_REPAIRDATA_SQL
+        strSQL = strSQL.Replace("@id", RepairID)
+        Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
+        conDB.Close()
+        Return intReturn
+    End Function
     Public Function Create_NewOrder() As String
         Dim strOrder As String = "RP" & Now.Year & Now.Month
         Dim strSQL As String = SELECT_PAIRORDER_COUNT_SQL

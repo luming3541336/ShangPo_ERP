@@ -80,6 +80,7 @@ Public Class Set_Repair_Form
                 Case 4
                     StatusText.Text = "維修已完成"
                     SaveBtn.Visible = False
+                    RepairResultDGV.Visible = True
             End Select
             '載入維修產品ReapairProd
             Dim listProdData As List(Of RepairProd) = controller.Select_RepairProd(intRepairID)
@@ -122,6 +123,7 @@ Public Class Set_Repair_Form
         data.ETA = Format(ETADate.Value, "yyyy/MM/dd")
         data.RepairResult = RepairResultText.Text
         data.Remark = RemarkText.Text
+        data.RepairPerson = RepairPersonText.Text
         data.RepairID = intRepairID
         If intRepairID = -1 Then
             '表示此單為新的維修單，先建立維修單後再將資料放入此維修單中

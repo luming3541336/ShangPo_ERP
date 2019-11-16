@@ -75,6 +75,7 @@ Partial Class Set_Repair_Form
         Me.TotalAmountText = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.SaveBtn = New System.Windows.Forms.Button()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.SubmitBtn = New System.Windows.Forms.Button()
         Me.ReCheckBtn = New System.Windows.Forms.Button()
         Me.RepairConfirmBtn = New System.Windows.Forms.Button()
@@ -90,7 +91,6 @@ Partial Class Set_Repair_Form
         Me.RepairResultText = New System.Windows.Forms.TextBox()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -640,6 +640,16 @@ Partial Class Set_Repair_Form
         Me.SaveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.SaveBtn.UseVisualStyleBackColor = True
         '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "completed.png")
+        Me.ImageList1.Images.SetKeyName(1, "print.png")
+        Me.ImageList1.Images.SetKeyName(2, "Save.png")
+        Me.ImageList1.Images.SetKeyName(3, "note_add.png")
+        Me.ImageList1.Images.SetKeyName(4, "cancel.png")
+        '
         'SubmitBtn
         '
         Me.SubmitBtn.AutoSize = True
@@ -828,16 +838,6 @@ Partial Class Set_Repair_Form
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(848, 1)
         Me.Panel3.TabIndex = 19
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "completed.png")
-        Me.ImageList1.Images.SetKeyName(1, "print.png")
-        Me.ImageList1.Images.SetKeyName(2, "Save.png")
-        Me.ImageList1.Images.SetKeyName(3, "note_add.png")
-        Me.ImageList1.Images.SetKeyName(4, "cancel.png")
         '
         'Set_Repair_Form
         '

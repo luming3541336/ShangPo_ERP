@@ -151,23 +151,20 @@ Partial Class Data_Case_Form
         Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.RepairDGV = New System.Windows.Forms.DataGridView()
-        Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.AddRepairBtn = New System.Windows.Forms.Button()
-        Me.ReviseRepairBtn = New System.Windows.Forms.Button()
-        Me.DelRepairBtn = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.RepairTimeLabel = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.LoadingBackground = New System.ComponentModel.BackgroundWorker()
-        Me.LoadingDetailBackground = New System.ComponentModel.BackgroundWorker()
-        Me.PrintShippingRecordBackground = New System.ComponentModel.BackgroundWorker()
-        Me.PrintWorkProgressWork = New System.ComponentModel.BackgroundWorker()
         Me.RepairID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RepairData = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RepairPerson = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RepairDep = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RepairTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RepairStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.AddRepairBtn = New System.Windows.Forms.Button()
+        Me.ReviseRepairBtn = New System.Windows.Forms.Button()
+        Me.DelRepairBtn = New System.Windows.Forms.Button()
+        Me.LoadingBackground = New System.ComponentModel.BackgroundWorker()
+        Me.LoadingDetailBackground = New System.ComponentModel.BackgroundWorker()
+        Me.PrintShippingRecordBackground = New System.ComponentModel.BackgroundWorker()
+        Me.PrintWorkProgressWork = New System.ComponentModel.BackgroundWorker()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.PrintMenu.SuspendLayout()
@@ -207,7 +204,6 @@ Partial Class Data_Case_Form
         Me.TableLayoutPanel6.SuspendLayout()
         CType(Me.RepairDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FlowLayoutPanel6.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -1532,13 +1528,55 @@ Partial Class Data_Case_Form
         Me.RepairDGV.Size = New System.Drawing.Size(938, 230)
         Me.RepairDGV.TabIndex = 3
         '
+        'RepairID
+        '
+        Me.RepairID.HeaderText = "RepairID"
+        Me.RepairID.Name = "RepairID"
+        Me.RepairID.ReadOnly = True
+        Me.RepairID.Visible = False
+        Me.RepairID.Width = 111
+        '
+        'RepairData
+        '
+        Me.RepairData.HeaderText = "建檔日期"
+        Me.RepairData.Name = "RepairData"
+        Me.RepairData.ReadOnly = True
+        Me.RepairData.Width = 111
+        '
+        'RepairPerson
+        '
+        Me.RepairPerson.HeaderText = "維修人員"
+        Me.RepairPerson.Name = "RepairPerson"
+        Me.RepairPerson.ReadOnly = True
+        Me.RepairPerson.Width = 111
+        '
+        'RepairDep
+        '
+        Me.RepairDep.HeaderText = "問題描述"
+        Me.RepairDep.Name = "RepairDep"
+        Me.RepairDep.ReadOnly = True
+        Me.RepairDep.Width = 111
+        '
+        'RepairTime
+        '
+        Me.RepairTime.HeaderText = "維修時間"
+        Me.RepairTime.Name = "RepairTime"
+        Me.RepairTime.ReadOnly = True
+        Me.RepairTime.Width = 111
+        '
+        'RepairStatus
+        '
+        Me.RepairStatus.HeaderText = "狀態"
+        Me.RepairStatus.Name = "RepairStatus"
+        Me.RepairStatus.ReadOnly = True
+        Me.RepairStatus.Width = 73
+        '
         'FlowLayoutPanel6
         '
         Me.FlowLayoutPanel6.AutoSize = True
         Me.FlowLayoutPanel6.Controls.Add(Me.AddRepairBtn)
         Me.FlowLayoutPanel6.Controls.Add(Me.ReviseRepairBtn)
         Me.FlowLayoutPanel6.Controls.Add(Me.DelRepairBtn)
-        Me.FlowLayoutPanel6.Controls.Add(Me.Panel1)
         Me.FlowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel6.Location = New System.Drawing.Point(2, 2)
         Me.FlowLayoutPanel6.Margin = New System.Windows.Forms.Padding(2)
@@ -1599,39 +1637,6 @@ Partial Class Data_Case_Form
         Me.DelRepairBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.DelRepairBtn.UseVisualStyleBackColor = True
         '
-        'Panel1
-        '
-        Me.Panel1.AutoSize = True
-        Me.Panel1.Controls.Add(Me.RepairTimeLabel)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(238, 2)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(125, 28)
-        Me.Panel1.TabIndex = 3
-        '
-        'RepairTimeLabel
-        '
-        Me.RepairTimeLabel.AutoSize = True
-        Me.RepairTimeLabel.ForeColor = System.Drawing.Color.LightCyan
-        Me.RepairTimeLabel.Location = New System.Drawing.Point(102, 4)
-        Me.RepairTimeLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.RepairTimeLabel.Name = "RepairTimeLabel"
-        Me.RepairTimeLabel.Size = New System.Drawing.Size(21, 24)
-        Me.RepairTimeLabel.TabIndex = 1
-        Me.RepairTimeLabel.Text = "0"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(2, 4)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(105, 24)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "維修次數："
-        '
         'LoadingBackground
         '
         '
@@ -1645,49 +1650,6 @@ Partial Class Data_Case_Form
         'PrintWorkProgressWork
         '
         Me.PrintWorkProgressWork.WorkerReportsProgress = True
-        '
-        'RepairID
-        '
-        Me.RepairID.HeaderText = "RepairID"
-        Me.RepairID.Name = "RepairID"
-        Me.RepairID.ReadOnly = True
-        Me.RepairID.Visible = False
-        Me.RepairID.Width = 111
-        '
-        'RepairData
-        '
-        Me.RepairData.HeaderText = "建檔日期"
-        Me.RepairData.Name = "RepairData"
-        Me.RepairData.ReadOnly = True
-        Me.RepairData.Width = 111
-        '
-        'RepairPerson
-        '
-        Me.RepairPerson.HeaderText = "維修人員"
-        Me.RepairPerson.Name = "RepairPerson"
-        Me.RepairPerson.ReadOnly = True
-        Me.RepairPerson.Width = 111
-        '
-        'RepairDep
-        '
-        Me.RepairDep.HeaderText = "問題描述"
-        Me.RepairDep.Name = "RepairDep"
-        Me.RepairDep.ReadOnly = True
-        Me.RepairDep.Width = 111
-        '
-        'RepairTime
-        '
-        Me.RepairTime.HeaderText = "維修時間"
-        Me.RepairTime.Name = "RepairTime"
-        Me.RepairTime.ReadOnly = True
-        Me.RepairTime.Width = 111
-        '
-        'RepairStatus
-        '
-        Me.RepairStatus.HeaderText = "狀態"
-        Me.RepairStatus.Name = "RepairStatus"
-        Me.RepairStatus.ReadOnly = True
-        Me.RepairStatus.Width = 73
         '
         'Data_Case_Form
         '
@@ -1753,9 +1715,6 @@ Partial Class Data_Case_Form
         Me.TableLayoutPanel6.PerformLayout()
         CType(Me.RepairDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FlowLayoutPanel6.ResumeLayout(False)
-        Me.FlowLayoutPanel6.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1885,9 +1844,6 @@ Partial Class Data_Case_Form
     Friend WithEvents AddRepairBtn As Button
     Friend WithEvents ReviseRepairBtn As Button
     Friend WithEvents DelRepairBtn As Button
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents RepairTimeLabel As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents RepairID As DataGridViewTextBoxColumn
     Friend WithEvents RepairData As DataGridViewTextBoxColumn
     Friend WithEvents RepairPerson As DataGridViewTextBoxColumn

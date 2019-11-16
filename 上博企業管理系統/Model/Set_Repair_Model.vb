@@ -8,6 +8,7 @@
     Protected Const UPDATE_REPAIRDATA_SQL = "UPDATE RepairData SET RepairPerson = N'@repairPerson',Place= N'@place',Contact = N'@contact',Address = N'@address', Phone = N'@phone', Warranty = '@warranty', Remark = N'@remark', ETA = '@eta', ArchiveDate = '@archiveDate', RepairResult = N'@result' WHERE RepairID = @id "
     Protected Const INSERT_REPAIRDATA_SQL = "INSERT INTO RepairData(CaseID,RepairOrder,Status) VALUES('@caseID',N'@repairOrder',1); SELECT @@IDENTITY as id "
     Protected Const SELECT_PAIRORDER_COUNT_SQL = "SELECT COUNT(RepairOrder)  AS OrderCount FROM RepairData WHERE RepairOrder LIKE N'@order%'"
+    Protected Const DELETE_REPAIRDATA_SQL = "DELETE FROM RepairFile WHERE RepairID = @id DELETE FROM RepairAmount WHERE RepairID = @id DELETE FROM RepairProd WHERE RepairID = @id DELETE FROM RepairLog WHERE RepairID = @id DELETE FROM RepairData WHERE RepairID = @id"
     'RepairLog資料表欄位指令
     Protected Const SELECT_REPAIRLOG_FOR_REPAIRID_SQL = "SELECT * FROM RepairLog WHERE RepairID=@id"
     Protected Const INSERT_REPAIRLOG_SQL = "INSERT INTO RepairLog(RepairID,LoginID,LogDate,Remark) VALUES('@id',@loginID,'@date',N'@remark')"
