@@ -41,6 +41,10 @@
         If sender.checked = False Then
             arrCheckBoxLx2(Array.IndexOf(arrCheckBoxLx1, sender)).Checked = False
             arrCheckBoxLx2(Array.IndexOf(arrCheckBoxLx1, sender)).Enabled = False
+            If sender.Name = "L31" Then
+                L33.Checked = False
+                L33.Enabled = False
+            End If
         Else
             arrCheckBoxLx2(Array.IndexOf(arrCheckBoxLx1, sender)).Enabled = True
         End If
@@ -143,5 +147,13 @@
                 controller.Del_LoginData(LoginDGV.CurrentRow.Cells("LoginID").Value)
                 LoginDGV.Rows.RemoveAt(LoginDGV.CurrentRow.Index)
         End Select
+    End Sub
+
+    Private Sub L32_CheckedChanged(sender As Object, e As EventArgs) Handles L32.CheckedChanged
+        If L32.Checked Then
+            L33.Enabled = True
+        Else
+            L33.Enabled = False
+        End If
     End Sub
 End Class

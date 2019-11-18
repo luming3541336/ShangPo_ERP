@@ -69,7 +69,7 @@ Public Class Set_Repair_Form
                     StatusText.Text = "尚未提交"
                     SubmitBtn.Visible = True
                 Case 2
-                    StatusText.Text = "複核確認中"
+                    StatusText.Text = "覆核確認中"
                     ReCheckBtn.Visible = True
                     PrintBtn.Visible = True
                 Case 3

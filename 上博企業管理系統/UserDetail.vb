@@ -7,6 +7,7 @@
     '   0:無法讀取及修改
     '   1:僅能讀取
     '   2:可讀取及修改
+    '   3:管理級權限
     Public L0 As Integer = Nothing  '產品資訊
     Public L1 As Integer = Nothing  '供應商資訊
     Public L2 As Integer = Nothing  '規格設定

@@ -23,10 +23,10 @@ Partial Class Set_Repair_Form
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Set_Repair_Form))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.ETADate = New System.Windows.Forms.DateTimePicker()
@@ -151,14 +151,14 @@ Partial Class Set_Repair_Form
         Me.ETADate.Location = New System.Drawing.Point(561, 81)
         Me.ETADate.Name = "ETADate"
         Me.ETADate.Size = New System.Drawing.Size(284, 33)
-        Me.ETADate.TabIndex = 21
+        Me.ETADate.TabIndex = 4
         '
         'PlaceText
         '
         Me.PlaceText.Location = New System.Drawing.Point(95, 42)
         Me.PlaceText.Name = "PlaceText"
         Me.PlaceText.Size = New System.Drawing.Size(330, 33)
-        Me.PlaceText.TabIndex = 10
+        Me.PlaceText.TabIndex = 2
         '
         'Label5
         '
@@ -177,7 +177,7 @@ Partial Class Set_Repair_Form
         Me.Label1.Location = New System.Drawing.Point(3, 7)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 24)
-        Me.Label1.TabIndex = 0
+        Me.Label1.TabIndex = 2
         Me.Label1.Text = "維修單號"
         '
         'Label2
@@ -225,7 +225,7 @@ Partial Class Set_Repair_Form
         Me.RepairPersonText.Location = New System.Drawing.Point(95, 159)
         Me.RepairPersonText.Name = "RepairPersonText"
         Me.RepairPersonText.Size = New System.Drawing.Size(330, 33)
-        Me.RepairPersonText.TabIndex = 15
+        Me.RepairPersonText.TabIndex = 7
         '
         'Label4
         '
@@ -242,7 +242,7 @@ Partial Class Set_Repair_Form
         Me.PhoneText.Location = New System.Drawing.Point(561, 120)
         Me.PhoneText.Name = "PhoneText"
         Me.PhoneText.Size = New System.Drawing.Size(174, 33)
-        Me.PhoneText.TabIndex = 14
+        Me.PhoneText.TabIndex = 6
         '
         'Label3
         '
@@ -259,7 +259,7 @@ Partial Class Set_Repair_Form
         Me.ContactText.Location = New System.Drawing.Point(95, 120)
         Me.ContactText.Name = "ContactText"
         Me.ContactText.Size = New System.Drawing.Size(330, 33)
-        Me.ContactText.TabIndex = 12
+        Me.ContactText.TabIndex = 5
         '
         'Label14
         '
@@ -276,7 +276,7 @@ Partial Class Set_Repair_Form
         Me.AddressText.Location = New System.Drawing.Point(95, 81)
         Me.AddressText.Name = "AddressText"
         Me.AddressText.Size = New System.Drawing.Size(330, 33)
-        Me.AddressText.TabIndex = 17
+        Me.AddressText.TabIndex = 3
         '
         'ArchiveDate
         '
@@ -285,7 +285,7 @@ Partial Class Set_Repair_Form
         Me.ArchiveDate.Location = New System.Drawing.Point(561, 3)
         Me.ArchiveDate.Name = "ArchiveDate"
         Me.ArchiveDate.Size = New System.Drawing.Size(284, 33)
-        Me.ArchiveDate.TabIndex = 18
+        Me.ArchiveDate.TabIndex = 1
         '
         'RepairOrderText
         '
@@ -294,7 +294,7 @@ Partial Class Set_Repair_Form
         Me.RepairOrderText.Location = New System.Drawing.Point(95, 7)
         Me.RepairOrderText.Name = "RepairOrderText"
         Me.RepairOrderText.Size = New System.Drawing.Size(0, 24)
-        Me.RepairOrderText.TabIndex = 19
+        Me.RepairOrderText.TabIndex = 3
         '
         'WarrantyText
         '
@@ -350,7 +350,7 @@ Partial Class Set_Repair_Form
         Me.RemarkText.Multiline = True
         Me.RemarkText.Name = "RemarkText"
         Me.RemarkText.Size = New System.Drawing.Size(750, 188)
-        Me.RemarkText.TabIndex = 15
+        Me.RemarkText.TabIndex = 0
         '
         'Label9
         '
@@ -378,7 +378,7 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(848, 221)
-        Me.TableLayoutPanel3.TabIndex = 2
+        Me.TableLayoutPanel3.TabIndex = 3
         '
         'TableLayoutPanel4
         '
@@ -428,34 +428,35 @@ Partial Class Set_Repair_Form
         Me.UnJudgeCheckBox.TabIndex = 7
         Me.UnJudgeCheckBox.Text = "無法判斷修繕項目"
         Me.UnJudgeCheckBox.UseVisualStyleBackColor = False
+        Me.UnJudgeCheckBox.Visible = False
         '
         'RepairProdDGV
         '
         Me.RepairProdDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.RepairProdDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.RepairProdDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.RepairProdDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.RepairProdDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.RepairProdDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RepairProdID, Me.ProdPartType, Me.ShipmentPID, Me.ProdPartName, Me.RepairCount, Me.RepairRemark})
         Me.RepairProdDGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RepairProdDGV.Location = New System.Drawing.Point(3, 40)
         Me.RepairProdDGV.MultiSelect = False
         Me.RepairProdDGV.Name = "RepairProdDGV"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        Me.RepairProdDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.RepairProdDGV.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.RepairProdDGV.RowTemplate.Height = 24
         Me.RepairProdDGV.Size = New System.Drawing.Size(842, 178)
-        Me.RepairProdDGV.TabIndex = 17
+        Me.RepairProdDGV.TabIndex = 0
         '
         'RepairProdID
         '
@@ -518,34 +519,34 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(848, 175)
-        Me.TableLayoutPanel5.TabIndex = 3
+        Me.TableLayoutPanel5.TabIndex = 4
         '
         'RepairAmountDGV
         '
         Me.RepairAmountDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.RepairAmountDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.RepairAmountDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.RepairAmountDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.RepairAmountDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.RepairAmountDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.RepairAmountID, Me.BillItem, Me.RepairPrice})
         Me.RepairAmountDGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RepairAmountDGV.Location = New System.Drawing.Point(3, 27)
         Me.RepairAmountDGV.Name = "RepairAmountDGV"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.RepairAmountDGV.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        Me.RepairAmountDGV.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.RepairAmountDGV.RowTemplate.Height = 24
         Me.RepairAmountDGV.Size = New System.Drawing.Size(842, 115)
-        Me.RepairAmountDGV.TabIndex = 17
+        Me.RepairAmountDGV.TabIndex = 2
         '
         'RepairAmountID
         '
@@ -623,7 +624,7 @@ Partial Class Set_Repair_Form
         Me.FlowLayoutPanel2.Location = New System.Drawing.Point(0, 1025)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
         Me.FlowLayoutPanel2.Size = New System.Drawing.Size(848, 42)
-        Me.FlowLayoutPanel2.TabIndex = 4
+        Me.FlowLayoutPanel2.TabIndex = 6
         '
         'SaveBtn
         '
@@ -676,7 +677,7 @@ Partial Class Set_Repair_Form
         Me.ReCheckBtn.Location = New System.Drawing.Point(176, 3)
         Me.ReCheckBtn.Name = "ReCheckBtn"
         Me.ReCheckBtn.Size = New System.Drawing.Size(79, 36)
-        Me.ReCheckBtn.TabIndex = 0
+        Me.ReCheckBtn.TabIndex = 2
         Me.ReCheckBtn.Text = "複核"
         Me.ReCheckBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ReCheckBtn.UseVisualStyleBackColor = True
@@ -692,7 +693,7 @@ Partial Class Set_Repair_Form
         Me.RepairConfirmBtn.Location = New System.Drawing.Point(261, 3)
         Me.RepairConfirmBtn.Name = "RepairConfirmBtn"
         Me.RepairConfirmBtn.Size = New System.Drawing.Size(118, 36)
-        Me.RepairConfirmBtn.TabIndex = 0
+        Me.RepairConfirmBtn.TabIndex = 3
         Me.RepairConfirmBtn.Text = "維修確認"
         Me.RepairConfirmBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.RepairConfirmBtn.UseVisualStyleBackColor = True
@@ -708,7 +709,7 @@ Partial Class Set_Repair_Form
         Me.PrintBtn.Location = New System.Drawing.Point(385, 3)
         Me.PrintBtn.Name = "PrintBtn"
         Me.PrintBtn.Size = New System.Drawing.Size(79, 36)
-        Me.PrintBtn.TabIndex = 0
+        Me.PrintBtn.TabIndex = 4
         Me.PrintBtn.Text = "列印"
         Me.PrintBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.PrintBtn.UseVisualStyleBackColor = True
@@ -724,7 +725,7 @@ Partial Class Set_Repair_Form
         Me.ExitBtn.Location = New System.Drawing.Point(470, 3)
         Me.ExitBtn.Name = "ExitBtn"
         Me.ExitBtn.Size = New System.Drawing.Size(80, 36)
-        Me.ExitBtn.TabIndex = 0
+        Me.ExitBtn.TabIndex = 5
         Me.ExitBtn.Text = "關閉"
         Me.ExitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ExitBtn.UseVisualStyleBackColor = True
@@ -754,7 +755,7 @@ Partial Class Set_Repair_Form
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(848, 90)
-        Me.Panel1.TabIndex = 5
+        Me.Panel1.TabIndex = 7
         '
         'Label15
         '
@@ -799,7 +800,7 @@ Partial Class Set_Repair_Form
         Me.RepairResultDGV.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.75839!))
         Me.RepairResultDGV.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.24161!))
         Me.RepairResultDGV.Size = New System.Drawing.Size(848, 149)
-        Me.RepairResultDGV.TabIndex = 9
+        Me.RepairResultDGV.TabIndex = 5
         Me.RepairResultDGV.Visible = False
         '
         'Label17
@@ -819,7 +820,7 @@ Partial Class Set_Repair_Form
         Me.RepairResultText.Multiline = True
         Me.RepairResultText.Name = "RepairResultText"
         Me.RepairResultText.Size = New System.Drawing.Size(702, 88)
-        Me.RepairResultText.TabIndex = 16
+        Me.RepairResultText.TabIndex = 0
         '
         'FlowLayoutPanel3
         '

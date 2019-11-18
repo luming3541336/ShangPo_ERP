@@ -58,21 +58,14 @@ Partial Class Data_User_Form
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.L11 = New System.Windows.Forms.CheckBox()
-        Me.L12 = New System.Windows.Forms.CheckBox()
         Me.L21 = New System.Windows.Forms.CheckBox()
-        Me.L22 = New System.Windows.Forms.CheckBox()
         Me.L31 = New System.Windows.Forms.CheckBox()
-        Me.L32 = New System.Windows.Forms.CheckBox()
         Me.L41 = New System.Windows.Forms.CheckBox()
         Me.L51 = New System.Windows.Forms.CheckBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.L61 = New System.Windows.Forms.CheckBox()
-        Me.L42 = New System.Windows.Forms.CheckBox()
-        Me.L52 = New System.Windows.Forms.CheckBox()
-        Me.L62 = New System.Windows.Forms.CheckBox()
         Me.L02 = New System.Windows.Forms.CheckBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
@@ -81,6 +74,15 @@ Partial Class Data_User_Form
         Me.DelBtn = New System.Windows.Forms.Button()
         Me.OKBtn = New System.Windows.Forms.Button()
         Me.CancelBtn = New System.Windows.Forms.Button()
+        Me.L62 = New System.Windows.Forms.CheckBox()
+        Me.L52 = New System.Windows.Forms.CheckBox()
+        Me.L42 = New System.Windows.Forms.CheckBox()
+        Me.L32 = New System.Windows.Forms.CheckBox()
+        Me.L22 = New System.Windows.Forms.CheckBox()
+        Me.L12 = New System.Windows.Forms.CheckBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.L33 = New System.Windows.Forms.CheckBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.LoginDGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -374,33 +376,36 @@ Partial Class Data_User_Form
         'T2
         '
         Me.T2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
-        Me.T2.ColumnCount = 3
-        Me.T2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.T2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.T2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.T2.Controls.Add(Me.L01, 0, 7)
+        Me.T2.ColumnCount = 4
+        Me.T2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.0!))
+        Me.T2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.T2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.T2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.T2.Controls.Add(Me.Label12, 0, 6)
         Me.T2.Controls.Add(Me.Label10, 0, 4)
         Me.T2.Controls.Add(Me.Label9, 0, 3)
         Me.T2.Controls.Add(Me.Label8, 0, 2)
         Me.T2.Controls.Add(Me.Label5, 1, 0)
-        Me.T2.Controls.Add(Me.Label6, 2, 0)
         Me.T2.Controls.Add(Me.Label7, 0, 1)
-        Me.T2.Controls.Add(Me.L11, 1, 1)
-        Me.T2.Controls.Add(Me.L12, 2, 1)
-        Me.T2.Controls.Add(Me.L21, 1, 2)
-        Me.T2.Controls.Add(Me.L22, 2, 2)
-        Me.T2.Controls.Add(Me.L31, 1, 3)
-        Me.T2.Controls.Add(Me.L32, 2, 3)
-        Me.T2.Controls.Add(Me.L41, 1, 4)
-        Me.T2.Controls.Add(Me.L51, 1, 5)
         Me.T2.Controls.Add(Me.Label11, 0, 5)
-        Me.T2.Controls.Add(Me.L61, 1, 6)
-        Me.T2.Controls.Add(Me.L42, 2, 4)
-        Me.T2.Controls.Add(Me.L52, 2, 5)
-        Me.T2.Controls.Add(Me.L62, 2, 6)
-        Me.T2.Controls.Add(Me.L02, 1, 7)
+        Me.T2.Controls.Add(Me.Label6, 2, 0)
+        Me.T2.Controls.Add(Me.Label14, 3, 0)
         Me.T2.Controls.Add(Me.Label13, 0, 7)
+        Me.T2.Controls.Add(Me.L33, 3, 4)
+        Me.T2.Controls.Add(Me.L61, 1, 7)
+        Me.T2.Controls.Add(Me.L51, 1, 6)
+        Me.T2.Controls.Add(Me.L41, 1, 5)
+        Me.T2.Controls.Add(Me.L31, 1, 4)
+        Me.T2.Controls.Add(Me.L21, 1, 3)
+        Me.T2.Controls.Add(Me.L11, 1, 2)
+        Me.T2.Controls.Add(Me.L01, 1, 1)
+        Me.T2.Controls.Add(Me.L62, 2, 7)
+        Me.T2.Controls.Add(Me.L52, 2, 6)
+        Me.T2.Controls.Add(Me.L42, 2, 5)
+        Me.T2.Controls.Add(Me.L32, 2, 4)
+        Me.T2.Controls.Add(Me.L22, 2, 3)
+        Me.T2.Controls.Add(Me.L12, 2, 2)
+        Me.T2.Controls.Add(Me.L02, 2, 1)
         Me.T2.Dock = System.Windows.Forms.DockStyle.Top
         Me.T2.Enabled = False
         Me.T2.Location = New System.Drawing.Point(3, 28)
@@ -414,7 +419,6 @@ Partial Class Data_User_Form
         Me.T2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.T2.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.T2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.T2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.T2.Size = New System.Drawing.Size(569, 242)
         Me.T2.TabIndex = 0
         '
@@ -422,7 +426,7 @@ Partial Class Data_User_Form
         '
         Me.L01.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.L01.AutoSize = True
-        Me.L01.Location = New System.Drawing.Point(347, 175)
+        Me.L01.Location = New System.Drawing.Point(275, 25)
         Me.L01.Name = "L01"
         Me.L01.Size = New System.Drawing.Size(15, 14)
         Me.L01.TabIndex = 22
@@ -432,7 +436,7 @@ Partial Class Data_User_Form
         '
         Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(99, 147)
+        Me.Label12.Location = New System.Drawing.Point(70, 147)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(86, 24)
         Me.Label12.TabIndex = 19
@@ -442,7 +446,7 @@ Partial Class Data_User_Form
         '
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(89, 97)
+        Me.Label10.Location = New System.Drawing.Point(61, 97)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(105, 24)
         Me.Label10.TabIndex = 13
@@ -452,7 +456,7 @@ Partial Class Data_User_Form
         '
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(99, 72)
+        Me.Label9.Location = New System.Drawing.Point(70, 72)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(86, 24)
         Me.Label9.TabIndex = 10
@@ -462,7 +466,7 @@ Partial Class Data_User_Form
         '
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(89, 47)
+        Me.Label8.Location = New System.Drawing.Point(61, 47)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(105, 24)
         Me.Label8.TabIndex = 7
@@ -472,27 +476,17 @@ Partial Class Data_User_Form
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(330, 1)
+        Me.Label5.Location = New System.Drawing.Point(259, 1)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(48, 20)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "讀取"
         '
-        'Label6
-        '
-        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(473, 1)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(48, 20)
-        Me.Label6.TabIndex = 1
-        Me.Label6.Text = "修改"
-        '
         'Label7
         '
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(99, 22)
+        Me.Label7.Location = New System.Drawing.Point(70, 22)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(86, 24)
         Me.Label7.TabIndex = 2
@@ -502,67 +496,37 @@ Partial Class Data_User_Form
         '
         Me.L11.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.L11.AutoSize = True
-        Me.L11.Location = New System.Drawing.Point(347, 25)
+        Me.L11.Location = New System.Drawing.Point(275, 50)
         Me.L11.Name = "L11"
         Me.L11.Size = New System.Drawing.Size(15, 14)
         Me.L11.TabIndex = 3
         Me.L11.UseVisualStyleBackColor = True
         '
-        'L12
-        '
-        Me.L12.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.L12.AutoSize = True
-        Me.L12.Location = New System.Drawing.Point(489, 25)
-        Me.L12.Name = "L12"
-        Me.L12.Size = New System.Drawing.Size(15, 14)
-        Me.L12.TabIndex = 4
-        Me.L12.UseVisualStyleBackColor = True
-        '
         'L21
         '
         Me.L21.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.L21.AutoSize = True
-        Me.L21.Location = New System.Drawing.Point(347, 50)
+        Me.L21.Location = New System.Drawing.Point(275, 75)
         Me.L21.Name = "L21"
         Me.L21.Size = New System.Drawing.Size(15, 14)
         Me.L21.TabIndex = 5
         Me.L21.UseVisualStyleBackColor = True
         '
-        'L22
-        '
-        Me.L22.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.L22.AutoSize = True
-        Me.L22.Location = New System.Drawing.Point(489, 50)
-        Me.L22.Name = "L22"
-        Me.L22.Size = New System.Drawing.Size(15, 14)
-        Me.L22.TabIndex = 6
-        Me.L22.UseVisualStyleBackColor = True
-        '
         'L31
         '
         Me.L31.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.L31.AutoSize = True
-        Me.L31.Location = New System.Drawing.Point(347, 75)
+        Me.L31.Location = New System.Drawing.Point(275, 100)
         Me.L31.Name = "L31"
         Me.L31.Size = New System.Drawing.Size(15, 14)
         Me.L31.TabIndex = 8
         Me.L31.UseVisualStyleBackColor = True
         '
-        'L32
-        '
-        Me.L32.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.L32.AutoSize = True
-        Me.L32.Location = New System.Drawing.Point(489, 75)
-        Me.L32.Name = "L32"
-        Me.L32.Size = New System.Drawing.Size(15, 14)
-        Me.L32.TabIndex = 9
-        Me.L32.UseVisualStyleBackColor = True
-        '
         'L41
         '
         Me.L41.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.L41.AutoSize = True
-        Me.L41.Location = New System.Drawing.Point(347, 100)
+        Me.L41.Location = New System.Drawing.Point(275, 125)
         Me.L41.Name = "L41"
         Me.L41.Size = New System.Drawing.Size(15, 14)
         Me.L41.TabIndex = 11
@@ -572,7 +536,7 @@ Partial Class Data_User_Form
         '
         Me.L51.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.L51.AutoSize = True
-        Me.L51.Location = New System.Drawing.Point(347, 125)
+        Me.L51.Location = New System.Drawing.Point(275, 150)
         Me.L51.Name = "L51"
         Me.L51.Size = New System.Drawing.Size(15, 14)
         Me.L51.TabIndex = 15
@@ -582,7 +546,7 @@ Partial Class Data_User_Form
         '
         Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(99, 122)
+        Me.Label11.Location = New System.Drawing.Point(70, 122)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(86, 24)
         Me.Label11.TabIndex = 14
@@ -592,49 +556,17 @@ Partial Class Data_User_Form
         '
         Me.L61.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.L61.AutoSize = True
-        Me.L61.Location = New System.Drawing.Point(347, 150)
+        Me.L61.Location = New System.Drawing.Point(275, 175)
         Me.L61.Name = "L61"
         Me.L61.Size = New System.Drawing.Size(15, 14)
         Me.L61.TabIndex = 17
         Me.L61.UseVisualStyleBackColor = True
         '
-        'L42
-        '
-        Me.L42.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.L42.AutoSize = True
-        Me.L42.Location = New System.Drawing.Point(489, 100)
-        Me.L42.Name = "L42"
-        Me.L42.Size = New System.Drawing.Size(15, 14)
-        Me.L42.TabIndex = 12
-        Me.L42.UseVisualStyleBackColor = True
-        '
-        'L52
-        '
-        Me.L52.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.L52.AutoSize = True
-        Me.L52.Location = New System.Drawing.Point(489, 125)
-        Me.L52.Name = "L52"
-        Me.L52.Size = New System.Drawing.Size(15, 14)
-        Me.L52.TabIndex = 23
-        Me.L52.UseVisualStyleBackColor = True
-        Me.L52.Visible = False
-        '
-        'L62
-        '
-        Me.L62.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.L62.AutoSize = True
-        Me.L62.Location = New System.Drawing.Point(489, 150)
-        Me.L62.Name = "L62"
-        Me.L62.Size = New System.Drawing.Size(15, 14)
-        Me.L62.TabIndex = 24
-        Me.L62.UseVisualStyleBackColor = True
-        Me.L62.Visible = False
-        '
         'L02
         '
         Me.L02.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.L02.AutoSize = True
-        Me.L02.Location = New System.Drawing.Point(489, 175)
+        Me.L02.Location = New System.Drawing.Point(388, 25)
         Me.L02.Name = "L02"
         Me.L02.Size = New System.Drawing.Size(15, 14)
         Me.L02.TabIndex = 25
@@ -644,7 +576,7 @@ Partial Class Data_User_Form
         '
         Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(99, 172)
+        Me.Label13.Location = New System.Drawing.Point(70, 172)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(86, 24)
         Me.Label13.TabIndex = 20
@@ -718,6 +650,98 @@ Partial Class Data_User_Form
         Me.CancelBtn.UseVisualStyleBackColor = False
         Me.CancelBtn.Visible = False
         '
+        'L62
+        '
+        Me.L62.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.L62.AutoSize = True
+        Me.L62.Location = New System.Drawing.Point(388, 175)
+        Me.L62.Name = "L62"
+        Me.L62.Size = New System.Drawing.Size(15, 14)
+        Me.L62.TabIndex = 24
+        Me.L62.UseVisualStyleBackColor = True
+        Me.L62.Visible = False
+        '
+        'L52
+        '
+        Me.L52.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.L52.AutoSize = True
+        Me.L52.Location = New System.Drawing.Point(388, 150)
+        Me.L52.Name = "L52"
+        Me.L52.Size = New System.Drawing.Size(15, 14)
+        Me.L52.TabIndex = 23
+        Me.L52.UseVisualStyleBackColor = True
+        Me.L52.Visible = False
+        '
+        'L42
+        '
+        Me.L42.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.L42.AutoSize = True
+        Me.L42.Location = New System.Drawing.Point(388, 125)
+        Me.L42.Name = "L42"
+        Me.L42.Size = New System.Drawing.Size(15, 14)
+        Me.L42.TabIndex = 12
+        Me.L42.UseVisualStyleBackColor = True
+        '
+        'L32
+        '
+        Me.L32.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.L32.AutoSize = True
+        Me.L32.Location = New System.Drawing.Point(388, 100)
+        Me.L32.Name = "L32"
+        Me.L32.Size = New System.Drawing.Size(15, 14)
+        Me.L32.TabIndex = 9
+        Me.L32.UseVisualStyleBackColor = True
+        '
+        'L22
+        '
+        Me.L22.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.L22.AutoSize = True
+        Me.L22.Location = New System.Drawing.Point(388, 75)
+        Me.L22.Name = "L22"
+        Me.L22.Size = New System.Drawing.Size(15, 14)
+        Me.L22.TabIndex = 6
+        Me.L22.UseVisualStyleBackColor = True
+        '
+        'L12
+        '
+        Me.L12.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.L12.AutoSize = True
+        Me.L12.Location = New System.Drawing.Point(388, 50)
+        Me.L12.Name = "L12"
+        Me.L12.Size = New System.Drawing.Size(15, 14)
+        Me.L12.TabIndex = 4
+        Me.L12.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(372, 1)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(48, 20)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "修改"
+        '
+        'Label14
+        '
+        Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(477, 1)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(67, 20)
+        Me.Label14.TabIndex = 1
+        Me.Label14.Text = "管理級"
+        '
+        'L33
+        '
+        Me.L33.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.L33.AutoSize = True
+        Me.L33.Location = New System.Drawing.Point(503, 100)
+        Me.L33.Name = "L33"
+        Me.L33.Size = New System.Drawing.Size(15, 14)
+        Me.L33.TabIndex = 12
+        Me.L33.UseVisualStyleBackColor = True
+        '
         'Data_User_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -763,18 +787,13 @@ Partial Class Data_User_Form
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents T2 As TableLayoutPanel
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents L11 As CheckBox
-    Friend WithEvents L12 As CheckBox
     Friend WithEvents L21 As CheckBox
-    Friend WithEvents L22 As CheckBox
     Friend WithEvents Label9 As Label
     Friend WithEvents L31 As CheckBox
-    Friend WithEvents L32 As CheckBox
     Friend WithEvents L41 As CheckBox
-    Friend WithEvents L42 As CheckBox
     Friend WithEvents Label10 As Label
     Friend WithEvents L51 As CheckBox
     Friend WithEvents Label11 As Label
@@ -801,7 +820,14 @@ Partial Class Data_User_Form
     Friend WithEvents L4 As DataGridViewTextBoxColumn
     Friend WithEvents L5 As DataGridViewTextBoxColumn
     Friend WithEvents L6 As DataGridViewTextBoxColumn
+    Friend WithEvents L02 As CheckBox
+    Friend WithEvents L12 As CheckBox
+    Friend WithEvents L22 As CheckBox
+    Friend WithEvents L32 As CheckBox
     Friend WithEvents L52 As CheckBox
     Friend WithEvents L62 As CheckBox
-    Friend WithEvents L02 As CheckBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents L42 As CheckBox
+    Friend WithEvents L33 As CheckBox
 End Class
