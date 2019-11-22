@@ -119,5 +119,25 @@ Namespace My.Resources
                 Return CType(obj,Byte())
             End Get
         End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
+        Friend ReadOnly Property 您有待審查訊息() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("您有待審查訊息", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        '''</summary>
+        Friend ReadOnly Property 登入資訊() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("登入資訊", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
     End Module
 End Namespace

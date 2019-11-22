@@ -17,4 +17,18 @@ Public Class Main_Controller
         End If
         Return listData
     End Function
+    Public Function Select_RepairStatus() As List(Of RepairData)
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = SELECT_REPAIRDATA_FOR_STATUS
+        Dim listData As List(Of RepairData) = Nothing
+        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
+        If dataReader.HasRows Then
+            listData = New List(Of RepairData)
+            While dataReader.Read
+                listData.Add(New RepairData With {.RepairID = dataReader("RepairID"), .CaseID = dataReader("CaseID"), .RepairOrder = dataReader("RepairOrder")})
+            End While
+        End If
+        Return listData
+
+    End Function
 End Class

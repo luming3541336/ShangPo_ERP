@@ -8,9 +8,9 @@
     '   1:僅能讀取
     '   2:可讀取及修改
     '   3:管理級權限
-    Public L0 As Integer = Nothing  '產品資訊
+    Public L0 As Integer = Nothing  '零件資訊
     Public L1 As Integer = Nothing  '供應商資訊
-    Public L2 As Integer = Nothing  '規格設定
+    Public L2 As Integer = Nothing  '類別設定
     Public L3 As Integer = Nothing  '進出貨管理
     Public L4 As Integer = Nothing  '庫存查詢
     Public L5 As Integer = Nothing  '報表列印

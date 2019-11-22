@@ -18,13 +18,25 @@
                 Select Case LoginDGV.CurrentRow.Cells(arrL(i)).Value
                     Case 0
                         arrCheckBoxLx1(i).Checked = False
+                        arrCheckBoxLx1(i).Enabled = True
+                        arrCheckBoxLx2(i).Enabled = False
                         arrCheckBoxLx2(i).Checked = False
+
                     Case 1
                         arrCheckBoxLx1(i).Checked = True
                         arrCheckBoxLx2(i).Checked = False
+                        arrCheckBoxLx1(i).Enabled = True
+                        arrCheckBoxLx2(i).Enabled = True
                     Case 2
                         arrCheckBoxLx1(i).Checked = True
                         arrCheckBoxLx2(i).Checked = True
+                        If arrL(i) = "L3" Then 'L3X有提供管理級權限
+                            L33.Enabled = True
+                        End If
+                    Case 3 '管理級權限資料 暫時限定只有"進出貨管理(L3X)使用
+                        arrCheckBoxLx1(i).Checked = True
+                        arrCheckBoxLx2(i).Checked = True
+                        L33.Checked = True
                 End Select
             Next
         End If
@@ -87,6 +99,9 @@
         For i = 0 To 6
             If arrCheckBoxLx1(i).Checked And arrCheckBoxLx2(i).Checked Then
                 arrLSave(i) = 2
+                If i = 3 And L33.Checked Then
+                    arrLSave(i) = 3
+                End If
             ElseIf arrCheckBoxLx1(i).Checked Then
                 arrLSave(i) = 1
             Else

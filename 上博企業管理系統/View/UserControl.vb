@@ -11,7 +11,7 @@
 
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles CaseBtn.Click
         If Panel2.Visible Then
             Panel2.Visible = False
             sender.imageIndex = 1
@@ -46,7 +46,7 @@
     End Sub
 
 
-    Private Sub CasrViewBtn_Click(sender As Object, e As EventArgs) Handles CasrViewBtn.Click
+    Private Sub CasrViewBtn_Click(sender As Object, e As EventArgs) Handles CaseViewBtn.Click
         Dim View As Data_Case_Form = New Data_Case_Form
         View.Show()
     End Sub
@@ -63,6 +63,37 @@
 
     Private Sub StockViewBtn_Click(sender As Object, e As EventArgs) Handles StockViewBtn.Click
         Dim View As Data_Stock_Form = New Data_Stock_Form
+        View.Show()
+    End Sub
+
+    Private Sub UserSetBtn_Click(sender As Object, e As EventArgs) Handles UserSetBtn.Click
+        Dim View As Data_User_Form = New Data_User_Form
+        View.Show()
+    End Sub
+
+    Private Sub UserControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If L0 = 0 Then
+            ProdPartBtn.Visible = False
+        End If
+        If L1 = 0 Then
+            SupplierSetBtn.Visible = False
+        End If
+        If L2 = 0 Then
+            ClassBtn.Visible = False
+        End If
+        If L3 = 0 Then
+            CaseBtn.Visible = False
+        End If
+        If L4 = 0 Then
+            StockViewBtn.Visible = False
+        End If
+        If L6 = 0 Then
+            UserSetBtn.Visible = False
+        End If
+    End Sub
+
+    Private Sub SupplierSetBtn_Click(sender As Object, e As EventArgs) Handles SupplierSetBtn.Click
+        Dim View As Data_Supplier_Form = New Data_Supplier_Form
         View.Show()
     End Sub
 End Class

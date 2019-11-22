@@ -8,6 +8,7 @@
     Protected Const INSERT_LOGINDATA_SQL = "INSERT INTO LoginData(UserName,Access,UserID,Password,L0,L1,L2,L3,L4,L5,L6) VALUES (N'@name',N'@access','@ID','@PW',@L0,@L1,@L2,@L3,@L4,@L5,@L6); SELECT id = SCOPE_IDENTITY(); "
     Protected Const UPDATE_LOGINDATA_SQL = "UPDATE LoginData SET UserName = N'@name', Access = N'@access', UserID = '@ID', Password = '@PW', L0 = @L0, L1 = @L1, L2 = @L2, L3 = @L3, L4 = @L4, L5 = @L5, L6 = @L6 WHERE LoginID = @LID"
     Protected Const DELETE_LOGINDATA_SQL = "DELETE FROM LoginData WHERE LoginID = @id"
+    Protected Const SELECT_REPAIRDATA_FOR_STATUS = "SELECT * FROM RepairData WHERE Status = 2"
     Public Structure LoginData
         Dim LoginID As Integer
         Dim UserName As String

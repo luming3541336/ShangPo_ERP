@@ -193,11 +193,11 @@ Public Class Set_Sale_Form
     End Sub
 
     Private Sub prodDGV_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles prodDGV.CellEnter, fitDGV.CellEnter
-        If e.ColumnIndex = 8 Then
-            sender.ImeMode = ImeMode.OnHalf
-        Else
-            sender.ImeMode = ImeMode.Disable
-        End If
+        'If e.ColumnIndex = 8 Then
+        '    sender.ImeMode = ImeMode.OnHalf
+        'Else
+        '    sender.ImeMode = ImeMode.Disable
+        'End If
     End Sub
 
     Private Sub prodDGV_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles prodDGV.CellValueChanged, fitDGV.CellValueChanged

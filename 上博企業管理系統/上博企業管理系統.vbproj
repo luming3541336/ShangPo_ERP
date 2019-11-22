@@ -333,6 +333,12 @@
     <Compile Include="View\UserControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="View\UserControl1.Designer.vb">
+      <DependentUpon>UserControl1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl1.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="View\View_Form.Designer.vb">
       <DependentUpon>View_Form.vb</DependentUpon>
     </Compile>
@@ -435,6 +441,9 @@
     <EmbeddedResource Include="View\UserControl.resx">
       <DependentUpon>UserControl.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControl1.resx">
+      <DependentUpon>UserControl1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\View_Form.resx">
       <DependentUpon>View_Form.vb</DependentUpon>
     </EmbeddedResource>
@@ -483,8 +492,10 @@
     <Content Include="Resources\pencil-red-icon.png" />
     <Content Include="Resources\stock.png" />
     <Content Include="Resources\供應商資訊.png" />
+    <Content Include="Resources\您有待審查訊息.png" />
     <Content Include="Resources\產品資訊.png" />
     <Content Include="Resources\用戶設定.png" />
+    <Content Include="Resources\登入資訊.png" />
     <Content Include="Resources\規格設定.png" />
   </ItemGroup>
   <ItemGroup>

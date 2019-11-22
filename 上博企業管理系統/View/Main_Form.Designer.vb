@@ -25,19 +25,24 @@ Partial Class Main_Form
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Form))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.ConfirmBGW = New System.ComponentModel.BackgroundWorker()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.MainPanel = New System.Windows.Forms.Panel()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.ConfirmPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.NameLabel = New System.Windows.Forms.Label()
-        Me.TimeLabel = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.VerText = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TimeLabel = New System.Windows.Forms.Label()
         Me.UserControl1 = New 上博企業管理系統.UserControl()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MainPanel.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -59,12 +64,31 @@ Partial Class Main_Form
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1139, 700)
         Me.TableLayoutPanel1.TabIndex = 0
         '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "baseline_Down.png")
+        Me.ImageList1.Images.SetKeyName(1, "baseline_right.png")
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
+        'ConfirmBGW
+        '
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 10000
+        '
         'MainPanel
         '
         Me.MainPanel.BackColor = System.Drawing.Color.Transparent
         Me.MainPanel.BackgroundImage = Global.上博企業管理系統.My.Resources.Resources.Shangpo_Logo_Final
         Me.MainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.MainPanel.Controls.Add(Me.FlowLayoutPanel1)
+        Me.MainPanel.Controls.Add(Me.Panel3)
+        Me.MainPanel.Controls.Add(Me.Panel1)
         Me.MainPanel.Controls.Add(Me.UserControl1)
         Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainPanel.Location = New System.Drawing.Point(0, 0)
@@ -73,29 +97,47 @@ Partial Class Main_Form
         Me.MainPanel.Size = New System.Drawing.Size(1139, 700)
         Me.MainPanel.TabIndex = 1
         '
-        'FlowLayoutPanel1
+        'Panel3
         '
-        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(133, Byte), Integer))
-        Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FlowLayoutPanel1.Controls.Add(Me.NameLabel)
-        Me.FlowLayoutPanel1.Controls.Add(Me.TimeLabel)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Panel2)
-        Me.FlowLayoutPanel1.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.FlowLayoutPanel1.ForeColor = System.Drawing.Color.Black
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(922, 5)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(5)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(212, 93)
-        Me.FlowLayoutPanel1.TabIndex = 0
+        Me.Panel3.BackgroundImage = Global.上博企業管理系統.My.Resources.Resources.您有待審查訊息
+        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel3.Controls.Add(Me.ConfirmPanel)
+        Me.Panel3.Location = New System.Drawing.Point(924, 143)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(212, 300)
+        Me.Panel3.TabIndex = 8
+        Me.Panel3.Visible = False
+        '
+        'ConfirmPanel
+        '
+        Me.ConfirmPanel.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.ConfirmPanel.Location = New System.Drawing.Point(12, 39)
+        Me.ConfirmPanel.Margin = New System.Windows.Forms.Padding(0)
+        Me.ConfirmPanel.Name = "ConfirmPanel"
+        Me.ConfirmPanel.Size = New System.Drawing.Size(192, 251)
+        Me.ConfirmPanel.TabIndex = 1
+        '
+        'Panel1
+        '
+        Me.Panel1.BackgroundImage = Global.上博企業管理系統.My.Resources.Resources.登入資訊
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel1.Controls.Add(Me.NameLabel)
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.TimeLabel)
+        Me.Panel1.Location = New System.Drawing.Point(924, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(215, 140)
+        Me.Panel1.TabIndex = 7
         '
         'NameLabel
         '
         Me.NameLabel.AutoSize = True
         Me.NameLabel.BackColor = System.Drawing.Color.Transparent
         Me.NameLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NameLabel.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.NameLabel.ForeColor = System.Drawing.Color.White
-        Me.NameLabel.Location = New System.Drawing.Point(2, 3)
+        Me.NameLabel.Location = New System.Drawing.Point(8, 45)
         Me.NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.NameLabel.Name = "NameLabel"
         Me.NameLabel.Size = New System.Drawing.Size(73, 20)
@@ -103,25 +145,13 @@ Partial Class Main_Form
         Me.NameLabel.Text = "測試字幕"
         Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'TimeLabel
-        '
-        Me.TimeLabel.BackColor = System.Drawing.Color.Transparent
-        Me.TimeLabel.ForeColor = System.Drawing.Color.White
-        Me.TimeLabel.Location = New System.Drawing.Point(3, 26)
-        Me.TimeLabel.Margin = New System.Windows.Forms.Padding(3)
-        Me.TimeLabel.Name = "TimeLabel"
-        Me.TimeLabel.Size = New System.Drawing.Size(196, 20)
-        Me.TimeLabel.TabIndex = 1
-        Me.TimeLabel.Text = "測試字幕"
-        Me.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'Panel2
         '
         Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.Controls.Add(Me.VerText)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(3, 52)
+        Me.Panel2.Location = New System.Drawing.Point(8, 94)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(196, 24)
         Me.Panel2.TabIndex = 1
@@ -151,6 +181,18 @@ Partial Class Main_Form
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Ver.:"
         '
+        'TimeLabel
+        '
+        Me.TimeLabel.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.TimeLabel.ForeColor = System.Drawing.Color.White
+        Me.TimeLabel.Location = New System.Drawing.Point(8, 68)
+        Me.TimeLabel.Margin = New System.Windows.Forms.Padding(3)
+        Me.TimeLabel.Name = "TimeLabel"
+        Me.TimeLabel.Size = New System.Drawing.Size(196, 20)
+        Me.TimeLabel.TabIndex = 1
+        Me.TimeLabel.Text = "測試字幕"
+        Me.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'UserControl1
         '
         Me.UserControl1.AutoSize = True
@@ -161,17 +203,6 @@ Partial Class Main_Form
         Me.UserControl1.Name = "UserControl1"
         Me.UserControl1.Size = New System.Drawing.Size(222, 700)
         Me.UserControl1.TabIndex = 4
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "baseline_Down.png")
-        Me.ImageList1.Images.SetKeyName(1, "baseline_right.png")
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 1000
         '
         'Main_Form
         '
@@ -192,8 +223,9 @@ Partial Class Main_Form
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.MainPanel.ResumeLayout(False)
         Me.MainPanel.PerformLayout()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.FlowLayoutPanel1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
@@ -205,10 +237,14 @@ Partial Class Main_Form
     Friend WithEvents NameLabel As Label
     Friend WithEvents VerText As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents TimeLabel As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents UserControl1 As UserControl
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents ConfirmPanel As FlowLayoutPanel
+    Friend WithEvents ConfirmBGW As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel3 As Panel
 End Class

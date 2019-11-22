@@ -11,6 +11,7 @@ Public Class Set_Repair_Form
     Dim arrRepairAmountEdit As ArrayList = New ArrayList
     Dim arrRepairAmountDel As ArrayList = New ArrayList
     Dim bufRepairAmountEdit As String = Nothing
+    Dim arrRepairFileAdd As ArrayList = New ArrayList
     Dim arrRepairFileDel As ArrayList = New ArrayList
 
 
@@ -70,13 +71,21 @@ Public Class Set_Repair_Form
                     SubmitBtn.Visible = True
                 Case 2
                     StatusText.Text = "覆核確認中"
-                    ReCheckBtn.Visible = True
-                    PrintBtn.Visible = True
+                    SaveBtn.Visible = False
+                    If L3 = 3 Then
+                        ReCheckBtn.Visible = True
+                        PrintBtn.Visible = True
+                        SaveBtn.Visible = True
+                    End If
                 Case 3
                     StatusText.Text = "已完成派單，等待執行"
                     RepairConfirmBtn.Visible = True
+                    SaveBtn.Visible = False
                     PrintBtn.Visible = True
                     RepairResultDGV.Visible = True
+                    If L3 = 3 Then
+                        SaveBtn.Visible = True
+                    End If
                 Case 4
                     StatusText.Text = "維修已完成"
                     SaveBtn.Visible = False
@@ -175,7 +184,7 @@ Public Class Set_Repair_Form
             controller.Delete_RepairAmount(intdata)
         Next
         '新增維修單據掃描檔
-        For Each controls As Control In FlowLayoutPanel3.Controls
+        For Each controls As Control In arrRepairFileAdd
             If CType(controls, FilePath).Get_FileID = 0 Then
                 Dim strFile As String() = Split(CType(controls, FilePath).Get_FileName, ".")
                 controller.Copy_File(CType(controls, FilePath).Get_Path, controls.Name & "." & strFile(1))
@@ -215,7 +224,12 @@ Public Class Set_Repair_Form
     End Sub
 
     Private Sub RepairProdDGV_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles RepairProdDGV.EditingControlShowing
+        If RepairProdDGV.CurrentCell.ColumnIndex = 4 Then
+            e.Control.ImeMode = ImeMode.Disable
+        Else
+            e.Control.ImeMode = ImeMode.OnHalf
 
+        End If
         If RepairProdDGV.CurrentCellAddress.X = ProdPartName.DisplayIndex Then
             Dim cb As ComboBox = TryCast(e.Control, ComboBox)
             If cb IsNot Nothing Then
@@ -245,6 +259,12 @@ Public Class Set_Repair_Form
     End Sub
 
     Private Sub RepairAmountDGV_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles RepairAmountDGV.EditingControlShowing
+        If RepairAmountDGV.CurrentCell.ColumnIndex = 2 Then
+            e.Control.ImeMode = ImeMode.Disable
+        Else
+            e.Control.ImeMode = ImeMode.OnHalf
+
+        End If
         If RepairAmountDGV.CurrentCellAddress.X = BillItem.DisplayIndex Then
             Dim cb As ComboBox = TryCast(e.Control, ComboBox)
             If cb IsNot Nothing Then
@@ -348,13 +368,19 @@ Public Class Set_Repair_Form
                     Dim f As FilePath = New FilePath(Me, SafeFileNames(i), FileNames(i))
                     f.Name = New Random().Next
                     FlowLayoutPanel3.Controls.Add(f)
+                    arrRepairFileAdd.Add(f)
                 Next
             End If
         End If
     End Sub
     Public Sub RemoveControl(ByRef myControl As Control)
         FlowLayoutPanel3.Focus()
-        arrRepairFileDel.Add(New RepairFile With {.RepairFileID = CType(myControl, FilePath).Get_FileID, .RepairFilePath = CType(myControl, FilePath).Get_Path})
+        '若刪除的檔案ID為0表示為尚未新增之檔案，直接從新增檔案陣列內刪除
+        If CType(myControl, FilePath).Get_FileID = 0 Then
+            arrRepairFileAdd.Remove(myControl)
+        Else
+            arrRepairFileDel.Add(New RepairFile With {.RepairFileID = CType(myControl, FilePath).Get_FileID, .RepairFilePath = CType(myControl, FilePath).Get_Path})
+        End If
         FlowLayoutPanel3.Controls.Remove(myControl)
     End Sub
 
@@ -392,6 +418,7 @@ Public Class Set_Repair_Form
     End Sub
 
     Private Sub RepairConfirmBtn_Click(sender As Object, e As EventArgs) Handles RepairConfirmBtn.Click
+
         Select Case MsgBox("確定資料皆正確?完成後將無法再修正", MsgBoxStyle.OkCancel, "注意")
             Case MsgBoxResult.Ok
                 controller.Update_RepairDataStatus(4, intRepairID)
@@ -403,5 +430,13 @@ Public Class Set_Repair_Form
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
         Me.DialogResult = DialogResult.Cancel
+    End Sub
+
+    Private Sub RepairAmountDGV_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles RepairAmountDGV.CellEnter
+
+    End Sub
+
+    Private Sub RepairProdDGV_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles RepairProdDGV.CellEnter
+
     End Sub
 End Class
