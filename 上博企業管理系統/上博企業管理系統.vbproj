@@ -26,8 +26,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\DBSERVER\AppInstall\</UpdateUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
-    <ApplicationVersion>1.6.1.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -333,12 +333,6 @@
     <Compile Include="View\UserControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UserControl1.Designer.vb">
-      <DependentUpon>UserControl1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserControl1.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="View\View_Form.Designer.vb">
       <DependentUpon>View_Form.vb</DependentUpon>
     </Compile>
@@ -440,9 +434,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControl.resx">
       <DependentUpon>UserControl.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\UserControl1.resx">
-      <DependentUpon>UserControl1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\View_Form.resx">
       <DependentUpon>View_Form.vb</DependentUpon>

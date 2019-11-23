@@ -25,10 +25,6 @@ Partial Class Main_Form
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Form))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.ConfirmBGW = New System.ComponentModel.BackgroundWorker()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.MainPanel = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.ConfirmPanel = New System.Windows.Forms.FlowLayoutPanel()
@@ -39,6 +35,10 @@ Partial Class Main_Form
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TimeLabel = New System.Windows.Forms.Label()
         Me.UserControl1 = New 上博企業管理系統.UserControl()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.ConfirmBGW = New System.ComponentModel.BackgroundWorker()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MainPanel.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -63,24 +63,6 @@ Partial Class Main_Form
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1139, 700)
         Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "baseline_Down.png")
-        Me.ImageList1.Images.SetKeyName(1, "baseline_right.png")
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 1000
-        '
-        'ConfirmBGW
-        '
-        '
-        'Timer2
-        '
-        Me.Timer2.Interval = 10000
         '
         'MainPanel
         '
@@ -140,9 +122,8 @@ Partial Class Main_Form
         Me.NameLabel.Location = New System.Drawing.Point(8, 45)
         Me.NameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(73, 20)
+        Me.NameLabel.Size = New System.Drawing.Size(0, 20)
         Me.NameLabel.TabIndex = 0
-        Me.NameLabel.Text = "測試字幕"
         Me.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Panel2
@@ -190,7 +171,6 @@ Partial Class Main_Form
         Me.TimeLabel.Name = "TimeLabel"
         Me.TimeLabel.Size = New System.Drawing.Size(196, 20)
         Me.TimeLabel.TabIndex = 1
-        Me.TimeLabel.Text = "測試字幕"
         Me.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'UserControl1
@@ -203,6 +183,24 @@ Partial Class Main_Form
         Me.UserControl1.Name = "UserControl1"
         Me.UserControl1.Size = New System.Drawing.Size(222, 700)
         Me.UserControl1.TabIndex = 4
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "baseline_Down.png")
+        Me.ImageList1.Images.SetKeyName(1, "baseline_right.png")
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
+        'ConfirmBGW
+        '
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 10000
         '
         'Main_Form
         '

@@ -296,7 +296,7 @@ Public Class Set_Repair_Form
     End Sub
 
     Private Sub ReCheckBtn_Click(sender As Object, e As EventArgs) Handles ReCheckBtn.Click
-        Select Case MsgBox("確定資料皆正確?", MsgBoxStyle.OkCancel, "注意")
+        Select Case MsgBox("若有新增資料時須先存檔，確定資料皆正確?", MsgBoxStyle.OkCancel, "注意")
             Case MsgBoxResult.Ok
                 controller.Update_RepairDataStatus(3, intRepairID)
                 controller.Insert_RepairLog(intRepairID, "覆核確認")
@@ -419,7 +419,7 @@ Public Class Set_Repair_Form
 
     Private Sub RepairConfirmBtn_Click(sender As Object, e As EventArgs) Handles RepairConfirmBtn.Click
 
-        Select Case MsgBox("確定資料皆正確?完成後將無法再修正", MsgBoxStyle.OkCancel, "注意")
+        Select Case MsgBox("若有新增資料時須先存檔，完成後將無法再修正", MsgBoxStyle.OkCancel, "注意")
             Case MsgBoxResult.Ok
                 controller.Update_RepairDataStatus(4, intRepairID)
                 controller.Insert_RepairLog(intRepairID, "維修確認")
