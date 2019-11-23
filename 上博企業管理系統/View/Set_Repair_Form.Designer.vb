@@ -241,7 +241,7 @@ Partial Class Set_Repair_Form
         '
         Me.PhoneText.Location = New System.Drawing.Point(561, 120)
         Me.PhoneText.Name = "PhoneText"
-        Me.PhoneText.Size = New System.Drawing.Size(174, 33)
+        Me.PhoneText.Size = New System.Drawing.Size(275, 33)
         Me.PhoneText.TabIndex = 6
         '
         'Label3

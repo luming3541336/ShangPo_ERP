@@ -33,6 +33,7 @@ Partial Class Login_Form
         '
         Me.UserIDText.Depth = 0
         Me.UserIDText.Hint = "帳號"
+        Me.UserIDText.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.UserIDText.Location = New System.Drawing.Point(49, 90)
         Me.UserIDText.Margin = New System.Windows.Forms.Padding(2)
         Me.UserIDText.MouseState = MaterialSkin.MouseState.HOVER
@@ -49,11 +50,12 @@ Partial Class Login_Form
         '
         Me.PasswordText.Depth = 0
         Me.PasswordText.Hint = "密碼"
+        Me.PasswordText.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.PasswordText.Location = New System.Drawing.Point(49, 117)
         Me.PasswordText.Margin = New System.Windows.Forms.Padding(2)
         Me.PasswordText.MouseState = MaterialSkin.MouseState.HOVER
         Me.PasswordText.Name = "PasswordText"
-        Me.PasswordText.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.PasswordText.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PasswordText.SelectedText = ""
         Me.PasswordText.SelectionLength = 0
         Me.PasswordText.SelectionStart = 0
@@ -117,6 +119,7 @@ Partial Class Login_Form
         Me.Controls.Add(Me.PasswordText)
         Me.Controls.Add(Me.UserIDText)
         Me.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.ImeMode = System.Windows.Forms.ImeMode.Close
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Login_Form"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

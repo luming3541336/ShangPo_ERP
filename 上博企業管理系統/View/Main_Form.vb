@@ -21,9 +21,7 @@ Public Class Main_Form
             Timer2.Start()
             ConfirmBGW.RunWorkerAsync()
         End If
-        If readBoard = False Then
-            BillBoardForm.Show()
-        End If
+
 
     End Sub
 
@@ -99,5 +97,11 @@ Public Class Main_Form
 
     Private Sub NameLabel_Click(sender As Object, e As EventArgs) Handles NameLabel.Click
 
+    End Sub
+
+    Private Sub Main_Form_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        If readBoard = False Then
+            BillBoardForm.Show()
+        End If
     End Sub
 End Class

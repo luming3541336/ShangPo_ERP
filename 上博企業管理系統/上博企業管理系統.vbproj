@@ -464,9 +464,7 @@
     <Content Include="Resources\Save.png" />
     <Content Include="Resources\出貨總表.xltx" />
     <Content Include="Resources\工程進度表.xltx" />
-    <None Include="Resources\維修單.dotx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Content Include="Resources\維修單.dotx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

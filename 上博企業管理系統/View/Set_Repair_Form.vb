@@ -43,7 +43,7 @@ Public Class Set_Repair_Form
             PlaceText.Text = data.Place
             AddressText.Text = data.Address
             ContactText.Text = data.Contact
-            PhoneText.Text = data.Place
+            PhoneText.Text = data.Phone
             '查詢是否已過保固
             '過保定義: 最後更新日期+1年
             If Now > DateAdd(DateInterval.Year, 1, CDate(data.UpdateTime)) Then

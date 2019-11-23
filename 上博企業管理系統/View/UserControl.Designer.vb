@@ -89,7 +89,7 @@ Partial Class UserControl
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(222, 31)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "估價系統"
+        Me.Button1.Text = "估價系統(建立中)"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'ImageList1
@@ -213,7 +213,7 @@ Partial Class UserControl
         Me.CaseSearchBtn.Name = "CaseSearchBtn"
         Me.CaseSearchBtn.Size = New System.Drawing.Size(222, 31)
         Me.CaseSearchBtn.TabIndex = 2
-        Me.CaseSearchBtn.Text = "案件查詢"
+        Me.CaseSearchBtn.Text = "案件查詢(尚未開放)"
         Me.CaseSearchBtn.UseVisualStyleBackColor = False
         '
         'CaseViewBtn
@@ -247,6 +247,7 @@ Partial Class UserControl
         Me.Button8.TabIndex = 2
         Me.Button8.Text = "財務管理"
         Me.Button8.UseVisualStyleBackColor = False
+        Me.Button8.Visible = False
         '
         'Panel3
         '

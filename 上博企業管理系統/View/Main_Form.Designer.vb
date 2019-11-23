@@ -34,11 +34,11 @@ Partial Class Main_Form
         Me.VerText = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TimeLabel = New System.Windows.Forms.Label()
-        Me.UserControl1 = New 上博企業管理系統.UserControl()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ConfirmBGW = New System.ComponentModel.BackgroundWorker()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.UserControl1 = New 上博企業管理系統.UserControl()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.MainPanel.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -173,17 +173,6 @@ Partial Class Main_Form
         Me.TimeLabel.TabIndex = 1
         Me.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'UserControl1
-        '
-        Me.UserControl1.AutoSize = True
-        Me.UserControl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(144, Byte), Integer))
-        Me.UserControl1.Font = New System.Drawing.Font("新細明體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.UserControl1.Location = New System.Drawing.Point(0, 0)
-        Me.UserControl1.Margin = New System.Windows.Forms.Padding(0)
-        Me.UserControl1.Name = "UserControl1"
-        Me.UserControl1.Size = New System.Drawing.Size(222, 700)
-        Me.UserControl1.TabIndex = 4
-        '
         'ImageList1
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
@@ -201,6 +190,17 @@ Partial Class Main_Form
         'Timer2
         '
         Me.Timer2.Interval = 10000
+        '
+        'UserControl1
+        '
+        Me.UserControl1.AutoSize = True
+        Me.UserControl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.UserControl1.Font = New System.Drawing.Font("新細明體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.UserControl1.Location = New System.Drawing.Point(0, 0)
+        Me.UserControl1.Margin = New System.Windows.Forms.Padding(0)
+        Me.UserControl1.Name = "UserControl1"
+        Me.UserControl1.Size = New System.Drawing.Size(222, 700)
+        Me.UserControl1.TabIndex = 4
         '
         'Main_Form
         '
