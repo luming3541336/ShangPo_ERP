@@ -28,8 +28,8 @@
     Protected Const UPDATE_PURCHASEDATA_BY_PURCHASEID_SQL = "UPDATE PurchaseData SET InsertTime = '@time' WHERE PurchaseID = @id"
     Protected Const INSERT_PURCHASEPART_SQL = "INSERT INTO PurchasePart(PurchaseID, ProdPartID, Specification, Width, Length, CBM, Count, Remark) VALUES(@id,@prodPartID,N'@specification',@width ,@length ,@cbm ,@count, N'@remark')"
     Protected Const UPDATE_PURCHASEPART_SQL = "UPDATE PurchasePart SET ProdPartID = @prodPartID, Specification = N'@specification', Width = @width,Length = @length, CBM = @cbm, Count = @count, Remark = N'@remark' WHERE PurchasePID = @PID"
-    Protected Const INSERT_PURCHASEPART2_SQL = "INSERT INTO PurchasePart2(PurchaseID, ProdPartData2, Specification, Width, Length, CBM, Count, Remark) VALUES(@id,@prodPart2ID,N'@specification',@width ,@length ,@cbm ,@count,N'@remark')"
-    Protected Const UPDATE_PURCHASEPART2_SQL = "UPDATE PurchasePart2 SET ProdPartData2 = @prodPart2ID, Specification = N'@specification',Width = @width,Length = @length, CBM = @cbm, Count = @count, Remark = N'@remark' WHERE PurchaseP2ID = @FID"
+    Protected Const INSERT_PURCHASEPART2_SQL = "INSERT INTO PurchasePart2(PurchaseID, ProdPart2ID, Specification, Width, Length, CBM, Count, Remark) VALUES(@id,@prodPart2ID,N'@specification',@width ,@length ,@cbm ,@count,N'@remark')"
+    Protected Const UPDATE_PURCHASEPART2_SQL = "UPDATE PurchasePart2 SET ProdPart2ID = @prodPart2ID, Specification = N'@specification',Width = @width,Length = @length, CBM = @cbm, Count = @count, Remark = N'@remark' WHERE PurchaseP2ID = @FID"
     Protected Const DEL_PURCHASEPART_BY_PURCHASEPID = "DELETE FROM PurchasePart WHERE PurchasePID = @PID"
     Protected Const DEL_PURCHASEPART2_BY_PURCHASEFID = "DELETE FROM PurchasePart2 WHERE PurchaseP2ID = @FID"
     Protected editIndex As Integer = Nothing ' 修改中的欄位

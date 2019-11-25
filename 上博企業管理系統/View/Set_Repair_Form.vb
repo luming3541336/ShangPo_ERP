@@ -431,12 +431,4 @@ Public Class Set_Repair_Form
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
         Me.DialogResult = DialogResult.Cancel
     End Sub
-
-    Private Sub RepairAmountDGV_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles RepairAmountDGV.CellEnter
-
-    End Sub
-
-    Private Sub RepairProdDGV_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles RepairProdDGV.CellEnter
-
-    End Sub
 End Class

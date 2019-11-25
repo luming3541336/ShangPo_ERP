@@ -58,8 +58,6 @@ Partial Class Set_Purchase_Form
         Me.PasteItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.FitDGV = New System.Windows.Forms.DataGridView()
-        Me.addPurchaseNoBackground = New System.ComponentModel.BackgroundWorker()
-        Me.insertToDatabaseBackground = New System.ComponentModel.BackgroundWorker()
         Me.ProdPart2ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fitName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fitSupplier = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -69,6 +67,8 @@ Partial Class Set_Purchase_Form
         Me.FitCBM = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fitCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fitRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.addPurchaseNoBackground = New System.ComponentModel.BackgroundWorker()
+        Me.insertToDatabaseBackground = New System.ComponentModel.BackgroundWorker()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
@@ -158,7 +158,7 @@ Partial Class Set_Purchase_Form
         'PurchaseTime
         '
         Me.PurchaseTime.Location = New System.Drawing.Point(412, 2)
-        Me.PurchaseTime.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PurchaseTime.Margin = New System.Windows.Forms.Padding(2)
         Me.PurchaseTime.Name = "PurchaseTime"
         Me.PurchaseTime.Size = New System.Drawing.Size(162, 32)
         Me.PurchaseTime.TabIndex = 3
@@ -197,7 +197,7 @@ Partial Class Set_Purchase_Form
         Me.FlowLayoutPanel2.Controls.Add(Me.SaveDataButton)
         Me.FlowLayoutPanel2.Controls.Add(Me.CancelButton)
         Me.FlowLayoutPanel2.Location = New System.Drawing.Point(655, 474)
-        Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(2)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
         Me.FlowLayoutPanel2.Size = New System.Drawing.Size(185, 40)
         Me.FlowLayoutPanel2.TabIndex = 3
@@ -212,7 +212,7 @@ Partial Class Set_Purchase_Form
         Me.SaveDataButton.ImageIndex = 0
         Me.SaveDataButton.ImageList = Me.ImageList1
         Me.SaveDataButton.Location = New System.Drawing.Point(2, 2)
-        Me.SaveDataButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SaveDataButton.Margin = New System.Windows.Forms.Padding(2)
         Me.SaveDataButton.Name = "SaveDataButton"
         Me.SaveDataButton.Size = New System.Drawing.Size(87, 36)
         Me.SaveDataButton.TabIndex = 0
@@ -237,7 +237,7 @@ Partial Class Set_Purchase_Form
         Me.CancelButton.ImageIndex = 1
         Me.CancelButton.ImageList = Me.ImageList1
         Me.CancelButton.Location = New System.Drawing.Point(93, 2)
-        Me.CancelButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CancelButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CancelButton.Name = "CancelButton"
         Me.CancelButton.Size = New System.Drawing.Size(90, 36)
         Me.CancelButton.TabIndex = 1
@@ -261,7 +261,7 @@ Partial Class Set_Purchase_Form
         Me.TabPage1.Controls.Add(Me.ProdDGV)
         Me.TabPage1.Location = New System.Drawing.Point(4, 32)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(828, 388)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "門框/窗框"
@@ -276,7 +276,7 @@ Partial Class Set_Purchase_Form
         Me.ProdDGV.ContextMenuStrip = Me.MouseMenu
         Me.ProdDGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ProdDGV.Location = New System.Drawing.Point(3, 3)
-        Me.ProdDGV.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ProdDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.ProdDGV.Name = "ProdDGV"
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
@@ -398,7 +398,7 @@ Partial Class Set_Purchase_Form
         Me.TabPage2.Controls.Add(Me.FitDGV)
         Me.TabPage2.Location = New System.Drawing.Point(4, 32)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(828, 388)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "門扇"
@@ -413,7 +413,7 @@ Partial Class Set_Purchase_Form
         Me.FitDGV.ContextMenuStrip = Me.MouseMenu
         Me.FitDGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FitDGV.Location = New System.Drawing.Point(3, 3)
-        Me.FitDGV.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.FitDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.FitDGV.Name = "FitDGV"
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
@@ -423,14 +423,6 @@ Partial Class Set_Purchase_Form
         Me.FitDGV.RowTemplate.Height = 38
         Me.FitDGV.Size = New System.Drawing.Size(822, 382)
         Me.FitDGV.TabIndex = 0
-        '
-        'addPurchaseNoBackground
-        '
-        Me.addPurchaseNoBackground.WorkerReportsProgress = True
-        '
-        'insertToDatabaseBackground
-        '
-        Me.insertToDatabaseBackground.WorkerReportsProgress = True
         '
         'ProdPart2ID
         '
@@ -495,6 +487,14 @@ Partial Class Set_Purchase_Form
         Me.fitRemark.Name = "fitRemark"
         Me.fitRemark.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.fitRemark.Width = 54
+        '
+        'addPurchaseNoBackground
+        '
+        Me.addPurchaseNoBackground.WorkerReportsProgress = True
+        '
+        'insertToDatabaseBackground
+        '
+        Me.insertToDatabaseBackground.WorkerReportsProgress = True
         '
         'Set_Purchase_Form
         '

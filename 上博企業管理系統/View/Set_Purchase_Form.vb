@@ -89,7 +89,7 @@ Public Class Set_Purchase_Form
                     'End If
 
                     If controller.Get_PurchasePart2Count > e.RowIndex Then
-                        controller.Set_PurchasePart2em(editIndex, Nothing, IIf(FitDGV.CurrentRow.Cells("fitID").EditedFormattedValue.ToString = "", 0, FitDGV.CurrentRow.Cells("fitID").EditedFormattedValue.ToString),
+                        controller.Set_PurchasePart2em(editIndex, Nothing, IIf(FitDGV.CurrentRow.Cells("ProdPart2ID").EditedFormattedValue.ToString = "", 0, FitDGV.CurrentRow.Cells("ProdPart2ID").EditedFormattedValue.ToString),
                                              IIf(FitDGV.CurrentRow.Cells("fitSpecification").EditedFormattedValue.ToString = "", "", FitDGV.CurrentRow.Cells("fitSpecification").EditedFormattedValue.ToString),
                                               IIf(FitDGV.CurrentRow.Cells("fitCount").EditedFormattedValue.ToString = "", 0, FitDGV.CurrentRow.Cells("fitCount").EditedFormattedValue.ToString),
                                              IIf(FitDGV.CurrentRow.Cells("fitRemark").EditedFormattedValue.ToString = "", Nothing, FitDGV.CurrentRow.Cells("fitRemark").EditedFormattedValue.ToString),
@@ -314,7 +314,7 @@ Public Class Set_Purchase_Form
             End If
         ElseIf TabControl1.SelectedIndex = 1 Then
             If FitDGV.SelectedCells.Count > 0 Then
-                controller.Copy_Row(FitDGV.CurrentRow.Cells("fitID").Value, FitDGV.CurrentRow.Cells("fitName").Value, FitDGV.CurrentRow.Cells("fitSupplier").Value)
+                controller.Copy_Row(FitDGV.CurrentRow.Cells("ProdPart2ID").Value, FitDGV.CurrentRow.Cells("fitName").Value, FitDGV.CurrentRow.Cells("fitSupplier").Value)
             Else
                 MsgBox("請選擇要複製的資料欄位")
             End If

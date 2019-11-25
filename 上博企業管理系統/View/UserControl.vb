@@ -96,4 +96,8 @@
         Dim View As Data_Supplier_Form = New Data_Supplier_Form
         View.Show()
     End Sub
+
+    Private Sub ProductSetBtn_Click(sender As Object, e As EventArgs) Handles ProductSetBtn.Click
+
+    End Sub
 End Class
