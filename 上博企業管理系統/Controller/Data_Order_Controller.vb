@@ -113,7 +113,7 @@ Public Class Data_Order_Controller
             strSQL = strSQL.Replace("@id", id)
             Return conDB.ExecuteSQL(strSQL).ExecuteNonQuery()
         Catch ex As Exception
-            Throw ex
+            MsgBox(ex)
         End Try
     End Function
     Public Function Delete_Sale_Order(ByVal id As Integer) As Integer

@@ -43,7 +43,9 @@ Public Class Data_Case_Form
             End Select
 
         Next
-        CaseDGV.CurrentCell = CaseDGV.Rows(e.Result(1)).Cells(1)
+        If CaseDGV.RowCount > e.Result(1) Then
+            CaseDGV.CurrentCell = CaseDGV.Rows(e.Result(1)).Cells(1)
+        End If
         caseDGV_SelectionChanged(sender, e)
         formStatusNormal.Hide()
     End Sub

@@ -22,6 +22,7 @@ Partial Class Login_Form
     '請勿使用程式碼編輯器進行修改。
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login_Form))
         Me.UserIDText = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.PasswordText = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.RememberCheckBox = New MaterialSkin.Controls.MaterialCheckBox()
@@ -119,6 +120,7 @@ Partial Class Login_Form
         Me.Controls.Add(Me.PasswordText)
         Me.Controls.Add(Me.UserIDText)
         Me.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.ImeMode = System.Windows.Forms.ImeMode.Close
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Login_Form"
