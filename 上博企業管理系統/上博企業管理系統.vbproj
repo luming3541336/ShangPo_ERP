@@ -147,6 +147,7 @@
     <Compile Include="Model\Set_Purchase_Model.vb" />
     <Compile Include="Model\Output_SaleReport_Model.vb" />
     <Compile Include="Model\Data_Specification_Model.vb" />
+    <Compile Include="Model\Set_ReceiptKey_Model.vb" />
     <Compile Include="Model\Set_Repair_Model.vb" />
     <Compile Include="Model\Set_Sale_Model.vb" />
     <Compile Include="Model\Set_WorkProgress_Model.vb" />
@@ -218,6 +219,12 @@
       <DependentUpon>Set_PasswordRevise_Form.vb</DependentUpon>
     </Compile>
     <Compile Include="View\Set_PasswordRevise_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Set_ReceiptKey_Form.Designer.vb">
+      <DependentUpon>Set_ReceiptKey_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_ReceiptKey_Form.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Set_Repair_Form.Designer.vb">
@@ -375,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Set_PasswordRevise_Form.resx">
       <DependentUpon>Set_PasswordRevise_Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_ReceiptKey_Form.resx">
+      <DependentUpon>Set_ReceiptKey_Form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Set_Repair_Form.resx">
       <DependentUpon>Set_Repair_Form.vb</DependentUpon>

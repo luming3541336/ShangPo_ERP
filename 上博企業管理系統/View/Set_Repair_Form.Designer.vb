@@ -74,14 +74,7 @@ Partial Class Set_Repair_Form
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TotalAmountText = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.SaveBtn = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.SubmitBtn = New System.Windows.Forms.Button()
-        Me.ReCheckBtn = New System.Windows.Forms.Button()
-        Me.RepairConfirmBtn = New System.Windows.Forms.Button()
-        Me.PrintBtn = New System.Windows.Forms.Button()
-        Me.ExitBtn = New System.Windows.Forms.Button()
-        Me.FileUploadBtn = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.LogText = New System.Windows.Forms.TextBox()
@@ -91,6 +84,13 @@ Partial Class Set_Repair_Form
         Me.RepairResultText = New System.Windows.Forms.TextBox()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.FileUploadBtn = New System.Windows.Forms.Button()
+        Me.SaveBtn = New System.Windows.Forms.Button()
+        Me.SubmitBtn = New System.Windows.Forms.Button()
+        Me.ReCheckBtn = New System.Windows.Forms.Button()
+        Me.RepairConfirmBtn = New System.Windows.Forms.Button()
+        Me.PrintBtn = New System.Windows.Forms.Button()
+        Me.ExitBtn = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -141,7 +141,7 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(848, 195)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(831, 195)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'ETADate
@@ -340,7 +340,7 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(848, 194)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(831, 194)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'RemarkText
@@ -349,7 +349,7 @@ Partial Class Set_Repair_Form
         Me.RemarkText.Location = New System.Drawing.Point(95, 3)
         Me.RemarkText.Multiline = True
         Me.RemarkText.Name = "RemarkText"
-        Me.RemarkText.Size = New System.Drawing.Size(750, 188)
+        Me.RemarkText.Size = New System.Drawing.Size(733, 188)
         Me.RemarkText.TabIndex = 0
         '
         'Label9
@@ -377,7 +377,7 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 7.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(848, 221)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(831, 221)
         Me.TableLayoutPanel3.TabIndex = 3
         '
         'TableLayoutPanel4
@@ -417,7 +417,7 @@ Partial Class Set_Repair_Form
         Me.UnJudgeCheckBox.Enabled = False
         Me.UnJudgeCheckBox.FlatAppearance.CheckedBackColor = System.Drawing.Color.SlateGray
         Me.UnJudgeCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.UnJudgeCheckBox.Font = New System.Drawing.Font("Roboto", 10.0!)
+        Me.UnJudgeCheckBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.UnJudgeCheckBox.Location = New System.Drawing.Point(697, 0)
         Me.UnJudgeCheckBox.Margin = New System.Windows.Forms.Padding(0)
         Me.UnJudgeCheckBox.MouseLocation = New System.Drawing.Point(-1, -1)
@@ -518,7 +518,7 @@ Partial Class Set_Repair_Form
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(848, 175)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(831, 175)
         Me.TableLayoutPanel5.TabIndex = 4
         '
         'RepairAmountDGV
@@ -623,8 +623,128 @@ Partial Class Set_Repair_Form
         Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.FlowLayoutPanel2.Location = New System.Drawing.Point(0, 1025)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(848, 42)
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(831, 42)
         Me.FlowLayoutPanel2.TabIndex = 6
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "completed.png")
+        Me.ImageList1.Images.SetKeyName(1, "print.png")
+        Me.ImageList1.Images.SetKeyName(2, "Save.png")
+        Me.ImageList1.Images.SetKeyName(3, "note_add.png")
+        Me.ImageList1.Images.SetKeyName(4, "cancel.png")
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label15)
+        Me.Panel1.Controls.Add(Me.LogText)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 935)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(831, 90)
+        Me.Panel1.TabIndex = 7
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(-1, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(86, 24)
+        Me.Label15.TabIndex = 7
+        Me.Label15.Text = "操作紀錄"
+        '
+        'LogText
+        '
+        Me.LogText.BackColor = System.Drawing.Color.SlateGray
+        Me.LogText.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.LogText.Font = New System.Drawing.Font("微軟正黑體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.LogText.ForeColor = System.Drawing.Color.White
+        Me.LogText.Location = New System.Drawing.Point(0, 27)
+        Me.LogText.Multiline = True
+        Me.LogText.Name = "LogText"
+        Me.LogText.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.LogText.Size = New System.Drawing.Size(831, 63)
+        Me.LogText.TabIndex = 6
+        '
+        'LoadingDataBGW
+        '
+        '
+        'RepairResultDGV
+        '
+        Me.RepairResultDGV.ColumnCount = 2
+        Me.RepairResultDGV.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.RepairResultDGV.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.RepairResultDGV.Controls.Add(Me.Label17, 0, 0)
+        Me.RepairResultDGV.Controls.Add(Me.RepairResultText, 1, 0)
+        Me.RepairResultDGV.Controls.Add(Me.FileUploadBtn, 0, 1)
+        Me.RepairResultDGV.Controls.Add(Me.FlowLayoutPanel3, 1, 1)
+        Me.RepairResultDGV.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.RepairResultDGV.Location = New System.Drawing.Point(0, 786)
+        Me.RepairResultDGV.Margin = New System.Windows.Forms.Padding(0)
+        Me.RepairResultDGV.MinimumSize = New System.Drawing.Size(0, 121)
+        Me.RepairResultDGV.Name = "RepairResultDGV"
+        Me.RepairResultDGV.RowCount = 2
+        Me.RepairResultDGV.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.75839!))
+        Me.RepairResultDGV.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.24161!))
+        Me.RepairResultDGV.Size = New System.Drawing.Size(831, 149)
+        Me.RepairResultDGV.TabIndex = 5
+        Me.RepairResultDGV.Visible = False
+        '
+        'Label17
+        '
+        Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(3, 35)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(124, 24)
+        Me.Label17.TabIndex = 6
+        Me.Label17.Text = "維修情況說明"
+        '
+        'RepairResultText
+        '
+        Me.RepairResultText.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RepairResultText.Location = New System.Drawing.Point(143, 3)
+        Me.RepairResultText.Multiline = True
+        Me.RepairResultText.Name = "RepairResultText"
+        Me.RepairResultText.Size = New System.Drawing.Size(685, 88)
+        Me.RepairResultText.TabIndex = 0
+        '
+        'FlowLayoutPanel3
+        '
+        Me.FlowLayoutPanel3.AutoScroll = True
+        Me.FlowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(143, 97)
+        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(685, 49)
+        Me.FlowLayoutPanel3.TabIndex = 17
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.Black
+        Me.Panel3.Font = New System.Drawing.Font("微軟正黑體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.Panel3.Location = New System.Drawing.Point(0, 785)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(848, 1)
+        Me.Panel3.TabIndex = 19
+        '
+        'FileUploadBtn
+        '
+        Me.FileUploadBtn.AutoSize = True
+        Me.FileUploadBtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FileUploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.FileUploadBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.FileUploadBtn.ImageIndex = 3
+        Me.FileUploadBtn.ImageList = Me.ImageList1
+        Me.FileUploadBtn.Location = New System.Drawing.Point(3, 97)
+        Me.FileUploadBtn.Name = "FileUploadBtn"
+        Me.FileUploadBtn.Size = New System.Drawing.Size(134, 49)
+        Me.FileUploadBtn.TabIndex = 0
+        Me.FileUploadBtn.Text = "簽收單上傳"
+        Me.FileUploadBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.FileUploadBtn.UseVisualStyleBackColor = True
         '
         'SaveBtn
         '
@@ -640,16 +760,6 @@ Partial Class Set_Repair_Form
         Me.SaveBtn.Text = "存檔"
         Me.SaveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.SaveBtn.UseVisualStyleBackColor = True
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "completed.png")
-        Me.ImageList1.Images.SetKeyName(1, "print.png")
-        Me.ImageList1.Images.SetKeyName(2, "Save.png")
-        Me.ImageList1.Images.SetKeyName(3, "note_add.png")
-        Me.ImageList1.Images.SetKeyName(4, "cancel.png")
         '
         'SubmitBtn
         '
@@ -729,116 +839,6 @@ Partial Class Set_Repair_Form
         Me.ExitBtn.Text = "關閉"
         Me.ExitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ExitBtn.UseVisualStyleBackColor = True
-        '
-        'FileUploadBtn
-        '
-        Me.FileUploadBtn.AutoSize = True
-        Me.FileUploadBtn.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FileUploadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.FileUploadBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.FileUploadBtn.ImageIndex = 3
-        Me.FileUploadBtn.ImageList = Me.ImageList1
-        Me.FileUploadBtn.Location = New System.Drawing.Point(3, 97)
-        Me.FileUploadBtn.Name = "FileUploadBtn"
-        Me.FileUploadBtn.Size = New System.Drawing.Size(134, 49)
-        Me.FileUploadBtn.TabIndex = 0
-        Me.FileUploadBtn.Text = "簽收單上傳"
-        Me.FileUploadBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.FileUploadBtn.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.Label15)
-        Me.Panel1.Controls.Add(Me.LogText)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 935)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(848, 90)
-        Me.Panel1.TabIndex = 7
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(-1, 0)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(86, 24)
-        Me.Label15.TabIndex = 7
-        Me.Label15.Text = "操作紀錄"
-        '
-        'LogText
-        '
-        Me.LogText.BackColor = System.Drawing.Color.SlateGray
-        Me.LogText.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.LogText.Font = New System.Drawing.Font("微軟正黑體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.LogText.ForeColor = System.Drawing.Color.White
-        Me.LogText.Location = New System.Drawing.Point(0, 27)
-        Me.LogText.Multiline = True
-        Me.LogText.Name = "LogText"
-        Me.LogText.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.LogText.Size = New System.Drawing.Size(848, 63)
-        Me.LogText.TabIndex = 6
-        '
-        'LoadingDataBGW
-        '
-        '
-        'RepairResultDGV
-        '
-        Me.RepairResultDGV.ColumnCount = 2
-        Me.RepairResultDGV.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.RepairResultDGV.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.RepairResultDGV.Controls.Add(Me.Label17, 0, 0)
-        Me.RepairResultDGV.Controls.Add(Me.RepairResultText, 1, 0)
-        Me.RepairResultDGV.Controls.Add(Me.FileUploadBtn, 0, 1)
-        Me.RepairResultDGV.Controls.Add(Me.FlowLayoutPanel3, 1, 1)
-        Me.RepairResultDGV.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.RepairResultDGV.Location = New System.Drawing.Point(0, 786)
-        Me.RepairResultDGV.Margin = New System.Windows.Forms.Padding(0)
-        Me.RepairResultDGV.MinimumSize = New System.Drawing.Size(0, 121)
-        Me.RepairResultDGV.Name = "RepairResultDGV"
-        Me.RepairResultDGV.RowCount = 2
-        Me.RepairResultDGV.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.75839!))
-        Me.RepairResultDGV.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.24161!))
-        Me.RepairResultDGV.Size = New System.Drawing.Size(848, 149)
-        Me.RepairResultDGV.TabIndex = 5
-        Me.RepairResultDGV.Visible = False
-        '
-        'Label17
-        '
-        Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(3, 35)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(124, 24)
-        Me.Label17.TabIndex = 6
-        Me.Label17.Text = "維修情況說明"
-        '
-        'RepairResultText
-        '
-        Me.RepairResultText.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RepairResultText.Location = New System.Drawing.Point(143, 3)
-        Me.RepairResultText.Multiline = True
-        Me.RepairResultText.Name = "RepairResultText"
-        Me.RepairResultText.Size = New System.Drawing.Size(702, 88)
-        Me.RepairResultText.TabIndex = 0
-        '
-        'FlowLayoutPanel3
-        '
-        Me.FlowLayoutPanel3.AutoScroll = True
-        Me.FlowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(143, 97)
-        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
-        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(702, 49)
-        Me.FlowLayoutPanel3.TabIndex = 17
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.Black
-        Me.Panel3.Font = New System.Drawing.Font("微軟正黑體", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(0, 785)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(848, 1)
-        Me.Panel3.TabIndex = 19
         '
         'Set_Repair_Form
         '

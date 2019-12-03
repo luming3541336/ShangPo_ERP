@@ -754,4 +754,12 @@ Public Class Data_Case_Form
         End If
 
     End Sub
+
+    Private Sub ReceiptAddBtn_Click(sender As Object, e As EventArgs) Handles ReceiptAddBtn.Click
+        Dim view As Set_ReceiptKey_Form = New Set_ReceiptKey_Form(CaseDGV.CurrentRow.Cells("CaseID").Value)
+    End Sub
+
+    Private Sub FlowLayoutPanel7_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel7.Paint
+
+    End Sub
 End Class

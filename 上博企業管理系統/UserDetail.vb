@@ -81,3 +81,21 @@ Public Structure RepairFile
     Dim RepairFileName As String
     Dim RepairFilePath As String
 End Structure
+Public Structure ReceiptData
+    Dim ReceiptID As Integer
+    Dim ReceiptOrder As String
+    Dim CaseID As Integer
+    Dim ReceiptType As Integer
+    Dim ReceiptDate As Date
+    Dim InsertTime As Date
+    Dim Status As Integer
+End Structure
+Public Structure ReceiptKey
+    Dim ReceiptKeyID As Integer
+    Dim ReceiptID As Integer
+    Dim Room As String
+    Dim Item As String
+    Dim Location As String
+    Dim ReceiptCount As Integer
+    Dim Remark As String
+End Structure
