@@ -86,10 +86,13 @@ Public Structure ReceiptData
     Dim ReceiptOrder As String
     Dim CaseID As Integer
     Dim ReceiptType As Integer
+    Dim Place As String
+    Dim Contact As String
     Dim ReceiptDate As Date
-    Dim InsertTime As Date
+    Dim InsertDate As Date
     Dim Status As Integer
 End Structure
+
 Public Structure ReceiptKey
     Dim ReceiptKeyID As Integer
     Dim ReceiptID As Integer

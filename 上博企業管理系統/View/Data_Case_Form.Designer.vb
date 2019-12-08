@@ -24,23 +24,30 @@ Partial Class Data_Case_Form
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Data_Case_Form))
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.SearchButton = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.AddBtn = New System.Windows.Forms.Button()
+        Me.ReviseBtn = New System.Windows.Forms.Button()
+        Me.ConpleteBtn = New System.Windows.Forms.Button()
+        Me.VoidBtn = New System.Windows.Forms.Button()
+        Me.PrintBtn = New System.Windows.Forms.Button()
         Me.PrintMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.PrintShippingRecordItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WorkProgressItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RefreshBtn = New System.Windows.Forms.Button()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.CaseDGV = New System.Windows.Forms.DataGridView()
         Me.CaseID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,6 +61,7 @@ Partial Class Data_Case_Form
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.addPurchaseButton = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PurchaseCountLabel = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -84,6 +92,9 @@ Partial Class Data_Case_Form
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.AddWPBtn = New System.Windows.Forms.Button()
+        Me.ReviseWPBtn = New System.Windows.Forms.Button()
+        Me.DelWPBtn = New System.Windows.Forms.Button()
         Me.WorkProgressDGV = New System.Windows.Forms.DataGridView()
         Me.WPID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.WPClass = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -97,6 +108,7 @@ Partial Class Data_Case_Form
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.addSaleButton = New System.Windows.Forms.Button()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.SaleCountLabel = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -129,6 +141,9 @@ Partial Class Data_Case_Form
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.AddDetailBtn = New System.Windows.Forms.Button()
+        Me.ReviseDetailBtn = New System.Windows.Forms.Button()
+        Me.DelDetailBtn = New System.Windows.Forms.Button()
         Me.DetailDGV = New System.Windows.Forms.DataGridView()
         Me.WDID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.WorkDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -144,42 +159,29 @@ Partial Class Data_Case_Form
         Me.RepairTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RepairStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.TabPage10 = New System.Windows.Forms.TabPage()
-        Me.LoadingBackground = New System.ComponentModel.BackgroundWorker()
-        Me.LoadingDetailBackground = New System.ComponentModel.BackgroundWorker()
-        Me.PrintShippingRecordBackground = New System.ComponentModel.BackgroundWorker()
-        Me.PrintWorkProgressWork = New System.ComponentModel.BackgroundWorker()
-        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
-        Me.ReceiptDGV = New System.Windows.Forms.DataGridView()
-        Me.FlowLayoutPanel7 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.ReceiptID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ReceiptType = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.InsertDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ReceiptType2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ReceiptDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SearchButton = New System.Windows.Forms.Button()
-        Me.AddBtn = New System.Windows.Forms.Button()
-        Me.ReviseBtn = New System.Windows.Forms.Button()
-        Me.ConpleteBtn = New System.Windows.Forms.Button()
-        Me.VoidBtn = New System.Windows.Forms.Button()
-        Me.PrintBtn = New System.Windows.Forms.Button()
-        Me.RefreshBtn = New System.Windows.Forms.Button()
-        Me.addPurchaseButton = New System.Windows.Forms.Button()
-        Me.AddWPBtn = New System.Windows.Forms.Button()
-        Me.ReviseWPBtn = New System.Windows.Forms.Button()
-        Me.DelWPBtn = New System.Windows.Forms.Button()
-        Me.addSaleButton = New System.Windows.Forms.Button()
-        Me.AddDetailBtn = New System.Windows.Forms.Button()
-        Me.ReviseDetailBtn = New System.Windows.Forms.Button()
-        Me.DelDetailBtn = New System.Windows.Forms.Button()
         Me.AddRepairBtn = New System.Windows.Forms.Button()
         Me.ReviseRepairBtn = New System.Windows.Forms.Button()
         Me.DelRepairBtn = New System.Windows.Forms.Button()
+        Me.TabPage10 = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.ReceiptDGV = New System.Windows.Forms.DataGridView()
+        Me.FlowLayoutPanel7 = New System.Windows.Forms.FlowLayoutPanel()
         Me.ReceiptAddBtn = New System.Windows.Forms.Button()
         Me.ReceiptAddBtn2 = New System.Windows.Forms.Button()
         Me.ReceiptReviseBtn = New System.Windows.Forms.Button()
         Me.ReceiptDelBtn = New System.Windows.Forms.Button()
+        Me.LoadingBackground = New System.ComponentModel.BackgroundWorker()
+        Me.LoadingDetailBackground = New System.ComponentModel.BackgroundWorker()
+        Me.PrintShippingRecordBackground = New System.ComponentModel.BackgroundWorker()
+        Me.PrintWorkProgressWork = New System.ComponentModel.BackgroundWorker()
+        Me.ReceiptID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReceiptType = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReceiptOrder = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InsertDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReceiptType2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReceiptDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusText = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.PrintMenu.SuspendLayout()
@@ -259,6 +261,23 @@ Partial Class Data_Case_Form
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(956, 42)
         Me.FlowLayoutPanel1.TabIndex = 1
         '
+        'SearchButton
+        '
+        Me.SearchButton.BackColor = System.Drawing.Color.DarkCyan
+        Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SearchButton.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.SearchButton.ForeColor = System.Drawing.Color.White
+        Me.SearchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.SearchButton.ImageIndex = 0
+        Me.SearchButton.ImageList = Me.ImageList1
+        Me.SearchButton.Location = New System.Drawing.Point(3, 3)
+        Me.SearchButton.Name = "SearchButton"
+        Me.SearchButton.Size = New System.Drawing.Size(90, 36)
+        Me.SearchButton.TabIndex = 0
+        Me.SearchButton.Text = "搜尋&F"
+        Me.SearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.SearchButton.UseVisualStyleBackColor = False
+        '
         'ImageList1
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
@@ -270,6 +289,87 @@ Partial Class Data_Case_Form
         Me.ImageList1.Images.SetKeyName(4, "refresh.png")
         Me.ImageList1.Images.SetKeyName(5, "completed.png")
         Me.ImageList1.Images.SetKeyName(6, "print.png")
+        '
+        'AddBtn
+        '
+        Me.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.AddBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.AddBtn.ForeColor = System.Drawing.Color.White
+        Me.AddBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AddBtn.ImageIndex = 1
+        Me.AddBtn.ImageList = Me.ImageList1
+        Me.AddBtn.Location = New System.Drawing.Point(99, 3)
+        Me.AddBtn.Name = "AddBtn"
+        Me.AddBtn.Size = New System.Drawing.Size(90, 36)
+        Me.AddBtn.TabIndex = 1
+        Me.AddBtn.Text = "新增&A"
+        Me.AddBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AddBtn.UseVisualStyleBackColor = True
+        '
+        'ReviseBtn
+        '
+        Me.ReviseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ReviseBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.ReviseBtn.ForeColor = System.Drawing.Color.White
+        Me.ReviseBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReviseBtn.ImageIndex = 2
+        Me.ReviseBtn.ImageList = Me.ImageList1
+        Me.ReviseBtn.Location = New System.Drawing.Point(195, 3)
+        Me.ReviseBtn.Name = "ReviseBtn"
+        Me.ReviseBtn.Size = New System.Drawing.Size(90, 36)
+        Me.ReviseBtn.TabIndex = 2
+        Me.ReviseBtn.Text = "編輯&D"
+        Me.ReviseBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReviseBtn.UseVisualStyleBackColor = True
+        '
+        'ConpleteBtn
+        '
+        Me.ConpleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ConpleteBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.ConpleteBtn.ForeColor = System.Drawing.Color.White
+        Me.ConpleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ConpleteBtn.ImageIndex = 5
+        Me.ConpleteBtn.ImageList = Me.ImageList1
+        Me.ConpleteBtn.Location = New System.Drawing.Point(291, 3)
+        Me.ConpleteBtn.Name = "ConpleteBtn"
+        Me.ConpleteBtn.Size = New System.Drawing.Size(90, 36)
+        Me.ConpleteBtn.TabIndex = 5
+        Me.ConpleteBtn.Text = "結案&C"
+        Me.ConpleteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ConpleteBtn.UseVisualStyleBackColor = True
+        '
+        'VoidBtn
+        '
+        Me.VoidBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.VoidBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.VoidBtn.ForeColor = System.Drawing.Color.White
+        Me.VoidBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.VoidBtn.ImageIndex = 3
+        Me.VoidBtn.ImageList = Me.ImageList1
+        Me.VoidBtn.Location = New System.Drawing.Point(387, 3)
+        Me.VoidBtn.Name = "VoidBtn"
+        Me.VoidBtn.Size = New System.Drawing.Size(90, 36)
+        Me.VoidBtn.TabIndex = 3
+        Me.VoidBtn.Text = "作廢&K"
+        Me.VoidBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.VoidBtn.UseVisualStyleBackColor = True
+        '
+        'PrintBtn
+        '
+        Me.PrintBtn.ContextMenuStrip = Me.PrintMenu
+        Me.PrintBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PrintBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.PrintBtn.ForeColor = System.Drawing.Color.White
+        Me.PrintBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.PrintBtn.ImageIndex = 6
+        Me.PrintBtn.ImageList = Me.ImageList1
+        Me.PrintBtn.Location = New System.Drawing.Point(483, 3)
+        Me.PrintBtn.Name = "PrintBtn"
+        Me.PrintBtn.Size = New System.Drawing.Size(90, 36)
+        Me.PrintBtn.TabIndex = 6
+        Me.PrintBtn.Text = "列印&P"
+        Me.PrintBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PrintBtn.UseVisualStyleBackColor = True
         '
         'PrintMenu
         '
@@ -292,6 +392,22 @@ Partial Class Data_Case_Form
         Me.WorkProgressItem.Name = "WorkProgressItem"
         Me.WorkProgressItem.Size = New System.Drawing.Size(175, 28)
         Me.WorkProgressItem.Text = "工作進度表"
+        '
+        'RefreshBtn
+        '
+        Me.RefreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RefreshBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.RefreshBtn.ForeColor = System.Drawing.Color.White
+        Me.RefreshBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.RefreshBtn.ImageIndex = 4
+        Me.RefreshBtn.ImageList = Me.ImageList1
+        Me.RefreshBtn.Location = New System.Drawing.Point(579, 3)
+        Me.RefreshBtn.Name = "RefreshBtn"
+        Me.RefreshBtn.Size = New System.Drawing.Size(90, 36)
+        Me.RefreshBtn.TabIndex = 4
+        Me.RefreshBtn.Text = "刷新&R"
+        Me.RefreshBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.RefreshBtn.UseVisualStyleBackColor = True
         '
         'SplitContainer1
         '
@@ -317,14 +433,14 @@ Partial Class Data_Case_Form
         Me.CaseDGV.AllowUserToDeleteRows = False
         Me.CaseDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.CaseDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CaseDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CaseDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.CaseDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.CaseDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CaseID, Me.CaseNo, Me.Place, Me.SaleName, Me.InsertTime, Me.UpdateTime, Me.Success})
         Me.CaseDGV.Dock = System.Windows.Forms.DockStyle.Fill
@@ -333,12 +449,12 @@ Partial Class Data_Case_Form
         Me.CaseDGV.MultiSelect = False
         Me.CaseDGV.Name = "CaseDGV"
         Me.CaseDGV.ReadOnly = True
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White
-        Me.CaseDGV.RowsDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        Me.CaseDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.CaseDGV.RowTemplate.Height = 38
         Me.CaseDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.CaseDGV.Size = New System.Drawing.Size(956, 257)
@@ -455,6 +571,23 @@ Partial Class Data_Case_Form
         Me.FlowLayoutPanel2.Size = New System.Drawing.Size(940, 36)
         Me.FlowLayoutPanel2.TabIndex = 0
         '
+        'addPurchaseButton
+        '
+        Me.addPurchaseButton.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.addPurchaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.addPurchaseButton.ForeColor = System.Drawing.Color.White
+        Me.addPurchaseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.addPurchaseButton.ImageKey = "note_add.png"
+        Me.addPurchaseButton.ImageList = Me.ImageList1
+        Me.addPurchaseButton.Location = New System.Drawing.Point(2, 2)
+        Me.addPurchaseButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.addPurchaseButton.Name = "addPurchaseButton"
+        Me.addPurchaseButton.Size = New System.Drawing.Size(74, 32)
+        Me.addPurchaseButton.TabIndex = 6
+        Me.addPurchaseButton.Text = "新增"
+        Me.addPurchaseButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.addPurchaseButton.UseVisualStyleBackColor = True
+        '
         'Panel3
         '
         Me.Panel3.AutoSize = True
@@ -516,14 +649,14 @@ Partial Class Data_Case_Form
         Me.PurchasePartDGV.AllowUserToDeleteRows = False
         Me.PurchasePartDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.PurchasePartDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PurchasePartDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PurchasePartDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.PurchasePartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PurchasePartDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PurchasePID, Me.PurchasePartTime, Me.PurchasePartSupplierName, Me.PurchasePartName, Me.PurchasePartSpecification, Me.PurchasePartWidth, Me.PurchasePartLength, Me.PurchasePartCBM, Me.PurchasePartCount, Me.PurchasePartRemark})
         Me.PurchasePartDGV.Dock = System.Windows.Forms.DockStyle.Fill
@@ -531,12 +664,12 @@ Partial Class Data_Case_Form
         Me.PurchasePartDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.PurchasePartDGV.Name = "PurchasePartDGV"
         Me.PurchasePartDGV.ReadOnly = True
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White
-        Me.PurchasePartDGV.RowsDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        Me.PurchasePartDGV.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.PurchasePartDGV.RowTemplate.Height = 38
         Me.PurchasePartDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.PurchasePartDGV.Size = New System.Drawing.Size(924, 187)
@@ -637,14 +770,14 @@ Partial Class Data_Case_Form
         Me.PurchasePart2DGV.Margin = New System.Windows.Forms.Padding(2)
         Me.PurchasePart2DGV.Name = "PurchasePart2DGV"
         Me.PurchasePart2DGV.ReadOnly = True
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White
-        Me.PurchasePart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        Me.PurchasePart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.PurchasePart2DGV.RowTemplate.Height = 38
         Me.PurchasePart2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.PurchasePart2DGV.Size = New System.Drawing.Size(924, 198)
+        Me.PurchasePart2DGV.Size = New System.Drawing.Size(924, 187)
         Me.PurchasePart2DGV.TabIndex = 3
         '
         'purchaseP2ID
@@ -734,7 +867,7 @@ Partial Class Data_Case_Form
         Me.TableLayoutPanel5.RowCount = 2
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(942, 285)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(942, 274)
         Me.TableLayoutPanel5.TabIndex = 11
         '
         'FlowLayoutPanel5
@@ -748,6 +881,60 @@ Partial Class Data_Case_Form
         Me.FlowLayoutPanel5.Name = "FlowLayoutPanel5"
         Me.FlowLayoutPanel5.Size = New System.Drawing.Size(936, 37)
         Me.FlowLayoutPanel5.TabIndex = 11
+        '
+        'AddWPBtn
+        '
+        Me.AddWPBtn.Enabled = False
+        Me.AddWPBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.AddWPBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.AddWPBtn.ForeColor = System.Drawing.Color.White
+        Me.AddWPBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AddWPBtn.ImageKey = "note_add.png"
+        Me.AddWPBtn.ImageList = Me.ImageList1
+        Me.AddWPBtn.Location = New System.Drawing.Point(2, 2)
+        Me.AddWPBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.AddWPBtn.Name = "AddWPBtn"
+        Me.AddWPBtn.Size = New System.Drawing.Size(75, 32)
+        Me.AddWPBtn.TabIndex = 7
+        Me.AddWPBtn.Text = "新增"
+        Me.AddWPBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AddWPBtn.UseVisualStyleBackColor = True
+        '
+        'ReviseWPBtn
+        '
+        Me.ReviseWPBtn.Enabled = False
+        Me.ReviseWPBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ReviseWPBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ReviseWPBtn.ForeColor = System.Drawing.Color.White
+        Me.ReviseWPBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReviseWPBtn.ImageKey = "note_revise.png"
+        Me.ReviseWPBtn.ImageList = Me.ImageList1
+        Me.ReviseWPBtn.Location = New System.Drawing.Point(81, 2)
+        Me.ReviseWPBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.ReviseWPBtn.Name = "ReviseWPBtn"
+        Me.ReviseWPBtn.Size = New System.Drawing.Size(75, 32)
+        Me.ReviseWPBtn.TabIndex = 8
+        Me.ReviseWPBtn.Text = "修改"
+        Me.ReviseWPBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReviseWPBtn.UseVisualStyleBackColor = True
+        '
+        'DelWPBtn
+        '
+        Me.DelWPBtn.Enabled = False
+        Me.DelWPBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.DelWPBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DelWPBtn.ForeColor = System.Drawing.Color.White
+        Me.DelWPBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.DelWPBtn.ImageKey = "note_del.png"
+        Me.DelWPBtn.ImageList = Me.ImageList1
+        Me.DelWPBtn.Location = New System.Drawing.Point(160, 2)
+        Me.DelWPBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.DelWPBtn.Name = "DelWPBtn"
+        Me.DelWPBtn.Size = New System.Drawing.Size(75, 32)
+        Me.DelWPBtn.TabIndex = 9
+        Me.DelWPBtn.Text = "刪除"
+        Me.DelWPBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.DelWPBtn.UseVisualStyleBackColor = True
         '
         'WorkProgressDGV
         '
@@ -764,16 +951,16 @@ Partial Class Data_Case_Form
         Me.WorkProgressDGV.MultiSelect = False
         Me.WorkProgressDGV.Name = "WorkProgressDGV"
         Me.WorkProgressDGV.ReadOnly = True
-        DataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.WorkProgressDGV.RowsDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.WorkProgressDGV.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.WorkProgressDGV.RowTemplate.Height = 38
         Me.WorkProgressDGV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.WorkProgressDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.WorkProgressDGV.Size = New System.Drawing.Size(938, 238)
+        Me.WorkProgressDGV.Size = New System.Drawing.Size(938, 227)
         Me.WorkProgressDGV.TabIndex = 1
         '
         'WPID
@@ -883,6 +1070,23 @@ Partial Class Data_Case_Form
         Me.FlowLayoutPanel3.Size = New System.Drawing.Size(207, 36)
         Me.FlowLayoutPanel3.TabIndex = 0
         '
+        'addSaleButton
+        '
+        Me.addSaleButton.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.addSaleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.addSaleButton.ForeColor = System.Drawing.Color.White
+        Me.addSaleButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.addSaleButton.ImageKey = "note_add.png"
+        Me.addSaleButton.ImageList = Me.ImageList1
+        Me.addSaleButton.Location = New System.Drawing.Point(2, 2)
+        Me.addSaleButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.addSaleButton.Name = "addSaleButton"
+        Me.addSaleButton.Size = New System.Drawing.Size(74, 32)
+        Me.addSaleButton.TabIndex = 6
+        Me.addSaleButton.Text = "新增"
+        Me.addSaleButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.addSaleButton.UseVisualStyleBackColor = True
+        '
         'Panel8
         '
         Me.Panel8.AutoSize = True
@@ -951,11 +1155,11 @@ Partial Class Data_Case_Form
         Me.ShipmentPartDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.ShipmentPartDGV.Name = "ShipmentPartDGV"
         Me.ShipmentPartDGV.ReadOnly = True
-        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle19.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White
-        Me.ShipmentPartDGV.RowsDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
+        Me.ShipmentPartDGV.RowsDefaultCellStyle = DataGridViewCellStyle7
         Me.ShipmentPartDGV.RowTemplate.Height = 38
         Me.ShipmentPartDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ShipmentPartDGV.Size = New System.Drawing.Size(924, 187)
@@ -1045,7 +1249,7 @@ Partial Class Data_Case_Form
         Me.TabPage7.Location = New System.Drawing.Point(4, 33)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(930, 204)
+        Me.TabPage7.Size = New System.Drawing.Size(930, 193)
         Me.TabPage7.TabIndex = 1
         Me.TabPage7.Text = "門扇"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -1063,14 +1267,14 @@ Partial Class Data_Case_Form
         Me.ShipmentPart2DGV.Margin = New System.Windows.Forms.Padding(2)
         Me.ShipmentPart2DGV.Name = "ShipmentPart2DGV"
         Me.ShipmentPart2DGV.ReadOnly = True
-        DataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White
-        Me.ShipmentPart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        Me.ShipmentPart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.ShipmentPart2DGV.RowTemplate.Height = 38
         Me.ShipmentPart2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ShipmentPart2DGV.Size = New System.Drawing.Size(924, 198)
+        Me.ShipmentPart2DGV.Size = New System.Drawing.Size(924, 187)
         Me.ShipmentPart2DGV.TabIndex = 3
         '
         'ShipmentP2ID
@@ -1167,7 +1371,7 @@ Partial Class Data_Case_Form
         Me.TableLayoutPanel4.RowCount = 2
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(948, 291)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(948, 280)
         Me.TableLayoutPanel4.TabIndex = 10
         '
         'FlowLayoutPanel4
@@ -1180,6 +1384,60 @@ Partial Class Data_Case_Form
         Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
         Me.FlowLayoutPanel4.Size = New System.Drawing.Size(942, 37)
         Me.FlowLayoutPanel4.TabIndex = 11
+        '
+        'AddDetailBtn
+        '
+        Me.AddDetailBtn.Enabled = False
+        Me.AddDetailBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.AddDetailBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.AddDetailBtn.ForeColor = System.Drawing.Color.White
+        Me.AddDetailBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AddDetailBtn.ImageKey = "note_add.png"
+        Me.AddDetailBtn.ImageList = Me.ImageList1
+        Me.AddDetailBtn.Location = New System.Drawing.Point(2, 2)
+        Me.AddDetailBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.AddDetailBtn.Name = "AddDetailBtn"
+        Me.AddDetailBtn.Size = New System.Drawing.Size(75, 32)
+        Me.AddDetailBtn.TabIndex = 7
+        Me.AddDetailBtn.Text = "新增"
+        Me.AddDetailBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AddDetailBtn.UseVisualStyleBackColor = True
+        '
+        'ReviseDetailBtn
+        '
+        Me.ReviseDetailBtn.Enabled = False
+        Me.ReviseDetailBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ReviseDetailBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ReviseDetailBtn.ForeColor = System.Drawing.Color.White
+        Me.ReviseDetailBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReviseDetailBtn.ImageKey = "note_revise.png"
+        Me.ReviseDetailBtn.ImageList = Me.ImageList1
+        Me.ReviseDetailBtn.Location = New System.Drawing.Point(81, 2)
+        Me.ReviseDetailBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.ReviseDetailBtn.Name = "ReviseDetailBtn"
+        Me.ReviseDetailBtn.Size = New System.Drawing.Size(75, 32)
+        Me.ReviseDetailBtn.TabIndex = 8
+        Me.ReviseDetailBtn.Text = "修改"
+        Me.ReviseDetailBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReviseDetailBtn.UseVisualStyleBackColor = True
+        '
+        'DelDetailBtn
+        '
+        Me.DelDetailBtn.Enabled = False
+        Me.DelDetailBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.DelDetailBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DelDetailBtn.ForeColor = System.Drawing.Color.White
+        Me.DelDetailBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.DelDetailBtn.ImageKey = "note_del.png"
+        Me.DelDetailBtn.ImageList = Me.ImageList1
+        Me.DelDetailBtn.Location = New System.Drawing.Point(160, 2)
+        Me.DelDetailBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.DelDetailBtn.Name = "DelDetailBtn"
+        Me.DelDetailBtn.Size = New System.Drawing.Size(75, 32)
+        Me.DelDetailBtn.TabIndex = 9
+        Me.DelDetailBtn.Text = "刪除"
+        Me.DelDetailBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.DelDetailBtn.UseVisualStyleBackColor = True
         '
         'DetailDGV
         '
@@ -1196,16 +1454,16 @@ Partial Class Data_Case_Form
         Me.DetailDGV.MultiSelect = False
         Me.DetailDGV.Name = "DetailDGV"
         Me.DetailDGV.ReadOnly = True
-        DataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DetailDGV.RowsDefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DetailDGV.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DetailDGV.RowTemplate.Height = 38
         Me.DetailDGV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DetailDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DetailDGV.Size = New System.Drawing.Size(944, 244)
+        Me.DetailDGV.Size = New System.Drawing.Size(944, 233)
         Me.DetailDGV.TabIndex = 1
         '
         'WDID
@@ -1282,11 +1540,11 @@ Partial Class Data_Case_Form
         Me.RepairDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.RepairDGV.Name = "RepairDGV"
         Me.RepairDGV.ReadOnly = True
-        DataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle22.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White
-        Me.RepairDGV.RowsDefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White
+        Me.RepairDGV.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.RepairDGV.RowTemplate.Height = 38
         Me.RepairDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.RepairDGV.Size = New System.Drawing.Size(938, 230)
@@ -1348,387 +1606,6 @@ Partial Class Data_Case_Form
         Me.FlowLayoutPanel6.Size = New System.Drawing.Size(938, 36)
         Me.FlowLayoutPanel6.TabIndex = 0
         '
-        'TabPage10
-        '
-        Me.TabPage10.BackColor = System.Drawing.Color.SlateGray
-        Me.TabPage10.Controls.Add(Me.TableLayoutPanel7)
-        Me.TabPage10.Location = New System.Drawing.Point(4, 33)
-        Me.TabPage10.Name = "TabPage10"
-        Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(948, 280)
-        Me.TabPage10.TabIndex = 6
-        Me.TabPage10.Text = "鑰匙/五金"
-        '
-        'LoadingBackground
-        '
-        '
-        'LoadingDetailBackground
-        '
-        '
-        'PrintShippingRecordBackground
-        '
-        Me.PrintShippingRecordBackground.WorkerReportsProgress = True
-        '
-        'PrintWorkProgressWork
-        '
-        Me.PrintWorkProgressWork.WorkerReportsProgress = True
-        '
-        'TableLayoutPanel7
-        '
-        Me.TableLayoutPanel7.AutoSize = True
-        Me.TableLayoutPanel7.BackColor = System.Drawing.Color.SlateGray
-        Me.TableLayoutPanel7.ColumnCount = 1
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel7.Controls.Add(Me.ReceiptDGV, 0, 1)
-        Me.TableLayoutPanel7.Controls.Add(Me.FlowLayoutPanel7, 0, 0)
-        Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel7.Location = New System.Drawing.Point(3, 3)
-        Me.TableLayoutPanel7.Margin = New System.Windows.Forms.Padding(2)
-        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
-        Me.TableLayoutPanel7.RowCount = 2
-        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(942, 274)
-        Me.TableLayoutPanel7.TabIndex = 2
-        '
-        'ReceiptDGV
-        '
-        Me.ReceiptDGV.AllowUserToAddRows = False
-        Me.ReceiptDGV.AllowUserToDeleteRows = False
-        Me.ReceiptDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.ReceiptDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.ReceiptDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ReceiptDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ReceiptID, Me.ReceiptType, Me.InsertDate, Me.ReceiptType2, Me.ReceiptDate, Me.Status})
-        Me.ReceiptDGV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ReceiptDGV.Location = New System.Drawing.Point(2, 42)
-        Me.ReceiptDGV.Margin = New System.Windows.Forms.Padding(2)
-        Me.ReceiptDGV.Name = "ReceiptDGV"
-        Me.ReceiptDGV.ReadOnly = True
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White
-        Me.ReceiptDGV.RowsDefaultCellStyle = DataGridViewCellStyle14
-        Me.ReceiptDGV.RowTemplate.Height = 38
-        Me.ReceiptDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ReceiptDGV.Size = New System.Drawing.Size(938, 230)
-        Me.ReceiptDGV.TabIndex = 3
-        '
-        'FlowLayoutPanel7
-        '
-        Me.FlowLayoutPanel7.AutoSize = True
-        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptAddBtn)
-        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptAddBtn2)
-        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptReviseBtn)
-        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptDelBtn)
-        Me.FlowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel7.Location = New System.Drawing.Point(2, 2)
-        Me.FlowLayoutPanel7.Margin = New System.Windows.Forms.Padding(2)
-        Me.FlowLayoutPanel7.Name = "FlowLayoutPanel7"
-        Me.FlowLayoutPanel7.Size = New System.Drawing.Size(938, 36)
-        Me.FlowLayoutPanel7.TabIndex = 0
-        '
-        'ReceiptID
-        '
-        Me.ReceiptID.HeaderText = "ReceiptID"
-        Me.ReceiptID.Name = "ReceiptID"
-        Me.ReceiptID.ReadOnly = True
-        Me.ReceiptID.Visible = False
-        Me.ReceiptID.Width = 77
-        '
-        'ReceiptType
-        '
-        Me.ReceiptType.HeaderText = "ReceiptType"
-        Me.ReceiptType.Name = "ReceiptType"
-        Me.ReceiptType.ReadOnly = True
-        Me.ReceiptType.Visible = False
-        Me.ReceiptType.Width = 89
-        '
-        'InsertDate
-        '
-        Me.InsertDate.HeaderText = "建檔時間"
-        Me.InsertDate.Name = "InsertDate"
-        Me.InsertDate.ReadOnly = True
-        Me.InsertDate.Width = 111
-        '
-        'ReceiptType2
-        '
-        Me.ReceiptType2.HeaderText = "類別"
-        Me.ReceiptType2.Name = "ReceiptType2"
-        Me.ReceiptType2.ReadOnly = True
-        Me.ReceiptType2.Width = 73
-        '
-        'ReceiptDate
-        '
-        Me.ReceiptDate.HeaderText = "簽收時間"
-        Me.ReceiptDate.Name = "ReceiptDate"
-        Me.ReceiptDate.ReadOnly = True
-        Me.ReceiptDate.Width = 111
-        '
-        'Status
-        '
-        Me.Status.HeaderText = "狀態"
-        Me.Status.Name = "Status"
-        Me.Status.ReadOnly = True
-        Me.Status.Width = 73
-        '
-        'SearchButton
-        '
-        Me.SearchButton.BackColor = System.Drawing.Color.DarkCyan
-        Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SearchButton.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.SearchButton.ImageIndex = 0
-        Me.SearchButton.ImageList = Me.ImageList1
-        Me.SearchButton.Location = New System.Drawing.Point(3, 3)
-        Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(90, 36)
-        Me.SearchButton.TabIndex = 0
-        Me.SearchButton.Text = "搜尋&F"
-        Me.SearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.SearchButton.UseVisualStyleBackColor = False
-        '
-        'AddBtn
-        '
-        Me.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.AddBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.AddBtn.ForeColor = System.Drawing.Color.White
-        Me.AddBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.AddBtn.ImageIndex = 1
-        Me.AddBtn.ImageList = Me.ImageList1
-        Me.AddBtn.Location = New System.Drawing.Point(99, 3)
-        Me.AddBtn.Name = "AddBtn"
-        Me.AddBtn.Size = New System.Drawing.Size(90, 36)
-        Me.AddBtn.TabIndex = 1
-        Me.AddBtn.Text = "新增&A"
-        Me.AddBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.AddBtn.UseVisualStyleBackColor = True
-        '
-        'ReviseBtn
-        '
-        Me.ReviseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ReviseBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.ReviseBtn.ForeColor = System.Drawing.Color.White
-        Me.ReviseBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ReviseBtn.ImageIndex = 2
-        Me.ReviseBtn.ImageList = Me.ImageList1
-        Me.ReviseBtn.Location = New System.Drawing.Point(195, 3)
-        Me.ReviseBtn.Name = "ReviseBtn"
-        Me.ReviseBtn.Size = New System.Drawing.Size(90, 36)
-        Me.ReviseBtn.TabIndex = 2
-        Me.ReviseBtn.Text = "編輯&D"
-        Me.ReviseBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ReviseBtn.UseVisualStyleBackColor = True
-        '
-        'ConpleteBtn
-        '
-        Me.ConpleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ConpleteBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.ConpleteBtn.ForeColor = System.Drawing.Color.White
-        Me.ConpleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ConpleteBtn.ImageIndex = 5
-        Me.ConpleteBtn.ImageList = Me.ImageList1
-        Me.ConpleteBtn.Location = New System.Drawing.Point(291, 3)
-        Me.ConpleteBtn.Name = "ConpleteBtn"
-        Me.ConpleteBtn.Size = New System.Drawing.Size(90, 36)
-        Me.ConpleteBtn.TabIndex = 5
-        Me.ConpleteBtn.Text = "結案&C"
-        Me.ConpleteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ConpleteBtn.UseVisualStyleBackColor = True
-        '
-        'VoidBtn
-        '
-        Me.VoidBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.VoidBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.VoidBtn.ForeColor = System.Drawing.Color.White
-        Me.VoidBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.VoidBtn.ImageIndex = 3
-        Me.VoidBtn.ImageList = Me.ImageList1
-        Me.VoidBtn.Location = New System.Drawing.Point(387, 3)
-        Me.VoidBtn.Name = "VoidBtn"
-        Me.VoidBtn.Size = New System.Drawing.Size(90, 36)
-        Me.VoidBtn.TabIndex = 3
-        Me.VoidBtn.Text = "作廢&K"
-        Me.VoidBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.VoidBtn.UseVisualStyleBackColor = True
-        '
-        'PrintBtn
-        '
-        Me.PrintBtn.ContextMenuStrip = Me.PrintMenu
-        Me.PrintBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.PrintBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.PrintBtn.ForeColor = System.Drawing.Color.White
-        Me.PrintBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.PrintBtn.ImageIndex = 6
-        Me.PrintBtn.ImageList = Me.ImageList1
-        Me.PrintBtn.Location = New System.Drawing.Point(483, 3)
-        Me.PrintBtn.Name = "PrintBtn"
-        Me.PrintBtn.Size = New System.Drawing.Size(90, 36)
-        Me.PrintBtn.TabIndex = 6
-        Me.PrintBtn.Text = "列印&P"
-        Me.PrintBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.PrintBtn.UseVisualStyleBackColor = True
-        '
-        'RefreshBtn
-        '
-        Me.RefreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RefreshBtn.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.RefreshBtn.ForeColor = System.Drawing.Color.White
-        Me.RefreshBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.RefreshBtn.ImageIndex = 4
-        Me.RefreshBtn.ImageList = Me.ImageList1
-        Me.RefreshBtn.Location = New System.Drawing.Point(579, 3)
-        Me.RefreshBtn.Name = "RefreshBtn"
-        Me.RefreshBtn.Size = New System.Drawing.Size(90, 36)
-        Me.RefreshBtn.TabIndex = 4
-        Me.RefreshBtn.Text = "刷新&R"
-        Me.RefreshBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.RefreshBtn.UseVisualStyleBackColor = True
-        '
-        'addPurchaseButton
-        '
-        Me.addPurchaseButton.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.addPurchaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.addPurchaseButton.ForeColor = System.Drawing.Color.White
-        Me.addPurchaseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.addPurchaseButton.ImageKey = "note_add.png"
-        Me.addPurchaseButton.ImageList = Me.ImageList1
-        Me.addPurchaseButton.Location = New System.Drawing.Point(2, 2)
-        Me.addPurchaseButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.addPurchaseButton.Name = "addPurchaseButton"
-        Me.addPurchaseButton.Size = New System.Drawing.Size(74, 32)
-        Me.addPurchaseButton.TabIndex = 6
-        Me.addPurchaseButton.Text = "新增"
-        Me.addPurchaseButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.addPurchaseButton.UseVisualStyleBackColor = True
-        '
-        'AddWPBtn
-        '
-        Me.AddWPBtn.Enabled = False
-        Me.AddWPBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.AddWPBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.AddWPBtn.ForeColor = System.Drawing.Color.White
-        Me.AddWPBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.AddWPBtn.ImageKey = "note_add.png"
-        Me.AddWPBtn.ImageList = Me.ImageList1
-        Me.AddWPBtn.Location = New System.Drawing.Point(2, 2)
-        Me.AddWPBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.AddWPBtn.Name = "AddWPBtn"
-        Me.AddWPBtn.Size = New System.Drawing.Size(75, 32)
-        Me.AddWPBtn.TabIndex = 7
-        Me.AddWPBtn.Text = "新增"
-        Me.AddWPBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.AddWPBtn.UseVisualStyleBackColor = True
-        '
-        'ReviseWPBtn
-        '
-        Me.ReviseWPBtn.Enabled = False
-        Me.ReviseWPBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ReviseWPBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ReviseWPBtn.ForeColor = System.Drawing.Color.White
-        Me.ReviseWPBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ReviseWPBtn.ImageKey = "note_revise.png"
-        Me.ReviseWPBtn.ImageList = Me.ImageList1
-        Me.ReviseWPBtn.Location = New System.Drawing.Point(81, 2)
-        Me.ReviseWPBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.ReviseWPBtn.Name = "ReviseWPBtn"
-        Me.ReviseWPBtn.Size = New System.Drawing.Size(75, 32)
-        Me.ReviseWPBtn.TabIndex = 8
-        Me.ReviseWPBtn.Text = "修改"
-        Me.ReviseWPBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ReviseWPBtn.UseVisualStyleBackColor = True
-        '
-        'DelWPBtn
-        '
-        Me.DelWPBtn.Enabled = False
-        Me.DelWPBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.DelWPBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.DelWPBtn.ForeColor = System.Drawing.Color.White
-        Me.DelWPBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.DelWPBtn.ImageKey = "note_del.png"
-        Me.DelWPBtn.ImageList = Me.ImageList1
-        Me.DelWPBtn.Location = New System.Drawing.Point(160, 2)
-        Me.DelWPBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.DelWPBtn.Name = "DelWPBtn"
-        Me.DelWPBtn.Size = New System.Drawing.Size(75, 32)
-        Me.DelWPBtn.TabIndex = 9
-        Me.DelWPBtn.Text = "刪除"
-        Me.DelWPBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.DelWPBtn.UseVisualStyleBackColor = True
-        '
-        'addSaleButton
-        '
-        Me.addSaleButton.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.addSaleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.addSaleButton.ForeColor = System.Drawing.Color.White
-        Me.addSaleButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.addSaleButton.ImageKey = "note_add.png"
-        Me.addSaleButton.ImageList = Me.ImageList1
-        Me.addSaleButton.Location = New System.Drawing.Point(2, 2)
-        Me.addSaleButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.addSaleButton.Name = "addSaleButton"
-        Me.addSaleButton.Size = New System.Drawing.Size(74, 32)
-        Me.addSaleButton.TabIndex = 6
-        Me.addSaleButton.Text = "新增"
-        Me.addSaleButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.addSaleButton.UseVisualStyleBackColor = True
-        '
-        'AddDetailBtn
-        '
-        Me.AddDetailBtn.Enabled = False
-        Me.AddDetailBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.AddDetailBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.AddDetailBtn.ForeColor = System.Drawing.Color.White
-        Me.AddDetailBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.AddDetailBtn.ImageKey = "note_add.png"
-        Me.AddDetailBtn.ImageList = Me.ImageList1
-        Me.AddDetailBtn.Location = New System.Drawing.Point(2, 2)
-        Me.AddDetailBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.AddDetailBtn.Name = "AddDetailBtn"
-        Me.AddDetailBtn.Size = New System.Drawing.Size(75, 32)
-        Me.AddDetailBtn.TabIndex = 7
-        Me.AddDetailBtn.Text = "新增"
-        Me.AddDetailBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.AddDetailBtn.UseVisualStyleBackColor = True
-        '
-        'ReviseDetailBtn
-        '
-        Me.ReviseDetailBtn.Enabled = False
-        Me.ReviseDetailBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ReviseDetailBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ReviseDetailBtn.ForeColor = System.Drawing.Color.White
-        Me.ReviseDetailBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ReviseDetailBtn.ImageKey = "note_revise.png"
-        Me.ReviseDetailBtn.ImageList = Me.ImageList1
-        Me.ReviseDetailBtn.Location = New System.Drawing.Point(81, 2)
-        Me.ReviseDetailBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.ReviseDetailBtn.Name = "ReviseDetailBtn"
-        Me.ReviseDetailBtn.Size = New System.Drawing.Size(75, 32)
-        Me.ReviseDetailBtn.TabIndex = 8
-        Me.ReviseDetailBtn.Text = "修改"
-        Me.ReviseDetailBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ReviseDetailBtn.UseVisualStyleBackColor = True
-        '
-        'DelDetailBtn
-        '
-        Me.DelDetailBtn.Enabled = False
-        Me.DelDetailBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.DelDetailBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.DelDetailBtn.ForeColor = System.Drawing.Color.White
-        Me.DelDetailBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.DelDetailBtn.ImageKey = "note_del.png"
-        Me.DelDetailBtn.ImageList = Me.ImageList1
-        Me.DelDetailBtn.Location = New System.Drawing.Point(160, 2)
-        Me.DelDetailBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.DelDetailBtn.Name = "DelDetailBtn"
-        Me.DelDetailBtn.Size = New System.Drawing.Size(75, 32)
-        Me.DelDetailBtn.TabIndex = 9
-        Me.DelDetailBtn.Text = "刪除"
-        Me.DelDetailBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.DelDetailBtn.UseVisualStyleBackColor = True
-        '
         'AddRepairBtn
         '
         Me.AddRepairBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
@@ -1781,6 +1658,73 @@ Partial Class Data_Case_Form
         Me.DelRepairBtn.Text = "刪除"
         Me.DelRepairBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.DelRepairBtn.UseVisualStyleBackColor = True
+        '
+        'TabPage10
+        '
+        Me.TabPage10.BackColor = System.Drawing.Color.SlateGray
+        Me.TabPage10.Controls.Add(Me.TableLayoutPanel7)
+        Me.TabPage10.Location = New System.Drawing.Point(4, 33)
+        Me.TabPage10.Name = "TabPage10"
+        Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage10.Size = New System.Drawing.Size(948, 280)
+        Me.TabPage10.TabIndex = 6
+        Me.TabPage10.Text = "鑰匙/五金"
+        '
+        'TableLayoutPanel7
+        '
+        Me.TableLayoutPanel7.AutoSize = True
+        Me.TableLayoutPanel7.BackColor = System.Drawing.Color.SlateGray
+        Me.TableLayoutPanel7.ColumnCount = 1
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel7.Controls.Add(Me.ReceiptDGV, 0, 1)
+        Me.TableLayoutPanel7.Controls.Add(Me.FlowLayoutPanel7, 0, 0)
+        Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel7.Margin = New System.Windows.Forms.Padding(2)
+        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
+        Me.TableLayoutPanel7.RowCount = 2
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(942, 274)
+        Me.TableLayoutPanel7.TabIndex = 2
+        '
+        'ReceiptDGV
+        '
+        Me.ReceiptDGV.AllowUserToAddRows = False
+        Me.ReceiptDGV.AllowUserToDeleteRows = False
+        Me.ReceiptDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.ReceiptDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.ReceiptDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ReceiptDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ReceiptID, Me.ReceiptType, Me.ReceiptOrder, Me.InsertDate, Me.ReceiptType2, Me.ReceiptDate, Me.StatusText, Me.Status})
+        Me.ReceiptDGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ReceiptDGV.Location = New System.Drawing.Point(2, 42)
+        Me.ReceiptDGV.Margin = New System.Windows.Forms.Padding(2)
+        Me.ReceiptDGV.Name = "ReceiptDGV"
+        Me.ReceiptDGV.ReadOnly = True
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
+        Me.ReceiptDGV.RowsDefaultCellStyle = DataGridViewCellStyle11
+        Me.ReceiptDGV.RowTemplate.Height = 38
+        Me.ReceiptDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.ReceiptDGV.Size = New System.Drawing.Size(938, 230)
+        Me.ReceiptDGV.TabIndex = 3
+        '
+        'FlowLayoutPanel7
+        '
+        Me.FlowLayoutPanel7.AutoSize = True
+        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptAddBtn)
+        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptAddBtn2)
+        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptReviseBtn)
+        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptDelBtn)
+        Me.FlowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel7.Location = New System.Drawing.Point(2, 2)
+        Me.FlowLayoutPanel7.Margin = New System.Windows.Forms.Padding(2)
+        Me.FlowLayoutPanel7.Name = "FlowLayoutPanel7"
+        Me.FlowLayoutPanel7.Size = New System.Drawing.Size(938, 36)
+        Me.FlowLayoutPanel7.TabIndex = 0
         '
         'ReceiptAddBtn
         '
@@ -1851,6 +1795,80 @@ Partial Class Data_Case_Form
         Me.ReceiptDelBtn.Text = "刪除"
         Me.ReceiptDelBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ReceiptDelBtn.UseVisualStyleBackColor = True
+        '
+        'LoadingBackground
+        '
+        '
+        'LoadingDetailBackground
+        '
+        '
+        'PrintShippingRecordBackground
+        '
+        Me.PrintShippingRecordBackground.WorkerReportsProgress = True
+        '
+        'PrintWorkProgressWork
+        '
+        Me.PrintWorkProgressWork.WorkerReportsProgress = True
+        '
+        'ReceiptID
+        '
+        Me.ReceiptID.HeaderText = "ReceiptID"
+        Me.ReceiptID.Name = "ReceiptID"
+        Me.ReceiptID.ReadOnly = True
+        Me.ReceiptID.Visible = False
+        Me.ReceiptID.Width = 121
+        '
+        'ReceiptType
+        '
+        Me.ReceiptType.HeaderText = "ReceiptType"
+        Me.ReceiptType.Name = "ReceiptType"
+        Me.ReceiptType.ReadOnly = True
+        Me.ReceiptType.Visible = False
+        Me.ReceiptType.Width = 146
+        '
+        'ReceiptOrder
+        '
+        Me.ReceiptOrder.HeaderText = "ReceiptOrder"
+        Me.ReceiptOrder.Name = "ReceiptOrder"
+        Me.ReceiptOrder.ReadOnly = True
+        Me.ReceiptOrder.Visible = False
+        Me.ReceiptOrder.Width = 154
+        '
+        'InsertDate
+        '
+        Me.InsertDate.HeaderText = "建檔時間"
+        Me.InsertDate.Name = "InsertDate"
+        Me.InsertDate.ReadOnly = True
+        Me.InsertDate.Width = 111
+        '
+        'ReceiptType2
+        '
+        Me.ReceiptType2.HeaderText = "類別"
+        Me.ReceiptType2.Name = "ReceiptType2"
+        Me.ReceiptType2.ReadOnly = True
+        Me.ReceiptType2.Width = 73
+        '
+        'ReceiptDate
+        '
+        Me.ReceiptDate.HeaderText = "簽收時間"
+        Me.ReceiptDate.Name = "ReceiptDate"
+        Me.ReceiptDate.ReadOnly = True
+        Me.ReceiptDate.Width = 111
+        '
+        'StatusText
+        '
+        Me.StatusText.HeaderText = "狀態"
+        Me.StatusText.Name = "StatusText"
+        Me.StatusText.ReadOnly = True
+        Me.StatusText.Width = 73
+        '
+        'Status
+        '
+        Me.Status.HeaderText = "Status"
+        Me.Status.Name = "Status"
+        Me.Status.ReadOnly = True
+        Me.Status.Visible = False
+        Me.Status.Width = 91
         '
         'Data_Case_Form
         '
@@ -2060,15 +2078,17 @@ Partial Class Data_Case_Form
     Friend WithEvents TabPage10 As TabPage
     Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
     Friend WithEvents ReceiptDGV As DataGridView
-    Friend WithEvents ReceiptID As DataGridViewTextBoxColumn
-    Friend WithEvents ReceiptType As DataGridViewTextBoxColumn
-    Friend WithEvents InsertDate As DataGridViewTextBoxColumn
-    Friend WithEvents ReceiptType2 As DataGridViewTextBoxColumn
-    Friend WithEvents ReceiptDate As DataGridViewTextBoxColumn
-    Friend WithEvents Status As DataGridViewTextBoxColumn
     Friend WithEvents FlowLayoutPanel7 As FlowLayoutPanel
     Friend WithEvents ReceiptAddBtn As Button
     Friend WithEvents ReceiptAddBtn2 As Button
     Friend WithEvents ReceiptReviseBtn As Button
     Friend WithEvents ReceiptDelBtn As Button
+    Friend WithEvents ReceiptID As DataGridViewTextBoxColumn
+    Friend WithEvents ReceiptType As DataGridViewTextBoxColumn
+    Friend WithEvents ReceiptOrder As DataGridViewTextBoxColumn
+    Friend WithEvents InsertDate As DataGridViewTextBoxColumn
+    Friend WithEvents ReceiptType2 As DataGridViewTextBoxColumn
+    Friend WithEvents ReceiptDate As DataGridViewTextBoxColumn
+    Friend WithEvents StatusText As DataGridViewTextBoxColumn
+    Friend WithEvents Status As DataGridViewTextBoxColumn
 End Class

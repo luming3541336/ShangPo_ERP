@@ -57,7 +57,7 @@ Public Class Data_Case_Form
     Private Sub LoadingDetailBackground_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles LoadingDetailBackground.DoWork
 
         e.Result = {controller.Select_PurchasePart(e.Argument), controller.Select_PurchasePart2(e.Argument), controller.Select_ShipmentPart(e.Argument), controller.Select_ShipmentPart2(e.Argument),
-            controller.Get_PurchaseCase_Count(e.Argument), controller.Get_SaleCase_Count(e.Argument), controller.Select_WorkDetail(e.Argument), controller.Select_WorkProgress(e.Argument), controller.Select_RepairData(e.Argument)}
+            controller.Get_PurchaseCase_Count(e.Argument), controller.Get_SaleCase_Count(e.Argument), controller.Select_WorkDetail(e.Argument), controller.Select_WorkProgress(e.Argument), controller.Select_RepairData(e.Argument), controller.Select_ReceiptData(e.Argument)}
     End Sub
 
     Private Sub LoadingDetailBackground_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles LoadingDetailBackground.RunWorkerCompleted
@@ -70,6 +70,7 @@ Public Class Data_Case_Form
         Dim listWorkDetail As List(Of Set_WorkDetail_Model.WorkDetail) = e.Result(6)
         Dim listWorkProgress As List(Of Set_WorkProgress_Model.WorkProgress) = e.Result(7)
         Dim listRepairData As List(Of RepairData) = e.Result(8)
+        Dim listReceiptData As List(Of ReceiptData) = e.Result(9)
         PurchasePartDGV.Rows.Clear()
         For Each data As Data_Case_Model.PurchasePart In listPurchasePart '取得PurchasePart並放入purchaseProdDGV內
             PurchasePartDGV.Rows.Add(data.PurchasePID, data.InsertTime, data.Supplier, data.ProdName, data.Specification, data.Width, data.Length, data.CBM, data.Count, data.Remark)
@@ -93,6 +94,17 @@ Public Class Data_Case_Form
         WorkProgressDGV.Rows.Clear()
         For Each data As Set_WorkProgress_Model.WorkProgress In listWorkProgress
             WorkProgressDGV.Rows.Add(data.WPID, If(data.WPClass = 0, "門框、窗框", "門扇"), Format(data.WPDate, "yyyy/MM/dd"), data.Supplier, data.ProdName, data.Specification, data.Count, data.Unit, data.Remark)
+        Next
+        ReceiptDGV.Rows.Clear()
+        For Each data As ReceiptData In listReceiptData
+            Dim strStatus As String = ""
+            Select Case data.Status
+                Case 1
+                    strStatus = "尚未簽收"
+                Case 2
+                    strStatus = "簽收完成"
+            End Select
+            ReceiptDGV.Rows.Add(data.ReceiptID, data.ReceiptType, data.ReceiptOrder, Format(data.InsertDate, "yyyy/MM/dd"), If(data.ReceiptType = 0, "鑰匙", "五金"), Format(data.ReceiptDate, "yyyy/MM/dd"), strStatus, data.Status)
         Next
         RepairDGV.Rows.Clear()
         For Each data As RepairData In listRepairData

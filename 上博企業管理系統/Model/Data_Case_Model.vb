@@ -29,6 +29,8 @@
     Protected Const SELECT_PURCHASEID_FOR_FIT_SQL = "SELECT PurchaseID FROM PurchasePart2 WHERE PurchaseP2ID = @FID"
     Protected Const SELECT_SALEID_FOR_FIT_SQL = "SELECT ShipmentID FROM ShipmentPart2 WHERE ShipmentP2ID = @FID"
     Protected Const SELECT_REPAIRDATA_FOR_CASEID_SQL = "SELECT * FROM RepairData WHERE CaseID = @caseID"
+    Protected Const SELECT_RECEIPTDATA_FOR_CASEID_SQL = "SELECT * FROM ReceiptData WHERE CaseID = @caseID"
+
     Public Const UNSUCCESS_STATE = 0
     Public Const SUCCESS_STATE = 1
     Public Const CANCELCASE_STATE = 2

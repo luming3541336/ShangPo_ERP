@@ -88,6 +88,20 @@ Public Class Data_Case_Controller
         conDB.Close()
         Return arrayList
     End Function
+    Public Function Select_ReceiptData(ByVal caseID As Integer) As List(Of ReceiptData)
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = SELECT_SALEPROD_FOR_CASEID_SQL
+        Dim arrayList As List(Of ReceiptData) = New List(Of ReceiptData)
+        strSQL = strSQL.Replace("@caseID", caseID)
+        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
+        If dataReader.HasRows Then
+            Do While dataReader.Read
+                arrayList.Add(New ReceiptData With {.ReceiptID = dataReader("ReceiptID"), .ReceiptDate = dataReader("ReceiptDate"), .InsertDate = dataReader("InsertTime"), .ReceiptOrder = dataReader("ReceiptOrder"), .ReceiptType = dataReader("ReceiptType"), .Status = dataReader("Status")})
+            Loop
+        End If
+        conDB.Close()
+        Return arrayList
+    End Function
     Public Function Select_ShipmentPart(ByVal caseID As Integer) As List(Of ShipmentPart)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_SALEPROD_FOR_CASEID_SQL

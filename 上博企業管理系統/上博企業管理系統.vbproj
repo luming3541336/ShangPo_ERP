@@ -130,6 +130,7 @@
     <Compile Include="Controller\Output_SaleReport_Controller.vb" />
     <Compile Include="Controller\Search_Controller.vb" />
     <Compile Include="Controller\Data_Specification_Controller.vb" />
+    <Compile Include="Controller\Set_ReceiptKey_Controller.vb" />
     <Compile Include="Controller\Set_Repair_Controller.vb" />
     <Compile Include="Controller\Set_Sale_Controller.vb" />
     <Compile Include="Controller\Set_WorkProgress_Controller.vb" />
