@@ -23,15 +23,15 @@ Partial Class Set_ReceiptKey_Form
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Set_ReceiptKey_Form))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.PlaceText = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.ArchiveDate = New System.Windows.Forms.DateTimePicker()
+        Me.InsertDate = New System.Windows.Forms.DateTimePicker()
         Me.ReceiptOrderText = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.StatusText = New System.Windows.Forms.Label()
@@ -48,7 +48,6 @@ Partial Class Set_ReceiptKey_Form
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.SaveBtn = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.SubmitBtn = New System.Windows.Forms.Button()
         Me.RepairConfirmBtn = New System.Windows.Forms.Button()
         Me.PrintBtn = New System.Windows.Forms.Button()
         Me.ExitBtn = New System.Windows.Forms.Button()
@@ -74,7 +73,7 @@ Partial Class Set_ReceiptKey_Form
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label6, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.ArchiveDate, 3, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.InsertDate, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.ReceiptOrderText, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label16, 2, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.StatusText, 3, 2)
@@ -89,7 +88,7 @@ Partial Class Set_ReceiptKey_Form
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(908, 102)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(914, 102)
         Me.TableLayoutPanel1.TabIndex = 1
         '
         'PlaceText
@@ -129,14 +128,14 @@ Partial Class Set_ReceiptKey_Form
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "建檔日期"
         '
-        'ArchiveDate
+        'InsertDate
         '
-        Me.ArchiveDate.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ArchiveDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.ArchiveDate.Location = New System.Drawing.Point(523, 3)
-        Me.ArchiveDate.Name = "ArchiveDate"
-        Me.ArchiveDate.Size = New System.Drawing.Size(382, 33)
-        Me.ArchiveDate.TabIndex = 1
+        Me.InsertDate.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.InsertDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.InsertDate.Location = New System.Drawing.Point(523, 3)
+        Me.InsertDate.Name = "InsertDate"
+        Me.InsertDate.Size = New System.Drawing.Size(388, 33)
+        Me.InsertDate.TabIndex = 1
         '
         'ReceiptOrderText
         '
@@ -182,7 +181,7 @@ Partial Class Set_ReceiptKey_Form
         Me.ContactText.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ContactText.Location = New System.Drawing.Point(523, 42)
         Me.ContactText.Name = "ContactText"
-        Me.ContactText.Size = New System.Drawing.Size(382, 33)
+        Me.ContactText.Size = New System.Drawing.Size(388, 33)
         Me.ContactText.TabIndex = 5
         '
         'TableLayoutPanel3
@@ -198,35 +197,35 @@ Partial Class Set_ReceiptKey_Form
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 221.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 221.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(908, 221)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(914, 221)
         Me.TableLayoutPanel3.TabIndex = 4
         '
         'ReceiptKeyDGV
         '
         Me.ReceiptKeyDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ReceiptKeyDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ReceiptKeyDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ReceiptKeyDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.ReceiptKeyDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ReceiptKeyDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ReceiptKeyID, Me.Room, Me.Item, Me.Location, Me.ReceiptCount, Me.ReceiptRemark})
         Me.ReceiptKeyDGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ReceiptKeyDGV.Location = New System.Drawing.Point(3, 3)
         Me.ReceiptKeyDGV.MultiSelect = False
         Me.ReceiptKeyDGV.Name = "ReceiptKeyDGV"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        Me.ReceiptKeyDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.ReceiptKeyDGV.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.ReceiptKeyDGV.RowTemplate.Height = 24
-        Me.ReceiptKeyDGV.Size = New System.Drawing.Size(902, 215)
+        Me.ReceiptKeyDGV.Size = New System.Drawing.Size(908, 215)
         Me.ReceiptKeyDGV.TabIndex = 0
         '
         'ReceiptKeyID
@@ -266,14 +265,13 @@ Partial Class Set_ReceiptKey_Form
         '
         Me.FlowLayoutPanel2.AutoSize = True
         Me.FlowLayoutPanel2.Controls.Add(Me.SaveBtn)
-        Me.FlowLayoutPanel2.Controls.Add(Me.SubmitBtn)
         Me.FlowLayoutPanel2.Controls.Add(Me.RepairConfirmBtn)
         Me.FlowLayoutPanel2.Controls.Add(Me.PrintBtn)
         Me.FlowLayoutPanel2.Controls.Add(Me.ExitBtn)
-        Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(0, 379)
+        Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(0, 378)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(908, 42)
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(914, 42)
         Me.FlowLayoutPanel2.TabIndex = 7
         '
         'SaveBtn
@@ -301,22 +299,6 @@ Partial Class Set_ReceiptKey_Form
         Me.ImageList1.Images.SetKeyName(3, "note_add.png")
         Me.ImageList1.Images.SetKeyName(4, "cancel.png")
         '
-        'SubmitBtn
-        '
-        Me.SubmitBtn.AutoSize = True
-        Me.SubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SubmitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.SubmitBtn.ImageIndex = 0
-        Me.SubmitBtn.ImageList = Me.ImageList1
-        Me.SubmitBtn.Location = New System.Drawing.Point(91, 3)
-        Me.SubmitBtn.Name = "SubmitBtn"
-        Me.SubmitBtn.Size = New System.Drawing.Size(79, 36)
-        Me.SubmitBtn.TabIndex = 1
-        Me.SubmitBtn.Text = "提交"
-        Me.SubmitBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.SubmitBtn.UseVisualStyleBackColor = True
-        Me.SubmitBtn.Visible = False
-        '
         'RepairConfirmBtn
         '
         Me.RepairConfirmBtn.AutoSize = True
@@ -324,7 +306,7 @@ Partial Class Set_ReceiptKey_Form
         Me.RepairConfirmBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.RepairConfirmBtn.ImageKey = "completed.png"
         Me.RepairConfirmBtn.ImageList = Me.ImageList1
-        Me.RepairConfirmBtn.Location = New System.Drawing.Point(176, 3)
+        Me.RepairConfirmBtn.Location = New System.Drawing.Point(91, 3)
         Me.RepairConfirmBtn.Name = "RepairConfirmBtn"
         Me.RepairConfirmBtn.Size = New System.Drawing.Size(80, 36)
         Me.RepairConfirmBtn.TabIndex = 3
@@ -340,7 +322,7 @@ Partial Class Set_ReceiptKey_Form
         Me.PrintBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.PrintBtn.ImageIndex = 1
         Me.PrintBtn.ImageList = Me.ImageList1
-        Me.PrintBtn.Location = New System.Drawing.Point(262, 3)
+        Me.PrintBtn.Location = New System.Drawing.Point(177, 3)
         Me.PrintBtn.Name = "PrintBtn"
         Me.PrintBtn.Size = New System.Drawing.Size(79, 36)
         Me.PrintBtn.TabIndex = 4
@@ -356,7 +338,7 @@ Partial Class Set_ReceiptKey_Form
         Me.ExitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ExitBtn.ImageIndex = 4
         Me.ExitBtn.ImageList = Me.ImageList1
-        Me.ExitBtn.Location = New System.Drawing.Point(347, 3)
+        Me.ExitBtn.Location = New System.Drawing.Point(262, 3)
         Me.ExitBtn.Name = "ExitBtn"
         Me.ExitBtn.Size = New System.Drawing.Size(80, 36)
         Me.ExitBtn.TabIndex = 5
@@ -372,15 +354,14 @@ Partial Class Set_ReceiptKey_Form
         Me.RepairResultDGV.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.RepairResultDGV.Controls.Add(Me.FileUploadBtn, 0, 0)
         Me.RepairResultDGV.Controls.Add(Me.FlowLayoutPanel3, 1, 0)
-        Me.RepairResultDGV.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.RepairResultDGV.Location = New System.Drawing.Point(0, 324)
+        Me.RepairResultDGV.Dock = System.Windows.Forms.DockStyle.Top
+        Me.RepairResultDGV.Location = New System.Drawing.Point(0, 323)
         Me.RepairResultDGV.Margin = New System.Windows.Forms.Padding(0)
         Me.RepairResultDGV.Name = "RepairResultDGV"
         Me.RepairResultDGV.RowCount = 1
         Me.RepairResultDGV.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.RepairResultDGV.Size = New System.Drawing.Size(908, 55)
+        Me.RepairResultDGV.Size = New System.Drawing.Size(914, 55)
         Me.RepairResultDGV.TabIndex = 8
-        Me.RepairResultDGV.Visible = False
         '
         'FileUploadBtn
         '
@@ -402,17 +383,18 @@ Partial Class Set_ReceiptKey_Form
         Me.FlowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel3.Location = New System.Drawing.Point(143, 3)
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
-        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(762, 49)
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(768, 49)
         Me.FlowLayoutPanel3.TabIndex = 17
         '
         'Set_ReceiptKey_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.SlateGray
-        Me.ClientSize = New System.Drawing.Size(908, 421)
-        Me.Controls.Add(Me.RepairResultDGV)
+        Me.ClientSize = New System.Drawing.Size(914, 435)
         Me.Controls.Add(Me.FlowLayoutPanel2)
+        Me.Controls.Add(Me.RepairResultDGV)
         Me.Controls.Add(Me.TableLayoutPanel3)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
@@ -438,7 +420,7 @@ Partial Class Set_ReceiptKey_Form
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents ArchiveDate As DateTimePicker
+    Friend WithEvents InsertDate As DateTimePicker
     Friend WithEvents ReceiptOrderText As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents StatusText As Label
@@ -454,7 +436,6 @@ Partial Class Set_ReceiptKey_Form
     Friend WithEvents ReceiptRemark As DataGridViewTextBoxColumn
     Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
     Friend WithEvents SaveBtn As Button
-    Friend WithEvents SubmitBtn As Button
     Friend WithEvents RepairConfirmBtn As Button
     Friend WithEvents PrintBtn As Button
     Friend WithEvents ExitBtn As Button

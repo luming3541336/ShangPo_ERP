@@ -90,7 +90,7 @@ Public Class Data_Case_Controller
     End Function
     Public Function Select_ReceiptData(ByVal caseID As Integer) As List(Of ReceiptData)
         Dim conDB As Connection = New Connection
-        Dim strSQL As String = SELECT_SALEPROD_FOR_CASEID_SQL
+        Dim strSQL As String = SELECT_RECEIPTDATA_FOR_CASEID_SQL
         Dim arrayList As List(Of ReceiptData) = New List(Of ReceiptData)
         strSQL = strSQL.Replace("@caseID", caseID)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
