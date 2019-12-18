@@ -1,8 +1,8 @@
 ﻿Public Class FilePath
-    Private RepairForm As Set_Repair_Form
+    Private RepairForm As Object
     Private FilePath As String
     Private FileID As Integer = 0
-    Public Sub New(ByRef RepairForm As Set_Repair_Form, ByVal FileName As String, FilePath As String)
+    Public Sub New(ByRef RepairForm As Object, ByVal FileName As String, FilePath As String)
 
         ' 設計工具需要此呼叫。
         InitializeComponent()
@@ -18,7 +18,7 @@
         End Select
         Me.FilePath = FilePath
     End Sub
-    Public Sub New(ByVal ID As Integer, ByRef RepairForm As Set_Repair_Form, ByVal FileName As String, FilePath As String)
+    Public Sub New(ByVal ID As Integer, ByRef RepairForm As Object, ByVal FileName As String, FilePath As String)
 
         ' 設計工具需要此呼叫。
         InitializeComponent()

@@ -92,7 +92,12 @@ Public Structure ReceiptData
     Dim InsertDate As Date
     Dim Status As Integer
 End Structure
-
+Public Structure ReceiptFile
+    Dim ReceiptFileID As Integer
+    Dim ReceiptID As Integer
+    Dim ReceiptFileName As String
+    Dim ReceiptFilePath As String
+End Structure
 Public Structure ReceiptKey
     Dim ReceiptKeyID As Integer
     Dim ReceiptID As Integer

@@ -27,19 +27,33 @@ Public Class Set_ReceiptKey_Controller
                 data.CaseID = dataReader("CaseID")
                 data.ReceiptOrder = dataReader("ReceiptOrder")
                 data.ReceiptType = dataReader("ReceiptType")
-                data.ReceiptDate = dataReader("ReceiptDate")
+                data.ReceiptDate = If(dataReader("ReceiptDate").ToString <> "", dataReader("ReceiptDate"), Nothing)
                 data.Contact = dataReader("Contact")
                 data.Place = dataReader("Place")
                 data.Status = dataReader("Status")
-                data.InsertDate = dataReader("InsertTime")
+                data.InsertDate = dataReader("InsertDate")
             Loop
         End If
+        Return data
+    End Function
+    Public Function Select_ReceiptFile(ByVal repairID As Integer) As List(Of ReceiptFile)
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = SELECT_RECEIPTFILE_SQL
+        Dim data As List(Of ReceiptFile) = New List(Of ReceiptFile)
+        strSQL = strSQL.Replace("@id", repairID)
+        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
+        If dataReader.HasRows Then
+            Do While dataReader.Read
+                data.Add(New ReceiptFile With {.RepairID = dataReader("RepairID"), .RepairFileID = dataReader("RepairFileID"), .RepairFileName = dataReader("RepairFileName"), .RepairFilePath = dataReader("RepairFilePath")})
+            Loop
+        End If
+        conDB.Close()
         Return data
     End Function
     Public Function Insert_ReceiptData(ByVal data As ReceiptData) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = INSERT_RECEIPTDATA_SQL
-        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@date", data.ReceiptDate).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status)
+        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.CaseID).Replace("@place", data.Place).Replace("@contact", data.Contact)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         Dim id As Integer = Nothing
         If dataReader.HasRows Then
@@ -50,15 +64,15 @@ Public Class Set_ReceiptKey_Controller
     End Function
     Public Function Update_ReceiptData(ByVal data As ReceiptData) As Integer
         Dim conDB As Connection = New Connection
-        Dim strSQL As String = INSERT_RECEIPTDATA_SQL
-        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@date", data.ReceiptDate).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.ReceiptID)
+        Dim strSQL As String = UPDATE_RECEIPTDATA_SQL
+        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@date", If(data.ReceiptDate = Nothing, "null", data.ReceiptDate)).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.ReceiptID).Replace("@place", data.Place).Replace("@contact", data.Contact)
         Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
         Return dataReader
     End Function
     Public Function Insert_ReceiptKey(ByVal data As ReceiptKey) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = INSERT_RECEIPTKEY_SQL
-        strSQL = strSQL.Replace("@id", data.ReceiptID).Replace("@room", data.Room).Replace("@date", data.Item).Replace("@location", data.Location).Replace("@count", data.ReceiptCount).Replace("@remark", data.Remark)
+        strSQL = strSQL.Replace("@id", data.ReceiptID).Replace("@room", data.Room).Replace("@date", data.Item).Replace("@location", data.Location).Replace("@count", data.ReceiptCount).Replace("@remark", data.Remark).Replace("@item", data.Item)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         Dim id As Integer = Nothing
         If dataReader.HasRows Then

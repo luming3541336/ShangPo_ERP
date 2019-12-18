@@ -165,15 +165,6 @@ Partial Class Data_Case_Form
         Me.TabPage10 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
         Me.ReceiptDGV = New System.Windows.Forms.DataGridView()
-        Me.FlowLayoutPanel7 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.ReceiptAddBtn = New System.Windows.Forms.Button()
-        Me.ReceiptAddBtn2 = New System.Windows.Forms.Button()
-        Me.ReceiptReviseBtn = New System.Windows.Forms.Button()
-        Me.ReceiptDelBtn = New System.Windows.Forms.Button()
-        Me.LoadingBackground = New System.ComponentModel.BackgroundWorker()
-        Me.LoadingDetailBackground = New System.ComponentModel.BackgroundWorker()
-        Me.PrintShippingRecordBackground = New System.ComponentModel.BackgroundWorker()
-        Me.PrintWorkProgressWork = New System.ComponentModel.BackgroundWorker()
         Me.ReceiptID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReceiptType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReceiptOrder = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -182,6 +173,15 @@ Partial Class Data_Case_Form
         Me.ReceiptDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusText = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FlowLayoutPanel7 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.ReceiptAddBtn = New System.Windows.Forms.Button()
+        Me.ReceiptAddBtn2 = New System.Windows.Forms.Button()
+        Me.ReviseReceiptBtn = New System.Windows.Forms.Button()
+        Me.DelReceiptBtn = New System.Windows.Forms.Button()
+        Me.LoadingBackground = New System.ComponentModel.BackgroundWorker()
+        Me.LoadingDetailBackground = New System.ComponentModel.BackgroundWorker()
+        Me.PrintShippingRecordBackground = New System.ComponentModel.BackgroundWorker()
+        Me.PrintWorkProgressWork = New System.ComponentModel.BackgroundWorker()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.PrintMenu.SuspendLayout()
@@ -1712,104 +1712,6 @@ Partial Class Data_Case_Form
         Me.ReceiptDGV.Size = New System.Drawing.Size(938, 230)
         Me.ReceiptDGV.TabIndex = 3
         '
-        'FlowLayoutPanel7
-        '
-        Me.FlowLayoutPanel7.AutoSize = True
-        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptAddBtn)
-        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptAddBtn2)
-        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptReviseBtn)
-        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptDelBtn)
-        Me.FlowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel7.Location = New System.Drawing.Point(2, 2)
-        Me.FlowLayoutPanel7.Margin = New System.Windows.Forms.Padding(2)
-        Me.FlowLayoutPanel7.Name = "FlowLayoutPanel7"
-        Me.FlowLayoutPanel7.Size = New System.Drawing.Size(938, 36)
-        Me.FlowLayoutPanel7.TabIndex = 0
-        '
-        'ReceiptAddBtn
-        '
-        Me.ReceiptAddBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ReceiptAddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ReceiptAddBtn.ForeColor = System.Drawing.Color.White
-        Me.ReceiptAddBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ReceiptAddBtn.ImageKey = "note_add.png"
-        Me.ReceiptAddBtn.ImageList = Me.ImageList1
-        Me.ReceiptAddBtn.Location = New System.Drawing.Point(2, 2)
-        Me.ReceiptAddBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.ReceiptAddBtn.Name = "ReceiptAddBtn"
-        Me.ReceiptAddBtn.Size = New System.Drawing.Size(178, 32)
-        Me.ReceiptAddBtn.TabIndex = 6
-        Me.ReceiptAddBtn.Text = "新增鑰匙簽收單"
-        Me.ReceiptAddBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ReceiptAddBtn.UseVisualStyleBackColor = True
-        '
-        'ReceiptAddBtn2
-        '
-        Me.ReceiptAddBtn2.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ReceiptAddBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ReceiptAddBtn2.ForeColor = System.Drawing.Color.White
-        Me.ReceiptAddBtn2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ReceiptAddBtn2.ImageKey = "note_add.png"
-        Me.ReceiptAddBtn2.ImageList = Me.ImageList1
-        Me.ReceiptAddBtn2.Location = New System.Drawing.Point(184, 2)
-        Me.ReceiptAddBtn2.Margin = New System.Windows.Forms.Padding(2)
-        Me.ReceiptAddBtn2.Name = "ReceiptAddBtn2"
-        Me.ReceiptAddBtn2.Size = New System.Drawing.Size(178, 32)
-        Me.ReceiptAddBtn2.TabIndex = 6
-        Me.ReceiptAddBtn2.Text = "新增五金簽收單"
-        Me.ReceiptAddBtn2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ReceiptAddBtn2.UseVisualStyleBackColor = True
-        '
-        'ReceiptReviseBtn
-        '
-        Me.ReceiptReviseBtn.Enabled = False
-        Me.ReceiptReviseBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ReceiptReviseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ReceiptReviseBtn.ForeColor = System.Drawing.Color.White
-        Me.ReceiptReviseBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ReceiptReviseBtn.ImageKey = "note_revise.png"
-        Me.ReceiptReviseBtn.ImageList = Me.ImageList1
-        Me.ReceiptReviseBtn.Location = New System.Drawing.Point(366, 2)
-        Me.ReceiptReviseBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.ReceiptReviseBtn.Name = "ReceiptReviseBtn"
-        Me.ReceiptReviseBtn.Size = New System.Drawing.Size(75, 32)
-        Me.ReceiptReviseBtn.TabIndex = 10
-        Me.ReceiptReviseBtn.Text = "修改"
-        Me.ReceiptReviseBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ReceiptReviseBtn.UseVisualStyleBackColor = True
-        '
-        'ReceiptDelBtn
-        '
-        Me.ReceiptDelBtn.Enabled = False
-        Me.ReceiptDelBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.ReceiptDelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ReceiptDelBtn.ForeColor = System.Drawing.Color.White
-        Me.ReceiptDelBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ReceiptDelBtn.ImageKey = "note_del.png"
-        Me.ReceiptDelBtn.ImageList = Me.ImageList1
-        Me.ReceiptDelBtn.Location = New System.Drawing.Point(445, 2)
-        Me.ReceiptDelBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.ReceiptDelBtn.Name = "ReceiptDelBtn"
-        Me.ReceiptDelBtn.Size = New System.Drawing.Size(75, 32)
-        Me.ReceiptDelBtn.TabIndex = 11
-        Me.ReceiptDelBtn.Text = "刪除"
-        Me.ReceiptDelBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ReceiptDelBtn.UseVisualStyleBackColor = True
-        '
-        'LoadingBackground
-        '
-        '
-        'LoadingDetailBackground
-        '
-        '
-        'PrintShippingRecordBackground
-        '
-        Me.PrintShippingRecordBackground.WorkerReportsProgress = True
-        '
-        'PrintWorkProgressWork
-        '
-        Me.PrintWorkProgressWork.WorkerReportsProgress = True
-        '
         'ReceiptID
         '
         Me.ReceiptID.HeaderText = "ReceiptID"
@@ -1869,6 +1771,104 @@ Partial Class Data_Case_Form
         Me.Status.ReadOnly = True
         Me.Status.Visible = False
         Me.Status.Width = 91
+        '
+        'FlowLayoutPanel7
+        '
+        Me.FlowLayoutPanel7.AutoSize = True
+        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptAddBtn)
+        Me.FlowLayoutPanel7.Controls.Add(Me.ReceiptAddBtn2)
+        Me.FlowLayoutPanel7.Controls.Add(Me.ReviseReceiptBtn)
+        Me.FlowLayoutPanel7.Controls.Add(Me.DelReceiptBtn)
+        Me.FlowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel7.Location = New System.Drawing.Point(2, 2)
+        Me.FlowLayoutPanel7.Margin = New System.Windows.Forms.Padding(2)
+        Me.FlowLayoutPanel7.Name = "FlowLayoutPanel7"
+        Me.FlowLayoutPanel7.Size = New System.Drawing.Size(938, 36)
+        Me.FlowLayoutPanel7.TabIndex = 0
+        '
+        'ReceiptAddBtn
+        '
+        Me.ReceiptAddBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ReceiptAddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ReceiptAddBtn.ForeColor = System.Drawing.Color.White
+        Me.ReceiptAddBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReceiptAddBtn.ImageKey = "note_add.png"
+        Me.ReceiptAddBtn.ImageList = Me.ImageList1
+        Me.ReceiptAddBtn.Location = New System.Drawing.Point(2, 2)
+        Me.ReceiptAddBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.ReceiptAddBtn.Name = "ReceiptAddBtn"
+        Me.ReceiptAddBtn.Size = New System.Drawing.Size(178, 32)
+        Me.ReceiptAddBtn.TabIndex = 6
+        Me.ReceiptAddBtn.Text = "新增鑰匙簽收單"
+        Me.ReceiptAddBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReceiptAddBtn.UseVisualStyleBackColor = True
+        '
+        'ReceiptAddBtn2
+        '
+        Me.ReceiptAddBtn2.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ReceiptAddBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ReceiptAddBtn2.ForeColor = System.Drawing.Color.White
+        Me.ReceiptAddBtn2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReceiptAddBtn2.ImageKey = "note_add.png"
+        Me.ReceiptAddBtn2.ImageList = Me.ImageList1
+        Me.ReceiptAddBtn2.Location = New System.Drawing.Point(184, 2)
+        Me.ReceiptAddBtn2.Margin = New System.Windows.Forms.Padding(2)
+        Me.ReceiptAddBtn2.Name = "ReceiptAddBtn2"
+        Me.ReceiptAddBtn2.Size = New System.Drawing.Size(178, 32)
+        Me.ReceiptAddBtn2.TabIndex = 6
+        Me.ReceiptAddBtn2.Text = "新增五金簽收單"
+        Me.ReceiptAddBtn2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReceiptAddBtn2.UseVisualStyleBackColor = True
+        '
+        'ReviseReceiptBtn
+        '
+        Me.ReviseReceiptBtn.Enabled = False
+        Me.ReviseReceiptBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.ReviseReceiptBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ReviseReceiptBtn.ForeColor = System.Drawing.Color.White
+        Me.ReviseReceiptBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReviseReceiptBtn.ImageKey = "note_revise.png"
+        Me.ReviseReceiptBtn.ImageList = Me.ImageList1
+        Me.ReviseReceiptBtn.Location = New System.Drawing.Point(366, 2)
+        Me.ReviseReceiptBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.ReviseReceiptBtn.Name = "ReviseReceiptBtn"
+        Me.ReviseReceiptBtn.Size = New System.Drawing.Size(75, 32)
+        Me.ReviseReceiptBtn.TabIndex = 10
+        Me.ReviseReceiptBtn.Text = "修改"
+        Me.ReviseReceiptBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReviseReceiptBtn.UseVisualStyleBackColor = True
+        '
+        'DelReceiptBtn
+        '
+        Me.DelReceiptBtn.Enabled = False
+        Me.DelReceiptBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.DelReceiptBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DelReceiptBtn.ForeColor = System.Drawing.Color.White
+        Me.DelReceiptBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.DelReceiptBtn.ImageKey = "note_del.png"
+        Me.DelReceiptBtn.ImageList = Me.ImageList1
+        Me.DelReceiptBtn.Location = New System.Drawing.Point(445, 2)
+        Me.DelReceiptBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.DelReceiptBtn.Name = "DelReceiptBtn"
+        Me.DelReceiptBtn.Size = New System.Drawing.Size(75, 32)
+        Me.DelReceiptBtn.TabIndex = 11
+        Me.DelReceiptBtn.Text = "刪除"
+        Me.DelReceiptBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.DelReceiptBtn.UseVisualStyleBackColor = True
+        '
+        'LoadingBackground
+        '
+        '
+        'LoadingDetailBackground
+        '
+        '
+        'PrintShippingRecordBackground
+        '
+        Me.PrintShippingRecordBackground.WorkerReportsProgress = True
+        '
+        'PrintWorkProgressWork
+        '
+        Me.PrintWorkProgressWork.WorkerReportsProgress = True
         '
         'Data_Case_Form
         '
@@ -2081,8 +2081,8 @@ Partial Class Data_Case_Form
     Friend WithEvents FlowLayoutPanel7 As FlowLayoutPanel
     Friend WithEvents ReceiptAddBtn As Button
     Friend WithEvents ReceiptAddBtn2 As Button
-    Friend WithEvents ReceiptReviseBtn As Button
-    Friend WithEvents ReceiptDelBtn As Button
+    Friend WithEvents ReviseReceiptBtn As Button
+    Friend WithEvents DelReceiptBtn As Button
     Friend WithEvents ReceiptID As DataGridViewTextBoxColumn
     Friend WithEvents ReceiptType As DataGridViewTextBoxColumn
     Friend WithEvents ReceiptOrder As DataGridViewTextBoxColumn

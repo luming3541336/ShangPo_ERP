@@ -96,7 +96,7 @@ Public Class Data_Case_Controller
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                arrayList.Add(New ReceiptData With {.ReceiptID = dataReader("ReceiptID"), .ReceiptDate = dataReader("ReceiptDate"), .InsertDate = dataReader("InsertTime"), .ReceiptOrder = dataReader("ReceiptOrder"), .ReceiptType = dataReader("ReceiptType"), .Status = dataReader("Status")})
+                arrayList.Add(New ReceiptData With {.ReceiptID = dataReader("ReceiptID"), .ReceiptDate = If(dataReader("ReceiptDate").ToString <> "", dataReader("ReceiptDate"), Nothing), .InsertDate = dataReader("InsertDate"), .ReceiptOrder = dataReader("ReceiptOrder"), .ReceiptType = dataReader("ReceiptType"), .Status = dataReader("Status")})
             Loop
         End If
         conDB.Close()
