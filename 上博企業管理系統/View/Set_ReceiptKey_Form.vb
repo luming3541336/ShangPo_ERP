@@ -1,8 +1,10 @@
-﻿Public Class Set_ReceiptKey_Form
+﻿Imports Microsoft.Office.Interop
+
+Public Class Set_ReceiptKey_Form
     Private intCaseID As Integer = Nothing
     Private intReceiptID As Integer = Nothing
-    Dim arrRepairFileAdd As ArrayList = New ArrayList
-    Dim arrRepairFileDel As ArrayList = New ArrayList
+    Dim arrReceiptFileAdd As ArrayList = New ArrayList
+    Dim arrReceiptFileDel As ArrayList = New ArrayList
     Private controller As Set_ReceiptKey_Controller = New Set_ReceiptKey_Controller
     '狀態:1 尚未簽收 2 簽收完成
     Public Sub New(ByVal intCaseID As Integer, Optional ByVal intReceiptID As Integer = Nothing)
@@ -29,6 +31,12 @@
             For Each data2 As ReceiptKey In listdata
                 ReceiptKeyDGV.Rows.Add(data2.ReceiptKeyID, data2.Room, data2.Item, data2.Location, data2.ReceiptCount, data2.Remark)
             Next
+            Dim listFileData As List(Of ReceiptFile) = controller.Select_ReceiptFile(intReceiptID)
+            For Each FD As ReceiptFile In listFileData
+                Dim f As FilePath = New FilePath(FD.ReceiptFileID, Me, FD.ReceiptFileName, FD.ReceiptFilePath)
+                f.Name = New Random().Next
+                FlowLayoutPanel3.Controls.Add(f)
+            Next
             RepairConfirmBtn.Visible = True
             PrintBtn.Visible = True
         Else
@@ -37,7 +45,12 @@
             ContactText.Text = data.Contact
             PlaceText.Text = data.Place
             ReceiptOrderText.Text = controller.Create_NewOrder
-
+            Dim listFileData As List(Of ReceiptFile) = controller.Select_ReceiptFile(intReceiptID)
+            For Each FD As ReceiptFile In listFileData
+                Dim f As FilePath = New FilePath(FD.ReceiptFileID, Me, FD.ReceiptFileName, FD.ReceiptFilePath)
+                f.Name = New Random().Next
+                FlowLayoutPanel3.Controls.Add(f)
+            Next
         End If
     End Sub
 
@@ -56,12 +69,22 @@
         End If
         Dim data2 As List(Of ReceiptKey) = New List(Of ReceiptKey)
         For Each row As DataGridViewRow In ReceiptKeyDGV.Rows
-            If row.Cells("ReceiptKeyID").Value = "" And row.Cells("Item").Value <> "" Then
+            If row.Cells("ReceiptKeyID").Value = Nothing And row.Cells("Item").Value <> "" Then
                 Dim id As Integer = controller.Insert_ReceiptKey(New ReceiptKey With {.ReceiptID = intReceiptID, .Item = row.Cells("Item").Value, .Location = row.Cells("Location").Value, .ReceiptCount = row.Cells("ReceiptCount").Value, .Remark = row.Cells("ReceiptRemark").Value, .Room = row.Cells("Room").Value})
                 row.Cells("ReceiptKeyID").Value = id
             Else
                 controller.Update_ReceiptKey(New ReceiptKey With {.ReceiptKeyID = row.Cells("ReceiptKeyID").Value, .ReceiptID = intReceiptID, .Item = row.Cells("Item").Value, .Location = row.Cells("Location").Value, .ReceiptCount = row.Cells("ReceiptCount").Value, .Remark = row.Cells("ReceiptRemark").Value, .Room = row.Cells("Room").Value})
             End If
+        Next
+        For Each controls As Control In arrReceiptFileAdd
+            If CType(controls, FilePath).Get_FileID = 0 Then
+                Dim strFile As String() = Split(CType(controls, FilePath).Get_FileName, ".")
+                controller.Copy_File(CType(controls, FilePath).Get_Path, controls.Name & "." & strFile(1))
+                controller.Insert_ReceipFile(intReceiptID, CType(controls, FilePath).Get_FileName, UPLOAD_PATH & controls.Name & "." & strFile(1))
+            End If
+        Next
+        For Each arrData As ReceiptFile In arrReceiptFileDel
+            controller.Delete_ReceiptFile(arrData)
         Next
         MsgBox("新增成功")
         Me.DialogResult = DialogResult.OK
@@ -81,7 +104,7 @@
                     Dim f As FilePath = New FilePath(Me, SafeFileNames(i), FileNames(i))
                     f.Name = New Random().Next
                     FlowLayoutPanel3.Controls.Add(f)
-                    arrRepairFileAdd.Add(f)
+                    arrReceiptFileAdd.Add(f)
                 Next
             End If
         End If
@@ -90,10 +113,49 @@
         FlowLayoutPanel3.Focus()
         '若刪除的檔案ID為0表示為尚未新增之檔案，直接從新增檔案陣列內刪除
         If CType(myControl, FilePath).Get_FileID = 0 Then
-            arrRepairFileAdd.Remove(myControl)
+            arrReceiptFileAdd.Remove(myControl)
         Else
-            arrRepairFileDel.Add(New ReceiptFile With {.ReceiptFileID = CType(myControl, FilePath).Get_FileID, .ReceiveFilePath = CType(myControl, FilePath).Get_Path})
+            arrReceiptFileDel.Add(New ReceiptFile With {.ReceiptFileID = CType(myControl, FilePath).Get_FileID, .ReceiptFilePath = CType(myControl, FilePath).Get_Path})
         End If
         FlowLayoutPanel3.Controls.Remove(myControl)
+    End Sub
+
+    Private Sub PrintBtn_Click(sender As Object, e As EventArgs) Handles PrintBtn.Click
+        Dim path As String = My.Application.Info.DirectoryPath
+        Dim wordApp As Word.Application = New Word.Application
+        Dim wordDoc As Word.Document = wordApp.Documents.Open(path + "\Resources\鑰匙單.dotx", [ReadOnly]:=True)
+        wordDoc.Content.Find.Execute(FindText:="$RepairOrder", ReplaceWith:=ReceiptOrderText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        wordDoc.Content.Find.Execute(FindText:="$Place", ReplaceWith:=PlaceText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        wordDoc.Content.Find.Execute(FindText:="$Contact", ReplaceWith:=ContactText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
+        Dim strRepairProd As String = ""
+        For i As Integer = 1 To 14
+            If i <= ReceiptKeyDGV.Rows.Count Then
+                wordDoc.Content.Find.Execute(FindText:="$R" & i, ReplaceWith:=ReceiptKeyDGV.Rows(i - 1).Cells("Room").Value, Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
+                wordDoc.Content.Find.Execute(FindText:="$Item" & i, ReplaceWith:=ReceiptKeyDGV.Rows(i - 1).Cells("Item").Value, Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
+                wordDoc.Content.Find.Execute(FindText:="$Location" & i, ReplaceWith:=ReceiptKeyDGV.Rows(i - 1).Cells("Location").Value, Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
+                wordDoc.Content.Find.Execute(FindText:="$C" & i, ReplaceWith:=ReceiptKeyDGV.Rows(i - 1).Cells("ReceiptCount").Value, Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
+                wordDoc.Content.Find.Execute(FindText:="$Remark" & i, ReplaceWith:=ReceiptKeyDGV.Rows(i - 1).Cells("ReceiptRemark").Value, Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
+            Else
+                wordDoc.Content.Find.Execute(FindText:="$R" & i, ReplaceWith:="", Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
+                wordDoc.Content.Find.Execute(FindText:="$Item" & i, ReplaceWith:="", Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
+                wordDoc.Content.Find.Execute(FindText:="$Location" & i, ReplaceWith:="", Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
+                wordDoc.Content.Find.Execute(FindText:="$C" & i, ReplaceWith:="", Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
+                wordDoc.Content.Find.Execute(FindText:="$Remark" & i, ReplaceWith:="", Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
+            End If
+        Next
+        wordApp.DisplayAlerts = True
+        wordApp.Visible = True
+    End Sub
+
+    Private Sub RepairConfirmBtn_Click(sender As Object, e As EventArgs) Handles RepairConfirmBtn.Click
+        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = PlaceText.Text, .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 0, .Status = 2, .CaseID = intCaseID, .ReceiptDate = Format(Date.Now, "yyyy/MM/dd")}
+        If controller.Update_ReceiptData(data) = 1 Then
+            MsgBox("狀態更新")
+            Me.DialogResult = DialogResult.OK
+        End If
+    End Sub
+
+    Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
+        Me.DialogResult = DialogResult.Cancel
     End Sub
 End Class

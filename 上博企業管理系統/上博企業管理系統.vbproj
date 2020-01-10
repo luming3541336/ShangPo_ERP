@@ -26,8 +26,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\DBSERVER\AppInstall\</UpdateUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
-    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -384,6 +384,9 @@
     <EmbeddedResource Include="View\Set_PasswordRevise_Form.resx">
       <DependentUpon>Set_PasswordRevise_Form.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_ReceiptKey_Form.en.resx">
+      <DependentUpon>Set_ReceiptKey_Form.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Set_ReceiptKey_Form.resx">
       <DependentUpon>Set_ReceiptKey_Form.vb</DependentUpon>
     </EmbeddedResource>
@@ -476,6 +479,9 @@
     <Content Include="Resources\出貨總表.xltx" />
     <Content Include="Resources\工程進度表.xltx" />
     <Content Include="Resources\維修單.dotx" />
+    <Content Include="Resources\鑰匙單.dotx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -513,12 +519,12 @@
   <ItemGroup>
     <PublishFile Include="MetroFramework.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>False</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

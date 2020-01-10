@@ -188,7 +188,7 @@ Public Class Set_Repair_Form
             If CType(controls, FilePath).Get_FileID = 0 Then
                 Dim strFile As String() = Split(CType(controls, FilePath).Get_FileName, ".")
                 controller.Copy_File(CType(controls, FilePath).Get_Path, controls.Name & "." & strFile(1))
-                controller.Insert_RepairFile(intRepairID, CType(controls, FilePath).Get_FileName, Set_Repair_Model.UPLOAD_PATH & controls.Name & "." & strFile(1))
+                controller.Insert_RepairFile(intRepairID, CType(controls, FilePath).Get_FileName, UPLOAD_PATH & controls.Name & "." & strFile(1))
             End If
         Next
         For Each arrData As RepairFile In arrRepairFileDel

@@ -19,7 +19,8 @@
     Public UserID As String = Nothing '使用者帳號
     Public Password As String = Nothing '使用者密碼
     Public readBoard As Boolean = Nothing '是否讀取公告
-
+    Public Const UPLOAD_PATH = "\\DS916\Alex\"
+    'Public Const UPLOAD_PATH = "\\DBSERVER\FileData\"
 End Module
 Public Structure CaseData
     Dim CaseID As Integer

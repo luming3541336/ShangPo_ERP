@@ -1819,6 +1819,7 @@ Partial Class Data_Case_Form
         Me.ReceiptAddBtn2.Text = "新增五金簽收單"
         Me.ReceiptAddBtn2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ReceiptAddBtn2.UseVisualStyleBackColor = True
+        Me.ReceiptAddBtn2.Visible = False
         '
         'ReviseReceiptBtn
         '

@@ -36,6 +36,14 @@ Public Class Set_ReceiptKey_Controller
         End If
         Return data
     End Function
+    Public Function Delete_ReceiptData(ByVal intReceiptID As Integer) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = DELETE_RECEIPTDATA_SQL
+        strSQL = strSQL.Replace("@id", intReceiptID)
+        Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
+        conDB.Close()
+        Return intReturn
+    End Function
     Public Function Select_ReceiptFile(ByVal repairID As Integer) As List(Of ReceiptFile)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_RECEIPTFILE_SQL
@@ -44,11 +52,32 @@ Public Class Set_ReceiptKey_Controller
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
             Do While dataReader.Read
-                data.Add(New ReceiptFile With {.RepairID = dataReader("RepairID"), .RepairFileID = dataReader("RepairFileID"), .RepairFileName = dataReader("RepairFileName"), .RepairFilePath = dataReader("RepairFilePath")})
+                data.Add(New ReceiptFile With {.ReceiptID = dataReader("ReceiptID"), .ReceiptFileID = dataReader("ReceiptFileID"), .ReceiptFileName = dataReader("ReceiptFileName"), .ReceiptFilePath = dataReader("ReceiptFilePath")})
             Loop
         End If
         conDB.Close()
         Return data
+    End Function
+    Public Function Insert_ReceipFile(ByVal ReceiptID As Integer, ByVal ReceiptFileName As String, ByVal ReceiptFilePath As String) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = INSERT_RECEIPTFILE_SQL
+        strSQL = strSQL.Replace("@id", ReceiptID).Replace("@fileName", ReceiptFileName).Replace("@filePath", ReceiptFilePath)
+        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
+        Dim id As Integer = Nothing
+        If dataReader.HasRows Then
+            dataReader.Read()
+            id = dataReader("id")
+        End If
+        Return id
+    End Function
+    Public Function Delete_ReceiptFile(ByVal data As ReceiptFile) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = DELETE_RECEIPTFILE_SQL
+        strSQL = strSQL.Replace("@id", data.ReceiptFileID)
+        My.Computer.FileSystem.DeleteFile(data.ReceiptFilePath)
+        Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
+        conDB.Close()
+        Return intReturn
     End Function
     Public Function Insert_ReceiptData(ByVal data As ReceiptData) As Integer
         Dim conDB As Connection = New Connection
@@ -65,7 +94,7 @@ Public Class Set_ReceiptKey_Controller
     Public Function Update_ReceiptData(ByVal data As ReceiptData) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = UPDATE_RECEIPTDATA_SQL
-        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@date", If(data.ReceiptDate = Nothing, "null", data.ReceiptDate)).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.ReceiptID).Replace("@place", data.Place).Replace("@contact", data.Contact)
+        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@date", If(data.ReceiptDate = Nothing, "null", "'" & data.ReceiptDate & "'")).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.ReceiptID).Replace("@place", data.Place).Replace("@contact", data.Contact)
         Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
         Return dataReader
     End Function
@@ -110,4 +139,7 @@ Public Class Set_ReceiptKey_Controller
         End If
         Return strOrder
     End Function
+    Public Sub Copy_File(ByVal D1 As String, ByVal FileName As String)
+        FileSystem.FileCopy(D1, UPLOAD_PATH & FileName)
+    End Sub
 End Class

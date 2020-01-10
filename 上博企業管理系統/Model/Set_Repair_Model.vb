@@ -1,6 +1,5 @@
 ﻿Public Class Set_Repair_Model
-    'Public Const UPLOAD_PATH = "\\DS916\Alex\"
-    Public Const UPLOAD_PATH = "\\DBSERVER\FileData\"
+
     'CaseData資料表欄位指令
     Protected Const SELECT_CASEDATA_FOR_CASEID_SQL = "SELECT * FROM CaseData WHERE CaseID = @caseID"
     'RepairData資料表欄位指令
