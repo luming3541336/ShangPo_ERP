@@ -119,6 +119,9 @@
   </resheader>
   <data name="BoardText.Text" xml:space="preserve">
     <value>更新公告:
+Ver.2.0.1.1 Update 2020/01/10
+  修正案件搜尋查無資料時，明細部分會出現其他筆資料的明細。
+  進出貨管理最佳化
  Ver.2.0.1.0 Update 2020/01/03
    新增鑰匙/五金 簽收單功能(目前僅有鑰匙可用)
  Ver.2.0.0.0 Update 2019/11/23

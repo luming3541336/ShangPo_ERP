@@ -11,8 +11,6 @@ Public Class Data_Case_Form
     Dim workBook As Microsoft.Office.Interop.Excel.Workbook 'Workbook 代表的是一個 Excel 本體
     Dim listPurchasePart As List(Of Data_Case_Model.PurchasePart) = Nothing
     Dim listPurchasePart2 As List(Of Data_Case_Model.PurchasePart2) = Nothing
-    'Dim listShipmentPart As List(Of Data_Case_Model.ShipmentPart) = Nothing
-    'Dim listShipmentPart2 As List(Of Data_Case_Model.ShipmentPart2) = Nothing
     Private Sub LoadingBackground_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles LoadingBackground.DoWork
         Dim arrayList As List(Of CaseData) = New List(Of CaseData)
         If strSearchSQL = Nothing Then
@@ -236,12 +234,6 @@ Public Class Data_Case_Form
 
     Private Sub caseDGV_SelectionChanged(sender As Object, e As EventArgs) Handles CaseDGV.SelectionChanged
         If CaseDGV.CurrentRow IsNot Nothing Then
-            'PurchasePartDGV.Rows.Clear()
-            'PurchasePart2DGV.Rows.Clear()
-            'ShipmentPartDGV.Rows.Clear()
-            'ShipmentPart2DGV.Rows.Clear()
-            'DetailDGV.Rows.Clear()
-            'WorkProgressDGV.Rows.Clear()
             AddDetailBtn.Enabled = True
             ReviseDetailBtn.Enabled = False
             DelDetailBtn.Enabled = False
@@ -269,6 +261,20 @@ Public Class Data_Case_Form
                 ConpleteBtn.Enabled = False
             End If
             LoadingDetailBackground.RunWorkerAsync(CaseDGV.CurrentRow.Cells("CaseID").Value)
+        Else
+            Do While LoadingDetailBackground.IsBusy
+                Application.DoEvents()
+            Loop
+            PurchaseCountLabel.Text = 0
+            SaleCountLabel.Text = 0
+            PurchasePartDGV.Rows.Clear()
+            PurchasePart2DGV.Rows.Clear()
+            ShipmentPartDGV.Rows.Clear()
+            ShipmentPart2DGV.Rows.Clear()
+            DetailDGV.Rows.Clear()
+            WorkProgressDGV.Rows.Clear()
+            ReceiptDGV.Rows.Clear()
+            RepairDGV.Rows.Clear()
         End If
     End Sub
 
@@ -389,143 +395,6 @@ Public Class Data_Case_Form
             LoadingDetailBackground.RunWorkerAsync(CaseDGV.CurrentRow.Cells("CaseID").Value)
         End If
     End Sub
-    ''生產出貨總表標頭資訊
-    'Private Sub Print_ShippingRecord()
-    '    Dim path As String = My.Application.Info.DirectoryPath
-    '    app = New Microsoft.Office.Interop.Excel.Application
-    '    workBook = app.Workbooks.Open(path + "\Resources\出貨總表.xltx") '開啟一張已存在的 Excel 檔案
-    '    workSheet = workBook.Worksheets(1) '門框
-    '    workSheet.Cells(4, 2) = CaseDGV.CurrentRow.Cells("place").Value ' 工地
-    '    workSheet.Cells(4, 15) = Now '製表時間
-    '    workSheet.Cells(5, 15) = UserName '製表人
-    '    workSheet = workBook.Worksheets(2) '門扇
-    '    workSheet.Cells(4, 2) = CaseDGV.CurrentRow.Cells("place").Value ' 工地
-    '    workSheet.Cells(4, 15) = Now '製表時間
-    '    workSheet.Cells(5, 15) = UserName '製表人
-    '    PrintShippingRecordBackground.RunWorkerAsync()
-    'End Sub
-    'Private Sub PrintShippingRecordBackground_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles PrintShippingRecordBackground.DoWork
-    '    Dim index As Integer = 10 '工作進度表表格第一欄位置
-    '    Dim listShipmentPart As List(Of Output_SaleReport_Model.ShipmentPart)
-    '    Dim listShipmentPart2 As List(Of Output_SaleReport_Model.ShipmentPart2)
-    '    workSheet = workBook.Worksheets(1)
-    '    If listPurchasePart.Count > 19 Then '預設資料筆數為20筆，若大於需要增加欄位
-
-    '        For i As Integer = 0 To listPurchasePart.Count - 19
-    '            workSheet.Rows(20).insert
-    '        Next
-    '        workSheet.Rows(11).Copy
-    '        For i As Integer = 0 To listPurchasePart.Count - 19
-    '            workSheet.Rows(20 + i).PasteSpecial
-    '        Next
-    '    End If
-    '    For i As Integer = 0 To listPurchasePart.Count - 1
-    '        listShipmentPart = controller_SaleReport.Load_Sale_Prod_From_PID(listPurchasePart(i).PurchasePID)
-    '        If listShipmentPart.Count > 1 Then '出貨次數大於1筆時，若大於需要增加欄位
-    '            For i2 As Integer = 1 To listShipmentPart.Count - 1
-    '                workSheet.Rows(index + 2).insert
-    '            Next
-    '            workSheet.Rows(index + 1).Copy
-    '            For i2 As Integer = 1 To listShipmentPart.Count - 1
-    '                workSheet.Rows(index + i2 + 1).PasteSpecial
-    '            Next
-    '        End If
-    '        workSheet.Cells(index, 1) = i + 1
-    '        workSheet.Cells(index, 2) = listPurchasePart(i).Supplier
-    '        workSheet.Cells(index, 3) = listPurchasePart(i).ProdName
-    '        workSheet.Cells(index, 5) = listPurchasePart(i).Specification
-    '        If listPurchasePart(i).Width = 0 And listPurchasePart(i).Length = 0 Then
-    '            workSheet.Range("F" & index & ":" & "H" & index).MergeCells = True
-    '            workSheet.Cells(index, 6) = "共"
-    '        Else
-    '            workSheet.Cells(index, 6) = listPurchasePart(i).Width
-    '            workSheet.Cells(index, 7) = listPurchasePart(i).Length
-    '            workSheet.Cells(index, 8) = listPurchasePart(i).CBM
-    '        End If
-    '        workSheet.Cells(index, 9) = listPurchasePart(i).InsertTime
-    '        workSheet.Cells(index, 10) = listPurchasePart(i).Count
-    '        workSheet.Cells(index, 15) = listPurchasePart(i).Remark
-
-    '        If listShipmentPart.Count <> 0 Then
-    '            For Each data As Output_SaleReport_Model.ShipmentPart In listShipmentPart
-    '                workSheet.Cells(index, 11) = data.InsertTime
-    '                workSheet.Cells(index, 12) = data.Count
-    '                workSheet.Cells(index, 13) = data.PIC
-    '                index += 1
-    '            Next
-    '        Else
-    '            index += 1
-    '        End If
-    '        PrintShippingRecordBackground.ReportProgress(i)
-    '    Next
-    '    index = 10
-    '    workSheet = workBook.Worksheets(2)
-    '    If listPurchasePart2.Count > 19 Then '預設資料筆數為20筆，若大於需要增加欄位
-    '        For i As Integer = 0 To listPurchasePart2.Count - 19
-    '            workSheet.Rows(20).insert
-    '        Next
-    '        workSheet.Rows(11).Copy
-    '        For i As Integer = 0 To listPurchasePart2.Count - 19
-    '            workSheet.Rows(20).PasteSpecial
-    '        Next
-    '    End If
-
-    '    For i As Integer = 0 To listPurchasePart2.Count - 1
-    '        listShipmentPart2 = controller_SaleReport.Load_Sale_Fit_From_FID(listPurchasePart2(i).PurchaseP2ID)
-    '        If listShipmentPart2.Count > 1 Then '出貨次數大於1筆時，若大於需要增加欄位
-    '            For i2 As Integer = 1 To listShipmentPart2.Count
-    '                workSheet.Rows(index + 2).insert
-    '            Next
-    '            workSheet.Rows(index + 1).Copy
-    '            For i2 As Integer = 1 To listShipmentPart2.Count
-    '                workSheet.Rows(index + i2 + 1).PasteSpecial
-    '            Next
-    '        End If
-    '        workSheet.Cells(index, 1) = i + 1
-    '        workSheet.Cells(index, 2) = listPurchasePart2(i).Supplier
-    '        workSheet.Cells(index, 3) = listPurchasePart2(i).FitName
-    '        workSheet.Cells(index, 5) = listPurchasePart2(i).Specification
-    '        If listPurchasePart2(i).Width = 0 And listPurchasePart2(i).Length = 0 Then
-    '            workSheet.Range("F" & index & ":" & "H" & index).MergeCells = True
-    '            workSheet.Cells(index, 6) = "共"
-    '        Else
-    '            workSheet.Cells(index, 6) = listPurchasePart2(i).Width
-    '            workSheet.Cells(index, 7) = listPurchasePart2(i).Length
-    '        End If
-
-    '        workSheet.Cells(index, 9) = listPurchasePart2(i).InsertTime
-    '        workSheet.Cells(index, 10) = listPurchasePart2(i).Count
-    '        workSheet.Cells(index, 15) = listPurchasePart2(i).Remark
-    '        If listShipmentPart2.Count <> 0 Then
-    '            For Each data As Output_SaleReport_Model.ShipmentPart2 In listShipmentPart2
-    '                workSheet.Cells(index, 11) = data.InsertTime
-    '                workSheet.Cells(index, 12) = data.Count
-    '                workSheet.Cells(index, 13) = data.PIC
-    '                index += 1
-    '            Next
-    '        Else
-    '            index += 1
-    '        End If
-    '        PrintShippingRecordBackground.ReportProgress(i)
-    '    Next
-    'End Sub
-
-    'Private Sub PrintShippingRecordBackground_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles PrintShippingRecordBackground.ProgressChanged
-    '    formStatusProcessBar.addProcess()
-    'End Sub
-
-    'Private Sub PrintShippingRecordBackground_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles PrintShippingRecordBackground.RunWorkerCompleted
-    '    app.DisplayAlerts = True
-    '    app.Visible = True
-    '    formStatusProcessBar.Close()
-    'End Sub
-
-    'Private Sub PrintShippingRecordItem_Click(sender As Object, e As EventArgs) Handles PrintShippingRecordItem.Click
-    '    formStatusProcessBar = New Status_ProcessBar_Form("報表生產中....請稍後", listPurchasePart.Count + listPurchasePart2.Count)
-    '    formStatusProcessBar.Show()
-    '    Print_ShippingRecord() '列印出貨總表
-    'End Sub
-
     Private Sub AddWPBtn_Click(sender As Object, e As EventArgs) Handles AddWPBtn.Click
         Dim workProgressForm As Set_WorkProgress_Form = New Set_WorkProgress_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, Set_WorkProgress_Model.INSERT_MODE)
         If workProgressForm.ShowDialog = DialogResult.OK Then
@@ -566,118 +435,6 @@ Public Class Data_Case_Form
         Else
             MsgBox("請先選擇刪除項目", MsgBoxStyle.OkOnly, "錯誤")
         End If
-    End Sub
-    'Private Sub Print_WorkProgress()
-    '    Dim listProdData As List(Of Set_WorkProgress_Model.WorkProgress) = New List(Of Set_WorkProgress_Model.WorkProgress)
-    '    Dim listFitData As List(Of Set_WorkProgress_Model.WorkProgress) = New List(Of Set_WorkProgress_Model.WorkProgress)
-    '    For Each rowData As DataGridViewRow In WorkProgressDGV.Rows
-    '        If rowData.Cells("WPClass").Value = "門框、窗框" Then
-    '            listProdData.Add(New Set_WorkProgress_Model.WorkProgress With {.WPDate = rowData.Cells("WPDate").Value, .Supplier = rowData.Cells("WPSupplier").Value, .ProdName = rowData.Cells("WPPartName").Value, .Specification = rowData.Cells("WPSpecification").Value, .Count = rowData.Cells("WPCount").Value, .Unit = rowData.Cells("WPUnit").Value, .Remark = rowData.Cells("WPRemark").Value})
-    '        Else
-    '            listFitData.Add(New Set_WorkProgress_Model.WorkProgress With {.WPDate = rowData.Cells("WPDate").Value, .Supplier = rowData.Cells("WPSupplier").Value, .ProdName = rowData.Cells("WPPartName").Value, .Specification = rowData.Cells("WPSpecification").Value, .Count = rowData.Cells("WPCount").Value, .Unit = rowData.Cells("WPUnit").Value, .Remark = rowData.Cells("WPRemark").Value})
-    '        End If
-    '    Next
-    '    Dim listWorkDetail As List(Of Set_WorkDetail_Model.WorkDetail) = New List(Of Set_WorkDetail_Model.WorkDetail)
-    '    For Each rowData As DataGridViewRow In DetailDGV.Rows
-    '        listWorkDetail.Add(New Set_WorkDetail_Model.WorkDetail With {.WorkDate = rowData.Cells("WorkDate").Value, .SalesName = rowData.Cells("WorkPerson").Value, .Detail = rowData.Cells("WorkDetail").Value})
-    '    Next
-    '    Dim path As String = My.Application.Info.DirectoryPath
-    '    'controller_SaleReport.Load_Case_Data()
-    '    app = New Microsoft.Office.Interop.Excel.Application
-    '    workBook = app.Workbooks.Open(path + "\Resources\工程進度表.xltx") '開啟一張已存在的 Excel 檔案
-    '    workSheet = workBook.Worksheets(1)
-    '    workSheet.Cells(1, 1) = CaseDGV.CurrentRow.Cells("place").Value
-    '    workSheet.Cells(3, 2) = controller_SaleReport.CaseList(controller_SaleReport.Search_CaseID_Index(CaseDGV.CurrentRow.Cells("CaseID").Value)).Address
-    '    workSheet.Cells(4, 2) = controller_SaleReport.CaseList(controller_SaleReport.Search_CaseID_Index(CaseDGV.CurrentRow.Cells("CaseID").Value)).Phone
-    '    workSheet.Cells(2, 11) = controller_SaleReport.CaseList(controller_SaleReport.Search_CaseID_Index(CaseDGV.CurrentRow.Cells("CaseID").Value)).SalesName
-    '    formStatusProcessBar = New Status_ProcessBar_Form("報表生產中....請稍後", listProdData.Count + listFitData.Count + listWorkDetail.Count)
-    '    formStatusProcessBar.Show()
-    '    PrintWorkProgressWork.RunWorkerAsync({listProdData, listFitData, listWorkDetail})
-    'End Sub
-    'Private Sub PrintWorkProgressWork_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles PrintWorkProgressWork.DoWork
-    '    Dim index As Integer = Nothing '工作進度表表格位置設定
-    '    Dim listProdData As List(Of Set_WorkProgress_Model.WorkProgress) = e.Argument(0)
-    '    Dim listFitData As List(Of Set_WorkProgress_Model.WorkProgress) = e.Argument(1)
-    '    Dim listWorkDetail As List(Of Set_WorkDetail_Model.WorkDetail) = e.Argument(2)
-    '    '門扇內容打印
-    '    If listFitData.Count > 5 Then '預設資料筆數為5筆，若大於需要增加欄位
-    '        For i As Integer = 0 To listFitData.Count - 6
-    '            workSheet.Rows(20).insert
-    '        Next
-    '        workSheet.Rows(18).Copy
-    '        For i As Integer = 0 To listFitData.Count - 6
-    '            workSheet.Rows(20 + i).PasteSpecial
-    '        Next
-    '    End If
-    '    index = 17 '工作進度表門扇的初始位置
-    '    For Each data As Set_WorkProgress_Model.WorkProgress In listFitData
-    '        workSheet.Cells(index, 1) = data.WPDate
-    '        workSheet.Cells(index, 2) = data.Supplier
-    '        workSheet.Cells(index, 3) = data.ProdName
-    '        workSheet.Cells(index, 4) = data.Specification
-    '        workSheet.Cells(index, 8) = data.Count
-    '        workSheet.Cells(index, 10) = data.Unit
-    '        workSheet.Cells(index, 11) = data.Remark
-    '        PrintWorkProgressWork.ReportProgress(index)
-    '        index += 1
-    '    Next
-    '    '門框、窗框內容打印
-    '    If listProdData.Count > 5 Then '預設資料筆數為5筆，若大於需要增加欄位
-    '        For i As Integer = 0 To listProdData.Count - 6
-    '            workSheet.Rows(11).insert
-    '        Next
-    '        workSheet.Rows(9).Copy
-    '        For i As Integer = 0 To listProdData.Count - 6
-    '            workSheet.Rows(11 + i).PasteSpecial
-    '        Next
-    '    End If
-    '    index = 8 '門框的初始位置
-    '    For Each data As Set_WorkProgress_Model.WorkProgress In listProdData
-    '        workSheet.Cells(index, 1) = data.WPDate
-    '        workSheet.Cells(index, 2) = data.Supplier
-    '        workSheet.Cells(index, 3) = data.ProdName
-    '        workSheet.Cells(index, 4) = data.Specification
-    '        workSheet.Cells(index, 8) = data.Count
-    '        workSheet.Cells(index, 10) = data.Unit
-    '        workSheet.Cells(index, 11) = data.Remark
-    '        index += 1
-    '        PrintWorkProgressWork.ReportProgress(index)
-    '    Next
-    '    workSheet = workBook.Worksheets(2)
-    '    If listWorkDetail.Count > 54 Then ' 產生工程進度表門框(背面)資料量超過預設欄位時新增欄位
-    '        For i As Integer = 0 To listWorkDetail.Count - 55
-    '            workSheet.Rows(20).insert
-    '        Next
-    '        workSheet.Rows(18).Copy
-    '        For i As Integer = 0 To listWorkDetail.Count - 55
-    '            workSheet.Rows(20 + i).PasteSpecial
-    '        Next
-    '    End If
-    '    workSheet = workBook.Worksheets(2) '開始輸入工程進度表(背面)
-    '    index = 4
-    '    For Each data As Set_WorkDetail_Model.WorkDetail In listWorkDetail
-    '        workSheet.Cells(index, 1) = data.WorkDate
-    '        workSheet.Cells(index, 2) = data.SalesName
-    '        workSheet.Cells(index, 3) = data.Detail
-    '        index += 1
-    '        PrintWorkProgressWork.ReportProgress(index)
-    '    Next
-    'End Sub
-
-    'Private Sub WorkProgressItem_Click(sender As Object, e As EventArgs) Handles WorkProgressItem.Click
-    '    Print_WorkProgress()
-    'End Sub
-
-    'Private Sub PrintWorkProgressWork_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles PrintWorkProgressWork.RunWorkerCompleted
-    '    app.DisplayAlerts = True
-    '    app.Visible = True
-    '    formStatusProcessBar.Close()
-    'End Sub
-
-    Private Sub PrintBtn_MouseDown(sender As Object, e As MouseEventArgs) Handles PrintBtn.MouseDown
-        'If e.Button = MouseButtons.Left Then '按下左鍵 
-        '    Me.PrintMenu.Show(sender, e.Location) '顯示功能表 
-        'End If
     End Sub
 
     Private Sub PrintWorkProgressWork_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles PrintWorkProgressWork.ProgressChanged
