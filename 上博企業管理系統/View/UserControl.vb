@@ -52,7 +52,7 @@
     End Sub
 
     Private Sub ProdPartBtn_Click(sender As Object, e As EventArgs) Handles ProdPartBtn.Click
-        Dim View As Data_Product_Form = New Data_Product_Form
+        Dim View As Data_ProdPart_Form = New Data_ProdPart_Form
         View.Show()
     End Sub
 
