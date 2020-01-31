@@ -127,23 +127,21 @@ Public Class Data_Case_Form
         Dim formDataSearch As Data_Search_Form = New Data_Search_Form
         If formDataSearch.ShowDialog = DialogResult.OK Then
             strSearchSQL = formDataSearch.strSQL
-            CaseDGV.Rows.Clear()
-            LoadingBackground.RunWorkerAsync(0)
+            RefreshCaseData(0)
         End If
     End Sub
 
     Private Sub RefreshBtn_Click(sender As Object, e As EventArgs) Handles RefreshBtn.Click
-        RefreshCaseData()
+        RefreshCaseData(CaseDGV.CurrentRow.Index)
     End Sub
 
     Private Sub AddBtn_Click(sender As Object, e As EventArgs) Handles AddBtn.Click
         Dim formSetCase As Set_Case_Form = New Set_Case_Form(UserName)
         If formSetCase.ShowDialog = DialogResult.OK Then
-            RefreshCaseData()
+            RefreshCaseData(CaseDGV.CurrentRow.Index)
         End If
     End Sub
-    Private Sub RefreshCaseData()
-        Dim index As Integer = CaseDGV.CurrentRow.Index
+    Private Sub RefreshCaseData(ByVal index As Integer)
         CaseDGV.Rows.Clear()
         If Not LoadingBackground.IsBusy Then
             LoadingBackground.RunWorkerAsync(index)
@@ -194,7 +192,7 @@ Public Class Data_Case_Form
                 Else
                     MsgBox("操作未成功，請在試一次或告知系統管理員")
                 End If
-                RefreshCaseData()
+                RefreshCaseData(CaseDGV.CurrentRow.Index)
             End If
         Else
             Dim msgResult As MsgBoxResult
@@ -227,13 +225,15 @@ Public Class Data_Case_Form
                 Else
                     MsgBox("結案未成功，請在試一次或告知系統管理員")
                 End If
-                RefreshCaseData()
+                RefreshCaseData(CaseDGV.CurrentRow.Index)
             End If
         End If
     End Sub
 
     Private Sub caseDGV_SelectionChanged(sender As Object, e As EventArgs) Handles CaseDGV.SelectionChanged
         If CaseDGV.CurrentRow IsNot Nothing Then
+            addPurchaseButton.Enabled = True
+            addSaleButton.Enabled = True
             AddDetailBtn.Enabled = True
             ReviseDetailBtn.Enabled = False
             DelDetailBtn.Enabled = False
@@ -241,9 +241,11 @@ Public Class Data_Case_Form
             ReviseWPBtn.Enabled = False
             DelWPBtn.Enabled = False
             ReviseRepairBtn.Enabled = False
+            AddRepairBtn.Enabled = True
             DelRepairBtn.Enabled = False
             ReviseReceiptBtn.Enabled = False
             DelReceiptBtn.Enabled = False
+            ReceiptAddBtn.Enabled = True
             Do While LoadingDetailBackground.IsBusy
                 Application.DoEvents()
             Loop
@@ -262,6 +264,12 @@ Public Class Data_Case_Form
             End If
             LoadingDetailBackground.RunWorkerAsync(CaseDGV.CurrentRow.Cells("CaseID").Value)
         Else
+            addPurchaseButton.Enabled = False
+            addSaleButton.Enabled = False
+            AddDetailBtn.Enabled = False
+            AddWPBtn.Enabled = False
+            AddRepairBtn.Enabled = False
+            ReceiptAddBtn.Enabled = False
             Do While LoadingDetailBackground.IsBusy
                 Application.DoEvents()
             Loop
@@ -297,7 +305,7 @@ Public Class Data_Case_Form
                 Else
                     MsgBox("作廢未成功，請在試一次或告知系統管理員")
                 End If
-                RefreshCaseData()
+                RefreshCaseData(CaseDGV.CurrentRow.Index)
             End If
         End If
 
@@ -491,20 +499,20 @@ Public Class Data_Case_Form
     Private Sub AddRepairBtn_Click(sender As Object, e As EventArgs) Handles AddRepairBtn.Click
         Dim view As Set_Repair_Form = New Set_Repair_Form(CaseDGV.CurrentRow.Cells("CaseID").Value)
         If view.ShowDialog = DialogResult.OK Then
-            RefreshCaseData()
+            RefreshCaseData(CaseDGV.CurrentRow.Index)
         End If
     End Sub
 
     Private Sub RepairDGV_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles RepairDGV.CellDoubleClick
         Dim view As Set_Repair_Form = New Set_Repair_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, RepairDGV.CurrentRow.Cells("RepairID").Value)
         If view.ShowDialog = DialogResult.OK Then
-            RefreshCaseData()
+            RefreshCaseData(CaseDGV.CurrentRow.Index)
         End If
     End Sub
     Private Sub ReviseRepairBtn_Click(sender As Object, e As EventArgs) Handles ReviseRepairBtn.Click
         Dim view As Set_Repair_Form = New Set_Repair_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, RepairDGV.CurrentRow.Cells("RepairID").Value)
         If view.ShowDialog = DialogResult.OK Then
-            RefreshCaseData()
+            RefreshCaseData(CaseDGV.CurrentRow.Index)
         End If
     End Sub
 
@@ -523,14 +531,14 @@ Public Class Data_Case_Form
                 Case MsgBoxResult.Ok
                     controller.Delete_RepairData(RepairDGV.CurrentRow.Cells("RepairID").Value)
                     MsgBox("刪除完成")
-                    RefreshCaseData()
+                    RefreshCaseData(CaseDGV.CurrentRow.Index)
             End Select
         End If
     End Sub
     Private Sub ReceiptAddBtn_Click(sender As Object, e As EventArgs) Handles ReceiptAddBtn.Click
         Dim view As Set_ReceiptKey_Form = New Set_ReceiptKey_Form(CaseDGV.CurrentRow.Cells("CaseID").Value)
         If view.ShowDialog = DialogResult.OK Then
-            RefreshCaseData()
+            RefreshCaseData(CaseDGV.CurrentRow.Index)
         End If
     End Sub
     Private Sub ReceiptDGV_SelectionChanged(sender As Object, e As EventArgs) Handles ReceiptDGV.SelectionChanged
@@ -543,14 +551,14 @@ Public Class Data_Case_Form
     Private Sub ReceiptDGV_DoubleClick(sender As Object, e As EventArgs) Handles ReceiptDGV.DoubleClick
         Dim view As Set_ReceiptKey_Form = New Set_ReceiptKey_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, intReceiptID:=ReceiptDGV.CurrentRow.Cells("ReceiptID").Value)
         If view.ShowDialog = DialogResult.OK Then
-            RefreshCaseData()
+            RefreshCaseData(CaseDGV.CurrentRow.Index)
         End If
     End Sub
 
     Private Sub ReviseReceiptBtn_Click(sender As Object, e As EventArgs) Handles ReviseReceiptBtn.Click
         Dim view As Set_ReceiptKey_Form = New Set_ReceiptKey_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, intReceiptID:=ReceiptDGV.CurrentRow.Cells("ReceiptID").Value)
         If view.ShowDialog = DialogResult.OK Then
-            RefreshCaseData()
+            RefreshCaseData(CaseDGV.CurrentRow.Index)
         End If
     End Sub
 
@@ -562,7 +570,7 @@ Public Class Data_Case_Form
                 Case MsgBoxResult.Ok
                     controller.Delete_ReceiptData(ReceiptDGV.CurrentRow.Cells("ReceiptID").Value)
                     MsgBox("刪除完成")
-                    RefreshCaseData()
+                    RefreshCaseData(CaseDGV.CurrentRow.Index)
             End Select
         End If
     End Sub

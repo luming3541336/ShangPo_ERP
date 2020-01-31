@@ -24,17 +24,17 @@ Partial Class Data_Case_Form
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Data_Case_Form))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.SearchButton = New System.Windows.Forms.Button()
@@ -433,14 +433,14 @@ Partial Class Data_Case_Form
         Me.CaseDGV.AllowUserToDeleteRows = False
         Me.CaseDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.CaseDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CaseDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CaseDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
         Me.CaseDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.CaseDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CaseID, Me.CaseNo, Me.Place, Me.SaleName, Me.InsertTime, Me.UpdateTime, Me.Success})
         Me.CaseDGV.Dock = System.Windows.Forms.DockStyle.Fill
@@ -449,12 +449,12 @@ Partial Class Data_Case_Form
         Me.CaseDGV.MultiSelect = False
         Me.CaseDGV.Name = "CaseDGV"
         Me.CaseDGV.ReadOnly = True
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        Me.CaseDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White
+        Me.CaseDGV.RowsDefaultCellStyle = DataGridViewCellStyle24
         Me.CaseDGV.RowTemplate.Height = 38
         Me.CaseDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.CaseDGV.Size = New System.Drawing.Size(956, 257)
@@ -573,6 +573,7 @@ Partial Class Data_Case_Form
         '
         'addPurchaseButton
         '
+        Me.addPurchaseButton.Enabled = False
         Me.addPurchaseButton.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.addPurchaseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.addPurchaseButton.ForeColor = System.Drawing.Color.White
@@ -649,14 +650,14 @@ Partial Class Data_Case_Form
         Me.PurchasePartDGV.AllowUserToDeleteRows = False
         Me.PurchasePartDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.PurchasePartDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PurchasePartDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PurchasePartDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
         Me.PurchasePartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PurchasePartDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PurchasePID, Me.PurchasePartTime, Me.PurchasePartSupplierName, Me.PurchasePartName, Me.PurchasePartSpecification, Me.PurchasePartWidth, Me.PurchasePartLength, Me.PurchasePartCBM, Me.PurchasePartCount, Me.PurchasePartRemark})
         Me.PurchasePartDGV.Dock = System.Windows.Forms.DockStyle.Fill
@@ -664,12 +665,12 @@ Partial Class Data_Case_Form
         Me.PurchasePartDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.PurchasePartDGV.Name = "PurchasePartDGV"
         Me.PurchasePartDGV.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.PurchasePartDGV.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White
+        Me.PurchasePartDGV.RowsDefaultCellStyle = DataGridViewCellStyle26
         Me.PurchasePartDGV.RowTemplate.Height = 38
         Me.PurchasePartDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.PurchasePartDGV.Size = New System.Drawing.Size(924, 187)
@@ -770,11 +771,11 @@ Partial Class Data_Case_Form
         Me.PurchasePart2DGV.Margin = New System.Windows.Forms.Padding(2)
         Me.PurchasePart2DGV.Name = "PurchasePart2DGV"
         Me.PurchasePart2DGV.ReadOnly = True
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        Me.PurchasePart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle27.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White
+        Me.PurchasePart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle27
         Me.PurchasePart2DGV.RowTemplate.Height = 38
         Me.PurchasePart2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.PurchasePart2DGV.Size = New System.Drawing.Size(924, 187)
@@ -884,7 +885,6 @@ Partial Class Data_Case_Form
         '
         'AddWPBtn
         '
-        Me.AddWPBtn.Enabled = False
         Me.AddWPBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.AddWPBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddWPBtn.ForeColor = System.Drawing.Color.White
@@ -951,12 +951,12 @@ Partial Class Data_Case_Form
         Me.WorkProgressDGV.MultiSelect = False
         Me.WorkProgressDGV.Name = "WorkProgressDGV"
         Me.WorkProgressDGV.ReadOnly = True
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.WorkProgressDGV.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle28.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.WorkProgressDGV.RowsDefaultCellStyle = DataGridViewCellStyle28
         Me.WorkProgressDGV.RowTemplate.Height = 38
         Me.WorkProgressDGV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.WorkProgressDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -1072,6 +1072,7 @@ Partial Class Data_Case_Form
         '
         'addSaleButton
         '
+        Me.addSaleButton.Enabled = False
         Me.addSaleButton.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.addSaleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.addSaleButton.ForeColor = System.Drawing.Color.White
@@ -1155,11 +1156,11 @@ Partial Class Data_Case_Form
         Me.ShipmentPartDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.ShipmentPartDGV.Name = "ShipmentPartDGV"
         Me.ShipmentPartDGV.ReadOnly = True
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
-        Me.ShipmentPartDGV.RowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White
+        Me.ShipmentPartDGV.RowsDefaultCellStyle = DataGridViewCellStyle29
         Me.ShipmentPartDGV.RowTemplate.Height = 38
         Me.ShipmentPartDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ShipmentPartDGV.Size = New System.Drawing.Size(924, 187)
@@ -1267,11 +1268,11 @@ Partial Class Data_Case_Form
         Me.ShipmentPart2DGV.Margin = New System.Windows.Forms.Padding(2)
         Me.ShipmentPart2DGV.Name = "ShipmentPart2DGV"
         Me.ShipmentPart2DGV.ReadOnly = True
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        Me.ShipmentPart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White
+        Me.ShipmentPart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle30
         Me.ShipmentPart2DGV.RowTemplate.Height = 38
         Me.ShipmentPart2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ShipmentPart2DGV.Size = New System.Drawing.Size(924, 187)
@@ -1454,12 +1455,12 @@ Partial Class Data_Case_Form
         Me.DetailDGV.MultiSelect = False
         Me.DetailDGV.Name = "DetailDGV"
         Me.DetailDGV.ReadOnly = True
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DetailDGV.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle31.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DetailDGV.RowsDefaultCellStyle = DataGridViewCellStyle31
         Me.DetailDGV.RowTemplate.Height = 38
         Me.DetailDGV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DetailDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -1540,11 +1541,11 @@ Partial Class Data_Case_Form
         Me.RepairDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.RepairDGV.Name = "RepairDGV"
         Me.RepairDGV.ReadOnly = True
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White
-        Me.RepairDGV.RowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White
+        Me.RepairDGV.RowsDefaultCellStyle = DataGridViewCellStyle32
         Me.RepairDGV.RowTemplate.Height = 38
         Me.RepairDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.RepairDGV.Size = New System.Drawing.Size(938, 230)
@@ -1608,6 +1609,7 @@ Partial Class Data_Case_Form
         '
         'AddRepairBtn
         '
+        Me.AddRepairBtn.Enabled = False
         Me.AddRepairBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.AddRepairBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddRepairBtn.ForeColor = System.Drawing.Color.White
@@ -1702,11 +1704,11 @@ Partial Class Data_Case_Form
         Me.ReceiptDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.ReceiptDGV.Name = "ReceiptDGV"
         Me.ReceiptDGV.ReadOnly = True
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
-        Me.ReceiptDGV.RowsDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle33.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.White
+        Me.ReceiptDGV.RowsDefaultCellStyle = DataGridViewCellStyle33
         Me.ReceiptDGV.RowTemplate.Height = 38
         Me.ReceiptDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ReceiptDGV.Size = New System.Drawing.Size(938, 230)
@@ -1788,6 +1790,7 @@ Partial Class Data_Case_Form
         '
         'ReceiptAddBtn
         '
+        Me.ReceiptAddBtn.Enabled = False
         Me.ReceiptAddBtn.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.ReceiptAddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ReceiptAddBtn.ForeColor = System.Drawing.Color.White
