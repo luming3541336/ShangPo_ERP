@@ -24,16 +24,18 @@ Partial Class Data_Product_Form
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Data_Product_Form))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ProdNameText = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -58,8 +60,6 @@ Partial Class Data_Product_Form
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel3.SuspendLayout()
@@ -156,6 +156,14 @@ Partial Class Data_Product_Form
         Me.Label1.Text = "供應商："
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(376, 3)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(171, 32)
+        Me.ComboBox2.TabIndex = 14
+        '
         'Label3
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -192,6 +200,15 @@ Partial Class Data_Product_Form
         Me.Label11.Text = "計算單位："
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"才", "樘"})
+        Me.ComboBox1.Location = New System.Drawing.Point(112, 41)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(61, 32)
+        Me.ComboBox1.TabIndex = 13
+        '
         'Label12
         '
         Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -212,7 +229,7 @@ Partial Class Data_Product_Form
         Me.TextBox7.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.ReadOnly = True
-        Me.TextBox7.Size = New System.Drawing.Size(170, 33)
+        Me.TextBox7.Size = New System.Drawing.Size(153, 33)
         Me.TextBox7.TabIndex = 11
         '
         'Panel2
@@ -429,11 +446,11 @@ Partial Class Data_Product_Form
         Me.ViewDGV.Name = "ViewDGV"
         Me.ViewDGV.ReadOnly = True
         Me.ViewDGV.RowHeadersVisible = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        Me.ViewDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        Me.ViewDGV.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.ViewDGV.RowTemplate.Height = 24
         Me.ViewDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ViewDGV.Size = New System.Drawing.Size(839, 472)
@@ -483,23 +500,6 @@ Partial Class Data_Product_Form
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(839, 1)
         Me.Panel3.TabIndex = 8
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"才", "樘"})
-        Me.ComboBox1.Location = New System.Drawing.Point(112, 41)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(61, 32)
-        Me.ComboBox1.TabIndex = 13
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(376, 3)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(171, 32)
-        Me.ComboBox2.TabIndex = 14
         '
         'Data_Product_Form
         '
