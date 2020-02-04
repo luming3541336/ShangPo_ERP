@@ -26,6 +26,8 @@ Public Class Set_ReceiptKey_Form
             InsertDate.Text = Format(data.InsertDate, "yyyy/MM/dd")
             ContactText.Text = data.Contact
             PlaceText.Text = data.Place
+            ReturnDate.Text = Format(data.ReturnDate, "yyyy/MM/dd")
+            ReturnText.Text = data.ReturnUser
             StatusText.Text = If(data.Status = 1, "尚未簽收", "簽收完成")
             Dim listdata As List(Of ReceiptKey) = controller.Select_ReceiptKey(intReceiptID)
             For Each data2 As ReceiptKey In listdata
