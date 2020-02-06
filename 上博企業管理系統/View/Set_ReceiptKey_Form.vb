@@ -5,6 +5,7 @@ Public Class Set_ReceiptKey_Form
     Private intReceiptID As Integer = Nothing
     Dim arrReceiptFileAdd As ArrayList = New ArrayList
     Dim arrReceiptFileDel As ArrayList = New ArrayList
+    Dim arrReceiptDel As ArrayList = New ArrayList
     Private controller As Set_ReceiptKey_Controller = New Set_ReceiptKey_Controller
     '狀態:1 尚未簽收 2 簽收完成
     Public Sub New(ByVal intCaseID As Integer, Optional ByVal intReceiptID As Integer = Nothing)
@@ -27,20 +28,26 @@ Public Class Set_ReceiptKey_Form
             ContactText.Text = data.Contact
             PlaceText.Text = data.Place
             StatusText.Text = If(data.Status = 1, "尚未簽收", "簽收完成")
-            Dim listdata As List(Of ReceiptKey) = controller.Select_ReceiptKey(intReceiptID)
-            For Each data2 As ReceiptKey In listdata
-                ReceiptKeyDGV.Rows.Add(data2.ReceiptKeyID, data2.Room, data2.Item, data2.Location, data2.ReceiptCount, data2.Remark)
-            Next
-            Dim listFileData As List(Of ReceiptFile) = controller.Select_ReceiptFile(intReceiptID)
-            For Each FD As ReceiptFile In listFileData
-                Dim f As FilePath = New FilePath(FD.ReceiptFileID, Me, FD.ReceiptFileName, FD.ReceiptFilePath)
-                f.Name = New Random().Next
-                FlowLayoutPanel3.Controls.Add(f)
-            Next
-            RepairConfirmBtn.Visible = True
+            If data.Status = 2 Then
+                SaveBtn.Visible = False
+                RepairConfirmBtn.Visible = False
+            Else
+                RepairConfirmBtn.Visible = True
+            End If
             PrintBtn.Visible = True
+            Dim listdata As List(Of ReceiptKey) = controller.Select_ReceiptKey(intReceiptID)
+                For Each data2 As ReceiptKey In listdata
+                    ReceiptKeyDGV.Rows.Add(data2.ReceiptKeyID, data2.Room, data2.Item, data2.Location, data2.ReceiptCount, data2.Remark)
+                Next
+                Dim listFileData As List(Of ReceiptFile) = controller.Select_ReceiptFile(intReceiptID)
+                For Each FD As ReceiptFile In listFileData
+                    Dim f As FilePath = New FilePath(FD.ReceiptFileID, Me, FD.ReceiptFileName, FD.ReceiptFilePath)
+                    f.Name = New Random().Next
+                    FlowLayoutPanel3.Controls.Add(f)
+                Next
+
         Else
-            Dim controller2 As Set_Repair_Controller = New Set_Repair_Controller
+                Dim controller2 As Set_Repair_Controller = New Set_Repair_Controller
             Dim data As CaseData = controller2.Selet_CaseData(intCaseID)
             ContactText.Text = data.Contact
             PlaceText.Text = data.Place
@@ -74,6 +81,10 @@ Public Class Set_ReceiptKey_Form
                 row.Cells("ReceiptKeyID").Value = id
             Else
                 controller.Update_ReceiptKey(New ReceiptKey With {.ReceiptKeyID = row.Cells("ReceiptKeyID").Value, .ReceiptID = intReceiptID, .Item = row.Cells("Item").Value, .Location = row.Cells("Location").Value, .ReceiptCount = row.Cells("ReceiptCount").Value, .Remark = row.Cells("ReceiptRemark").Value, .Room = row.Cells("Room").Value})
+                '若有刪除任何欄位時執行
+                For Each i As Integer In arrReceiptDel
+                    controller.Delete_ReceiptKey(i)
+                Next
             End If
         Next
         For Each controls As Control In arrReceiptFileAdd
@@ -157,5 +168,9 @@ Public Class Set_ReceiptKey_Form
 
     Private Sub ExitBtn_Click(sender As Object, e As EventArgs) Handles ExitBtn.Click
         Me.DialogResult = DialogResult.Cancel
+    End Sub
+
+    Private Sub ReceiptKeyDGV_UserDeletingRow(sender As Object, e As DataGridViewRowCancelEventArgs) Handles ReceiptKeyDGV.UserDeletingRow
+        arrReceiptDel.Add(e.Row.Cells("ReceiptKeyID").Value)
     End Sub
 End Class

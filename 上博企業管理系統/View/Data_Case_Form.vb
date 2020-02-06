@@ -450,7 +450,7 @@ Public Class Data_Case_Form
     End Sub
 
     Private Sub Data_Case_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If L4 = 1 Then
+        If L3 = 1 Then
             AddBtn.Visible = False
             DelDetailBtn.Visible = False
             ReviseBtn.Visible = False
@@ -464,8 +464,12 @@ Public Class Data_Case_Form
             AddWPBtn.Visible = False
             ReviseWPBtn.Visible = False
             DelWPBtn.Visible = False
+            ReceiptAddBtn.Visible = False
             ReviseReceiptBtn.Visible = False
             DelReceiptBtn.Visible = False
+            AddRepairBtn.Visible = False
+            ReviseRepairBtn.Visible = False
+            DelRepairBtn.Visible = False
         End If
 
     End Sub

@@ -110,8 +110,14 @@ Public Class Set_ReceiptKey_Controller
         End If
         Return id
     End Function
-
-
+    Public Function Delete_ReceiptKey(ByVal id As Integer) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = DELETE_RECEIPTKEY_SQL
+        strSQL = strSQL.Replace("@id", id)
+        Dim intReturn As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
+        conDB.Close()
+        Return intReturn
+    End Function
     Public Function Update_ReceiptKey(ByVal data As ReceiptKey) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = UPDATE_RECEIPTKEY_SQL

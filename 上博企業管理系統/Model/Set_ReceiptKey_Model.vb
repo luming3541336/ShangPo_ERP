@@ -8,6 +8,7 @@
     Protected Const SELECT_RECEIPTKEY_SQL = "SELECT * FROM ReceiptKey WHERE ReceiptID = @id"
     Protected Const INSERT_RECEIPTKEY_SQL = "INSERT INTO ReceiptKey(ReceiptID,Room,Item,Location,ReceiptCount,Remark) VALUES(N'@id',N'@room',N'@item',N'@location',@count,N'@remark');SELECT @@IDENTITY as id"
     Protected Const UPDATE_RECEIPTKEY_SQL = "UPDATE ReceiptKey SET Room = N'@room' , Item = N'@item' , Location = N'@location' , ReceiptCount = @count, Remark = N'@remark' WHERE ReceiptKeyID = @id"
+    Protected Const DELETE_RECEIPTKEY_SQL = "DELETE FROM ReceiptKey Where ReceiptKeyID = @id"
 
     Protected Const SELECT_RECEIPTFILE_SQL = "SELECT * FROM ReceiptFile WHERE ReceiptID = @id"
     Protected Const INSERT_RECEIPTFILE_SQL = "INSERT INTO ReceiptFile(ReceiptID, ReceiptFileName,ReceiptFilePath) VALUES(@id,N'@fileName',N'@filePath')"
