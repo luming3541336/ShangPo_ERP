@@ -32,8 +32,6 @@ Public Class Set_ReceiptKey_Controller
                 data.Place = dataReader("Place")
                 data.Status = dataReader("Status")
                 data.InsertDate = dataReader("InsertDate")
-                data.ReturnDate = dataReader("ReturnDate")
-                data.ReturnUser = dataReader("ReturnUser")
             Loop
         End If
         Return data
