@@ -102,7 +102,7 @@ Public Class Data_Case_Form
                 Case 2
                     strStatus = "簽收完成"
             End Select
-            ReceiptDGV.Rows.Add(data.ReceiptID, data.ReceiptType, data.ReceiptOrder, Format(data.InsertDate, "yyyy/MM/dd"), If(data.ReceiptType = 0, "鑰匙", "五金"), If(data.ReceiptDate = Nothing, "尚未簽收", Format(data.ReceiptDate, "yyyy/MM/dd")), strStatus, data.Status)
+            ReceiptDGV.Rows.Add(data.ReceiptID, data.ReceiptType, data.ReceiptOrder, Format(CDate(data.InsertDate), "yyyy/MM/dd"), If(data.ReceiptType = 0, "鑰匙", "五金"), If(data.ReceiptDate = Nothing, "尚未簽收", Format(CDate(data.ReceiptDate), "yyyy/MM/dd")), strStatus, data.Status)
         Next
         RepairDGV.Rows.Clear()
         For Each data As RepairData In listRepairData

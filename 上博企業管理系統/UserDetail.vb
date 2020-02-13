@@ -90,7 +90,7 @@ Public Structure ReceiptData
     Dim Place As String
     Dim Contact As String
     Dim ReceiptDate As Date
-    Dim InsertDate As Date
+    Dim InsertDate As String
     Dim Status As Integer
     Dim ReturnDate As Date
     Dim ReturnUser As String

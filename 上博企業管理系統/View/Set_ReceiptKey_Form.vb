@@ -21,13 +21,20 @@ Public Class Set_ReceiptKey_Form
     End Sub
 
     Private Sub Set_ReceiptKey_Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        '修改鑰匙單時執行
         If intReceiptID <> Nothing Then
             Dim data As ReceiptData = controller.Select_ReceiptData(intReceiptID)
             ReceiptOrderText.Text = data.ReceiptOrder
-            InsertDate.Text = Format(data.InsertDate, "yyyy/MM/dd")
+            InsertDate.Text = Format(CDate(data.InsertDate), "yyyy/MM/dd")
             ContactText.Text = data.Contact
             PlaceText.Text = data.Place
-            ReturnDate.Text = Format(data.ReturnDate, "yyyy/MM/dd")
+            If data.ReturnDate > ReturnDate.MinDate Then
+                ReturnDate.Value = Format(CDate(data.ReturnDate), "yyyy/MM/dd")
+            End If
+            If data.ReceiptDate > ReceiptDate.MinDate Then
+                ReceiptDate.Text = Format(CDate(data.ReceiptDate), "yyyy/MM/dd")
+            End If
             ReturnText.Text = data.ReturnUser
             StatusText.Text = If(data.Status = 1, "尚未簽收", "簽收完成")
             If data.Status = 2 Then
@@ -35,21 +42,25 @@ Public Class Set_ReceiptKey_Form
                 RepairConfirmBtn.Visible = False
             Else
                 RepairConfirmBtn.Visible = True
+                ReturnDate.Enabled = True
+                ReturnText.Enabled = True
+                ReceiptDate.Enabled = True
             End If
             PrintBtn.Visible = True
             Dim listdata As List(Of ReceiptKey) = controller.Select_ReceiptKey(intReceiptID)
-                For Each data2 As ReceiptKey In listdata
-                    ReceiptKeyDGV.Rows.Add(data2.ReceiptKeyID, data2.Room, data2.Item, data2.Location, data2.ReceiptCount, data2.Remark)
-                Next
-                Dim listFileData As List(Of ReceiptFile) = controller.Select_ReceiptFile(intReceiptID)
-                For Each FD As ReceiptFile In listFileData
-                    Dim f As FilePath = New FilePath(FD.ReceiptFileID, Me, FD.ReceiptFileName, FD.ReceiptFilePath)
-                    f.Name = New Random().Next
-                    FlowLayoutPanel3.Controls.Add(f)
-                Next
+            For Each data2 As ReceiptKey In listdata
+                ReceiptKeyDGV.Rows.Add(data2.ReceiptKeyID, data2.Room, data2.Item, data2.Location, data2.ReceiptCount, data2.Remark)
+            Next
+            Dim listFileData As List(Of ReceiptFile) = controller.Select_ReceiptFile(intReceiptID)
+            For Each FD As ReceiptFile In listFileData
+                Dim f As FilePath = New FilePath(FD.ReceiptFileID, Me, FD.ReceiptFileName, FD.ReceiptFilePath)
+                f.Name = New Random().Next
+                FlowLayoutPanel3.Controls.Add(f)
+            Next
 
+            '新增鑰匙單時執行
         Else
-                Dim controller2 As Set_Repair_Controller = New Set_Repair_Controller
+            Dim controller2 As Set_Repair_Controller = New Set_Repair_Controller
             Dim data As CaseData = controller2.Selet_CaseData(intCaseID)
             ContactText.Text = data.Contact
             PlaceText.Text = data.Place
@@ -64,7 +75,7 @@ Public Class Set_ReceiptKey_Form
     End Sub
 
     Private Sub SaveBtn_Click(sender As Object, e As EventArgs) Handles SaveBtn.Click
-        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = PlaceText.Text, .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 0, .Status = 1, .CaseID = intCaseID, .ReceiptDate = Nothing}
+        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = PlaceText.Text, .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 0, .Status = 1, .CaseID = intCaseID, .ReceiptDate = Nothing, .ReturnDate = Nothing, .ReturnUser = Nothing}
         If intReceiptID = Nothing Then
             Dim intReceiveID As Integer = controller.Insert_ReceiptData(data)
             If intReceiveID <> Nothing Then
@@ -161,7 +172,7 @@ Public Class Set_ReceiptKey_Form
     End Sub
 
     Private Sub RepairConfirmBtn_Click(sender As Object, e As EventArgs) Handles RepairConfirmBtn.Click
-        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = PlaceText.Text, .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 0, .Status = 2, .CaseID = intCaseID, .ReceiptDate = Format(Date.Now, "yyyy/MM/dd")}
+        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = PlaceText.Text, .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 0, .Status = 2, .CaseID = intCaseID, .ReceiptDate = Format(ReceiptDate.Value, "yyyy/MM/dd"), .ReturnDate = Format(ReturnDate.Value, "yyyy/MM/dd"), .ReturnUser = ReturnText.Text}
         If controller.Update_ReceiptData(data) = 1 Then
             MsgBox("狀態更新")
             Me.DialogResult = DialogResult.OK
@@ -174,5 +185,9 @@ Public Class Set_ReceiptKey_Form
 
     Private Sub ReceiptKeyDGV_UserDeletingRow(sender As Object, e As DataGridViewRowCancelEventArgs) Handles ReceiptKeyDGV.UserDeletingRow
         arrReceiptDel.Add(e.Row.Cells("ReceiptKeyID").Value)
+    End Sub
+
+    Private Sub ReturnDate_ValueChanged(sender As Object, e As EventArgs) Handles ReturnDate.ValueChanged, ReceiptDate.ValueChanged
+        CType(sender, DateTimePicker).Format = DateTimePickerFormat.Short
     End Sub
 End Class

@@ -122,29 +122,7 @@
     <value>True</value>
   </data>
   <data name="TableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PlaceText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 42</value>
-  </data>
-  <data name="PlaceText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>330, 33</value>
-  </data>
-  <data name="PlaceText.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;PlaceText.Name" xml:space="preserve">
-    <value>PlaceText</value>
-  </data>
-  <data name="&gt;&gt;PlaceText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PlaceText.Parent" xml:space="preserve">
-    <value>TableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;PlaceText.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>6</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -153,6 +131,7 @@
   <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 7</value>
   </data>
@@ -175,37 +154,7 @@
     <value>TableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 46</value>
-  </data>
-  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 24</value>
-  </data>
-  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="Label2.Text" xml:space="preserve">
-    <value>工地名稱</value>
-  </data>
-  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
-    <value>Label2</value>
-  </data>
-  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
-    <value>TableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="Label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -214,7 +163,7 @@
     <value>True</value>
   </data>
   <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>431, 7</value>
+    <value>256, 7</value>
   </data>
   <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 24</value>
@@ -235,16 +184,13 @@
     <value>TableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;Label6.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="InsertDate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>1</value>
   </data>
   <data name="InsertDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>523, 3</value>
+    <value>348, 3</value>
   </data>
   <data name="InsertDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>388, 33</value>
+    <value>155, 33</value>
   </data>
   <data name="InsertDate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -259,7 +205,7 @@
     <value>TableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;InsertDate.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="ReceiptOrderText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -286,7 +232,7 @@
     <value>TableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;ReceiptOrderText.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="Label16.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -294,8 +240,11 @@
   <data name="Label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="Label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="Label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>431, 78</value>
+    <value>256, 85</value>
   </data>
   <data name="Label16.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 24</value>
@@ -316,7 +265,7 @@
     <value>TableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;Label16.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="StatusText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -324,8 +273,11 @@
   <data name="StatusText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="StatusText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="StatusText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>523, 78</value>
+    <value>348, 85</value>
   </data>
   <data name="StatusText.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 24</value>
@@ -346,6 +298,57 @@
     <value>TableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;StatusText.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>509, 7</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 24</value>
+  </data>
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>工地名稱</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="PlaceText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>601, 3</value>
+  </data>
+  <data name="PlaceText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 33</value>
+  </data>
+  <data name="PlaceText.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;PlaceText.Name" xml:space="preserve">
+    <value>PlaceText</value>
+  </data>
+  <data name="&gt;&gt;PlaceText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PlaceText.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;PlaceText.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="Label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -355,7 +358,7 @@
     <value>True</value>
   </data>
   <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>431, 46</value>
+    <value>3, 46</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 24</value>
@@ -378,14 +381,11 @@
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="ContactText.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="ContactText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>523, 42</value>
+    <value>95, 42</value>
   </data>
   <data name="ContactText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>388, 33</value>
+    <value>155, 33</value>
   </data>
   <data name="ContactText.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -402,6 +402,183 @@
   <data name="&gt;&gt;ContactText.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="Label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 46</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 24</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>交回日期</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ReturnDate.CustomFormat" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="ReturnDate.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ReturnDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>348, 42</value>
+  </data>
+  <data name="ReturnDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 33</value>
+  </data>
+  <data name="ReturnDate.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;ReturnDate.Name" xml:space="preserve">
+    <value>ReturnDate</value>
+  </data>
+  <data name="&gt;&gt;ReturnDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReturnDate.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;ReturnDate.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="ReturnText.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ReturnText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>601, 42</value>
+  </data>
+  <data name="ReturnText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 33</value>
+  </data>
+  <data name="ReturnText.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;ReturnText.Name" xml:space="preserve">
+    <value>ReturnText</value>
+  </data>
+  <data name="&gt;&gt;ReturnText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReturnText.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;ReturnText.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="Label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>509, 46</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 24</value>
+  </data>
+  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>交回人員</value>
+  </data>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
+  </data>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="ReceiptDate.CustomFormat" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="ReceiptDate.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ReceiptDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>95, 81</value>
+  </data>
+  <data name="ReceiptDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 33</value>
+  </data>
+  <data name="ReceiptDate.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;ReceiptDate.Name" xml:space="preserve">
+    <value>ReceiptDate</value>
+  </data>
+  <data name="&gt;&gt;ReceiptDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReceiptDate.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;ReceiptDate.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="Label7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 85</value>
+  </data>
+  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 24</value>
+  </data>
+  <data name="Label7.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="Label7.Text" xml:space="preserve">
+    <value>結案日期</value>
+  </data>
+  <data name="&gt;&gt;Label7.Name" xml:space="preserve">
+    <value>Label7</value>
+  </data>
+  <data name="&gt;&gt;Label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label7.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;Label7.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
   <data name="TableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -412,7 +589,7 @@
     <value>3</value>
   </data>
   <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>914, 102</value>
+    <value>1145, 117</value>
   </data>
   <data name="TableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -430,7 +607,7 @@
     <value>3</value>
   </data>
   <data name="TableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="PlaceText" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label2" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label6" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="InsertDate" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="ReceiptOrderText" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label16" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="StatusText" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Label3" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="ContactText" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label6" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="InsertDate" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="ReceiptOrderText" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label16" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="StatusText" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Label2" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="PlaceText" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="Label3" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ContactText" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label4" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="ReturnDate" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="ReturnText" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="Label5" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="ReceiptDate" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label7" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="TableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -451,7 +628,7 @@
     <value>Fill</value>
   </data>
   <data name="TableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 102</value>
+    <value>0, 117</value>
   </data>
   <data name="TableLayoutPanel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 3</value>
@@ -460,7 +637,7 @@
     <value>2</value>
   </data>
   <data name="TableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>914, 319</value>
+    <value>1145, 508</value>
   </data>
   <data name="TableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -478,7 +655,7 @@
     <value>2</value>
   </data>
   <data name="TableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ReceiptKeyDGV" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,Absolute,319,Absolute,319" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ReceiptKeyDGV" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0" /&gt;&lt;Rows Styles="Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="ReceiptKeyID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -526,7 +703,7 @@
     <value>3, 3</value>
   </data>
   <data name="ReceiptKeyDGV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>908, 313</value>
+    <value>1144, 502</value>
   </data>
   <data name="ReceiptKeyDGV.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -545,78 +722,6 @@
   </data>
   <data name="FlowLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;SaveBtn.Name" xml:space="preserve">
-    <value>SaveBtn</value>
-  </data>
-  <data name="&gt;&gt;SaveBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SaveBtn.Parent" xml:space="preserve">
-    <value>FlowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;SaveBtn.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RepairConfirmBtn.Name" xml:space="preserve">
-    <value>RepairConfirmBtn</value>
-  </data>
-  <data name="&gt;&gt;RepairConfirmBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RepairConfirmBtn.Parent" xml:space="preserve">
-    <value>FlowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;RepairConfirmBtn.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;PrintBtn.Name" xml:space="preserve">
-    <value>PrintBtn</value>
-  </data>
-  <data name="&gt;&gt;PrintBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PrintBtn.Parent" xml:space="preserve">
-    <value>FlowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;PrintBtn.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ExitBtn.Name" xml:space="preserve">
-    <value>ExitBtn</value>
-  </data>
-  <data name="&gt;&gt;ExitBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExitBtn.Parent" xml:space="preserve">
-    <value>FlowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;ExitBtn.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="FlowLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="FlowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 379</value>
-  </data>
-  <data name="FlowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>914, 42</value>
-  </data>
-  <data name="FlowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;FlowLayoutPanel2.Name" xml:space="preserve">
-    <value>FlowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;FlowLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FlowLayoutPanel2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;FlowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="SaveBtn.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -638,7 +743,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAE
-        DAAAAk1TRnQBSQFMAgEBBQEAAdwBAAHcAQABFAEAARQBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        DAAAAk1TRnQBSQFMAgEBBQEAAfwBAAH8AQABFAEAARQBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABUAMAASgDAAEBAQABCAUAAYABDBgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -842,6 +947,30 @@
   <data name="&gt;&gt;ExitBtn.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="FlowLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="FlowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 583</value>
+  </data>
+  <data name="FlowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1145, 42</value>
+  </data>
+  <data name="FlowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;FlowLayoutPanel2.Name" xml:space="preserve">
+    <value>FlowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;FlowLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FlowLayoutPanel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;FlowLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="RepairResultDGV.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -876,7 +1005,7 @@
     <value>Bottom</value>
   </data>
   <data name="RepairResultDGV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 324</value>
+    <value>0, 528</value>
   </data>
   <data name="RepairResultDGV.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -885,7 +1014,7 @@
     <value>1</value>
   </data>
   <data name="RepairResultDGV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>914, 55</value>
+    <value>1145, 55</value>
   </data>
   <data name="RepairResultDGV.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -954,7 +1083,7 @@
     <value>143, 3</value>
   </data>
   <data name="FlowLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>768, 49</value>
+    <value>999, 49</value>
   </data>
   <data name="FlowLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -981,7 +1110,7 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>914, 421</value>
+    <value>1145, 625</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>微軟正黑體, 14.25pt</value>

@@ -31,8 +31,8 @@ Public Class Set_ReceiptKey_Controller
                 data.Contact = dataReader("Contact")
                 data.Place = dataReader("Place")
                 data.Status = dataReader("Status")
-                data.InsertDate = dataReader("InsertDate")
-                data.ReturnDate = dataReader("ReturnDate")
+                data.InsertDate = If(dataReader("InsertDate").ToString <> "", dataReader("InsertDate"), Nothing)
+                data.ReturnDate = If(dataReader("ReturnDate").ToString <> "", dataReader("ReturnDate"), Nothing)
                 data.ReturnUser = dataReader("ReturnUser")
             Loop
         End If
@@ -96,7 +96,7 @@ Public Class Set_ReceiptKey_Controller
     Public Function Update_ReceiptData(ByVal data As ReceiptData) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = UPDATE_RECEIPTDATA_SQL
-        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@date", If(data.ReceiptDate = Nothing, "null", "'" & data.ReceiptDate & "'")).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.ReceiptID).Replace("@place", data.Place).Replace("@contact", data.Contact)
+        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@date", If(data.ReceiptDate = Nothing, "null", "'" & data.ReceiptDate & "'")).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.ReceiptID).Replace("@place", data.Place).Replace("@contact", data.Contact).Replace("@returnDate", If(data.ReceiptDate = Nothing, "null", "'" & data.ReturnDate & "'")).Replace("@returnUser", data.ReturnUser)
         Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
         Return dataReader
     End Function

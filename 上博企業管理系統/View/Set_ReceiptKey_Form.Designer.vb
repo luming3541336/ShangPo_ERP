@@ -27,16 +27,22 @@ Partial Class Set_ReceiptKey_Form
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.PlaceText = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.InsertDate = New System.Windows.Forms.DateTimePicker()
         Me.ReceiptOrderText = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.StatusText = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PlaceText = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ContactText = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ReturnDate = New System.Windows.Forms.DateTimePicker()
+        Me.ReturnText = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.ReceiptDate = New System.Windows.Forms.DateTimePicker()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.ReceiptKeyDGV = New System.Windows.Forms.DataGridView()
         Me.ReceiptKeyID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,32 +70,28 @@ Partial Class Set_ReceiptKey_Form
         'TableLayoutPanel1
         '
         resources.ApplyResources(Me.TableLayoutPanel1, "TableLayoutPanel1")
-        Me.TableLayoutPanel1.Controls.Add(Me.PlaceText, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label6, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.InsertDate, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.ReceiptOrderText, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label16, 2, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.StatusText, 3, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 2, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.ContactText, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label2, 4, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.PlaceText, 5, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.ContactText, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label4, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.ReturnDate, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.ReturnText, 5, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label5, 4, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.ReceiptDate, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label7, 0, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        '
-        'PlaceText
-        '
-        resources.ApplyResources(Me.PlaceText, "PlaceText")
-        Me.PlaceText.Name = "PlaceText"
         '
         'Label1
         '
         resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        '
-        'Label2
-        '
-        resources.ApplyResources(Me.Label2, "Label2")
-        Me.Label2.Name = "Label2"
         '
         'Label6
         '
@@ -98,8 +100,8 @@ Partial Class Set_ReceiptKey_Form
         '
         'InsertDate
         '
-        resources.ApplyResources(Me.InsertDate, "InsertDate")
         Me.InsertDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        resources.ApplyResources(Me.InsertDate, "InsertDate")
         Me.InsertDate.Name = "InsertDate"
         '
         'ReceiptOrderText
@@ -117,6 +119,16 @@ Partial Class Set_ReceiptKey_Form
         resources.ApplyResources(Me.StatusText, "StatusText")
         Me.StatusText.Name = "StatusText"
         '
+        'Label2
+        '
+        resources.ApplyResources(Me.Label2, "Label2")
+        Me.Label2.Name = "Label2"
+        '
+        'PlaceText
+        '
+        resources.ApplyResources(Me.PlaceText, "PlaceText")
+        Me.PlaceText.Name = "PlaceText"
+        '
         'Label3
         '
         resources.ApplyResources(Me.Label3, "Label3")
@@ -126,6 +138,38 @@ Partial Class Set_ReceiptKey_Form
         '
         resources.ApplyResources(Me.ContactText, "ContactText")
         Me.ContactText.Name = "ContactText"
+        '
+        'Label4
+        '
+        resources.ApplyResources(Me.Label4, "Label4")
+        Me.Label4.Name = "Label4"
+        '
+        'ReturnDate
+        '
+        resources.ApplyResources(Me.ReturnDate, "ReturnDate")
+        Me.ReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.ReturnDate.Name = "ReturnDate"
+        '
+        'ReturnText
+        '
+        resources.ApplyResources(Me.ReturnText, "ReturnText")
+        Me.ReturnText.Name = "ReturnText"
+        '
+        'Label5
+        '
+        resources.ApplyResources(Me.Label5, "Label5")
+        Me.Label5.Name = "Label5"
+        '
+        'ReceiptDate
+        '
+        resources.ApplyResources(Me.ReceiptDate, "ReceiptDate")
+        Me.ReceiptDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.ReceiptDate.Name = "ReceiptDate"
+        '
+        'Label7
+        '
+        resources.ApplyResources(Me.Label7, "Label7")
+        Me.Label7.Name = "Label7"
         '
         'TableLayoutPanel3
         '
@@ -286,8 +330,6 @@ Partial Class Set_ReceiptKey_Form
     Friend WithEvents Label6 As Label
     Friend WithEvents InsertDate As DateTimePicker
     Friend WithEvents ReceiptOrderText As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents StatusText As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents ContactText As TextBox
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
@@ -307,4 +349,12 @@ Partial Class Set_ReceiptKey_Form
     Friend WithEvents FileUploadBtn As Button
     Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
     Friend WithEvents ImageList1 As ImageList
+    Friend WithEvents Label16 As Label
+    Friend WithEvents StatusText As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ReturnDate As DateTimePicker
+    Friend WithEvents ReturnText As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents ReceiptDate As DateTimePicker
+    Friend WithEvents Label7 As Label
 End Class
