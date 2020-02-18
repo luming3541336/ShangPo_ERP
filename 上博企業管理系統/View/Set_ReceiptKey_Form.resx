@@ -604,13 +604,85 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="TableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label6" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="InsertDate" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="ReceiptOrderText" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label16" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="StatusText" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Label2" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="PlaceText" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="Label3" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ContactText" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label4" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="ReturnDate" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="ReturnText" Row="1" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="Label5" Row="1" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="ReceiptDate" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label7" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="TableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <metadata name="ReceiptKeyID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ReceiptKeyID.HeaderText" xml:space="preserve">
+    <value>ReceiptKeyID</value>
+  </data>
+  <data name="ReceiptKeyID.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="Room.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Room.HeaderText" xml:space="preserve">
+    <value>棟別</value>
+  </data>
+  <metadata name="Item.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Item.HeaderText" xml:space="preserve">
+    <value>項目</value>
+  </data>
+  <metadata name="Location.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Location.HeaderText" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <metadata name="ReceiptCount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ReceiptCount.HeaderText" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <metadata name="ReceiptRemark.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ReceiptRemark.HeaderText" xml:space="preserve">
+    <value>備註</value>
+  </data>
+  <metadata name="ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <data name="ContextMenuStrip1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微軟正黑體, 14.25pt</value>
+  </data>
+  <data name="複製ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 28</value>
+  </data>
+  <data name="複製ToolStripMenuItem.Text" xml:space="preserve">
+    <value>複製</value>
+  </data>
+  <data name="ContextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 32</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStrip1.Name" xml:space="preserve">
+    <value>ContextMenuStrip1</value>
+  </data>
+  <data name="&gt;&gt;ContextMenuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ReceiptKeyDGV.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ReceiptKeyDGV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="ReceiptKeyDGV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1144, 502</value>
+  </data>
+  <data name="ReceiptKeyDGV.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;ReceiptKeyDGV.Name" xml:space="preserve">
     <value>ReceiptKeyDGV</value>
@@ -652,73 +724,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TableLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="TableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ReceiptKeyDGV" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0" /&gt;&lt;Rows Styles="Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <metadata name="ReceiptKeyID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="ReceiptKeyID.HeaderText" xml:space="preserve">
-    <value>ReceiptKeyID</value>
-  </data>
-  <data name="ReceiptKeyID.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <metadata name="Room.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Room.HeaderText" xml:space="preserve">
-    <value>棟別</value>
-  </data>
-  <metadata name="Item.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Item.HeaderText" xml:space="preserve">
-    <value>項目</value>
-  </data>
-  <metadata name="Location.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Location.HeaderText" xml:space="preserve">
-    <value>位置</value>
-  </data>
-  <metadata name="ReceiptCount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="ReceiptCount.HeaderText" xml:space="preserve">
-    <value>數量</value>
-  </data>
-  <metadata name="ReceiptRemark.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="ReceiptRemark.HeaderText" xml:space="preserve">
-    <value>備註</value>
-  </data>
-  <data name="ReceiptKeyDGV.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ReceiptKeyDGV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="ReceiptKeyDGV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1144, 502</value>
-  </data>
-  <data name="ReceiptKeyDGV.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ReceiptKeyDGV.Name" xml:space="preserve">
-    <value>ReceiptKeyDGV</value>
-  </data>
-  <data name="&gt;&gt;ReceiptKeyDGV.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ReceiptKeyDGV.Parent" xml:space="preserve">
-    <value>TableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;ReceiptKeyDGV.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="FlowLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -743,7 +752,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAE
-        DAAAAk1TRnQBSQFMAgEBBQEAAfwBAAH8AQABFAEAARQBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        DAAAAk1TRnQBSQFMAgEBBQEAAQQBAQEEAQEBFAEAARQBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABUAMAASgDAAEBAQABCAUAAYABDBgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -969,70 +978,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;FlowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="RepairResultDGV.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="RepairResultDGV.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;FileUploadBtn.Name" xml:space="preserve">
-    <value>FileUploadBtn</value>
-  </data>
-  <data name="&gt;&gt;FileUploadBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FileUploadBtn.Parent" xml:space="preserve">
-    <value>RepairResultDGV</value>
-  </data>
-  <data name="&gt;&gt;FileUploadBtn.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;FlowLayoutPanel3.Name" xml:space="preserve">
-    <value>FlowLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;FlowLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FlowLayoutPanel3.Parent" xml:space="preserve">
-    <value>RepairResultDGV</value>
-  </data>
-  <data name="&gt;&gt;FlowLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="RepairResultDGV.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="RepairResultDGV.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 528</value>
-  </data>
-  <data name="RepairResultDGV.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="RepairResultDGV.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="RepairResultDGV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1145, 55</value>
-  </data>
-  <data name="RepairResultDGV.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;RepairResultDGV.Name" xml:space="preserve">
-    <value>RepairResultDGV</value>
-  </data>
-  <data name="&gt;&gt;RepairResultDGV.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RepairResultDGV.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;RepairResultDGV.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="RepairResultDGV.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="FileUploadBtn" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="FlowLayoutPanel3" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="FileUploadBtn.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1100,6 +1052,39 @@
   <data name="&gt;&gt;FlowLayoutPanel3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="RepairResultDGV.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="RepairResultDGV.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 528</value>
+  </data>
+  <data name="RepairResultDGV.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="RepairResultDGV.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="RepairResultDGV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1145, 55</value>
+  </data>
+  <data name="RepairResultDGV.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;RepairResultDGV.Name" xml:space="preserve">
+    <value>RepairResultDGV</value>
+  </data>
+  <data name="&gt;&gt;RepairResultDGV.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RepairResultDGV.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RepairResultDGV.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="RepairResultDGV.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="FileUploadBtn" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="FlowLayoutPanel3" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1162,6 +1147,12 @@
   </data>
   <data name="&gt;&gt;ImageList1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;複製ToolStripMenuItem.Name" xml:space="preserve">
+    <value>複製ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;複製ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Set_ReceiptKey_Form</value>

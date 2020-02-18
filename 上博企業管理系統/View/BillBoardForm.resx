@@ -119,7 +119,9 @@
   </resheader>
   <data name="BoardText.Text" xml:space="preserve">
     <value>更新公告:
-Ver.2.0.1.5 Update 2020/02/13
+Ver.2.0.1.7 Update 2020/02/18
+    新增鑰匙單複製功能，現在在需要的欄位點選右鍵即可使用此功能
+Ver.2.0.1.6 Update 2020/02/13
     更新鑰匙單:新增交回人員及時間，結案時間更改為手動輸入
 Ver.2.0.1.3 Update 2020/02/04
     修正進出貨管理權限問題

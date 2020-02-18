@@ -190,4 +190,13 @@ Public Class Set_ReceiptKey_Form
     Private Sub ReturnDate_ValueChanged(sender As Object, e As EventArgs) Handles ReturnDate.ValueChanged, ReceiptDate.ValueChanged
         CType(sender, DateTimePicker).Format = DateTimePickerFormat.Short
     End Sub
+
+    Private Sub 複製ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 複製ToolStripMenuItem.Click
+        If Not IsNothing(ReceiptKeyDGV.CurrentRow) Then
+            Dim index As Integer = ReceiptKeyDGV.CurrentRow.Index
+            ReceiptKeyDGV.Rows.Add(Nothing, ReceiptKeyDGV.Rows(index).Cells("Room").Value, ReceiptKeyDGV.Rows(index).Cells("Item").Value, ReceiptKeyDGV.Rows(index).Cells("Location").Value, ReceiptKeyDGV.Rows(index).Cells("ReceiptCount").Value, ReceiptKeyDGV.Rows(index).Cells("ReceiptRemark").Value)
+        Else
+            MsgBox("請選擇要複製的欄位")
+        End If
+    End Sub
 End Class
