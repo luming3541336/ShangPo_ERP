@@ -92,7 +92,10 @@ Public Class Main_Form
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        ConfirmBGW.RunWorkerAsync()
+        If ConfirmBGW.IsBusy <> True Then
+            ConfirmBGW.RunWorkerAsync()
+        End If
+
     End Sub
 
     Private Sub NameLabel_Click(sender As Object, e As EventArgs) Handles NameLabel.Click
