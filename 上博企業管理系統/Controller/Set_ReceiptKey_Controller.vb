@@ -84,7 +84,7 @@ Public Class Set_ReceiptKey_Controller
     Public Function Insert_ReceiptData(ByVal data As ReceiptData) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = INSERT_RECEIPTDATA_SQL
-        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.CaseID).Replace("@place", data.Place).Replace("@contact", data.Contact)
+        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.CaseID).Replace("@place", data.Place).Replace("@contact", data.Contact).Replace("@returnDate", data.ReturnDate).Replace("@returnUser", data.ReturnUser)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         Dim id As Integer = Nothing
         If dataReader.HasRows Then

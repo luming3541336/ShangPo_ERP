@@ -42,8 +42,6 @@ Public Class Set_ReceiptKey_Form
                 RepairConfirmBtn.Visible = False
             Else
                 RepairConfirmBtn.Visible = True
-                ReturnDate.Enabled = True
-                ReturnText.Enabled = True
                 ReceiptDate.Enabled = True
             End If
             PrintBtn.Visible = True
@@ -75,7 +73,7 @@ Public Class Set_ReceiptKey_Form
     End Sub
 
     Private Sub SaveBtn_Click(sender As Object, e As EventArgs) Handles SaveBtn.Click
-        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = PlaceText.Text, .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 0, .Status = 1, .CaseID = intCaseID, .ReceiptDate = Nothing, .ReturnDate = Nothing, .ReturnUser = Nothing}
+        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = PlaceText.Text, .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 0, .Status = 1, .CaseID = intCaseID, .ReceiptDate = Nothing, .ReturnDate = If(ReturnDate.Text <> " ", Format(ReturnDate.Value, "yyyy/MM/dd"), Nothing), .ReturnUser = ReturnText.Text}
         If intReceiptID = Nothing Then
             Dim intReceiveID As Integer = controller.Insert_ReceiptData(data)
             If intReceiveID <> Nothing Then
@@ -193,10 +191,31 @@ Public Class Set_ReceiptKey_Form
 
     Private Sub 複製ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 複製ToolStripMenuItem.Click
         If Not IsNothing(ReceiptKeyDGV.CurrentRow) Then
-            Dim index As Integer = ReceiptKeyDGV.CurrentRow.Index
-            ReceiptKeyDGV.Rows.Add(Nothing, ReceiptKeyDGV.Rows(index).Cells("Room").Value, ReceiptKeyDGV.Rows(index).Cells("Item").Value, ReceiptKeyDGV.Rows(index).Cells("Location").Value, ReceiptKeyDGV.Rows(index).Cells("ReceiptCount").Value, ReceiptKeyDGV.Rows(index).Cells("ReceiptRemark").Value)
+            If ReceiptKeyDGV.SelectedCells.Count = 6 Then '當整攔複製時執行
+                Dim index As Integer = ReceiptKeyDGV.CurrentRow.Index
+                ReceiptKeyDGV.Rows.Add(Nothing, ReceiptKeyDGV.Rows(index).Cells("Room").Value, ReceiptKeyDGV.Rows(index).Cells("Item").Value, ReceiptKeyDGV.Rows(index).Cells("Location").Value, ReceiptKeyDGV.Rows(index).Cells("ReceiptCount").Value, ReceiptKeyDGV.Rows(index).Cells("ReceiptRemark").Value)
+            ElseIf ReceiptKeyDGV.SelectedCells.Count = 1 Then
+                Clipboard.SetText(ReceiptKeyDGV.CurrentCell.Value)
+                貼上ToolStripMenuItem.Enabled = True
+            End If
         Else
             MsgBox("請選擇要複製的欄位")
+        End If
+    End Sub
+
+    Private Sub 貼上ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 貼上ToolStripMenuItem.Click
+        If Not IsNothing(ReceiptKeyDGV.CurrentRow) Then
+            ReceiptKeyDGV.CurrentCell.Value = Clipboard.GetText()
+        Else
+            MsgBox("請選擇要貼上的欄位")
+        End If
+    End Sub
+
+    Private Sub ReceiptKeyDGV_KeyDown(sender As Object, e As KeyEventArgs) Handles ReceiptKeyDGV.KeyDown
+        If e.Modifiers = Keys.Control AndAlso e.KeyCode = Keys.C Then
+            複製ToolStripMenuItem_Click(sender, e)
+        ElseIf e.Modifiers = Keys.Control AndAlso e.KeyCode = Keys.V Then
+            貼上ToolStripMenuItem_Click(sender, e)
         End If
     End Sub
 End Class

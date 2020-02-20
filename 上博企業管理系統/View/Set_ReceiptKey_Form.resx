@@ -438,9 +438,6 @@
   <data name="ReturnDate.CustomFormat" xml:space="preserve">
     <value> </value>
   </data>
-  <data name="ReturnDate.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="ReturnDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>348, 42</value>
   </data>
@@ -461,9 +458,6 @@
   </data>
   <data name="&gt;&gt;ReturnDate.ZOrder" xml:space="preserve">
     <value>11</value>
-  </data>
-  <data name="ReturnText.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="ReturnText.Location" type="System.Drawing.Point, System.Drawing">
     <value>601, 42</value>
@@ -663,8 +657,17 @@
   <data name="複製ToolStripMenuItem.Text" xml:space="preserve">
     <value>複製</value>
   </data>
+  <data name="貼上ToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="貼上ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 28</value>
+  </data>
+  <data name="貼上ToolStripMenuItem.Text" xml:space="preserve">
+    <value>貼上</value>
+  </data>
   <data name="ContextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 32</value>
+    <value>119, 60</value>
   </data>
   <data name="&gt;&gt;ContextMenuStrip1.Name" xml:space="preserve">
     <value>ContextMenuStrip1</value>
@@ -752,7 +755,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAE
-        DAAAAk1TRnQBSQFMAgEBBQEAAQQBAQEEAQEBFAEAARQBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        DAAAAk1TRnQBSQFMAgEBBQEAARwBAQEcAQEBFAEAARQBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABUAMAASgDAAEBAQABCAUAAYABDBgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -1142,17 +1145,23 @@
   <data name="&gt;&gt;ReceiptRemark.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ImageList1.Name" xml:space="preserve">
-    <value>ImageList1</value>
-  </data>
-  <data name="&gt;&gt;ImageList1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;複製ToolStripMenuItem.Name" xml:space="preserve">
     <value>複製ToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;複製ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;貼上ToolStripMenuItem.Name" xml:space="preserve">
+    <value>貼上ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;貼上ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImageList1.Name" xml:space="preserve">
+    <value>ImageList1</value>
+  </data>
+  <data name="&gt;&gt;ImageList1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Set_ReceiptKey_Form</value>

@@ -51,6 +51,9 @@ Partial Class Set_ReceiptKey_Form
         Me.Location = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReceiptCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReceiptRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.複製ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.貼上ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.SaveBtn = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
@@ -60,14 +63,12 @@ Partial Class Set_ReceiptKey_Form
         Me.RepairResultDGV = New System.Windows.Forms.TableLayoutPanel()
         Me.FileUploadBtn = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.複製ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.ReceiptKeyDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
         Me.RepairResultDGV.SuspendLayout()
-        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -151,6 +152,7 @@ Partial Class Set_ReceiptKey_Form
         '
         resources.ApplyResources(Me.ReturnDate, "ReturnDate")
         Me.ReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.ReturnDate.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.ReturnDate.Name = "ReturnDate"
         '
         'ReturnText
@@ -167,6 +169,7 @@ Partial Class Set_ReceiptKey_Form
         '
         resources.ApplyResources(Me.ReceiptDate, "ReceiptDate")
         Me.ReceiptDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.ReceiptDate.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.ReceiptDate.Name = "ReceiptDate"
         '
         'Label7
@@ -238,6 +241,22 @@ Partial Class Set_ReceiptKey_Form
         resources.ApplyResources(Me.ReceiptRemark, "ReceiptRemark")
         Me.ReceiptRemark.Name = "ReceiptRemark"
         '
+        'ContextMenuStrip1
+        '
+        resources.ApplyResources(Me.ContextMenuStrip1, "ContextMenuStrip1")
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.複製ToolStripMenuItem, Me.貼上ToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        '
+        '複製ToolStripMenuItem
+        '
+        Me.複製ToolStripMenuItem.Name = "複製ToolStripMenuItem"
+        resources.ApplyResources(Me.複製ToolStripMenuItem, "複製ToolStripMenuItem")
+        '
+        '貼上ToolStripMenuItem
+        '
+        resources.ApplyResources(Me.貼上ToolStripMenuItem, "貼上ToolStripMenuItem")
+        Me.貼上ToolStripMenuItem.Name = "貼上ToolStripMenuItem"
+        '
         'FlowLayoutPanel2
         '
         resources.ApplyResources(Me.FlowLayoutPanel2, "FlowLayoutPanel2")
@@ -303,17 +322,6 @@ Partial Class Set_ReceiptKey_Form
         resources.ApplyResources(Me.FlowLayoutPanel3, "FlowLayoutPanel3")
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
         '
-        'ContextMenuStrip1
-        '
-        resources.ApplyResources(Me.ContextMenuStrip1, "ContextMenuStrip1")
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.複製ToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        '
-        '複製ToolStripMenuItem
-        '
-        Me.複製ToolStripMenuItem.Name = "複製ToolStripMenuItem"
-        resources.ApplyResources(Me.複製ToolStripMenuItem, "複製ToolStripMenuItem")
-        '
         'Set_ReceiptKey_Form
         '
         resources.ApplyResources(Me, "$this")
@@ -329,11 +337,11 @@ Partial Class Set_ReceiptKey_Form
         Me.TableLayoutPanel1.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         CType(Me.ReceiptKeyDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.FlowLayoutPanel2.ResumeLayout(False)
         Me.FlowLayoutPanel2.PerformLayout()
         Me.RepairResultDGV.ResumeLayout(False)
         Me.RepairResultDGV.PerformLayout()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -375,4 +383,5 @@ Partial Class Set_ReceiptKey_Form
     Friend WithEvents Label7 As Label
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents 複製ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents 貼上ToolStripMenuItem As ToolStripMenuItem
 End Class

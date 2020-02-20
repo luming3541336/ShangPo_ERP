@@ -92,7 +92,7 @@ Public Structure ReceiptData
     Dim ReceiptDate As Date
     Dim InsertDate As String
     Dim Status As Integer
-    Dim ReturnDate As Date
+    Dim ReturnDate As String
     Dim ReturnUser As String
 End Structure
 Public Structure ReceiptFile

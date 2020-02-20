@@ -119,6 +119,11 @@
   </resheader>
   <data name="BoardText.Text" xml:space="preserve">
     <value>更新公告:
+Ver.2.0.1.9 Update 2020/02/20
+    鑰匙單複製功能更新: 
+             1.現在可以複製整行資料或者可自行選取單攔資料進行複製
+             2. 提供快速鍵複製&lt;Ctrl+C&gt;及貼上&lt;Ctrl+V&gt;功能
+    鑰匙單交回人員及日期現在已不受任何限制，隨時可以進行設定及修改
 Ver.2.0.1.7 Update 2020/02/18
     新增鑰匙單複製功能，現在在需要的欄位點選右鍵即可使用此功能
 Ver.2.0.1.6 Update 2020/02/13
