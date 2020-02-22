@@ -84,7 +84,7 @@ Public Class Set_ReceiptKey_Controller
     Public Function Insert_ReceiptData(ByVal data As ReceiptData) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = INSERT_RECEIPTDATA_SQL
-        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.CaseID).Replace("@place", data.Place).Replace("@contact", data.Contact).Replace("@returnDate", data.ReturnDate).Replace("@returnUser", data.ReturnUser)
+        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.CaseID).Replace("@place", data.Place).Replace("@contact", data.Contact).Replace("@returnDate", If(data.ReceiptDate = Nothing, "null", "'" & data.ReturnDate & "'")).Replace("@returnUser", data.ReturnUser)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         Dim id As Integer = Nothing
         If dataReader.HasRows Then
@@ -96,7 +96,7 @@ Public Class Set_ReceiptKey_Controller
     Public Function Update_ReceiptData(ByVal data As ReceiptData) As Integer
         Dim conDB As Connection = New Connection
         Dim strSQL As String = UPDATE_RECEIPTDATA_SQL
-        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@date", If(data.ReceiptDate = Nothing, "null", "'" & data.ReceiptDate & "'")).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.ReceiptID).Replace("@place", data.Place).Replace("@contact", data.Contact).Replace("@returnDate", If(data.ReceiptDate = Nothing, "null", "'" & data.ReturnDate & "'")).Replace("@returnUser", data.ReturnUser)
+        strSQL = strSQL.Replace("@order", data.ReceiptOrder).Replace("@type", data.ReceiptType).Replace("@date", If(data.ReceiptDate = Nothing, "null", "'" & data.ReceiptDate & "'")).Replace("@insertDate", data.InsertDate).Replace("@status", data.Status).Replace("@id", data.ReceiptID).Replace("@place", data.Place).Replace("@contact", data.Contact).Replace("@returnDate", If(data.ReturnDate = Nothing, "null", "'" & data.ReturnDate & "'")).Replace("@returnUser", data.ReturnUser)
         Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
         Return dataReader
     End Function

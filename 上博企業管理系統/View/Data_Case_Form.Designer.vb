@@ -24,17 +24,23 @@ Partial Class Data_Case_Form
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Data_Case_Form))
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.SearchButton = New System.Windows.Forms.Button()
@@ -68,16 +74,6 @@ Partial Class Data_Case_Form
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.PurchasePartDGV = New System.Windows.Forms.DataGridView()
-        Me.PurchasePID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartSpecification = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartWidth = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartLength = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartCBM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.PurchasePart2DGV = New System.Windows.Forms.DataGridView()
         Me.purchaseP2ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -115,29 +111,8 @@ Partial Class Data_Case_Form
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.ShipmentPartDGV = New System.Windows.Forms.DataGridView()
-        Me.ShipmentPID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartSpecification = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartWidth = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartLength = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartCBM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartPIC = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.ShipmentPart2DGV = New System.Windows.Forms.DataGridView()
-        Me.ShipmentP2ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Time = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2SupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Specification = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Width = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Length = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Count = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2PIC = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Remark = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
@@ -182,6 +157,37 @@ Partial Class Data_Case_Form
         Me.LoadingDetailBackground = New System.ComponentModel.BackgroundWorker()
         Me.PrintShippingRecordBackground = New System.ComponentModel.BackgroundWorker()
         Me.PrintWorkProgressWork = New System.ComponentModel.BackgroundWorker()
+        Me.ShipmentP2ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Time = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2SupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Specification = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Width = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Length = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Count = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2PIC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Remark = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartSpecification = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartWidth = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartLength = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartCBM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartPIC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartSpecification = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartWidth = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartLength = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartCBM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.PrintMenu.SuspendLayout()
@@ -433,14 +439,14 @@ Partial Class Data_Case_Form
         Me.CaseDGV.AllowUserToDeleteRows = False
         Me.CaseDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.CaseDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CaseDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CaseDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.CaseDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.CaseDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CaseID, Me.CaseNo, Me.Place, Me.SaleName, Me.InsertTime, Me.UpdateTime, Me.Success})
         Me.CaseDGV.Dock = System.Windows.Forms.DockStyle.Fill
@@ -449,12 +455,12 @@ Partial Class Data_Case_Form
         Me.CaseDGV.MultiSelect = False
         Me.CaseDGV.Name = "CaseDGV"
         Me.CaseDGV.ReadOnly = True
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White
-        Me.CaseDGV.RowsDefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        Me.CaseDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.CaseDGV.RowTemplate.Height = 38
         Me.CaseDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.CaseDGV.Size = New System.Drawing.Size(956, 257)
@@ -650,102 +656,39 @@ Partial Class Data_Case_Form
         Me.PurchasePartDGV.AllowUserToDeleteRows = False
         Me.PurchasePartDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.PurchasePartDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PurchasePartDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PurchasePartDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.PurchasePartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PurchasePartDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PurchasePID, Me.PurchasePartTime, Me.PurchasePartSupplierName, Me.PurchasePartName, Me.PurchasePartSpecification, Me.PurchasePartWidth, Me.PurchasePartLength, Me.PurchasePartCBM, Me.PurchasePartCount, Me.PurchasePartRemark})
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.PurchasePartDGV.DefaultCellStyle = DataGridViewCellStyle5
         Me.PurchasePartDGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PurchasePartDGV.Location = New System.Drawing.Point(3, 3)
         Me.PurchasePartDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.PurchasePartDGV.Name = "PurchasePartDGV"
         Me.PurchasePartDGV.ReadOnly = True
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White
-        Me.PurchasePartDGV.RowsDefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.PurchasePartDGV.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.PurchasePartDGV.RowTemplate.Height = 38
         Me.PurchasePartDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.PurchasePartDGV.Size = New System.Drawing.Size(924, 187)
         Me.PurchasePartDGV.TabIndex = 2
-        '
-        'PurchasePID
-        '
-        Me.PurchasePID.HeaderText = "purchasePID"
-        Me.PurchasePID.Name = "PurchasePID"
-        Me.PurchasePID.ReadOnly = True
-        Me.PurchasePID.Visible = False
-        Me.PurchasePID.Width = 147
-        '
-        'PurchasePartTime
-        '
-        Me.PurchasePartTime.HeaderText = "進貨日期"
-        Me.PurchasePartTime.Name = "PurchasePartTime"
-        Me.PurchasePartTime.ReadOnly = True
-        Me.PurchasePartTime.Width = 111
-        '
-        'PurchasePartSupplierName
-        '
-        Me.PurchasePartSupplierName.HeaderText = "供應商"
-        Me.PurchasePartSupplierName.Name = "PurchasePartSupplierName"
-        Me.PurchasePartSupplierName.ReadOnly = True
-        Me.PurchasePartSupplierName.Width = 92
-        '
-        'PurchasePartName
-        '
-        Me.PurchasePartName.HeaderText = "名稱"
-        Me.PurchasePartName.Name = "PurchasePartName"
-        Me.PurchasePartName.ReadOnly = True
-        Me.PurchasePartName.Width = 73
-        '
-        'PurchasePartSpecification
-        '
-        Me.PurchasePartSpecification.HeaderText = "規格"
-        Me.PurchasePartSpecification.Name = "PurchasePartSpecification"
-        Me.PurchasePartSpecification.ReadOnly = True
-        Me.PurchasePartSpecification.Width = 73
-        '
-        'PurchasePartWidth
-        '
-        Me.PurchasePartWidth.HeaderText = "寬"
-        Me.PurchasePartWidth.Name = "PurchasePartWidth"
-        Me.PurchasePartWidth.ReadOnly = True
-        Me.PurchasePartWidth.Width = 54
-        '
-        'PurchasePartLength
-        '
-        Me.PurchasePartLength.HeaderText = "高"
-        Me.PurchasePartLength.Name = "PurchasePartLength"
-        Me.PurchasePartLength.ReadOnly = True
-        Me.PurchasePartLength.Width = 54
-        '
-        'PurchasePartCBM
-        '
-        Me.PurchasePartCBM.HeaderText = "材積"
-        Me.PurchasePartCBM.Name = "PurchasePartCBM"
-        Me.PurchasePartCBM.ReadOnly = True
-        Me.PurchasePartCBM.Width = 73
-        '
-        'PurchasePartCount
-        '
-        Me.PurchasePartCount.HeaderText = "數量"
-        Me.PurchasePartCount.Name = "PurchasePartCount"
-        Me.PurchasePartCount.ReadOnly = True
-        Me.PurchasePartCount.Width = 73
-        '
-        'PurchasePartRemark
-        '
-        Me.PurchasePartRemark.HeaderText = "備註"
-        Me.PurchasePartRemark.Name = "PurchasePartRemark"
-        Me.PurchasePartRemark.ReadOnly = True
-        Me.PurchasePartRemark.Width = 73
         '
         'TabPage5
         '
@@ -771,11 +714,11 @@ Partial Class Data_Case_Form
         Me.PurchasePart2DGV.Margin = New System.Windows.Forms.Padding(2)
         Me.PurchasePart2DGV.Name = "PurchasePart2DGV"
         Me.PurchasePart2DGV.ReadOnly = True
-        DataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle27.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White
-        Me.PurchasePart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
+        Me.PurchasePart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle7
         Me.PurchasePart2DGV.RowTemplate.Height = 38
         Me.PurchasePart2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.PurchasePart2DGV.Size = New System.Drawing.Size(924, 187)
@@ -951,12 +894,12 @@ Partial Class Data_Case_Form
         Me.WorkProgressDGV.MultiSelect = False
         Me.WorkProgressDGV.Name = "WorkProgressDGV"
         Me.WorkProgressDGV.ReadOnly = True
-        DataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle28.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.WorkProgressDGV.RowsDefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.WorkProgressDGV.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.WorkProgressDGV.RowTemplate.Height = 38
         Me.WorkProgressDGV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.WorkProgressDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -1149,6 +1092,14 @@ Partial Class Data_Case_Form
         Me.ShipmentPartDGV.AllowUserToDeleteRows = False
         Me.ShipmentPartDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.ShipmentPartDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ShipmentPartDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.ShipmentPartDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ShipmentPartDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShipmentPID, Me.ShipmentPartTime, Me.ShipmentPartSupplierName, Me.ShipmentPartName, Me.ShipmentPartSpecification, Me.ShipmentPartWidth, Me.ShipmentPartLength, Me.ShipmentPartCBM, Me.ShipmentPartCount, Me.ShipmentPartPIC, Me.ShipmentPartRemark})
         Me.ShipmentPartDGV.Dock = System.Windows.Forms.DockStyle.Fill
@@ -1156,93 +1107,16 @@ Partial Class Data_Case_Form
         Me.ShipmentPartDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.ShipmentPartDGV.Name = "ShipmentPartDGV"
         Me.ShipmentPartDGV.ReadOnly = True
-        DataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White
-        Me.ShipmentPartDGV.RowsDefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
+        Me.ShipmentPartDGV.RowsDefaultCellStyle = DataGridViewCellStyle11
         Me.ShipmentPartDGV.RowTemplate.Height = 38
         Me.ShipmentPartDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ShipmentPartDGV.Size = New System.Drawing.Size(924, 187)
         Me.ShipmentPartDGV.TabIndex = 2
-        '
-        'ShipmentPID
-        '
-        Me.ShipmentPID.HeaderText = "salePID"
-        Me.ShipmentPID.Name = "ShipmentPID"
-        Me.ShipmentPID.ReadOnly = True
-        Me.ShipmentPID.Visible = False
-        Me.ShipmentPID.Width = 65
-        '
-        'ShipmentPartTime
-        '
-        Me.ShipmentPartTime.HeaderText = "出貨日期"
-        Me.ShipmentPartTime.Name = "ShipmentPartTime"
-        Me.ShipmentPartTime.ReadOnly = True
-        Me.ShipmentPartTime.Width = 111
-        '
-        'ShipmentPartSupplierName
-        '
-        Me.ShipmentPartSupplierName.HeaderText = "供應商"
-        Me.ShipmentPartSupplierName.Name = "ShipmentPartSupplierName"
-        Me.ShipmentPartSupplierName.ReadOnly = True
-        Me.ShipmentPartSupplierName.Width = 92
-        '
-        'ShipmentPartName
-        '
-        Me.ShipmentPartName.HeaderText = "名稱"
-        Me.ShipmentPartName.Name = "ShipmentPartName"
-        Me.ShipmentPartName.ReadOnly = True
-        Me.ShipmentPartName.Width = 73
-        '
-        'ShipmentPartSpecification
-        '
-        Me.ShipmentPartSpecification.HeaderText = "規格"
-        Me.ShipmentPartSpecification.Name = "ShipmentPartSpecification"
-        Me.ShipmentPartSpecification.ReadOnly = True
-        Me.ShipmentPartSpecification.Width = 73
-        '
-        'ShipmentPartWidth
-        '
-        Me.ShipmentPartWidth.HeaderText = "寬"
-        Me.ShipmentPartWidth.Name = "ShipmentPartWidth"
-        Me.ShipmentPartWidth.ReadOnly = True
-        Me.ShipmentPartWidth.Width = 54
-        '
-        'ShipmentPartLength
-        '
-        Me.ShipmentPartLength.HeaderText = "長"
-        Me.ShipmentPartLength.Name = "ShipmentPartLength"
-        Me.ShipmentPartLength.ReadOnly = True
-        Me.ShipmentPartLength.Width = 54
-        '
-        'ShipmentPartCBM
-        '
-        Me.ShipmentPartCBM.HeaderText = "材積"
-        Me.ShipmentPartCBM.Name = "ShipmentPartCBM"
-        Me.ShipmentPartCBM.ReadOnly = True
-        Me.ShipmentPartCBM.Width = 73
-        '
-        'ShipmentPartCount
-        '
-        Me.ShipmentPartCount.HeaderText = "數量"
-        Me.ShipmentPartCount.Name = "ShipmentPartCount"
-        Me.ShipmentPartCount.ReadOnly = True
-        Me.ShipmentPartCount.Width = 73
-        '
-        'ShipmentPartPIC
-        '
-        Me.ShipmentPartPIC.HeaderText = "進場人員"
-        Me.ShipmentPartPIC.Name = "ShipmentPartPIC"
-        Me.ShipmentPartPIC.ReadOnly = True
-        Me.ShipmentPartPIC.Width = 111
-        '
-        'ShipmentPartRemark
-        '
-        Me.ShipmentPartRemark.HeaderText = "備註"
-        Me.ShipmentPartRemark.Name = "ShipmentPartRemark"
-        Me.ShipmentPartRemark.ReadOnly = True
-        Me.ShipmentPartRemark.Width = 73
         '
         'TabPage7
         '
@@ -1263,91 +1137,28 @@ Partial Class Data_Case_Form
         Me.ShipmentPart2DGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ShipmentPart2DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ShipmentPart2DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShipmentP2ID, Me.ShipmentPart2Time, Me.ShipmentPart2SupplierName, Me.ShipmentPart2Name, Me.ShipmentPart2Specification, Me.ShipmentPart2Width, Me.ShipmentPart2Length, Me.ShipmentPart2Count, Me.ShipmentPart2PIC, Me.ShipmentPart2Remark})
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("微軟正黑體", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ShipmentPart2DGV.DefaultCellStyle = DataGridViewCellStyle13
         Me.ShipmentPart2DGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ShipmentPart2DGV.Location = New System.Drawing.Point(3, 3)
         Me.ShipmentPart2DGV.Margin = New System.Windows.Forms.Padding(2)
         Me.ShipmentPart2DGV.Name = "ShipmentPart2DGV"
         Me.ShipmentPart2DGV.ReadOnly = True
-        DataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White
-        Me.ShipmentPart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White
+        Me.ShipmentPart2DGV.RowsDefaultCellStyle = DataGridViewCellStyle14
         Me.ShipmentPart2DGV.RowTemplate.Height = 38
         Me.ShipmentPart2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ShipmentPart2DGV.Size = New System.Drawing.Size(924, 187)
         Me.ShipmentPart2DGV.TabIndex = 3
-        '
-        'ShipmentP2ID
-        '
-        Me.ShipmentP2ID.HeaderText = "saleProdPartData2"
-        Me.ShipmentP2ID.Name = "ShipmentP2ID"
-        Me.ShipmentP2ID.ReadOnly = True
-        Me.ShipmentP2ID.Visible = False
-        Me.ShipmentP2ID.Width = 114
-        '
-        'ShipmentPart2Time
-        '
-        Me.ShipmentPart2Time.HeaderText = "出貨日期"
-        Me.ShipmentPart2Time.Name = "ShipmentPart2Time"
-        Me.ShipmentPart2Time.ReadOnly = True
-        Me.ShipmentPart2Time.Width = 111
-        '
-        'ShipmentPart2SupplierName
-        '
-        Me.ShipmentPart2SupplierName.HeaderText = "供應商"
-        Me.ShipmentPart2SupplierName.Name = "ShipmentPart2SupplierName"
-        Me.ShipmentPart2SupplierName.ReadOnly = True
-        Me.ShipmentPart2SupplierName.Width = 92
-        '
-        'ShipmentPart2Name
-        '
-        Me.ShipmentPart2Name.HeaderText = "名稱"
-        Me.ShipmentPart2Name.Name = "ShipmentPart2Name"
-        Me.ShipmentPart2Name.ReadOnly = True
-        Me.ShipmentPart2Name.Width = 73
-        '
-        'ShipmentPart2Specification
-        '
-        Me.ShipmentPart2Specification.HeaderText = "規格"
-        Me.ShipmentPart2Specification.Name = "ShipmentPart2Specification"
-        Me.ShipmentPart2Specification.ReadOnly = True
-        Me.ShipmentPart2Specification.Width = 73
-        '
-        'ShipmentPart2Width
-        '
-        Me.ShipmentPart2Width.HeaderText = "寬"
-        Me.ShipmentPart2Width.Name = "ShipmentPart2Width"
-        Me.ShipmentPart2Width.ReadOnly = True
-        Me.ShipmentPart2Width.Width = 54
-        '
-        'ShipmentPart2Length
-        '
-        Me.ShipmentPart2Length.HeaderText = "高"
-        Me.ShipmentPart2Length.Name = "ShipmentPart2Length"
-        Me.ShipmentPart2Length.ReadOnly = True
-        Me.ShipmentPart2Length.Width = 54
-        '
-        'ShipmentPart2Count
-        '
-        Me.ShipmentPart2Count.HeaderText = "數量"
-        Me.ShipmentPart2Count.Name = "ShipmentPart2Count"
-        Me.ShipmentPart2Count.ReadOnly = True
-        Me.ShipmentPart2Count.Width = 73
-        '
-        'ShipmentPart2PIC
-        '
-        Me.ShipmentPart2PIC.HeaderText = "進場人員"
-        Me.ShipmentPart2PIC.Name = "ShipmentPart2PIC"
-        Me.ShipmentPart2PIC.ReadOnly = True
-        Me.ShipmentPart2PIC.Width = 111
-        '
-        'ShipmentPart2Remark
-        '
-        Me.ShipmentPart2Remark.HeaderText = "備註"
-        Me.ShipmentPart2Remark.Name = "ShipmentPart2Remark"
-        Me.ShipmentPart2Remark.ReadOnly = True
-        Me.ShipmentPart2Remark.Width = 73
         '
         'TabPage8
         '
@@ -1455,12 +1266,12 @@ Partial Class Data_Case_Form
         Me.DetailDGV.MultiSelect = False
         Me.DetailDGV.Name = "DetailDGV"
         Me.DetailDGV.ReadOnly = True
-        DataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle31.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DetailDGV.RowsDefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DetailDGV.RowsDefaultCellStyle = DataGridViewCellStyle15
         Me.DetailDGV.RowTemplate.Height = 38
         Me.DetailDGV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DetailDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -1541,11 +1352,11 @@ Partial Class Data_Case_Form
         Me.RepairDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.RepairDGV.Name = "RepairDGV"
         Me.RepairDGV.ReadOnly = True
-        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White
-        Me.RepairDGV.RowsDefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White
+        Me.RepairDGV.RowsDefaultCellStyle = DataGridViewCellStyle16
         Me.RepairDGV.RowTemplate.Height = 38
         Me.RepairDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.RepairDGV.Size = New System.Drawing.Size(938, 230)
@@ -1704,11 +1515,11 @@ Partial Class Data_Case_Form
         Me.ReceiptDGV.Margin = New System.Windows.Forms.Padding(2)
         Me.ReceiptDGV.Name = "ReceiptDGV"
         Me.ReceiptDGV.ReadOnly = True
-        DataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle33.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.White
-        Me.ReceiptDGV.RowsDefaultCellStyle = DataGridViewCellStyle33
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White
+        Me.ReceiptDGV.RowsDefaultCellStyle = DataGridViewCellStyle17
         Me.ReceiptDGV.RowTemplate.Height = 38
         Me.ReceiptDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ReceiptDGV.Size = New System.Drawing.Size(938, 230)
@@ -1874,6 +1685,232 @@ Partial Class Data_Case_Form
         '
         Me.PrintWorkProgressWork.WorkerReportsProgress = True
         '
+        'ShipmentP2ID
+        '
+        Me.ShipmentP2ID.HeaderText = "saleProdPartData2"
+        Me.ShipmentP2ID.Name = "ShipmentP2ID"
+        Me.ShipmentP2ID.ReadOnly = True
+        Me.ShipmentP2ID.Visible = False
+        Me.ShipmentP2ID.Width = 199
+        '
+        'ShipmentPart2Time
+        '
+        Me.ShipmentPart2Time.HeaderText = "出貨日期"
+        Me.ShipmentPart2Time.Name = "ShipmentPart2Time"
+        Me.ShipmentPart2Time.ReadOnly = True
+        Me.ShipmentPart2Time.Width = 111
+        '
+        'ShipmentPart2SupplierName
+        '
+        Me.ShipmentPart2SupplierName.HeaderText = "供應商"
+        Me.ShipmentPart2SupplierName.Name = "ShipmentPart2SupplierName"
+        Me.ShipmentPart2SupplierName.ReadOnly = True
+        Me.ShipmentPart2SupplierName.Width = 92
+        '
+        'ShipmentPart2Name
+        '
+        Me.ShipmentPart2Name.HeaderText = "名稱"
+        Me.ShipmentPart2Name.Name = "ShipmentPart2Name"
+        Me.ShipmentPart2Name.ReadOnly = True
+        Me.ShipmentPart2Name.Width = 73
+        '
+        'ShipmentPart2Specification
+        '
+        Me.ShipmentPart2Specification.HeaderText = "規格"
+        Me.ShipmentPart2Specification.Name = "ShipmentPart2Specification"
+        Me.ShipmentPart2Specification.ReadOnly = True
+        Me.ShipmentPart2Specification.Width = 73
+        '
+        'ShipmentPart2Width
+        '
+        Me.ShipmentPart2Width.HeaderText = "寬"
+        Me.ShipmentPart2Width.Name = "ShipmentPart2Width"
+        Me.ShipmentPart2Width.ReadOnly = True
+        Me.ShipmentPart2Width.Width = 54
+        '
+        'ShipmentPart2Length
+        '
+        Me.ShipmentPart2Length.HeaderText = "高"
+        Me.ShipmentPart2Length.Name = "ShipmentPart2Length"
+        Me.ShipmentPart2Length.ReadOnly = True
+        Me.ShipmentPart2Length.Width = 54
+        '
+        'ShipmentPart2Count
+        '
+        Me.ShipmentPart2Count.HeaderText = "數量"
+        Me.ShipmentPart2Count.Name = "ShipmentPart2Count"
+        Me.ShipmentPart2Count.ReadOnly = True
+        Me.ShipmentPart2Count.Width = 73
+        '
+        'ShipmentPart2PIC
+        '
+        Me.ShipmentPart2PIC.HeaderText = "進場人員"
+        Me.ShipmentPart2PIC.Name = "ShipmentPart2PIC"
+        Me.ShipmentPart2PIC.ReadOnly = True
+        Me.ShipmentPart2PIC.Width = 111
+        '
+        'ShipmentPart2Remark
+        '
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.ShipmentPart2Remark.DefaultCellStyle = DataGridViewCellStyle12
+        Me.ShipmentPart2Remark.HeaderText = "備註"
+        Me.ShipmentPart2Remark.Name = "ShipmentPart2Remark"
+        Me.ShipmentPart2Remark.ReadOnly = True
+        Me.ShipmentPart2Remark.Width = 73
+        '
+        'ShipmentPID
+        '
+        Me.ShipmentPID.HeaderText = "salePID"
+        Me.ShipmentPID.Name = "ShipmentPID"
+        Me.ShipmentPID.ReadOnly = True
+        Me.ShipmentPID.Visible = False
+        '
+        'ShipmentPartTime
+        '
+        Me.ShipmentPartTime.HeaderText = "出貨日期"
+        Me.ShipmentPartTime.Name = "ShipmentPartTime"
+        Me.ShipmentPartTime.ReadOnly = True
+        Me.ShipmentPartTime.Width = 111
+        '
+        'ShipmentPartSupplierName
+        '
+        Me.ShipmentPartSupplierName.HeaderText = "供應商"
+        Me.ShipmentPartSupplierName.Name = "ShipmentPartSupplierName"
+        Me.ShipmentPartSupplierName.ReadOnly = True
+        Me.ShipmentPartSupplierName.Width = 92
+        '
+        'ShipmentPartName
+        '
+        Me.ShipmentPartName.HeaderText = "名稱"
+        Me.ShipmentPartName.Name = "ShipmentPartName"
+        Me.ShipmentPartName.ReadOnly = True
+        Me.ShipmentPartName.Width = 73
+        '
+        'ShipmentPartSpecification
+        '
+        Me.ShipmentPartSpecification.HeaderText = "規格"
+        Me.ShipmentPartSpecification.Name = "ShipmentPartSpecification"
+        Me.ShipmentPartSpecification.ReadOnly = True
+        Me.ShipmentPartSpecification.Width = 73
+        '
+        'ShipmentPartWidth
+        '
+        Me.ShipmentPartWidth.HeaderText = "寬"
+        Me.ShipmentPartWidth.Name = "ShipmentPartWidth"
+        Me.ShipmentPartWidth.ReadOnly = True
+        Me.ShipmentPartWidth.Width = 54
+        '
+        'ShipmentPartLength
+        '
+        Me.ShipmentPartLength.HeaderText = "長"
+        Me.ShipmentPartLength.Name = "ShipmentPartLength"
+        Me.ShipmentPartLength.ReadOnly = True
+        Me.ShipmentPartLength.Width = 54
+        '
+        'ShipmentPartCBM
+        '
+        Me.ShipmentPartCBM.HeaderText = "材積"
+        Me.ShipmentPartCBM.Name = "ShipmentPartCBM"
+        Me.ShipmentPartCBM.ReadOnly = True
+        Me.ShipmentPartCBM.Width = 73
+        '
+        'ShipmentPartCount
+        '
+        Me.ShipmentPartCount.HeaderText = "數量"
+        Me.ShipmentPartCount.Name = "ShipmentPartCount"
+        Me.ShipmentPartCount.ReadOnly = True
+        Me.ShipmentPartCount.Width = 73
+        '
+        'ShipmentPartPIC
+        '
+        Me.ShipmentPartPIC.HeaderText = "進場人員"
+        Me.ShipmentPartPIC.Name = "ShipmentPartPIC"
+        Me.ShipmentPartPIC.ReadOnly = True
+        Me.ShipmentPartPIC.Width = 111
+        '
+        'ShipmentPartRemark
+        '
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.ShipmentPartRemark.DefaultCellStyle = DataGridViewCellStyle10
+        Me.ShipmentPartRemark.HeaderText = "備註"
+        Me.ShipmentPartRemark.Name = "ShipmentPartRemark"
+        Me.ShipmentPartRemark.ReadOnly = True
+        Me.ShipmentPartRemark.Width = 73
+        '
+        'PurchasePID
+        '
+        Me.PurchasePID.HeaderText = "purchasePID"
+        Me.PurchasePID.Name = "PurchasePID"
+        Me.PurchasePID.ReadOnly = True
+        Me.PurchasePID.Visible = False
+        Me.PurchasePID.Width = 147
+        '
+        'PurchasePartTime
+        '
+        Me.PurchasePartTime.HeaderText = "進貨日期"
+        Me.PurchasePartTime.Name = "PurchasePartTime"
+        Me.PurchasePartTime.ReadOnly = True
+        Me.PurchasePartTime.Width = 111
+        '
+        'PurchasePartSupplierName
+        '
+        Me.PurchasePartSupplierName.HeaderText = "供應商"
+        Me.PurchasePartSupplierName.Name = "PurchasePartSupplierName"
+        Me.PurchasePartSupplierName.ReadOnly = True
+        Me.PurchasePartSupplierName.Width = 92
+        '
+        'PurchasePartName
+        '
+        Me.PurchasePartName.HeaderText = "名稱"
+        Me.PurchasePartName.Name = "PurchasePartName"
+        Me.PurchasePartName.ReadOnly = True
+        Me.PurchasePartName.Width = 73
+        '
+        'PurchasePartSpecification
+        '
+        Me.PurchasePartSpecification.HeaderText = "規格"
+        Me.PurchasePartSpecification.Name = "PurchasePartSpecification"
+        Me.PurchasePartSpecification.ReadOnly = True
+        Me.PurchasePartSpecification.Width = 73
+        '
+        'PurchasePartWidth
+        '
+        Me.PurchasePartWidth.HeaderText = "寬"
+        Me.PurchasePartWidth.Name = "PurchasePartWidth"
+        Me.PurchasePartWidth.ReadOnly = True
+        Me.PurchasePartWidth.Width = 54
+        '
+        'PurchasePartLength
+        '
+        Me.PurchasePartLength.HeaderText = "高"
+        Me.PurchasePartLength.Name = "PurchasePartLength"
+        Me.PurchasePartLength.ReadOnly = True
+        Me.PurchasePartLength.Width = 54
+        '
+        'PurchasePartCBM
+        '
+        Me.PurchasePartCBM.HeaderText = "材積"
+        Me.PurchasePartCBM.Name = "PurchasePartCBM"
+        Me.PurchasePartCBM.ReadOnly = True
+        Me.PurchasePartCBM.Width = 73
+        '
+        'PurchasePartCount
+        '
+        Me.PurchasePartCount.HeaderText = "數量"
+        Me.PurchasePartCount.Name = "PurchasePartCount"
+        Me.PurchasePartCount.ReadOnly = True
+        Me.PurchasePartCount.Width = 73
+        '
+        'PurchasePartRemark
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PurchasePartRemark.DefaultCellStyle = DataGridViewCellStyle4
+        Me.PurchasePartRemark.HeaderText = "備註"
+        Me.PurchasePartRemark.Name = "PurchasePartRemark"
+        Me.PurchasePartRemark.ReadOnly = True
+        Me.PurchasePartRemark.Width = 73
+        '
         'Data_Case_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -2017,16 +2054,6 @@ Partial Class Data_Case_Form
     Friend WithEvents WorkPerson As DataGridViewTextBoxColumn
     Friend WithEvents WorkDetail As DataGridViewTextBoxColumn
     Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents PurchasePID As DataGridViewTextBoxColumn
-    Friend WithEvents PurchasePartTime As DataGridViewTextBoxColumn
-    Friend WithEvents PurchasePartSupplierName As DataGridViewTextBoxColumn
-    Friend WithEvents PurchasePartName As DataGridViewTextBoxColumn
-    Friend WithEvents PurchasePartSpecification As DataGridViewTextBoxColumn
-    Friend WithEvents PurchasePartWidth As DataGridViewTextBoxColumn
-    Friend WithEvents PurchasePartLength As DataGridViewTextBoxColumn
-    Friend WithEvents PurchasePartCBM As DataGridViewTextBoxColumn
-    Friend WithEvents PurchasePartCount As DataGridViewTextBoxColumn
-    Friend WithEvents PurchasePartRemark As DataGridViewTextBoxColumn
     Friend WithEvents purchaseP2ID As DataGridViewTextBoxColumn
     Friend WithEvents PurchasePart2Time As DataGridViewTextBoxColumn
     Friend WithEvents PurchasePart2SupplierName As DataGridViewTextBoxColumn
@@ -2045,27 +2072,6 @@ Partial Class Data_Case_Form
     Friend WithEvents WPCount As DataGridViewTextBoxColumn
     Friend WithEvents WPUnit As DataGridViewTextBoxColumn
     Friend WithEvents WPRemark As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPID As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPartTime As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPartSupplierName As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPartName As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPartSpecification As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPartWidth As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPartLength As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPartCBM As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPartCount As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPartPIC As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPartRemark As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentP2ID As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPart2Time As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPart2SupplierName As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPart2Name As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPart2Specification As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPart2Width As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPart2Length As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPart2Count As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPart2PIC As DataGridViewTextBoxColumn
-    Friend WithEvents ShipmentPart2Remark As DataGridViewTextBoxColumn
     Friend WithEvents TabPage9 As TabPage
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents RepairDGV As DataGridView
@@ -2095,4 +2101,35 @@ Partial Class Data_Case_Form
     Friend WithEvents ReceiptDate As DataGridViewTextBoxColumn
     Friend WithEvents StatusText As DataGridViewTextBoxColumn
     Friend WithEvents Status As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentP2ID As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPart2Time As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPart2SupplierName As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPart2Name As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPart2Specification As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPart2Width As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPart2Length As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPart2Count As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPart2PIC As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPart2Remark As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPID As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPartTime As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPartSupplierName As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPartName As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPartSpecification As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPartWidth As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPartLength As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPartCBM As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPartCount As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPartPIC As DataGridViewTextBoxColumn
+    Friend WithEvents ShipmentPartRemark As DataGridViewTextBoxColumn
+    Friend WithEvents PurchasePID As DataGridViewTextBoxColumn
+    Friend WithEvents PurchasePartTime As DataGridViewTextBoxColumn
+    Friend WithEvents PurchasePartSupplierName As DataGridViewTextBoxColumn
+    Friend WithEvents PurchasePartName As DataGridViewTextBoxColumn
+    Friend WithEvents PurchasePartSpecification As DataGridViewTextBoxColumn
+    Friend WithEvents PurchasePartWidth As DataGridViewTextBoxColumn
+    Friend WithEvents PurchasePartLength As DataGridViewTextBoxColumn
+    Friend WithEvents PurchasePartCBM As DataGridViewTextBoxColumn
+    Friend WithEvents PurchasePartCount As DataGridViewTextBoxColumn
+    Friend WithEvents PurchasePartRemark As DataGridViewTextBoxColumn
 End Class

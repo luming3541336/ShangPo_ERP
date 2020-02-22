@@ -29,7 +29,7 @@ Public Class Set_ReceiptKey_Form
             InsertDate.Text = Format(CDate(data.InsertDate), "yyyy/MM/dd")
             ContactText.Text = data.Contact
             PlaceText.Text = data.Place
-            If data.ReturnDate > ReturnDate.MinDate Then
+            If data.ReturnDate <> Nothing Then
                 ReturnDate.Value = Format(CDate(data.ReturnDate), "yyyy/MM/dd")
             End If
             If data.ReceiptDate > ReceiptDate.MinDate Then
@@ -73,7 +73,7 @@ Public Class Set_ReceiptKey_Form
     End Sub
 
     Private Sub SaveBtn_Click(sender As Object, e As EventArgs) Handles SaveBtn.Click
-        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = PlaceText.Text, .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 0, .Status = 1, .CaseID = intCaseID, .ReceiptDate = Nothing, .ReturnDate = If(ReturnDate.Text <> " ", Format(ReturnDate.Value, "yyyy/MM/dd"), Nothing), .ReturnUser = ReturnText.Text}
+        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = PlaceText.Text, .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 0, .Status = 1, .CaseID = intCaseID, .ReceiptDate = Nothing, .ReturnDate = Format(ReturnDate.Value, "yyyy/MM/dd"), .ReturnUser = ReturnText.Text}
         If intReceiptID = Nothing Then
             Dim intReceiveID As Integer = controller.Insert_ReceiptData(data)
             If intReceiveID <> Nothing Then

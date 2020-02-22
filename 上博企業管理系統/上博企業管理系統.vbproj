@@ -28,7 +28,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\DBSERVER\AppInstall\</UpdateUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -484,7 +484,9 @@
     <Content Include="Resources\note_revise.png" />
     <Content Include="Resources\refresh.png" />
     <Content Include="Resources\Save.png" />
-    <Content Include="Resources\出貨總表.xltx" />
+    <Content Include="Resources\出貨總表.xltx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\工程進度表.xltx" />
     <Content Include="Resources\維修單.dotx" />
     <Content Include="Resources\鑰匙單.dotx">

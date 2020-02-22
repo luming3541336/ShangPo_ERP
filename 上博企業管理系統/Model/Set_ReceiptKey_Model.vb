@@ -1,7 +1,7 @@
 ﻿Public Class Set_ReceiptKey_Model
     Protected Const SELECT_RECEIPTDATA_SQL = "SELECT * FROM ReceiptData WHERE ReceiptID = @id"
-    Protected Const UPDATE_RECEIPTDATA_SQL = "UPDATE ReceiptData SET ReceiptOrder =N'@order', ReceiptType = @type, ReceiptDate = @date, InsertDate = N'@insertDate', Status = @status ,Contact = N'@contact', Place = N'@place',ReturnDate = N'@returnDate',ReturnUser = N'@returnUser' WHERE ReceiptID = @id"
-    Protected Const INSERT_RECEIPTDATA_SQL = "INSERT INTO ReceiptData(CaseID,ReceiptOrder,ReceiptType,InsertDate,Status,Place,Contact,ReturnDate,ReturnUser) VALUES(@id,N'@order',@type,N'@insertDate',@status,N'@place',N'@contact',N'@returnDate',N'@returnUser');SELECT @@IDENTITY as id"
+    Protected Const UPDATE_RECEIPTDATA_SQL = "UPDATE ReceiptData SET ReceiptOrder =N'@order', ReceiptType = @type, ReceiptDate = @date, InsertDate = N'@insertDate', Status = @status ,Contact = N'@contact', Place = N'@place',ReturnDate = @returnDate ,ReturnUser = N'@returnUser' WHERE ReceiptID = @id"
+    Protected Const INSERT_RECEIPTDATA_SQL = "INSERT INTO ReceiptData(CaseID,ReceiptOrder,ReceiptType,InsertDate,Status,Place,Contact,ReturnDate,ReturnUser) VALUES(@id,N'@order',@type,N'@insertDate',@status,N'@place',N'@contact',@returnDate,N'@returnUser');SELECT @@IDENTITY as id"
     Protected Const SELECT_RECEIPTDATA_COUNT_SQL = "SELECT COUNT(ReceiptOrder)  AS OrderCount FROM ReceiptData WHERE ReceiptOrder LIKE N'@order%'"
     Protected Const DELETE_RECEIPTDATA_SQL = "DELETE FROM ReceiptFile Where ReceiptID = @id;DELETE  FROM ReceiptKey WHERE ReceiptID = @id;DELETE FROM ReceiptData WHERE ReceiptID = @id"
 
