@@ -7,8 +7,8 @@ Public Class Connection
 
     '正式帳號
     Private objCon As SqlConnection
-    'Private strDbCon As String = "Data Source= DBSERVER,1433;Initial Catalog=ERPShongPo;User ID=ShongPoUser;Password=1234"
-    Private strDbCon As String = "Data Source=DESKTOP-SNRFQUA\SQLEXPRESS;Initial Catalog=ERPShongPo;Integrated Security=SSPI;"
+    Private strDbCon As String = "Data Source= DBSERVER,1433;Initial Catalog=ERPShongPo;User ID=ShongPoUser;Password=1234"
+    'Private strDbCon As String = "Data Source=DESKTOP-SNRFQUA\SQLEXPRESS;Initial Catalog=ERPShongPo;Integrated Security=SSPI;"
     'Private strDbCon As String = "Data Source=ALEXLUCD48\SQLEXPRESS02;Initial Catalog=ERPShongPo;Integrated Security=SSPI;"
     Private objCmd As SqlCommand
     Sub New(ByVal Data_Source As String, ByVal ID As String, ByVal Password As String, ByVal Initial_Catalog As String)

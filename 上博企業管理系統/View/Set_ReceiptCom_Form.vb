@@ -189,7 +189,7 @@ Public Class Set_ReceiptCom_Form
         If Not IsNothing(ReceiptComDGV.CurrentRow) Then
             If ReceiptComDGV.SelectedCells.Count = 6 Then '當整攔複製時執行
                 Dim index As Integer = ReceiptComDGV.CurrentRow.Index
-                ReceiptComDGV.Rows.Add(Nothing, ReceiptComDGV.Rows(index).Cells("Room").Value, ReceiptComDGV.Rows(index).Cells("Item").Value, ReceiptComDGV.Rows(index).Cells("Location").Value, ReceiptComDGV.Rows(index).Cells("ReceiptCount").Value, ReceiptComDGV.Rows(index).Cells("ReceiptRemark").Value)
+                ReceiptComDGV.Rows.Add(Nothing, ReceiptComDGV.Rows(index).Cells("Item").Value, ReceiptComDGV.Rows(index).Cells("Count").Value, ReceiptComDGV.Rows(index).Cells("Unit").Value, ReceiptComDGV.Rows(index).Cells("Price").Value, ReceiptComDGV.Rows(index).Cells("TotalAmount").Value, ReceiptComDGV.Rows(index).Cells("Remark").Value)
             ElseIf ReceiptComDGV.SelectedCells.Count = 1 Then
                 Clipboard.SetText(ReceiptComDGV.CurrentCell.Value)
                 貼上ToolStripMenuItem.Enabled = True
@@ -214,4 +214,5 @@ Public Class Set_ReceiptCom_Form
             貼上ToolStripMenuItem_Click(sender, e)
         End If
     End Sub
+
 End Class
