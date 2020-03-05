@@ -553,14 +553,21 @@ Public Class Data_Case_Form
     End Sub
 
     Private Sub ReceiptDGV_DoubleClick(sender As Object, e As EventArgs) Handles ReceiptDGV.DoubleClick
-        Dim view As Set_ReceiptKey_Form = New Set_ReceiptKey_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, intReceiptID:=ReceiptDGV.CurrentRow.Cells("ReceiptID").Value)
-        If view.ShowDialog = DialogResult.OK Then
-            RefreshCaseData(CaseDGV.CurrentRow.Index)
-        End If
+        ReviseReceiptBtn_Click(sender, e)
+        'Dim view As Set_ReceiptKey_Form = New Set_ReceiptKey_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, intReceiptID:=ReceiptDGV.CurrentRow.Cells("ReceiptID").Value)
+        'If view.ShowDialog = DialogResult.OK Then
+        '    RefreshCaseData(CaseDGV.CurrentRow.Index)
+        'End If
     End Sub
-
     Private Sub ReviseReceiptBtn_Click(sender As Object, e As EventArgs) Handles ReviseReceiptBtn.Click
-        Dim view As Set_ReceiptKey_Form = New Set_ReceiptKey_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, intReceiptID:=ReceiptDGV.CurrentRow.Cells("ReceiptID").Value)
+        Dim view As Object = Nothing
+        If ReceiptDGV.CurrentRow.Cells("ReceiptType").Value = 0 Then
+            view = New Set_ReceiptKey_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, intReceiptID:=ReceiptDGV.CurrentRow.Cells("ReceiptID").Value)
+        ElseIf ReceiptDGV.CurrentRow.Cells("ReceiptType").Value = 1 Then
+            view = New Set_ReceiptCom_Form(CaseDGV.CurrentRow.Cells("CaseID").Value, intReceiptID:=ReceiptDGV.CurrentRow.Cells("ReceiptID").Value)
+        Else
+            MsgBox("")
+        End If
         If view.ShowDialog = DialogResult.OK Then
             RefreshCaseData(CaseDGV.CurrentRow.Index)
         End If
@@ -576,6 +583,13 @@ Public Class Data_Case_Form
                     MsgBox("刪除完成")
                     RefreshCaseData(CaseDGV.CurrentRow.Index)
             End Select
+        End If
+    End Sub
+
+    Private Sub ReceiptAddBtn2_Click(sender As Object, e As EventArgs) Handles ReceiptAddBtn2.Click
+        Dim view As Set_ReceiptCom_Form = New Set_ReceiptCom_Form(CaseDGV.CurrentRow.Cells("CaseID").Value)
+        If view.ShowDialog = DialogResult.OK Then
+            RefreshCaseData(CaseDGV.CurrentRow.Index)
         End If
     End Sub
 End Class

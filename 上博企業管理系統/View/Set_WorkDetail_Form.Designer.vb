@@ -60,7 +60,7 @@ Partial Class Set_WorkDetail_Form
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(361, 324)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(618, 395)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'Panel1
@@ -72,7 +72,7 @@ Partial Class Set_WorkDetail_Form
         Me.Panel1.Location = New System.Drawing.Point(2, 3)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(357, 26)
+        Me.Panel1.Size = New System.Drawing.Size(614, 26)
         Me.Panel1.TabIndex = 0
         '
         'TitleLabel
@@ -99,7 +99,7 @@ Partial Class Set_WorkDetail_Form
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(2, 34)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(357, 288)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(614, 359)
         Me.FlowLayoutPanel1.TabIndex = 1
         '
         'Panel5
@@ -110,7 +110,7 @@ Partial Class Set_WorkDetail_Form
         Me.Panel5.Location = New System.Drawing.Point(2, 2)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(251, 38)
+        Me.Panel5.Size = New System.Drawing.Size(234, 38)
         Me.Panel5.TabIndex = 3
         '
         'Label5
@@ -125,10 +125,10 @@ Partial Class Set_WorkDetail_Form
         '
         'JobDetailDataTime
         '
-        Me.JobDetailDataTime.Location = New System.Drawing.Point(68, 4)
+        Me.JobDetailDataTime.Location = New System.Drawing.Point(70, 4)
         Me.JobDetailDataTime.Margin = New System.Windows.Forms.Padding(2)
         Me.JobDetailDataTime.Name = "JobDetailDataTime"
-        Me.JobDetailDataTime.Size = New System.Drawing.Size(181, 32)
+        Me.JobDetailDataTime.Size = New System.Drawing.Size(162, 32)
         Me.JobDetailDataTime.TabIndex = 1
         '
         'Panel8
@@ -136,19 +136,19 @@ Partial Class Set_WorkDetail_Form
         Me.Panel8.AutoSize = True
         Me.Panel8.Controls.Add(Me.SalesText)
         Me.Panel8.Controls.Add(Me.Label8)
-        Me.Panel8.Location = New System.Drawing.Point(2, 44)
+        Me.Panel8.Location = New System.Drawing.Point(240, 2)
         Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(252, 40)
+        Me.Panel8.Size = New System.Drawing.Size(367, 38)
         Me.Panel8.TabIndex = 4
         '
         'SalesText
         '
         Me.SalesText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.SalesText.Location = New System.Drawing.Point(68, 6)
+        Me.SalesText.Location = New System.Drawing.Point(68, 4)
         Me.SalesText.Margin = New System.Windows.Forms.Padding(2)
         Me.SalesText.Name = "SalesText"
-        Me.SalesText.Size = New System.Drawing.Size(182, 32)
+        Me.SalesText.Size = New System.Drawing.Size(297, 32)
         Me.SalesText.TabIndex = 2
         '
         'Label8
@@ -166,20 +166,20 @@ Partial Class Set_WorkDetail_Form
         Me.Panel7.AutoSize = True
         Me.Panel7.Controls.Add(Me.JobDetail)
         Me.Panel7.Controls.Add(Me.Label7)
-        Me.Panel7.Location = New System.Drawing.Point(2, 88)
+        Me.Panel7.Location = New System.Drawing.Point(2, 44)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(354, 152)
+        Me.Panel7.Size = New System.Drawing.Size(603, 268)
         Me.Panel7.TabIndex = 6
         '
         'JobDetail
         '
         Me.JobDetail.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.JobDetail.Location = New System.Drawing.Point(98, 6)
+        Me.JobDetail.Location = New System.Drawing.Point(100, 4)
         Me.JobDetail.Margin = New System.Windows.Forms.Padding(2)
         Me.JobDetail.Multiline = True
         Me.JobDetail.Name = "JobDetail"
-        Me.JobDetail.Size = New System.Drawing.Size(254, 144)
+        Me.JobDetail.Size = New System.Drawing.Size(501, 262)
         Me.JobDetail.TabIndex = 3
         '
         'Label7
@@ -194,7 +194,7 @@ Partial Class Set_WorkDetail_Form
         '
         'saveBtn
         '
-        Me.saveBtn.Location = New System.Drawing.Point(2, 244)
+        Me.saveBtn.Location = New System.Drawing.Point(2, 316)
         Me.saveBtn.Margin = New System.Windows.Forms.Padding(2)
         Me.saveBtn.Name = "saveBtn"
         Me.saveBtn.Size = New System.Drawing.Size(74, 32)
@@ -204,7 +204,7 @@ Partial Class Set_WorkDetail_Form
         '
         'cancelBtn
         '
-        Me.cancelBtn.Location = New System.Drawing.Point(80, 244)
+        Me.cancelBtn.Location = New System.Drawing.Point(80, 316)
         Me.cancelBtn.Margin = New System.Windows.Forms.Padding(2)
         Me.cancelBtn.Name = "cancelBtn"
         Me.cancelBtn.Size = New System.Drawing.Size(74, 32)
@@ -220,7 +220,7 @@ Partial Class Set_WorkDetail_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(361, 324)
+        Me.ClientSize = New System.Drawing.Size(618, 395)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("微軟正黑體", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

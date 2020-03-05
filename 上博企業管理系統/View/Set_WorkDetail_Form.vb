@@ -76,4 +76,8 @@ Public Class Set_WorkDetail_Form
             SendKeys.Send("{TAB}")
         End If
     End Sub
+
+    Private Sub JobDetailDataTime_ValueChanged(sender As Object, e As EventArgs) Handles JobDetailDataTime.ValueChanged
+
+    End Sub
 End Class

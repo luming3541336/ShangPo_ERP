@@ -43,14 +43,6 @@ Partial Class Set_ReceiptKey_Form
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ReceiptDate = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.ReceiptKeyDGV = New System.Windows.Forms.DataGridView()
-        Me.ReceiptKeyID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Room = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Item = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Location = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ReceiptCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ReceiptRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.複製ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.貼上ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -63,12 +55,18 @@ Partial Class Set_ReceiptKey_Form
         Me.RepairResultDGV = New System.Windows.Forms.TableLayoutPanel()
         Me.FileUploadBtn = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.ReceiptKeyDGV = New System.Windows.Forms.DataGridView()
+        Me.ReceiptKeyID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Room = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Item = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Location = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReceiptCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReceiptRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
-        CType(Me.ReceiptKeyDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
         Me.RepairResultDGV.SuspendLayout()
+        CType(Me.ReceiptKeyDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -177,70 +175,6 @@ Partial Class Set_ReceiptKey_Form
         resources.ApplyResources(Me.Label7, "Label7")
         Me.Label7.Name = "Label7"
         '
-        'TableLayoutPanel3
-        '
-        resources.ApplyResources(Me.TableLayoutPanel3, "TableLayoutPanel3")
-        Me.TableLayoutPanel3.Controls.Add(Me.ReceiptKeyDGV, 0, 0)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        '
-        'ReceiptKeyDGV
-        '
-        Me.ReceiptKeyDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.ReceiptKeyDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("微軟正黑體", 14.25!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ReceiptKeyDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.ReceiptKeyDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ReceiptKeyDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ReceiptKeyID, Me.Room, Me.Item, Me.Location, Me.ReceiptCount, Me.ReceiptRemark})
-        Me.ReceiptKeyDGV.ContextMenuStrip = Me.ContextMenuStrip1
-        resources.ApplyResources(Me.ReceiptKeyDGV, "ReceiptKeyDGV")
-        Me.ReceiptKeyDGV.MultiSelect = False
-        Me.ReceiptKeyDGV.Name = "ReceiptKeyDGV"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        Me.ReceiptKeyDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.ReceiptKeyDGV.RowTemplate.Height = 24
-        '
-        'ReceiptKeyID
-        '
-        resources.ApplyResources(Me.ReceiptKeyID, "ReceiptKeyID")
-        Me.ReceiptKeyID.Name = "ReceiptKeyID"
-        '
-        'Room
-        '
-        resources.ApplyResources(Me.Room, "Room")
-        Me.Room.Name = "Room"
-        '
-        'Item
-        '
-        resources.ApplyResources(Me.Item, "Item")
-        Me.Item.Name = "Item"
-        '
-        'Location
-        '
-        resources.ApplyResources(Me.Location, "Location")
-        Me.Location.Name = "Location"
-        Me.Location.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Location.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'ReceiptCount
-        '
-        resources.ApplyResources(Me.ReceiptCount, "ReceiptCount")
-        Me.ReceiptCount.Name = "ReceiptCount"
-        '
-        'ReceiptRemark
-        '
-        resources.ApplyResources(Me.ReceiptRemark, "ReceiptRemark")
-        Me.ReceiptRemark.Name = "ReceiptRemark"
-        '
         'ContextMenuStrip1
         '
         resources.ApplyResources(Me.ContextMenuStrip1, "ContextMenuStrip1")
@@ -322,26 +256,83 @@ Partial Class Set_ReceiptKey_Form
         resources.ApplyResources(Me.FlowLayoutPanel3, "FlowLayoutPanel3")
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
         '
+        'ReceiptKeyDGV
+        '
+        Me.ReceiptKeyDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.ReceiptKeyDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("微軟正黑體", 14.25!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ReceiptKeyDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.ReceiptKeyDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ReceiptKeyDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ReceiptKeyID, Me.Room, Me.Item, Me.Location, Me.ReceiptCount, Me.ReceiptRemark})
+        Me.ReceiptKeyDGV.ContextMenuStrip = Me.ContextMenuStrip1
+        resources.ApplyResources(Me.ReceiptKeyDGV, "ReceiptKeyDGV")
+        Me.ReceiptKeyDGV.MultiSelect = False
+        Me.ReceiptKeyDGV.Name = "ReceiptKeyDGV"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        Me.ReceiptKeyDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.ReceiptKeyDGV.RowTemplate.Height = 24
+        '
+        'ReceiptKeyID
+        '
+        resources.ApplyResources(Me.ReceiptKeyID, "ReceiptKeyID")
+        Me.ReceiptKeyID.Name = "ReceiptKeyID"
+        '
+        'Room
+        '
+        resources.ApplyResources(Me.Room, "Room")
+        Me.Room.Name = "Room"
+        '
+        'Item
+        '
+        resources.ApplyResources(Me.Item, "Item")
+        Me.Item.Name = "Item"
+        '
+        'Location
+        '
+        resources.ApplyResources(Me.Location, "Location")
+        Me.Location.Name = "Location"
+        Me.Location.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Location.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'ReceiptCount
+        '
+        resources.ApplyResources(Me.ReceiptCount, "ReceiptCount")
+        Me.ReceiptCount.Name = "ReceiptCount"
+        '
+        'ReceiptRemark
+        '
+        resources.ApplyResources(Me.ReceiptRemark, "ReceiptRemark")
+        Me.ReceiptRemark.Name = "ReceiptRemark"
+        '
         'Set_ReceiptKey_Form
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.SlateGray
+        Me.Controls.Add(Me.ReceiptKeyDGV)
         Me.Controls.Add(Me.RepairResultDGV)
         Me.Controls.Add(Me.FlowLayoutPanel2)
-        Me.Controls.Add(Me.TableLayoutPanel3)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.ForeColor = System.Drawing.Color.White
         Me.Name = "Set_ReceiptKey_Form"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        CType(Me.ReceiptKeyDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.FlowLayoutPanel2.ResumeLayout(False)
         Me.FlowLayoutPanel2.PerformLayout()
         Me.RepairResultDGV.ResumeLayout(False)
         Me.RepairResultDGV.PerformLayout()
+        CType(Me.ReceiptKeyDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -356,14 +347,6 @@ Partial Class Set_ReceiptKey_Form
     Friend WithEvents ReceiptOrderText As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents ContactText As TextBox
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents ReceiptKeyDGV As DataGridView
-    Friend WithEvents ReceiptKeyID As DataGridViewTextBoxColumn
-    Friend WithEvents Room As DataGridViewTextBoxColumn
-    Friend WithEvents Item As DataGridViewTextBoxColumn
-    Friend WithEvents Location As DataGridViewTextBoxColumn
-    Friend WithEvents ReceiptCount As DataGridViewTextBoxColumn
-    Friend WithEvents ReceiptRemark As DataGridViewTextBoxColumn
     Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
     Friend WithEvents SaveBtn As Button
     Friend WithEvents RepairConfirmBtn As Button
@@ -384,4 +367,11 @@ Partial Class Set_ReceiptKey_Form
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents 複製ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents 貼上ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReceiptKeyDGV As DataGridView
+    Friend WithEvents ReceiptKeyID As DataGridViewTextBoxColumn
+    Friend WithEvents Room As DataGridViewTextBoxColumn
+    Friend WithEvents Item As DataGridViewTextBoxColumn
+    Friend WithEvents Location As DataGridViewTextBoxColumn
+    Friend WithEvents ReceiptCount As DataGridViewTextBoxColumn
+    Friend WithEvents ReceiptRemark As DataGridViewTextBoxColumn
 End Class

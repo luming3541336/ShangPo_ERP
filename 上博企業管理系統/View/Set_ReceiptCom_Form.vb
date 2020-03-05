@@ -1,13 +1,13 @@
 ﻿Imports Microsoft.Office.Interop
-
-Public Class Set_ReceiptKey_Form
+Public Class Set_ReceiptCom_Form
     Private intCaseID As Integer = Nothing
     Private intReceiptID As Integer = Nothing
     Dim arrReceiptFileAdd As ArrayList = New ArrayList
     Dim arrReceiptFileDel As ArrayList = New ArrayList
     Dim arrReceiptDel As ArrayList = New ArrayList
-    Private controller As Set_ReceiptKey_Controller = New Set_ReceiptKey_Controller
+    Private controller As Set_ReceiptCom_Controller = New Set_ReceiptCom_Controller
     '狀態:1 尚未簽收 2 簽收完成
+    'ReceiptType:0鑰匙1配件
     Public Sub New(ByVal intCaseID As Integer, Optional ByVal intReceiptID As Integer = Nothing)
 
         ' 設計工具需要此呼叫。
@@ -28,7 +28,6 @@ Public Class Set_ReceiptKey_Form
             ReceiptOrderText.Text = data.ReceiptOrder
             InsertDate.Text = Format(CDate(data.InsertDate), "yyyy/MM/dd")
             ContactText.Text = data.Contact
-            PlaceText.Text = data.Place
             If data.ReturnDate <> Nothing Then
                 ReturnDate.Value = Format(CDate(data.ReturnDate), "yyyy/MM/dd")
             End If
@@ -45,9 +44,9 @@ Public Class Set_ReceiptKey_Form
                 ReceiptDate.Enabled = True
             End If
             PrintBtn.Visible = True
-            Dim listdata As List(Of ReceiptKey) = controller.Select_ReceiptKey(intReceiptID)
-            For Each data2 As ReceiptKey In listdata
-                ReceiptKeyDGV.Rows.Add(data2.ReceiptKeyID, data2.Room, data2.Item, data2.Location, data2.ReceiptCount, data2.Remark)
+            Dim listdata As List(Of ReceiptCom) = controller.Select_ReceiptCom(intReceiptID)
+            For Each data2 As ReceiptCom In listdata
+                ReceiptComDGV.Rows.Add(data2.ReceiptComID, data2.Item, data2.Count, data2.Unit, data2.Price, data2.TotalAmount, data2.Remark)
             Next
             Dim listFileData As List(Of ReceiptFile) = controller.Select_ReceiptFile(intReceiptID)
             For Each FD As ReceiptFile In listFileData
@@ -61,7 +60,6 @@ Public Class Set_ReceiptKey_Form
             Dim controller2 As Set_Repair_Controller = New Set_Repair_Controller
             Dim data As CaseData = controller2.Selet_CaseData(intCaseID)
             ContactText.Text = data.Contact
-            PlaceText.Text = data.Place
             ReceiptOrderText.Text = controller.Create_NewOrder
             Dim listFileData As List(Of ReceiptFile) = controller.Select_ReceiptFile(intReceiptID)
             For Each FD As ReceiptFile In listFileData
@@ -73,7 +71,7 @@ Public Class Set_ReceiptKey_Form
     End Sub
 
     Private Sub SaveBtn_Click(sender As Object, e As EventArgs) Handles SaveBtn.Click
-        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = PlaceText.Text, .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 0, .Status = 1, .CaseID = intCaseID, .ReceiptDate = Nothing, .ReturnDate = Format(ReturnDate.Value, "yyyy/MM/dd"), .ReturnUser = ReturnText.Text}
+        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = "", .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 1, .Status = 1, .CaseID = intCaseID, .ReceiptDate = Nothing, .ReturnDate = Format(ReturnDate.Value, "yyyy/MM/dd"), .ReturnUser = ReturnText.Text}
         If intReceiptID = Nothing Then
             Dim intReceiveID As Integer = controller.Insert_ReceiptData(data)
             If intReceiveID <> Nothing Then
@@ -85,16 +83,16 @@ Public Class Set_ReceiptKey_Form
         Else
             controller.Update_ReceiptData(data)
         End If
-        Dim data2 As List(Of ReceiptKey) = New List(Of ReceiptKey)
-        For Each row As DataGridViewRow In ReceiptKeyDGV.Rows
-            If row.Cells("ReceiptKeyID").Value = Nothing And row.Cells("Item").Value <> "" Then
-                Dim id As Integer = controller.Insert_ReceiptKey(New ReceiptKey With {.ReceiptID = intReceiptID, .Item = row.Cells("Item").Value, .Location = row.Cells("Location").Value, .ReceiptCount = row.Cells("ReceiptCount").Value, .Remark = row.Cells("ReceiptRemark").Value, .Room = row.Cells("Room").Value})
-                row.Cells("ReceiptKeyID").Value = id
+        Dim data2 As List(Of ReceiptCom) = New List(Of ReceiptCom)
+        For Each row As DataGridViewRow In ReceiptComDGV.Rows
+            If row.Cells("ReceiptComID").Value = Nothing And row.Cells("Item").Value <> "" Then
+                Dim id As Integer = controller.Insert_ReceiptCom(New ReceiptCom With {.ReceiptID = intReceiptID, .Item = row.Cells("Item").Value, .Count = row.Cells("Count").Value, .Price = row.Cells("Price").Value, .Remark = row.Cells("ReceiptRemark").Value, .TotalAmount = row.Cells("TotalAmount").Value, .Unit = row.Cells("Unit").Value})
+                row.Cells("ReceiptComID").Value = id
             Else
-                controller.Update_ReceiptKey(New ReceiptKey With {.ReceiptKeyID = row.Cells("ReceiptKeyID").Value, .ReceiptID = intReceiptID, .Item = row.Cells("Item").Value, .Location = row.Cells("Location").Value, .ReceiptCount = row.Cells("ReceiptCount").Value, .Remark = row.Cells("ReceiptRemark").Value, .Room = row.Cells("Room").Value})
+                controller.Update_ReceiptCom(New ReceiptCom With {.ReceiptComID = row.Cells("ReceiptComID").Value, .ReceiptID = intReceiptID, .Item = row.Cells("Item").Value, .Count = row.Cells("Count").Value, .Price = row.Cells("Price").Value, .Remark = row.Cells("ReceiptRemark").Value, .TotalAmount = row.Cells("TotalAmount").Value, .Unit = row.Cells("Unit").Value})
                 '若有刪除任何欄位時執行
                 For Each i As Integer In arrReceiptDel
-                    controller.Delete_ReceiptKey(i)
+                    controller.Delete_ReceiptCom(i)
                 Next
             End If
         Next
@@ -144,33 +142,31 @@ Public Class Set_ReceiptKey_Form
 
     Private Sub PrintBtn_Click(sender As Object, e As EventArgs) Handles PrintBtn.Click
         Dim path As String = My.Application.Info.DirectoryPath
-        Dim wordApp As Word.Application = New Word.Application
-        Dim wordDoc As Word.Document = wordApp.Documents.Open(path + "\Resources\鑰匙單.dotx", [ReadOnly]:=True)
-        wordDoc.Content.Find.Execute(FindText:="$RepairOrder", ReplaceWith:=ReceiptOrderText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
-        wordDoc.Content.Find.Execute(FindText:="$Place", ReplaceWith:=PlaceText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
-        wordDoc.Content.Find.Execute(FindText:="$Contact", ReplaceWith:=ContactText.Text, Replace:=Word.WdReplace.wdReplaceAll, Wrap:=Word.WdFindWrap.wdFindContinue)
-        Dim strRepairProd As String = ""
-        For i As Integer = 1 To 14
-            If i <= ReceiptKeyDGV.Rows.Count Then
-                wordDoc.Content.Find.Execute(FindText:="$R" & i, ReplaceWith:=ReceiptKeyDGV.Rows(i - 1).Cells("Room").Value, Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
-                wordDoc.Content.Find.Execute(FindText:="$Item" & i, ReplaceWith:=ReceiptKeyDGV.Rows(i - 1).Cells("Item").Value, Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
-                wordDoc.Content.Find.Execute(FindText:="$Location" & i, ReplaceWith:=ReceiptKeyDGV.Rows(i - 1).Cells("Location").Value, Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
-                wordDoc.Content.Find.Execute(FindText:="$C" & i, ReplaceWith:=ReceiptKeyDGV.Rows(i - 1).Cells("ReceiptCount").Value, Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
-                wordDoc.Content.Find.Execute(FindText:="$Remark" & i, ReplaceWith:=ReceiptKeyDGV.Rows(i - 1).Cells("ReceiptRemark").Value, Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
-            Else
-                wordDoc.Content.Find.Execute(FindText:="$R" & i, ReplaceWith:="", Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
-                wordDoc.Content.Find.Execute(FindText:="$Item" & i, ReplaceWith:="", Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
-                wordDoc.Content.Find.Execute(FindText:="$Location" & i, ReplaceWith:="", Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
-                wordDoc.Content.Find.Execute(FindText:="$C" & i, ReplaceWith:="", Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
-                wordDoc.Content.Find.Execute(FindText:="$Remark" & i, ReplaceWith:="", Replace:=Word.WdReplace.wdReplaceOne, Wrap:=Word.WdFindWrap.wdFindContinue)
-            End If
+        Dim App As Excel.Application = New Excel.Application
+        Dim workBook As Excel.Workbook = App.Workbooks.Open(path + "\Resources\五金簽收單.xltx", [ReadOnly]:=True)
+        Dim workSheet As Excel.Worksheet = workBook.Sheets(1)
+        workSheet.Cells(2, 2) = ContactText.Text ' 客戶名稱
+        workSheet.Cells(2, 7) = Format(Now, "yyyy/MM/dd") '製表時間
+        Dim obj As Object(,) = New Object(ReceiptComDGV.RowCount - 1, 5) {}
+        Dim i As Integer = 0
+        For Each data As DataGridViewRow In ReceiptComDGV.Rows
+            obj(i, 0) = data.Cells("Item").Value
+            obj(i, 1) = data.Cells("Count").Value
+            obj(i, 2) = data.Cells("Unit").Value
+            obj(i, 3) = data.Cells("Price").Value
+            obj(i, 4) = data.Cells("TotalAmount").Value
+            i += 1
         Next
-        wordApp.DisplayAlerts = True
-        wordApp.Visible = True
+        If obj.Length > 5 Then
+            '  workSheet.Range(4, 4).Insert(CopyOrigin:=Excel.XlInsertFormatOrigin.xlFormatFromRightOrBelow)
+        End If
+        workSheet.Range(App.Cells(4, 2), App.Cells(ReceiptComDGV.RowCount + 3, 6)).Value2 = obj
+        App.DisplayAlerts = True
+        App.Visible = True
     End Sub
 
     Private Sub RepairConfirmBtn_Click(sender As Object, e As EventArgs) Handles RepairConfirmBtn.Click
-        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = PlaceText.Text, .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 0, .Status = 2, .CaseID = intCaseID, .ReceiptDate = Format(ReceiptDate.Value, "yyyy/MM/dd"), .ReturnDate = Format(ReturnDate.Value, "yyyy/MM/dd"), .ReturnUser = ReturnText.Text}
+        Dim data As ReceiptData = New ReceiptData With {.ReceiptID = intReceiptID, .Contact = ContactText.Text, .InsertDate = InsertDate.Text, .Place = "", .ReceiptOrder = ReceiptOrderText.Text, .ReceiptType = 1, .Status = 2, .CaseID = intCaseID, .ReceiptDate = Format(ReceiptDate.Value, "yyyy/MM/dd"), .ReturnDate = Format(ReturnDate.Value, "yyyy/MM/dd"), .ReturnUser = ReturnText.Text}
         If controller.Update_ReceiptData(data) = 1 Then
             MsgBox("狀態更新")
             Me.DialogResult = DialogResult.OK
@@ -190,12 +186,12 @@ Public Class Set_ReceiptKey_Form
     End Sub
 
     Private Sub 複製ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 複製ToolStripMenuItem.Click
-        If Not IsNothing(ReceiptKeyDGV.CurrentRow) Then
-            If ReceiptKeyDGV.SelectedCells.Count = 6 Then '當整攔複製時執行
-                Dim index As Integer = ReceiptKeyDGV.CurrentRow.Index
-                ReceiptKeyDGV.Rows.Add(Nothing, ReceiptKeyDGV.Rows(index).Cells("Room").Value, ReceiptKeyDGV.Rows(index).Cells("Item").Value, ReceiptKeyDGV.Rows(index).Cells("Location").Value, ReceiptKeyDGV.Rows(index).Cells("ReceiptCount").Value, ReceiptKeyDGV.Rows(index).Cells("ReceiptRemark").Value)
-            ElseIf ReceiptKeyDGV.SelectedCells.Count = 1 Then
-                Clipboard.SetText(ReceiptKeyDGV.CurrentCell.Value)
+        If Not IsNothing(ReceiptComDGV.CurrentRow) Then
+            If ReceiptComDGV.SelectedCells.Count = 6 Then '當整攔複製時執行
+                Dim index As Integer = ReceiptComDGV.CurrentRow.Index
+                ReceiptComDGV.Rows.Add(Nothing, ReceiptComDGV.Rows(index).Cells("Room").Value, ReceiptComDGV.Rows(index).Cells("Item").Value, ReceiptComDGV.Rows(index).Cells("Location").Value, ReceiptComDGV.Rows(index).Cells("ReceiptCount").Value, ReceiptComDGV.Rows(index).Cells("ReceiptRemark").Value)
+            ElseIf ReceiptComDGV.SelectedCells.Count = 1 Then
+                Clipboard.SetText(ReceiptComDGV.CurrentCell.Value)
                 貼上ToolStripMenuItem.Enabled = True
             End If
         Else
@@ -204,8 +200,8 @@ Public Class Set_ReceiptKey_Form
     End Sub
 
     Private Sub 貼上ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 貼上ToolStripMenuItem.Click
-        If Not IsNothing(ReceiptKeyDGV.CurrentRow) Then
-            ReceiptKeyDGV.CurrentCell.Value = Clipboard.GetText()
+        If Not IsNothing(ReceiptComDGV.CurrentRow) Then
+            ReceiptComDGV.CurrentCell.Value = Clipboard.GetText()
         Else
             MsgBox("請選擇要貼上的欄位")
         End If

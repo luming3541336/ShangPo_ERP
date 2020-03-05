@@ -29,18 +29,18 @@ Partial Class Data_Case_Form
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.SearchButton = New System.Windows.Forms.Button()
@@ -74,6 +74,16 @@ Partial Class Data_Case_Form
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.PurchasePartDGV = New System.Windows.Forms.DataGridView()
+        Me.PurchasePID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartSpecification = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartWidth = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartLength = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartCBM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PurchasePartRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.PurchasePart2DGV = New System.Windows.Forms.DataGridView()
         Me.purchaseP2ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -111,8 +121,29 @@ Partial Class Data_Case_Form
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.ShipmentPartDGV = New System.Windows.Forms.DataGridView()
+        Me.ShipmentPID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartSpecification = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartWidth = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartLength = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartCBM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartPIC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPartRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.ShipmentPart2DGV = New System.Windows.Forms.DataGridView()
+        Me.ShipmentP2ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Time = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2SupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Specification = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Width = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Length = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Count = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2PIC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShipmentPart2Remark = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
@@ -120,10 +151,6 @@ Partial Class Data_Case_Form
         Me.ReviseDetailBtn = New System.Windows.Forms.Button()
         Me.DelDetailBtn = New System.Windows.Forms.Button()
         Me.DetailDGV = New System.Windows.Forms.DataGridView()
-        Me.WDID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WorkDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WorkPerson = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WorkDetail = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.RepairDGV = New System.Windows.Forms.DataGridView()
@@ -157,37 +184,10 @@ Partial Class Data_Case_Form
         Me.LoadingDetailBackground = New System.ComponentModel.BackgroundWorker()
         Me.PrintShippingRecordBackground = New System.ComponentModel.BackgroundWorker()
         Me.PrintWorkProgressWork = New System.ComponentModel.BackgroundWorker()
-        Me.ShipmentP2ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Time = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2SupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Specification = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Width = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Length = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Count = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2PIC = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPart2Remark = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartSpecification = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartWidth = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartLength = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartCBM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartPIC = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShipmentPartRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartTime = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartSupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartSpecification = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartWidth = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartLength = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartCBM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartCount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PurchasePartRemark = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WDID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WorkDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WorkPerson = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WorkDetail = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.PrintMenu.SuspendLayout()
@@ -690,6 +690,80 @@ Partial Class Data_Case_Form
         Me.PurchasePartDGV.Size = New System.Drawing.Size(924, 187)
         Me.PurchasePartDGV.TabIndex = 2
         '
+        'PurchasePID
+        '
+        Me.PurchasePID.HeaderText = "purchasePID"
+        Me.PurchasePID.Name = "PurchasePID"
+        Me.PurchasePID.ReadOnly = True
+        Me.PurchasePID.Visible = False
+        Me.PurchasePID.Width = 147
+        '
+        'PurchasePartTime
+        '
+        Me.PurchasePartTime.HeaderText = "進貨日期"
+        Me.PurchasePartTime.Name = "PurchasePartTime"
+        Me.PurchasePartTime.ReadOnly = True
+        Me.PurchasePartTime.Width = 111
+        '
+        'PurchasePartSupplierName
+        '
+        Me.PurchasePartSupplierName.HeaderText = "供應商"
+        Me.PurchasePartSupplierName.Name = "PurchasePartSupplierName"
+        Me.PurchasePartSupplierName.ReadOnly = True
+        Me.PurchasePartSupplierName.Width = 92
+        '
+        'PurchasePartName
+        '
+        Me.PurchasePartName.HeaderText = "名稱"
+        Me.PurchasePartName.Name = "PurchasePartName"
+        Me.PurchasePartName.ReadOnly = True
+        Me.PurchasePartName.Width = 73
+        '
+        'PurchasePartSpecification
+        '
+        Me.PurchasePartSpecification.HeaderText = "規格"
+        Me.PurchasePartSpecification.Name = "PurchasePartSpecification"
+        Me.PurchasePartSpecification.ReadOnly = True
+        Me.PurchasePartSpecification.Width = 73
+        '
+        'PurchasePartWidth
+        '
+        Me.PurchasePartWidth.HeaderText = "寬"
+        Me.PurchasePartWidth.Name = "PurchasePartWidth"
+        Me.PurchasePartWidth.ReadOnly = True
+        Me.PurchasePartWidth.Width = 54
+        '
+        'PurchasePartLength
+        '
+        Me.PurchasePartLength.HeaderText = "高"
+        Me.PurchasePartLength.Name = "PurchasePartLength"
+        Me.PurchasePartLength.ReadOnly = True
+        Me.PurchasePartLength.Width = 54
+        '
+        'PurchasePartCBM
+        '
+        Me.PurchasePartCBM.HeaderText = "材積"
+        Me.PurchasePartCBM.Name = "PurchasePartCBM"
+        Me.PurchasePartCBM.ReadOnly = True
+        Me.PurchasePartCBM.Width = 73
+        '
+        'PurchasePartCount
+        '
+        Me.PurchasePartCount.HeaderText = "數量"
+        Me.PurchasePartCount.Name = "PurchasePartCount"
+        Me.PurchasePartCount.ReadOnly = True
+        Me.PurchasePartCount.Width = 73
+        '
+        'PurchasePartRemark
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.PurchasePartRemark.DefaultCellStyle = DataGridViewCellStyle4
+        Me.PurchasePartRemark.HeaderText = "備註"
+        Me.PurchasePartRemark.Name = "PurchasePartRemark"
+        Me.PurchasePartRemark.ReadOnly = True
+        Me.PurchasePartRemark.Width = 73
+        '
         'TabPage5
         '
         Me.TabPage5.Controls.Add(Me.PurchasePart2DGV)
@@ -1118,6 +1192,85 @@ Partial Class Data_Case_Form
         Me.ShipmentPartDGV.Size = New System.Drawing.Size(924, 187)
         Me.ShipmentPartDGV.TabIndex = 2
         '
+        'ShipmentPID
+        '
+        Me.ShipmentPID.HeaderText = "salePID"
+        Me.ShipmentPID.Name = "ShipmentPID"
+        Me.ShipmentPID.ReadOnly = True
+        Me.ShipmentPID.Visible = False
+        '
+        'ShipmentPartTime
+        '
+        Me.ShipmentPartTime.HeaderText = "出貨日期"
+        Me.ShipmentPartTime.Name = "ShipmentPartTime"
+        Me.ShipmentPartTime.ReadOnly = True
+        Me.ShipmentPartTime.Width = 111
+        '
+        'ShipmentPartSupplierName
+        '
+        Me.ShipmentPartSupplierName.HeaderText = "供應商"
+        Me.ShipmentPartSupplierName.Name = "ShipmentPartSupplierName"
+        Me.ShipmentPartSupplierName.ReadOnly = True
+        Me.ShipmentPartSupplierName.Width = 92
+        '
+        'ShipmentPartName
+        '
+        Me.ShipmentPartName.HeaderText = "名稱"
+        Me.ShipmentPartName.Name = "ShipmentPartName"
+        Me.ShipmentPartName.ReadOnly = True
+        Me.ShipmentPartName.Width = 73
+        '
+        'ShipmentPartSpecification
+        '
+        Me.ShipmentPartSpecification.HeaderText = "規格"
+        Me.ShipmentPartSpecification.Name = "ShipmentPartSpecification"
+        Me.ShipmentPartSpecification.ReadOnly = True
+        Me.ShipmentPartSpecification.Width = 73
+        '
+        'ShipmentPartWidth
+        '
+        Me.ShipmentPartWidth.HeaderText = "寬"
+        Me.ShipmentPartWidth.Name = "ShipmentPartWidth"
+        Me.ShipmentPartWidth.ReadOnly = True
+        Me.ShipmentPartWidth.Width = 54
+        '
+        'ShipmentPartLength
+        '
+        Me.ShipmentPartLength.HeaderText = "長"
+        Me.ShipmentPartLength.Name = "ShipmentPartLength"
+        Me.ShipmentPartLength.ReadOnly = True
+        Me.ShipmentPartLength.Width = 54
+        '
+        'ShipmentPartCBM
+        '
+        Me.ShipmentPartCBM.HeaderText = "材積"
+        Me.ShipmentPartCBM.Name = "ShipmentPartCBM"
+        Me.ShipmentPartCBM.ReadOnly = True
+        Me.ShipmentPartCBM.Width = 73
+        '
+        'ShipmentPartCount
+        '
+        Me.ShipmentPartCount.HeaderText = "數量"
+        Me.ShipmentPartCount.Name = "ShipmentPartCount"
+        Me.ShipmentPartCount.ReadOnly = True
+        Me.ShipmentPartCount.Width = 73
+        '
+        'ShipmentPartPIC
+        '
+        Me.ShipmentPartPIC.HeaderText = "進場人員"
+        Me.ShipmentPartPIC.Name = "ShipmentPartPIC"
+        Me.ShipmentPartPIC.ReadOnly = True
+        Me.ShipmentPartPIC.Width = 111
+        '
+        'ShipmentPartRemark
+        '
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.ShipmentPartRemark.DefaultCellStyle = DataGridViewCellStyle10
+        Me.ShipmentPartRemark.HeaderText = "備註"
+        Me.ShipmentPartRemark.Name = "ShipmentPartRemark"
+        Me.ShipmentPartRemark.ReadOnly = True
+        Me.ShipmentPartRemark.Width = 73
+        '
         'TabPage7
         '
         Me.TabPage7.Controls.Add(Me.ShipmentPart2DGV)
@@ -1159,6 +1312,79 @@ Partial Class Data_Case_Form
         Me.ShipmentPart2DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ShipmentPart2DGV.Size = New System.Drawing.Size(924, 187)
         Me.ShipmentPart2DGV.TabIndex = 3
+        '
+        'ShipmentP2ID
+        '
+        Me.ShipmentP2ID.HeaderText = "saleProdPartData2"
+        Me.ShipmentP2ID.Name = "ShipmentP2ID"
+        Me.ShipmentP2ID.ReadOnly = True
+        Me.ShipmentP2ID.Visible = False
+        Me.ShipmentP2ID.Width = 199
+        '
+        'ShipmentPart2Time
+        '
+        Me.ShipmentPart2Time.HeaderText = "出貨日期"
+        Me.ShipmentPart2Time.Name = "ShipmentPart2Time"
+        Me.ShipmentPart2Time.ReadOnly = True
+        Me.ShipmentPart2Time.Width = 111
+        '
+        'ShipmentPart2SupplierName
+        '
+        Me.ShipmentPart2SupplierName.HeaderText = "供應商"
+        Me.ShipmentPart2SupplierName.Name = "ShipmentPart2SupplierName"
+        Me.ShipmentPart2SupplierName.ReadOnly = True
+        Me.ShipmentPart2SupplierName.Width = 92
+        '
+        'ShipmentPart2Name
+        '
+        Me.ShipmentPart2Name.HeaderText = "名稱"
+        Me.ShipmentPart2Name.Name = "ShipmentPart2Name"
+        Me.ShipmentPart2Name.ReadOnly = True
+        Me.ShipmentPart2Name.Width = 73
+        '
+        'ShipmentPart2Specification
+        '
+        Me.ShipmentPart2Specification.HeaderText = "規格"
+        Me.ShipmentPart2Specification.Name = "ShipmentPart2Specification"
+        Me.ShipmentPart2Specification.ReadOnly = True
+        Me.ShipmentPart2Specification.Width = 73
+        '
+        'ShipmentPart2Width
+        '
+        Me.ShipmentPart2Width.HeaderText = "寬"
+        Me.ShipmentPart2Width.Name = "ShipmentPart2Width"
+        Me.ShipmentPart2Width.ReadOnly = True
+        Me.ShipmentPart2Width.Width = 54
+        '
+        'ShipmentPart2Length
+        '
+        Me.ShipmentPart2Length.HeaderText = "高"
+        Me.ShipmentPart2Length.Name = "ShipmentPart2Length"
+        Me.ShipmentPart2Length.ReadOnly = True
+        Me.ShipmentPart2Length.Width = 54
+        '
+        'ShipmentPart2Count
+        '
+        Me.ShipmentPart2Count.HeaderText = "數量"
+        Me.ShipmentPart2Count.Name = "ShipmentPart2Count"
+        Me.ShipmentPart2Count.ReadOnly = True
+        Me.ShipmentPart2Count.Width = 73
+        '
+        'ShipmentPart2PIC
+        '
+        Me.ShipmentPart2PIC.HeaderText = "進場人員"
+        Me.ShipmentPart2PIC.Name = "ShipmentPart2PIC"
+        Me.ShipmentPart2PIC.ReadOnly = True
+        Me.ShipmentPart2PIC.Width = 111
+        '
+        'ShipmentPart2Remark
+        '
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.ShipmentPart2Remark.DefaultCellStyle = DataGridViewCellStyle12
+        Me.ShipmentPart2Remark.HeaderText = "備註"
+        Me.ShipmentPart2Remark.Name = "ShipmentPart2Remark"
+        Me.ShipmentPart2Remark.ReadOnly = True
+        Me.ShipmentPart2Remark.Width = 73
         '
         'TabPage8
         '
@@ -1255,7 +1481,6 @@ Partial Class Data_Case_Form
         '
         Me.DetailDGV.AllowUserToAddRows = False
         Me.DetailDGV.AllowUserToDeleteRows = False
-        Me.DetailDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DetailDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DetailDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.DetailDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -1277,37 +1502,6 @@ Partial Class Data_Case_Form
         Me.DetailDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DetailDGV.Size = New System.Drawing.Size(944, 233)
         Me.DetailDGV.TabIndex = 1
-        '
-        'WDID
-        '
-        Me.WDID.HeaderText = "WDID"
-        Me.WDID.Name = "WDID"
-        Me.WDID.ReadOnly = True
-        Me.WDID.Visible = False
-        Me.WDID.Width = 61
-        '
-        'WorkDate
-        '
-        Me.WorkDate.HeaderText = "工作時間"
-        Me.WorkDate.Name = "WorkDate"
-        Me.WorkDate.ReadOnly = True
-        Me.WorkDate.Width = 111
-        '
-        'WorkPerson
-        '
-        Me.WorkPerson.HeaderText = "人員"
-        Me.WorkPerson.Name = "WorkPerson"
-        Me.WorkPerson.ReadOnly = True
-        Me.WorkPerson.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.WorkPerson.Width = 54
-        '
-        'WorkDetail
-        '
-        Me.WorkDetail.HeaderText = "明細"
-        Me.WorkDetail.Name = "WorkDetail"
-        Me.WorkDetail.ReadOnly = True
-        Me.WorkDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.WorkDetail.Width = 54
         '
         'TabPage9
         '
@@ -1633,7 +1827,6 @@ Partial Class Data_Case_Form
         Me.ReceiptAddBtn2.Text = "新增五金簽收單"
         Me.ReceiptAddBtn2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ReceiptAddBtn2.UseVisualStyleBackColor = True
-        Me.ReceiptAddBtn2.Visible = False
         '
         'ReviseReceiptBtn
         '
@@ -1685,231 +1878,36 @@ Partial Class Data_Case_Form
         '
         Me.PrintWorkProgressWork.WorkerReportsProgress = True
         '
-        'ShipmentP2ID
+        'WDID
         '
-        Me.ShipmentP2ID.HeaderText = "saleProdPartData2"
-        Me.ShipmentP2ID.Name = "ShipmentP2ID"
-        Me.ShipmentP2ID.ReadOnly = True
-        Me.ShipmentP2ID.Visible = False
-        Me.ShipmentP2ID.Width = 199
+        Me.WDID.HeaderText = "WDID"
+        Me.WDID.Name = "WDID"
+        Me.WDID.ReadOnly = True
+        Me.WDID.Visible = False
+        Me.WDID.Width = 87
         '
-        'ShipmentPart2Time
+        'WorkDate
         '
-        Me.ShipmentPart2Time.HeaderText = "出貨日期"
-        Me.ShipmentPart2Time.Name = "ShipmentPart2Time"
-        Me.ShipmentPart2Time.ReadOnly = True
-        Me.ShipmentPart2Time.Width = 111
+        Me.WorkDate.HeaderText = "工作時間"
+        Me.WorkDate.Name = "WorkDate"
+        Me.WorkDate.ReadOnly = True
+        Me.WorkDate.Width = 110
         '
-        'ShipmentPart2SupplierName
+        'WorkPerson
         '
-        Me.ShipmentPart2SupplierName.HeaderText = "供應商"
-        Me.ShipmentPart2SupplierName.Name = "ShipmentPart2SupplierName"
-        Me.ShipmentPart2SupplierName.ReadOnly = True
-        Me.ShipmentPart2SupplierName.Width = 92
+        Me.WorkPerson.HeaderText = "人員"
+        Me.WorkPerson.Name = "WorkPerson"
+        Me.WorkPerson.ReadOnly = True
+        Me.WorkPerson.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.WorkPerson.Width = 80
         '
-        'ShipmentPart2Name
+        'WorkDetail
         '
-        Me.ShipmentPart2Name.HeaderText = "名稱"
-        Me.ShipmentPart2Name.Name = "ShipmentPart2Name"
-        Me.ShipmentPart2Name.ReadOnly = True
-        Me.ShipmentPart2Name.Width = 73
-        '
-        'ShipmentPart2Specification
-        '
-        Me.ShipmentPart2Specification.HeaderText = "規格"
-        Me.ShipmentPart2Specification.Name = "ShipmentPart2Specification"
-        Me.ShipmentPart2Specification.ReadOnly = True
-        Me.ShipmentPart2Specification.Width = 73
-        '
-        'ShipmentPart2Width
-        '
-        Me.ShipmentPart2Width.HeaderText = "寬"
-        Me.ShipmentPart2Width.Name = "ShipmentPart2Width"
-        Me.ShipmentPart2Width.ReadOnly = True
-        Me.ShipmentPart2Width.Width = 54
-        '
-        'ShipmentPart2Length
-        '
-        Me.ShipmentPart2Length.HeaderText = "高"
-        Me.ShipmentPart2Length.Name = "ShipmentPart2Length"
-        Me.ShipmentPart2Length.ReadOnly = True
-        Me.ShipmentPart2Length.Width = 54
-        '
-        'ShipmentPart2Count
-        '
-        Me.ShipmentPart2Count.HeaderText = "數量"
-        Me.ShipmentPart2Count.Name = "ShipmentPart2Count"
-        Me.ShipmentPart2Count.ReadOnly = True
-        Me.ShipmentPart2Count.Width = 73
-        '
-        'ShipmentPart2PIC
-        '
-        Me.ShipmentPart2PIC.HeaderText = "進場人員"
-        Me.ShipmentPart2PIC.Name = "ShipmentPart2PIC"
-        Me.ShipmentPart2PIC.ReadOnly = True
-        Me.ShipmentPart2PIC.Width = 111
-        '
-        'ShipmentPart2Remark
-        '
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.ShipmentPart2Remark.DefaultCellStyle = DataGridViewCellStyle12
-        Me.ShipmentPart2Remark.HeaderText = "備註"
-        Me.ShipmentPart2Remark.Name = "ShipmentPart2Remark"
-        Me.ShipmentPart2Remark.ReadOnly = True
-        Me.ShipmentPart2Remark.Width = 73
-        '
-        'ShipmentPID
-        '
-        Me.ShipmentPID.HeaderText = "salePID"
-        Me.ShipmentPID.Name = "ShipmentPID"
-        Me.ShipmentPID.ReadOnly = True
-        Me.ShipmentPID.Visible = False
-        '
-        'ShipmentPartTime
-        '
-        Me.ShipmentPartTime.HeaderText = "出貨日期"
-        Me.ShipmentPartTime.Name = "ShipmentPartTime"
-        Me.ShipmentPartTime.ReadOnly = True
-        Me.ShipmentPartTime.Width = 111
-        '
-        'ShipmentPartSupplierName
-        '
-        Me.ShipmentPartSupplierName.HeaderText = "供應商"
-        Me.ShipmentPartSupplierName.Name = "ShipmentPartSupplierName"
-        Me.ShipmentPartSupplierName.ReadOnly = True
-        Me.ShipmentPartSupplierName.Width = 92
-        '
-        'ShipmentPartName
-        '
-        Me.ShipmentPartName.HeaderText = "名稱"
-        Me.ShipmentPartName.Name = "ShipmentPartName"
-        Me.ShipmentPartName.ReadOnly = True
-        Me.ShipmentPartName.Width = 73
-        '
-        'ShipmentPartSpecification
-        '
-        Me.ShipmentPartSpecification.HeaderText = "規格"
-        Me.ShipmentPartSpecification.Name = "ShipmentPartSpecification"
-        Me.ShipmentPartSpecification.ReadOnly = True
-        Me.ShipmentPartSpecification.Width = 73
-        '
-        'ShipmentPartWidth
-        '
-        Me.ShipmentPartWidth.HeaderText = "寬"
-        Me.ShipmentPartWidth.Name = "ShipmentPartWidth"
-        Me.ShipmentPartWidth.ReadOnly = True
-        Me.ShipmentPartWidth.Width = 54
-        '
-        'ShipmentPartLength
-        '
-        Me.ShipmentPartLength.HeaderText = "長"
-        Me.ShipmentPartLength.Name = "ShipmentPartLength"
-        Me.ShipmentPartLength.ReadOnly = True
-        Me.ShipmentPartLength.Width = 54
-        '
-        'ShipmentPartCBM
-        '
-        Me.ShipmentPartCBM.HeaderText = "材積"
-        Me.ShipmentPartCBM.Name = "ShipmentPartCBM"
-        Me.ShipmentPartCBM.ReadOnly = True
-        Me.ShipmentPartCBM.Width = 73
-        '
-        'ShipmentPartCount
-        '
-        Me.ShipmentPartCount.HeaderText = "數量"
-        Me.ShipmentPartCount.Name = "ShipmentPartCount"
-        Me.ShipmentPartCount.ReadOnly = True
-        Me.ShipmentPartCount.Width = 73
-        '
-        'ShipmentPartPIC
-        '
-        Me.ShipmentPartPIC.HeaderText = "進場人員"
-        Me.ShipmentPartPIC.Name = "ShipmentPartPIC"
-        Me.ShipmentPartPIC.ReadOnly = True
-        Me.ShipmentPartPIC.Width = 111
-        '
-        'ShipmentPartRemark
-        '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.ShipmentPartRemark.DefaultCellStyle = DataGridViewCellStyle10
-        Me.ShipmentPartRemark.HeaderText = "備註"
-        Me.ShipmentPartRemark.Name = "ShipmentPartRemark"
-        Me.ShipmentPartRemark.ReadOnly = True
-        Me.ShipmentPartRemark.Width = 73
-        '
-        'PurchasePID
-        '
-        Me.PurchasePID.HeaderText = "purchasePID"
-        Me.PurchasePID.Name = "PurchasePID"
-        Me.PurchasePID.ReadOnly = True
-        Me.PurchasePID.Visible = False
-        Me.PurchasePID.Width = 147
-        '
-        'PurchasePartTime
-        '
-        Me.PurchasePartTime.HeaderText = "進貨日期"
-        Me.PurchasePartTime.Name = "PurchasePartTime"
-        Me.PurchasePartTime.ReadOnly = True
-        Me.PurchasePartTime.Width = 111
-        '
-        'PurchasePartSupplierName
-        '
-        Me.PurchasePartSupplierName.HeaderText = "供應商"
-        Me.PurchasePartSupplierName.Name = "PurchasePartSupplierName"
-        Me.PurchasePartSupplierName.ReadOnly = True
-        Me.PurchasePartSupplierName.Width = 92
-        '
-        'PurchasePartName
-        '
-        Me.PurchasePartName.HeaderText = "名稱"
-        Me.PurchasePartName.Name = "PurchasePartName"
-        Me.PurchasePartName.ReadOnly = True
-        Me.PurchasePartName.Width = 73
-        '
-        'PurchasePartSpecification
-        '
-        Me.PurchasePartSpecification.HeaderText = "規格"
-        Me.PurchasePartSpecification.Name = "PurchasePartSpecification"
-        Me.PurchasePartSpecification.ReadOnly = True
-        Me.PurchasePartSpecification.Width = 73
-        '
-        'PurchasePartWidth
-        '
-        Me.PurchasePartWidth.HeaderText = "寬"
-        Me.PurchasePartWidth.Name = "PurchasePartWidth"
-        Me.PurchasePartWidth.ReadOnly = True
-        Me.PurchasePartWidth.Width = 54
-        '
-        'PurchasePartLength
-        '
-        Me.PurchasePartLength.HeaderText = "高"
-        Me.PurchasePartLength.Name = "PurchasePartLength"
-        Me.PurchasePartLength.ReadOnly = True
-        Me.PurchasePartLength.Width = 54
-        '
-        'PurchasePartCBM
-        '
-        Me.PurchasePartCBM.HeaderText = "材積"
-        Me.PurchasePartCBM.Name = "PurchasePartCBM"
-        Me.PurchasePartCBM.ReadOnly = True
-        Me.PurchasePartCBM.Width = 73
-        '
-        'PurchasePartCount
-        '
-        Me.PurchasePartCount.HeaderText = "數量"
-        Me.PurchasePartCount.Name = "PurchasePartCount"
-        Me.PurchasePartCount.ReadOnly = True
-        Me.PurchasePartCount.Width = 73
-        '
-        'PurchasePartRemark
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.PurchasePartRemark.DefaultCellStyle = DataGridViewCellStyle4
-        Me.PurchasePartRemark.HeaderText = "備註"
-        Me.PurchasePartRemark.Name = "PurchasePartRemark"
-        Me.PurchasePartRemark.ReadOnly = True
-        Me.PurchasePartRemark.Width = 73
+        Me.WorkDetail.HeaderText = "明細"
+        Me.WorkDetail.Name = "WorkDetail"
+        Me.WorkDetail.ReadOnly = True
+        Me.WorkDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.WorkDetail.Width = 300
         '
         'Data_Case_Form
         '
@@ -2049,10 +2047,6 @@ Partial Class Data_Case_Form
     Friend WithEvents DelWPBtn As Button
     Friend WithEvents WorkProgressDGV As DataGridView
     Friend WithEvents PrintWorkProgressWork As System.ComponentModel.BackgroundWorker
-    Friend WithEvents WDID As DataGridViewTextBoxColumn
-    Friend WithEvents WorkDate As DataGridViewTextBoxColumn
-    Friend WithEvents WorkPerson As DataGridViewTextBoxColumn
-    Friend WithEvents WorkDetail As DataGridViewTextBoxColumn
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents purchaseP2ID As DataGridViewTextBoxColumn
     Friend WithEvents PurchasePart2Time As DataGridViewTextBoxColumn
@@ -2132,4 +2126,8 @@ Partial Class Data_Case_Form
     Friend WithEvents PurchasePartCBM As DataGridViewTextBoxColumn
     Friend WithEvents PurchasePartCount As DataGridViewTextBoxColumn
     Friend WithEvents PurchasePartRemark As DataGridViewTextBoxColumn
+    Friend WithEvents WDID As DataGridViewTextBoxColumn
+    Friend WithEvents WorkDate As DataGridViewTextBoxColumn
+    Friend WithEvents WorkPerson As DataGridViewTextBoxColumn
+    Friend WithEvents WorkDetail As DataGridViewTextBoxColumn
 End Class

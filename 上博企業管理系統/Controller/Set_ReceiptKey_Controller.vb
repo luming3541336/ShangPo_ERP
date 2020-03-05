@@ -2,6 +2,7 @@
 
 Public Class Set_ReceiptKey_Controller
     Inherits Set_ReceiptKey_Model
+    Public SELECT_RECEIPTDATA_COUNT As String = SELECT_RECEIPTDATA_COUNT_SQL
     Public Function Select_ReceiptKey(ByVal intReceiptID As Integer) As List(Of ReceiptKey)
         Dim conDB As Connection = New Connection
         Dim strSQL As String = SELECT_RECEIPTKEY_SQL

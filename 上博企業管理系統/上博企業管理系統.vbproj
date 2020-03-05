@@ -28,7 +28,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\DBSERVER\AppInstall\</UpdateUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -138,6 +138,7 @@
     <Compile Include="Controller\Output_SaleReport_Controller.vb" />
     <Compile Include="Controller\Search_Controller.vb" />
     <Compile Include="Controller\Data_Specification_Controller.vb" />
+    <Compile Include="Controller\Set_ReceiptCom_Controller.vb" />
     <Compile Include="Controller\Set_ReceiptKey_Controller.vb" />
     <Compile Include="Controller\Set_Repair_Controller.vb" />
     <Compile Include="Controller\Set_Sale_Controller.vb" />
@@ -156,6 +157,7 @@
     <Compile Include="Model\Set_Purchase_Model.vb" />
     <Compile Include="Model\Output_SaleReport_Model.vb" />
     <Compile Include="Model\Data_Specification_Model.vb" />
+    <Compile Include="Model\Set_ReceiptCom_Model.vb" />
     <Compile Include="Model\Set_ReceiptKey_Model.vb" />
     <Compile Include="Model\Set_Repair_Model.vb" />
     <Compile Include="Model\Set_Sale_Model.vb" />
@@ -234,6 +236,12 @@
       <DependentUpon>Data_Product_Form.vb</DependentUpon>
     </Compile>
     <Compile Include="View\Data_Product_Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Set_ReceiptCom_Form.Designer.vb">
+      <DependentUpon>Set_ReceiptCom_Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Set_ReceiptCom_Form.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Set_ReceiptKey_Form.Designer.vb">
@@ -395,6 +403,9 @@
     <EmbeddedResource Include="View\Data_Product_Form.resx">
       <DependentUpon>Data_Product_Form.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Set_ReceiptCom_Form.resx">
+      <DependentUpon>Set_ReceiptCom_Form.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Set_ReceiptKey_Form.en.resx">
       <DependentUpon>Set_ReceiptKey_Form.vb</DependentUpon>
     </EmbeddedResource>
@@ -491,6 +502,9 @@
     <Content Include="Resources\維修單.dotx" />
     <Content Include="Resources\鑰匙單.dotx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\五金簽收單.xltx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
