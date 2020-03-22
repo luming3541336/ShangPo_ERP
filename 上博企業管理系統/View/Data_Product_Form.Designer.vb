@@ -30,9 +30,11 @@ Partial Class Data_Product_Form
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.ProdPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ProdNameText = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.UnitCB = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ControlLayout = New System.Windows.Forms.FlowLayoutPanel()
         Me.AddBtn = New System.Windows.Forms.Button()
@@ -41,19 +43,19 @@ Partial Class Data_Product_Form
         Me.OKBtn = New System.Windows.Forms.Button()
         Me.CancelBtn = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.LoadingPic = New System.Windows.Forms.PictureBox()
-        Me.ViewDGV = New System.Windows.Forms.DataGridView()
+        Me.ProdDGV = New System.Windows.Forms.DataGridView()
+        Me.ProdID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProdName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Unit = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.ModelPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.SupplierCB = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.ModelText = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.PriceText = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -61,39 +63,35 @@ Partial Class Data_Product_Form
         Me.Label14 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.FlowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.ModelAddBtn = New System.Windows.Forms.Button()
+        Me.ModelReviseBtn = New System.Windows.Forms.Button()
+        Me.ModelDelBtn = New System.Windows.Forms.Button()
+        Me.ModelOKBtn = New System.Windows.Forms.Button()
+        Me.ModelCancelBtn = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.ProdID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProdName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Unit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ModelDGV = New System.Windows.Forms.DataGridView()
         Me.ProdModelID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SuID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SupplierName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Model = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Price = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.ProdPanel.SuspendLayout()
         Me.ControlLayout.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.LoadingPic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ViewDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
-        Me.FlowLayoutPanel2.SuspendLayout()
+        Me.ModelPanel.SuspendLayout()
         Me.FlowLayoutPanel4.SuspendLayout()
-        Me.FlowLayoutPanel5.SuspendLayout()
+        Me.FlowLayoutPanel.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ModelDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -126,7 +124,7 @@ Partial Class Data_Product_Form
         '
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.FlowLayoutPanel1, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.ProdPanel, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 0, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.ControlLayout, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Panel4, 0, 3)
@@ -144,18 +142,19 @@ Partial Class Data_Product_Form
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(843, 281)
         Me.TableLayoutPanel1.TabIndex = 3
         '
-        'FlowLayoutPanel1
+        'ProdPanel
         '
-        Me.FlowLayoutPanel1.AutoSize = True
-        Me.FlowLayoutPanel1.Controls.Add(Me.Label2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.ProdNameText)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Label9)
-        Me.FlowLayoutPanel1.Controls.Add(Me.ComboBox4)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 41)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(837, 38)
-        Me.FlowLayoutPanel1.TabIndex = 0
+        Me.ProdPanel.AutoSize = True
+        Me.ProdPanel.Controls.Add(Me.Label2)
+        Me.ProdPanel.Controls.Add(Me.ProdNameText)
+        Me.ProdPanel.Controls.Add(Me.Label9)
+        Me.ProdPanel.Controls.Add(Me.UnitCB)
+        Me.ProdPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ProdPanel.Enabled = False
+        Me.ProdPanel.Location = New System.Drawing.Point(3, 41)
+        Me.ProdPanel.Name = "ProdPanel"
+        Me.ProdPanel.Size = New System.Drawing.Size(837, 38)
+        Me.ProdPanel.TabIndex = 0
         '
         'Label2
         '
@@ -176,9 +175,30 @@ Partial Class Data_Product_Form
         Me.ProdNameText.Location = New System.Drawing.Point(73, 2)
         Me.ProdNameText.Margin = New System.Windows.Forms.Padding(2)
         Me.ProdNameText.Name = "ProdNameText"
-        Me.ProdNameText.ReadOnly = True
         Me.ProdNameText.Size = New System.Drawing.Size(351, 33)
         Me.ProdNameText.TabIndex = 3
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label9.AutoSize = True
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(428, 7)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(105, 24)
+        Me.Label9.TabIndex = 8
+        Me.Label9.Text = "計算單位："
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'UnitCB
+        '
+        Me.UnitCB.FormattingEnabled = True
+        Me.UnitCB.Items.AddRange(New Object() {"樘"})
+        Me.UnitCB.Location = New System.Drawing.Point(538, 3)
+        Me.UnitCB.Name = "UnitCB"
+        Me.UnitCB.Size = New System.Drawing.Size(61, 32)
+        Me.UnitCB.TabIndex = 13
         '
         'Panel2
         '
@@ -283,8 +303,7 @@ Partial Class Data_Product_Form
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.LoadingPic)
-        Me.Panel4.Controls.Add(Me.ViewDGV)
+        Me.Panel4.Controls.Add(Me.ProdDGV)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(2, 88)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
@@ -292,26 +311,13 @@ Partial Class Data_Product_Form
         Me.Panel4.Size = New System.Drawing.Size(839, 189)
         Me.Panel4.TabIndex = 6
         '
-        'LoadingPic
+        'ProdDGV
         '
-        Me.LoadingPic.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LoadingPic.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.LoadingPic.Image = Global.上博企業管理系統.My.Resources.Resources.loading
-        Me.LoadingPic.Location = New System.Drawing.Point(411, 90)
-        Me.LoadingPic.Margin = New System.Windows.Forms.Padding(2)
-        Me.LoadingPic.Name = "LoadingPic"
-        Me.LoadingPic.Size = New System.Drawing.Size(68, 36)
-        Me.LoadingPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.LoadingPic.TabIndex = 5
-        Me.LoadingPic.TabStop = False
-        '
-        'ViewDGV
-        '
-        Me.ViewDGV.AllowUserToAddRows = False
-        Me.ViewDGV.AllowUserToDeleteRows = False
-        Me.ViewDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.ViewDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
-        Me.ViewDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.ProdDGV.AllowUserToAddRows = False
+        Me.ProdDGV.AllowUserToDeleteRows = False
+        Me.ProdDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.ProdDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.ProdDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("微軟正黑體", 14.25!)
@@ -319,24 +325,49 @@ Partial Class Data_Product_Form
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ViewDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.ViewDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ViewDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProdID, Me.ProdName, Me.Unit})
-        Me.ViewDGV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ViewDGV.Location = New System.Drawing.Point(0, 0)
-        Me.ViewDGV.Margin = New System.Windows.Forms.Padding(2)
-        Me.ViewDGV.Name = "ViewDGV"
-        Me.ViewDGV.ReadOnly = True
-        Me.ViewDGV.RowHeadersVisible = False
+        Me.ProdDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.ProdDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ProdDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProdID, Me.ProdName, Me.Unit})
+        Me.ProdDGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ProdDGV.Location = New System.Drawing.Point(0, 0)
+        Me.ProdDGV.Margin = New System.Windows.Forms.Padding(2)
+        Me.ProdDGV.MultiSelect = False
+        Me.ProdDGV.Name = "ProdDGV"
+        Me.ProdDGV.ReadOnly = True
+        Me.ProdDGV.RowHeadersVisible = False
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        Me.ViewDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.ViewDGV.RowTemplate.Height = 24
-        Me.ViewDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ViewDGV.Size = New System.Drawing.Size(839, 189)
-        Me.ViewDGV.TabIndex = 3
+        Me.ProdDGV.RowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.ProdDGV.RowTemplate.Height = 24
+        Me.ProdDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.ProdDGV.Size = New System.Drawing.Size(839, 189)
+        Me.ProdDGV.TabIndex = 3
+        '
+        'ProdID
+        '
+        Me.ProdID.DataPropertyName = "ProdID"
+        Me.ProdID.HeaderText = "產品名稱"
+        Me.ProdID.Name = "ProdID"
+        Me.ProdID.ReadOnly = True
+        Me.ProdID.Visible = False
+        '
+        'ProdName
+        '
+        Me.ProdName.DataPropertyName = "ProdName"
+        Me.ProdName.FillWeight = 172.5888!
+        Me.ProdName.HeaderText = "樣式"
+        Me.ProdName.Name = "ProdName"
+        Me.ProdName.ReadOnly = True
+        '
+        'Unit
+        '
+        Me.Unit.DataPropertyName = "Unit"
+        Me.Unit.FillWeight = 27.41116!
+        Me.Unit.HeaderText = "單位"
+        Me.Unit.Name = "Unit"
+        Me.Unit.ReadOnly = True
         '
         'Panel3
         '
@@ -352,10 +383,10 @@ Partial Class Data_Product_Form
         '
         Me.TableLayoutPanel2.ColumnCount = 1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.FlowLayoutPanel2, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.ModelPanel, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Panel1, 0, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.FlowLayoutPanel4, 0, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.FlowLayoutPanel5, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.FlowLayoutPanel, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Panel5, 0, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.Panel6, 0, 2)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -372,20 +403,21 @@ Partial Class Data_Product_Form
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(843, 363)
         Me.TableLayoutPanel2.TabIndex = 4
         '
-        'FlowLayoutPanel2
+        'ModelPanel
         '
-        Me.FlowLayoutPanel2.AutoSize = True
-        Me.FlowLayoutPanel2.Controls.Add(Me.Label5)
-        Me.FlowLayoutPanel2.Controls.Add(Me.ComboBox3)
-        Me.FlowLayoutPanel2.Controls.Add(Me.Label8)
-        Me.FlowLayoutPanel2.Controls.Add(Me.TextBox2)
-        Me.FlowLayoutPanel2.Controls.Add(Me.Label10)
-        Me.FlowLayoutPanel2.Controls.Add(Me.TextBox3)
-        Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(3, 41)
-        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(837, 38)
-        Me.FlowLayoutPanel2.TabIndex = 0
+        Me.ModelPanel.AutoSize = True
+        Me.ModelPanel.Controls.Add(Me.Label5)
+        Me.ModelPanel.Controls.Add(Me.SupplierCB)
+        Me.ModelPanel.Controls.Add(Me.Label8)
+        Me.ModelPanel.Controls.Add(Me.ModelText)
+        Me.ModelPanel.Controls.Add(Me.Label10)
+        Me.ModelPanel.Controls.Add(Me.PriceText)
+        Me.ModelPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ModelPanel.Enabled = False
+        Me.ModelPanel.Location = New System.Drawing.Point(3, 41)
+        Me.ModelPanel.Name = "ModelPanel"
+        Me.ModelPanel.Size = New System.Drawing.Size(837, 38)
+        Me.ModelPanel.TabIndex = 0
         '
         'Label5
         '
@@ -400,13 +432,13 @@ Partial Class Data_Product_Form
         Me.Label5.Text = "供應商："
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ComboBox3
+        'SupplierCB
         '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(93, 3)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(171, 32)
-        Me.ComboBox3.TabIndex = 14
+        Me.SupplierCB.FormattingEnabled = True
+        Me.SupplierCB.Location = New System.Drawing.Point(93, 3)
+        Me.SupplierCB.Name = "SupplierCB"
+        Me.SupplierCB.Size = New System.Drawing.Size(171, 32)
+        Me.SupplierCB.TabIndex = 14
         '
         'Label8
         '
@@ -421,37 +453,14 @@ Partial Class Data_Product_Form
         Me.Label8.Text = "型號："
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox2
+        'ModelText
         '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Location = New System.Drawing.Point(340, 2)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(170, 33)
-        Me.TextBox2.TabIndex = 7
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label9.AutoSize = True
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(428, 7)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(105, 24)
-        Me.Label9.TabIndex = 8
-        Me.Label9.Text = "計算單位："
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'ComboBox4
-        '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Items.AddRange(New Object() {"才", "樘"})
-        Me.ComboBox4.Location = New System.Drawing.Point(538, 3)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(61, 32)
-        Me.ComboBox4.TabIndex = 13
+        Me.ModelText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ModelText.Location = New System.Drawing.Point(340, 2)
+        Me.ModelText.Margin = New System.Windows.Forms.Padding(2)
+        Me.ModelText.Name = "ModelText"
+        Me.ModelText.Size = New System.Drawing.Size(170, 33)
+        Me.ModelText.TabIndex = 7
         '
         'Label10
         '
@@ -466,15 +475,14 @@ Partial Class Data_Product_Form
         Me.Label10.Text = "單價："
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox3
+        'PriceText
         '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Location = New System.Drawing.Point(585, 2)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(153, 33)
-        Me.TextBox3.TabIndex = 11
+        Me.PriceText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PriceText.Location = New System.Drawing.Point(585, 2)
+        Me.PriceText.Margin = New System.Windows.Forms.Padding(2)
+        Me.PriceText.Name = "PriceText"
+        Me.PriceText.Size = New System.Drawing.Size(153, 33)
+        Me.PriceText.TabIndex = 11
         '
         'Panel1
         '
@@ -500,6 +508,7 @@ Partial Class Data_Product_Form
         Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
         Me.FlowLayoutPanel4.Size = New System.Drawing.Size(839, 42)
         Me.FlowLayoutPanel4.TabIndex = 4
+        Me.FlowLayoutPanel4.Visible = False
         '
         'Label13
         '
@@ -560,100 +569,103 @@ Partial Class Data_Product_Form
         Me.Button1.Text = "查詢"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'FlowLayoutPanel5
+        'FlowLayoutPanel
         '
-        Me.FlowLayoutPanel5.AutoSize = True
-        Me.FlowLayoutPanel5.Controls.Add(Me.Button2)
-        Me.FlowLayoutPanel5.Controls.Add(Me.Button3)
-        Me.FlowLayoutPanel5.Controls.Add(Me.Button4)
-        Me.FlowLayoutPanel5.Controls.Add(Me.Button5)
-        Me.FlowLayoutPanel5.Controls.Add(Me.Button6)
-        Me.FlowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel5.Location = New System.Drawing.Point(2, 2)
-        Me.FlowLayoutPanel5.Margin = New System.Windows.Forms.Padding(2)
-        Me.FlowLayoutPanel5.Name = "FlowLayoutPanel5"
-        Me.FlowLayoutPanel5.Size = New System.Drawing.Size(839, 34)
-        Me.FlowLayoutPanel5.TabIndex = 5
+        Me.FlowLayoutPanel.AutoSize = True
+        Me.FlowLayoutPanel.Controls.Add(Me.ModelAddBtn)
+        Me.FlowLayoutPanel.Controls.Add(Me.ModelReviseBtn)
+        Me.FlowLayoutPanel.Controls.Add(Me.ModelDelBtn)
+        Me.FlowLayoutPanel.Controls.Add(Me.ModelOKBtn)
+        Me.FlowLayoutPanel.Controls.Add(Me.ModelCancelBtn)
+        Me.FlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel.Location = New System.Drawing.Point(2, 2)
+        Me.FlowLayoutPanel.Margin = New System.Windows.Forms.Padding(2)
+        Me.FlowLayoutPanel.Name = "FlowLayoutPanel"
+        Me.FlowLayoutPanel.Size = New System.Drawing.Size(839, 34)
+        Me.FlowLayoutPanel.TabIndex = 5
         '
-        'Button2
+        'ModelAddBtn
         '
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.ImageKey = "add-icon.png"
-        Me.Button2.ImageList = Me.ImageList1
-        Me.Button2.Location = New System.Drawing.Point(2, 2)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(84, 30)
-        Me.Button2.TabIndex = 0
-        Me.Button2.Text = "新增"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ModelAddBtn.Enabled = False
+        Me.ModelAddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ModelAddBtn.ForeColor = System.Drawing.Color.White
+        Me.ModelAddBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ModelAddBtn.ImageKey = "add-icon.png"
+        Me.ModelAddBtn.ImageList = Me.ImageList1
+        Me.ModelAddBtn.Location = New System.Drawing.Point(2, 2)
+        Me.ModelAddBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.ModelAddBtn.Name = "ModelAddBtn"
+        Me.ModelAddBtn.Size = New System.Drawing.Size(84, 30)
+        Me.ModelAddBtn.TabIndex = 0
+        Me.ModelAddBtn.Text = "新增"
+        Me.ModelAddBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ModelAddBtn.UseVisualStyleBackColor = True
         '
-        'Button3
+        'ModelReviseBtn
         '
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.ImageKey = "pencil-red-icon.png"
-        Me.Button3.ImageList = Me.ImageList1
-        Me.Button3.Location = New System.Drawing.Point(90, 2)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(84, 30)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "修改"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.ModelReviseBtn.Enabled = False
+        Me.ModelReviseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ModelReviseBtn.ForeColor = System.Drawing.Color.White
+        Me.ModelReviseBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ModelReviseBtn.ImageKey = "pencil-red-icon.png"
+        Me.ModelReviseBtn.ImageList = Me.ImageList1
+        Me.ModelReviseBtn.Location = New System.Drawing.Point(90, 2)
+        Me.ModelReviseBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.ModelReviseBtn.Name = "ModelReviseBtn"
+        Me.ModelReviseBtn.Size = New System.Drawing.Size(84, 30)
+        Me.ModelReviseBtn.TabIndex = 1
+        Me.ModelReviseBtn.Text = "修改"
+        Me.ModelReviseBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ModelReviseBtn.UseVisualStyleBackColor = True
         '
-        'Button4
+        'ModelDelBtn
         '
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.ImageKey = "delete-icon.png"
-        Me.Button4.ImageList = Me.ImageList1
-        Me.Button4.Location = New System.Drawing.Point(178, 2)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(84, 30)
-        Me.Button4.TabIndex = 2
-        Me.Button4.Text = "移除"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.ModelDelBtn.Enabled = False
+        Me.ModelDelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ModelDelBtn.ForeColor = System.Drawing.Color.White
+        Me.ModelDelBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ModelDelBtn.ImageKey = "delete-icon.png"
+        Me.ModelDelBtn.ImageList = Me.ImageList1
+        Me.ModelDelBtn.Location = New System.Drawing.Point(178, 2)
+        Me.ModelDelBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.ModelDelBtn.Name = "ModelDelBtn"
+        Me.ModelDelBtn.Size = New System.Drawing.Size(84, 30)
+        Me.ModelDelBtn.TabIndex = 2
+        Me.ModelDelBtn.Text = "移除"
+        Me.ModelDelBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ModelDelBtn.UseVisualStyleBackColor = True
         '
-        'Button5
+        'ModelOKBtn
         '
-        Me.Button5.BackColor = System.Drawing.Color.DarkCyan
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Location = New System.Drawing.Point(266, 2)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(84, 30)
-        Me.Button5.TabIndex = 3
-        Me.Button5.Text = "確認"
-        Me.Button5.UseVisualStyleBackColor = False
-        Me.Button5.Visible = False
+        Me.ModelOKBtn.BackColor = System.Drawing.Color.DarkCyan
+        Me.ModelOKBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ModelOKBtn.ForeColor = System.Drawing.Color.White
+        Me.ModelOKBtn.Location = New System.Drawing.Point(266, 2)
+        Me.ModelOKBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.ModelOKBtn.Name = "ModelOKBtn"
+        Me.ModelOKBtn.Size = New System.Drawing.Size(84, 30)
+        Me.ModelOKBtn.TabIndex = 3
+        Me.ModelOKBtn.Text = "確認"
+        Me.ModelOKBtn.UseVisualStyleBackColor = False
+        Me.ModelOKBtn.Visible = False
         '
-        'Button6
+        'ModelCancelBtn
         '
-        Me.Button6.BackColor = System.Drawing.Color.DarkCyan
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(354, 2)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(84, 30)
-        Me.Button6.TabIndex = 4
-        Me.Button6.Text = "取消"
-        Me.Button6.UseVisualStyleBackColor = False
-        Me.Button6.Visible = False
+        Me.ModelCancelBtn.BackColor = System.Drawing.Color.DarkCyan
+        Me.ModelCancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ModelCancelBtn.ForeColor = System.Drawing.Color.White
+        Me.ModelCancelBtn.Location = New System.Drawing.Point(354, 2)
+        Me.ModelCancelBtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.ModelCancelBtn.Name = "ModelCancelBtn"
+        Me.ModelCancelBtn.Size = New System.Drawing.Size(84, 30)
+        Me.ModelCancelBtn.TabIndex = 4
+        Me.ModelCancelBtn.Text = "取消"
+        Me.ModelCancelBtn.UseVisualStyleBackColor = False
+        Me.ModelCancelBtn.Visible = False
         '
         'Panel5
         '
-        Me.Panel5.Controls.Add(Me.DataGridView1)
+        Me.Panel5.Controls.Add(Me.ModelDGV)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(2, 88)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
@@ -661,30 +673,73 @@ Partial Class Data_Product_Form
         Me.Panel5.Size = New System.Drawing.Size(839, 225)
         Me.Panel5.TabIndex = 6
         '
-        'DataGridView1
+        'ModelDGV
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
-        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProdModelID, Me.SuID, Me.SupplierName, Me.Model, Me.Price})
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersVisible = False
+        Me.ModelDGV.AllowUserToAddRows = False
+        Me.ModelDGV.AllowUserToDeleteRows = False
+        Me.ModelDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.ModelDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.ModelDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.ModelDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ModelDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProdModelID, Me.SuID, Me.SupplierName, Me.Model, Me.Price})
+        Me.ModelDGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ModelDGV.Location = New System.Drawing.Point(0, 0)
+        Me.ModelDGV.Margin = New System.Windows.Forms.Padding(2)
+        Me.ModelDGV.MultiSelect = False
+        Me.ModelDGV.Name = "ModelDGV"
+        Me.ModelDGV.ReadOnly = True
+        Me.ModelDGV.RowHeadersVisible = False
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(61, Byte), Integer))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(839, 225)
-        Me.DataGridView1.TabIndex = 3
+        Me.ModelDGV.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.ModelDGV.RowTemplate.Height = 24
+        Me.ModelDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.ModelDGV.Size = New System.Drawing.Size(839, 225)
+        Me.ModelDGV.TabIndex = 3
+        '
+        'ProdModelID
+        '
+        Me.ProdModelID.DataPropertyName = "ProdModelID"
+        Me.ProdModelID.HeaderText = "產品名稱"
+        Me.ProdModelID.Name = "ProdModelID"
+        Me.ProdModelID.ReadOnly = True
+        Me.ProdModelID.Visible = False
+        Me.ProdModelID.Width = 92
+        '
+        'SuID
+        '
+        Me.SuID.DataPropertyName = "SuID"
+        Me.SuID.HeaderText = "SuID"
+        Me.SuID.Name = "SuID"
+        Me.SuID.ReadOnly = True
+        Me.SuID.Visible = False
+        Me.SuID.Width = 58
+        '
+        'SupplierName
+        '
+        Me.SupplierName.DataPropertyName = "Name"
+        Me.SupplierName.HeaderText = "供應商"
+        Me.SupplierName.Name = "SupplierName"
+        Me.SupplierName.ReadOnly = True
+        Me.SupplierName.Width = 92
+        '
+        'Model
+        '
+        Me.Model.DataPropertyName = "Model"
+        Me.Model.HeaderText = "型號"
+        Me.Model.Name = "Model"
+        Me.Model.ReadOnly = True
+        Me.Model.Width = 73
+        '
+        'Price
+        '
+        Me.Price.DataPropertyName = "Price"
+        Me.Price.HeaderText = "單價"
+        Me.Price.Name = "Price"
+        Me.Price.ReadOnly = True
+        Me.Price.Width = 73
         '
         'Panel6
         '
@@ -696,73 +751,18 @@ Partial Class Data_Product_Form
         Me.Panel6.Size = New System.Drawing.Size(839, 1)
         Me.Panel6.TabIndex = 8
         '
-        'ProdID
-        '
-        Me.ProdID.HeaderText = "產品名稱"
-        Me.ProdID.Name = "ProdID"
-        Me.ProdID.ReadOnly = True
-        Me.ProdID.Visible = False
-        '
-        'ProdName
-        '
-        Me.ProdName.FillWeight = 172.5888!
-        Me.ProdName.HeaderText = "樣式"
-        Me.ProdName.Name = "ProdName"
-        Me.ProdName.ReadOnly = True
-        '
-        'Unit
-        '
-        Me.Unit.FillWeight = 27.41116!
-        Me.Unit.HeaderText = "單位"
-        Me.Unit.Name = "Unit"
-        Me.Unit.ReadOnly = True
-        '
-        'ProdModelID
-        '
-        Me.ProdModelID.HeaderText = "產品名稱"
-        Me.ProdModelID.Name = "ProdModelID"
-        Me.ProdModelID.ReadOnly = True
-        Me.ProdModelID.Visible = False
-        Me.ProdModelID.Width = 92
-        '
-        'SuID
-        '
-        Me.SuID.HeaderText = "SuID"
-        Me.SuID.Name = "SuID"
-        Me.SuID.ReadOnly = True
-        Me.SuID.Visible = False
-        Me.SuID.Width = 58
-        '
-        'SupplierName
-        '
-        Me.SupplierName.HeaderText = "供應商"
-        Me.SupplierName.Name = "SupplierName"
-        Me.SupplierName.ReadOnly = True
-        Me.SupplierName.Width = 92
-        '
-        'Model
-        '
-        Me.Model.HeaderText = "型號"
-        Me.Model.Name = "Model"
-        Me.Model.ReadOnly = True
-        Me.Model.Width = 73
-        '
-        'Price
-        '
-        Me.Price.HeaderText = "單價"
-        Me.Price.Name = "Price"
-        Me.Price.ReadOnly = True
-        Me.Price.Width = 73
-        '
         'Data_Product_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.BackColor = System.Drawing.Color.SlateGray
         Me.ClientSize = New System.Drawing.Size(843, 648)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Font = New System.Drawing.Font("微軟正黑體", 14.25!)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Data_Product_Form"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "產品設定"
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
@@ -770,28 +770,27 @@ Partial Class Data_Product_Form
         Me.SplitContainer1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.FlowLayoutPanel1.PerformLayout()
+        Me.ProdPanel.ResumeLayout(False)
+        Me.ProdPanel.PerformLayout()
         Me.ControlLayout.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
-        CType(Me.LoadingPic, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ViewDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProdDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
-        Me.FlowLayoutPanel2.ResumeLayout(False)
-        Me.FlowLayoutPanel2.PerformLayout()
+        Me.ModelPanel.ResumeLayout(False)
+        Me.ModelPanel.PerformLayout()
         Me.FlowLayoutPanel4.ResumeLayout(False)
         Me.FlowLayoutPanel4.PerformLayout()
-        Me.FlowLayoutPanel5.ResumeLayout(False)
+        Me.FlowLayoutPanel.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ModelDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents ProdPanel As FlowLayoutPanel
     Friend WithEvents Label2 As Label
     Friend WithEvents ProdNameText As TextBox
     Friend WithEvents Panel2 As Panel
@@ -802,19 +801,18 @@ Partial Class Data_Product_Form
     Friend WithEvents OKBtn As Button
     Friend WithEvents CancelBtn As Button
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents LoadingPic As PictureBox
-    Friend WithEvents ViewDGV As DataGridView
+    Friend WithEvents ProdDGV As DataGridView
     Friend WithEvents Panel3 As Panel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents ModelPanel As FlowLayoutPanel
     Friend WithEvents Label5 As Label
-    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents SupplierCB As ComboBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents ModelText As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents UnitCB As ComboBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents PriceText As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents FlowLayoutPanel4 As FlowLayoutPanel
     Friend WithEvents Label13 As Label
@@ -822,14 +820,14 @@ Partial Class Data_Product_Form
     Friend WithEvents Label14 As Label
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents FlowLayoutPanel5 As FlowLayoutPanel
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
+    Friend WithEvents FlowLayoutPanel As FlowLayoutPanel
+    Friend WithEvents ModelAddBtn As Button
+    Friend WithEvents ModelReviseBtn As Button
+    Friend WithEvents ModelDelBtn As Button
+    Friend WithEvents ModelOKBtn As Button
+    Friend WithEvents ModelCancelBtn As Button
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ModelDGV As DataGridView
     Friend WithEvents Panel6 As Panel
     Friend WithEvents ProdID As DataGridViewTextBoxColumn
     Friend WithEvents ProdName As DataGridViewTextBoxColumn

@@ -1,192 +1,110 @@
-﻿Imports System.Collections.Generic
+﻿Imports System.ComponentModel
 Imports System.Data.SqlClient
 
 Public Class Data_Product_Controller
     Inherits Data_Product_Model
-    Public Function Select_ProdPartData() As List(Of Prod)
+    Public Function Select_ProdData() As List(Of ProdData)
         Dim conDB As Connection = New Connection
-        Dim strSQL As String = SELECT_PRODPARTDATA_SQL
+        Dim strSQL As String = SELECT_ProdData_SQL
+        Dim data As List(Of ProdData) = New List(Of ProdData)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        Dim listData As List(Of Prod) = New List(Of Prod)
         If dataReader.HasRows Then
-            While dataReader.Read
-                listData.Add(New Prod With {.ProdPartID = dataReader("ProdPartID"), .SuID = dataReader("SuID"), .ProdName = dataReader("ProdName"), .ProdNumber = dataReader("ProdNumber"), .SupplierName = dataReader("SupplierNumber") & "(" & dataReader("SupplierName") & ")"})
-            End While
+            Do While dataReader.Read
+                data.Add(New ProdData With {.ProdID = dataReader("ProdID"), .ProdName = dataReader("ProdName"), .Unit = dataReader("Unit")})
+            Loop
         End If
-        Return listData
+        Return data
     End Function
-    Public Function Select_ProdPartData2() As List(Of Prod)
+    Public Function Update_ProdData(ByVal id As Integer, ByVal strUpdatedProp As Dictionary(Of String, String)) As Integer
         Dim conDB As Connection = New Connection
-        Dim strSQL As String = SELECT_FITTINGSET_SQL
+        Dim strSQL As String = UPDATE_ProdData_SQL
+        Dim strStatement As String = Nothing
+        For Each data As KeyValuePair(Of String, String) In strUpdatedProp
+            strStatement += $"{data.Key} = N'{data.Value}',"
+        Next
+        strStatement = strStatement.Remove(strStatement.LastIndexOf(","), 1)
+            strSQL = strSQL.Replace("@statement", strStatement)
+        strSQL = strSQL.Replace("@id", id)
+        Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
+        Return dataReader
+    End Function
+    Public Function Insert_ProdData(ByVal strUpdatedProp As Dictionary(Of String, String)) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = INSERT_ProdData_SQL
+        strSQL = strSQL.Replace("@name", strUpdatedProp("ProdName")).Replace("@unit", strUpdatedProp("Unit"))
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        Dim listData As List(Of Prod) = New List(Of Prod)
+        Dim intData As Integer = 0
         If dataReader.HasRows Then
-            While dataReader.Read
-                listData.Add(New Prod With {.ProdPartID = dataReader("ProdPart2ID"), .SuID = dataReader("SuID"), .ProdName = dataReader("FitName"), .ProdNumber = dataReader("FitNumber"), .SupplierName = dataReader("SupplierNumber") & "(" & dataReader("SupplierName") & ")"})
-            End While
+            Do While dataReader.Read
+                intData = dataReader(0)
+            Loop
         End If
-        Return listData
+        Return intData
+    End Function
+    Public Function Delete_ProdData(ByVal id As Integer) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = DELETE_ProdData_SQL
+        strSQL = strSQL.Replace("@id", id)
+        Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
+        Return dataReader
+    End Function
+
+    Public Function Select_ProdModel(ByVal id As Integer) As List(Of ProdModel)
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = SELECT_ProdModel_SQL
+        strSQL = strSQL.Replace("@id", id)
+        Dim data As List(Of ProdModel) = New List(Of ProdModel)
+        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
+        If dataReader.HasRows Then
+            Do While dataReader.Read
+                data.Add(New ProdModel With {.ProdModelID = dataReader("ProdModelID"), .ProdID = dataReader("prodID"), .Model = dataReader("Model"), .Name = dataReader("Name"), .Price = dataReader("Price"), .SuID = dataReader("SuID")})
+            Loop
+        End If
+        Return data
+    End Function
+    Public Function Update_ProdModel(ByVal id As Integer, strUpdatedProp As Dictionary(Of String, String)) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = UPDATE_ProdModel_SQL
+        Dim strStatement As String = Nothing
+        For Each data As KeyValuePair(Of String, String) In strUpdatedProp
+            strStatement += $"{data.Key} = N'{data.Value}',"
+        Next
+        strStatement = strStatement.Remove(strStatement.LastIndexOf(","), 1)
+        strSQL = strSQL.Replace("@statement", strStatement)
+        strSQL = strSQL.Replace("@id", id)
+        Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
+        Return dataReader
+    End Function
+    Public Function Insert_ProdModel(ByVal id As Integer, strUpdatedProp As Dictionary(Of String, String)) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = INSERT_ProdModel_SQL
+        strSQL = strSQL.Replace("@id", id).Replace("@suId", strUpdatedProp("SuID")).Replace("@model", strUpdatedProp("Model")).Replace("@price", strUpdatedProp("Price"))
+        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
+        Dim intData As Integer = 0
+        If dataReader.HasRows Then
+            Do While dataReader.Read
+                intData = dataReader(0)
+            Loop
+        End If
+        Return intData
+    End Function
+    Public Function Delete_ProdModel(ByVal id As Integer) As Integer
+        Dim conDB As Connection = New Connection
+        Dim strSQL As String = DELETE_ProdModel_SQL
+        strSQL = strSQL.Replace("@id", id)
+        Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
+        Return dataReader
     End Function
     Public Function Select_Supplier() As List(Of SupplierData)
         Dim conDB As Connection = New Connection
-        Dim strSQL As String = SELECT_SUPPLIERDATA_SQL
-        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        Dim listData As List(Of SupplierData) = New List(Of SupplierData)
-        Clear_listSuID()
-        If dataReader.HasRows Then
-            While dataReader.Read
-                listData.Add(New SupplierData With {.Name = dataReader("Number") & "(" & dataReader("Name") & ")"})
-                Set_listSuID(dataReader("SuID"))
-            End While
-        End If
-        Return listData
-    End Function
-    Public Function Select_PurchaseData(ByVal prodID As Integer) As List(Of PuchaseData)
-        Dim conDB As Connection = New Connection
-        Dim strSQL As String = SELECT_PURCHASEDATA_FOR_PRODID_SQL
-        strSQL = strSQL.Replace("@prodPartID", prodID)
-        Dim listData As List(Of PuchaseData) = New List(Of PuchaseData)
+        Dim strSQL As String = SELECT_Supplier_SQL
+        Dim data As List(Of SupplierData) = New List(Of SupplierData)
         Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
         If dataReader.HasRows Then
-            While dataReader.Read
-                listData.Add(New PuchaseData With {.CaseID = dataReader("CaseID"), .CaseName = dataReader("Place"), .PurchaseID = dataReader("PurchaseID"), .Count = dataReader("Count"), .InsertTime = dataReader("InsertTime").ToString, .PurchaseNo = dataReader("PurchaseNo"), .Specification = dataReader("Specification")})
-            End While
+            Do While dataReader.Read
+                data.Add(New SupplierData With {.SuID = dataReader("SuID"), .Name = dataReader("Name")})
+            Loop
         End If
-        Return listData
-    End Function
-    Public Function Select_PurchaseFData(ByVal fitID As Integer) As List(Of PuchaseData)
-        Dim conDB As Connection = New Connection
-        Dim strSQL As String = SELECT_PURCHASEDATA_FOR_FITID_SQL
-        strSQL = strSQL.Replace("@prodPart2ID", fitID)
-        Dim listData As List(Of PuchaseData) = New List(Of PuchaseData)
-        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        If dataReader.HasRows Then
-            While dataReader.Read
-                listData.Add(New PuchaseData With {.CaseID = dataReader("CaseID"), .CaseName = dataReader("Place"), .PurchaseID = dataReader("PurchaseID"), .Count = dataReader("Count"), .InsertTime = dataReader("InsertTime").ToString, .PurchaseNo = dataReader("PurchaseNo"), .Specification = dataReader("Specification")})
-            End While
-        End If
-        Return listData
-    End Function
-    Public Function Select_ProdPartData(ByVal searchitem As Integer, ByVal statement As String) As List(Of Prod)
-        Dim conDB As Connection = New Connection
-        Dim strSQL As String = SELECT_PRODPARTDATA_FOR_STATEMENT_SQL
-        Select Case searchitem
-            Case 0
-                strSQL = strSQL.Replace("@statement", " AND ProdPartData.Name Like N'%" & statement & "%'")
-            Case 1
-                strSQL = strSQL.Replace("@statement", " AND ProdPartData.Number Like N'%" & statement & "%'")
-
-        End Select
-        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        Dim listData As List(Of Prod) = New List(Of Prod)
-        If dataReader.HasRows Then
-            While dataReader.Read
-                listData.Add(New Prod With {.ProdPartID = dataReader("ProdPartID"), .SuID = dataReader("SuID"), .ProdName = dataReader("ProdName"), .ProdNumber = dataReader("ProdNumber"), .SupplierName = dataReader("SupplierNumber") & "(" & dataReader("SupplierName") & ")"})
-            End While
-        End If
-        Return listData
-    End Function
-    Public Function Select_ProdPartData2(ByVal searchitem As Integer, ByVal statement As String) As List(Of Prod)
-        Dim conDB As Connection = New Connection
-        Dim strSQL As String = SELECT_FITTING_FOR_STATEMENT_SQL
-
-        Select Case searchitem
-            Case 0
-                strSQL = strSQL.Replace("@statement", " AND ProdPartData2.Name Like N'%" & statement & "%'")
-            Case 1
-                strSQL = strSQL.Replace("@statement", " AND ProdPartData2.Number Like N'%" & statement & "%'")
-
-        End Select
-        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        Dim listData As List(Of Prod) = New List(Of Prod)
-        If dataReader.HasRows Then
-            While dataReader.Read
-                listData.Add(New Prod With {.ProdPartID = dataReader("ProdPart2ID"), .SuID = dataReader("SuID"), .ProdName = dataReader("FitName"), .ProdNumber = dataReader("FitNumber"), .SupplierName = dataReader("SupplierNumber") & "(" & dataReader("SupplierName") & ")"})
-            End While
-        End If
-        Return listData
-    End Function
-    Public Function Insert_ProdPartData(ByVal suID As Integer, ByVal prodName As String, ByVal prodNumber As String) As Integer
-        Dim conDB As Connection = New Connection
-        Dim strSQL As String = INSERT_PRODPARTDATA_SQL
-        strSQL = strSQL.Replace("@suID", suID)
-        strSQL = strSQL.Replace("@prodName", prodName)
-        strSQL = strSQL.Replace("@prodNumber", prodNumber)
-        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        If dataReader.HasRows Then
-            While dataReader.Read
-                Return dataReader(0)
-            End While
-        End If
-        Return Nothing
-    End Function
-    Public Function Insert_ProdPartData2(ByVal suID As Integer, ByVal fitName As String, ByVal fitNumber As String) As Integer
-        Dim conDB As Connection = New Connection
-        Dim strSQL As String = INSERT_FITTINGSET_SQL
-        strSQL = strSQL.Replace("@suID", suID)
-        strSQL = strSQL.Replace("@fitName", fitName)
-        strSQL = strSQL.Replace("@fitNumber", fitNumber)
-        Dim dataReader As SqlDataReader = conDB.ExecuteSQL(strSQL).ExecuteReader
-        If dataReader.HasRows Then
-            While dataReader.Read
-                Return dataReader(0)
-            End While
-        End If
-        Return Nothing
-    End Function
-    Public Function Update_ProdPartData(ByVal prodID As Integer, ByVal suID As Integer, ByVal prodName As String, ByVal prodNumber As String) As Integer
-        Dim conDB As Connection = New Connection
-        Dim strSQL As String = UPDATE_PRODPARTDATA_SQL
-        strSQL = strSQL.Replace("@prodPartID", prodID)
-        strSQL = strSQL.Replace("@suID", suID)
-        strSQL = strSQL.Replace("@prodNumber", prodNumber)
-        strSQL = strSQL.Replace("@prodName", prodName)
-        Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
-        Return dataReader
-    End Function
-    Public Function Update_ProdPartData2(ByVal fitID As Integer, ByVal suID As Integer, ByVal fitName As String, ByVal fitNumber As String) As Integer
-        Dim conDB As Connection = New Connection
-        Dim strSQL As String = UPDATE_FITTINGSET_SQL
-        strSQL = strSQL.Replace("@prodPart2ID", fitID)
-        strSQL = strSQL.Replace("@suID", suID)
-        strSQL = strSQL.Replace("@fitNumber", fitNumber)
-        strSQL = strSQL.Replace("@fitName", fitName)
-        Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
-        Return dataReader
-    End Function
-    Public Function Del_ProdPartData(ByVal prodID As Integer) As Integer
-        Dim conDB As Connection = New Connection
-        Dim strSQL As String = DELETE_PRODPARTDATA_SQL
-        strSQL = strSQL.Replace("@prodPartID", prodID)
-        Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
-        Return dataReader
-    End Function
-    Public Function Del_ProdPartData2(ByVal fitID As Integer) As Integer
-        Dim conDB As Connection = New Connection
-        Dim strSQL As String = DELETE_FITTINGSET_SQL
-        strSQL = strSQL.Replace("@prodPart2ID", fitID)
-        Dim dataReader As Integer = conDB.ExecuteSQL(strSQL).ExecuteNonQuery
-        Return dataReader
-    End Function
-    Public Sub Set_listSuID(ByVal suID As Integer)
-        listSuID.Add(suID)
-    End Sub
-    Public Function Get_listSuID(ByVal index As Integer) As Integer
-        Return listSuID(index)
-    End Function
-    Public Sub Clear_listSuID()
-        listSuID.Clear()
-    End Sub
-    Public Sub Set_InsertMode()
-        intMode = INSERT_MODE
-    End Sub
-    Public Sub Set_ReviseMode()
-        intMode = REVISE_MODE
-    End Sub
-    Public Sub Set_NormalMode()
-        intMode = NORMAL_MODE
-    End Sub
-    Public Function Get_Mode() As Integer
-        Return intMode
+        Return data
     End Function
 End Class

@@ -28,8 +28,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\DBSERVER\AppInstall\</UpdateUrl>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>14</ApplicationRevision>
-    <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>2.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -128,9 +128,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Data_Case_Controller.vb" />
+    <Compile Include="Controller\Data_Product_Controller.vb" />
     <Compile Include="Controller\Data_Supplier_Controller.vb" />
     <Compile Include="Controller\Data_User_Controller.vb" />
-    <Compile Include="Controller\Data_Product_Controller.vb" />
+    <Compile Include="Controller\Data_ProdPart_Controller.vb" />
     <Compile Include="Controller\Data_Order_Controller.vb" />
     <Compile Include="Controller\Data_Stock_Controller.vb" />
     <Compile Include="Controller\Main_Controller.vb" />
@@ -145,8 +146,9 @@
     <Compile Include="Controller\Set_WorkProgress_Controller.vb" />
     <Compile Include="Controller\Set_WorkDetail_Controller.vb" />
     <Compile Include="Model\Data_Case_Model.vb" />
-    <Compile Include="Model\Data_Search_Model.vb" />
     <Compile Include="Model\Data_Product_Model.vb" />
+    <Compile Include="Model\Data_Search_Model.vb" />
+    <Compile Include="Model\Data_ProdPart_Model.vb" />
     <Compile Include="Model\Data_Order_Model.vb" />
     <Compile Include="Model\Data_Stock_Model.vb" />
     <Compile Include="Model\Data_Supplier_Model.vb" />
@@ -480,6 +482,8 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Data_ProdPart_Model.Prod.datasource" />
+    <None Include="My Project\DataSources\Data_Product_Model.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -580,6 +584,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

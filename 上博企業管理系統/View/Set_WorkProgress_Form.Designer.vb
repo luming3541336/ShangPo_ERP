@@ -80,7 +80,7 @@ Partial Class Set_WorkProgress_Form
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(361, 583)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(722, 519)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'Panel1
@@ -92,7 +92,7 @@ Partial Class Set_WorkProgress_Form
         Me.Panel1.Location = New System.Drawing.Point(2, 3)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(357, 26)
+        Me.Panel1.Size = New System.Drawing.Size(718, 26)
         Me.Panel1.TabIndex = 0
         '
         'TitleLabel
@@ -114,9 +114,9 @@ Partial Class Set_WorkProgress_Form
         Me.FlowLayoutPanel1.Controls.Add(Me.Panel2)
         Me.FlowLayoutPanel1.Controls.Add(Me.Panel8)
         Me.FlowLayoutPanel1.Controls.Add(Me.Panel3)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Panel7)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Panel4)
         Me.FlowLayoutPanel1.Controls.Add(Me.Panel6)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Panel4)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Panel7)
         Me.FlowLayoutPanel1.Controls.Add(Me.Panel9)
         Me.FlowLayoutPanel1.Controls.Add(Me.saveBtn)
         Me.FlowLayoutPanel1.Controls.Add(Me.cancelBtn)
@@ -124,7 +124,7 @@ Partial Class Set_WorkProgress_Form
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(2, 34)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(357, 547)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(718, 483)
         Me.FlowLayoutPanel1.TabIndex = 1
         '
         'Panel5
@@ -162,7 +162,7 @@ Partial Class Set_WorkProgress_Form
         Me.Panel2.Controls.Add(Me.ClassCombo)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(2, 44)
+        Me.Panel2.Location = New System.Drawing.Point(360, 2)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(355, 39)
@@ -194,7 +194,7 @@ Partial Class Set_WorkProgress_Form
         Me.Panel8.Controls.Add(Me.SupplierText)
         Me.Panel8.Controls.Add(Me.Label8)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel8.Location = New System.Drawing.Point(2, 87)
+        Me.Panel8.Location = New System.Drawing.Point(2, 45)
         Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(354, 40)
@@ -225,10 +225,10 @@ Partial Class Set_WorkProgress_Form
         Me.Panel3.Controls.Add(Me.ProdText)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(2, 131)
+        Me.Panel3.Location = New System.Drawing.Point(360, 45)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(354, 39)
+        Me.Panel3.Size = New System.Drawing.Size(354, 40)
         Me.Panel3.TabIndex = 4
         '
         'ProdText
@@ -256,10 +256,10 @@ Partial Class Set_WorkProgress_Form
         Me.Panel7.Controls.Add(Me.SpecificationText)
         Me.Panel7.Controls.Add(Me.Label7)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel7.Location = New System.Drawing.Point(2, 174)
+        Me.Panel7.Location = New System.Drawing.Point(2, 133)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(354, 152)
+        Me.Panel7.Size = New System.Drawing.Size(712, 152)
         Me.Panel7.TabIndex = 5
         '
         'SpecificationText
@@ -269,7 +269,7 @@ Partial Class Set_WorkProgress_Form
         Me.SpecificationText.Margin = New System.Windows.Forms.Padding(2)
         Me.SpecificationText.Multiline = True
         Me.SpecificationText.Name = "SpecificationText"
-        Me.SpecificationText.Size = New System.Drawing.Size(254, 144)
+        Me.SpecificationText.Size = New System.Drawing.Size(612, 144)
         Me.SpecificationText.TabIndex = 5
         '
         'Label7
@@ -287,7 +287,7 @@ Partial Class Set_WorkProgress_Form
         Me.Panel4.AutoSize = True
         Me.Panel4.Controls.Add(Me.CountText)
         Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Location = New System.Drawing.Point(2, 330)
+        Me.Panel4.Location = New System.Drawing.Point(360, 89)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(354, 40)
@@ -317,7 +317,7 @@ Partial Class Set_WorkProgress_Form
         Me.Panel6.AutoSize = True
         Me.Panel6.Controls.Add(Me.UnitText)
         Me.Panel6.Controls.Add(Me.Label4)
-        Me.Panel6.Location = New System.Drawing.Point(2, 374)
+        Me.Panel6.Location = New System.Drawing.Point(2, 89)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(354, 40)
@@ -348,10 +348,10 @@ Partial Class Set_WorkProgress_Form
         Me.Panel9.AutoSize = True
         Me.Panel9.Controls.Add(Me.RemarkText)
         Me.Panel9.Controls.Add(Me.Label6)
-        Me.Panel9.Location = New System.Drawing.Point(2, 418)
+        Me.Panel9.Location = New System.Drawing.Point(2, 289)
         Me.Panel9.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(354, 83)
+        Me.Panel9.Size = New System.Drawing.Size(712, 152)
         Me.Panel9.TabIndex = 8
         '
         'RemarkText
@@ -361,7 +361,7 @@ Partial Class Set_WorkProgress_Form
         Me.RemarkText.Margin = New System.Windows.Forms.Padding(2)
         Me.RemarkText.Multiline = True
         Me.RemarkText.Name = "RemarkText"
-        Me.RemarkText.Size = New System.Drawing.Size(286, 75)
+        Me.RemarkText.Size = New System.Drawing.Size(644, 144)
         Me.RemarkText.TabIndex = 8
         '
         'Label6
@@ -376,7 +376,7 @@ Partial Class Set_WorkProgress_Form
         '
         'saveBtn
         '
-        Me.saveBtn.Location = New System.Drawing.Point(2, 505)
+        Me.saveBtn.Location = New System.Drawing.Point(2, 445)
         Me.saveBtn.Margin = New System.Windows.Forms.Padding(2)
         Me.saveBtn.Name = "saveBtn"
         Me.saveBtn.Size = New System.Drawing.Size(74, 32)
@@ -386,7 +386,7 @@ Partial Class Set_WorkProgress_Form
         '
         'cancelBtn
         '
-        Me.cancelBtn.Location = New System.Drawing.Point(80, 505)
+        Me.cancelBtn.Location = New System.Drawing.Point(80, 445)
         Me.cancelBtn.Margin = New System.Windows.Forms.Padding(2)
         Me.cancelBtn.Name = "cancelBtn"
         Me.cancelBtn.Size = New System.Drawing.Size(74, 32)
@@ -402,7 +402,7 @@ Partial Class Set_WorkProgress_Form
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(361, 583)
+        Me.ClientSize = New System.Drawing.Size(722, 519)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Font = New System.Drawing.Font("微軟正黑體", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

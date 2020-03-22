@@ -1,40 +1,165 @@
-﻿Public Class Data_Product_Model
-    Protected intMode As Integer = 3
-    Public Const INSERT_MODE = 1
-    Public Const REVISE_MODE = 2
-    Public Const NORMAL_MODE = 3
-    Protected Const SELECT_PRODPARTDATA_SQL = "SELECT ProdPartID,ProdPartData.SuID,ProdPartData.Name as ProdName,ProdPartData.Number as ProdNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM ProdPartData, SupplierData WHERE ProdPartData.SuID = SupplierData.SuID"
-    Protected Const SELECT_FITTINGSET_SQL = "SELECT ProdPart2ID,ProdPartData2.SuID,ProdPartData2.Name as FitName,ProdPartData2.Number as FitNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM ProdPartData2, SupplierData WHERE ProdPartData2.SuID = SupplierData.SuID"
-    Protected Const SELECT_PRODPARTDATA_FOR_STATEMENT_SQL = "SELECT ProdPartID,ProdPartData.SuID,ProdPartData.Name as ProdName,ProdPartData.Number as ProdNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM ProdPartData, SupplierData WHERE ProdPartData.SuID = SupplierData.SuID @statement"
-    Protected Const SELECT_FITTING_FOR_STATEMENT_SQL = "SELECT ProdPart2ID,ProdPartData2.SuID,ProdPartData2.Name as FitName,ProdPartData2.Number as FitNumber,SupplierData.Name as SupplierName,SupplierData.Number as SupplierNumber FROM ProdPartData2, SupplierData WHERE ProdPartData2.SuID = SupplierData.SuID @statement"
-    Protected Const UPDATE_PRODPARTDATA_SQL = "UPDATE ProdPartData SET SuID = '@suID', Name = N'@prodName', Number = N'@prodNumber'  WHERE ProdPartID = @prodPartID"
-    Protected Const UPDATE_FITTINGSET_SQL = "UPDATE ProdPartData2 SET SuID = '@suID', Name = N'@fitName', Number = N'@fitNumber' WHERE ProdPart2ID = @prodPart2ID"
-    Protected Const INSERT_PRODPARTDATA_SQL = "INSERT INTO ProdPartData (SuID,Name,Number) VALUES('@suID',N'@prodName',N'@prodNumber'); SELECT @@IDENTITY"
-    Protected Const INSERT_FITTINGSET_SQL = "INSERT INTO ProdPartData2 (SuID,Name,Number) VALUES('@suID',N'@fitName',N'@fitNumber'); SELECT @@IDENTITY"
-    Protected Const DELETE_PRODPARTDATA_SQL = "DELETE FROM ProdPartData WHERE ProdPartID = @prodPartID"
-    Protected Const DELETE_FITTINGSET_SQL = "DELETE FROM ProdPartData2 WHERE ProdPart2ID = @prodPart2ID"
-    Protected Const SELECT_SUPPLIERDATA_SQL = "SELECT * FROM SupplierData"
-    Protected Const SELECT_PURCHASEDATA_FOR_PRODID_SQL = "SELECT TOP 3 PurchasePart.PurchaseID,PurchaseData.PurchaseNO,PurchasePart.Specification,PurchasePart.[Count],PurchaseData.InsertTime,PurchaseData.CaseID, CaseData.Place FROM PurchasePart,PurchaseData,CaseData WHERE PurchasePart.ProdPartID = @prodPartID AND PurchaseData.PurchaseID = PurchasePart.PurchaseID AND CaseData.CaseID = PurchaseData.CaseID ORDER BY PurchaseData.InsertTime DESC"
-    Protected Const SELECT_PURCHASEDATA_FOR_FITID_SQL = "SELECT TOP 3 PurchasePart2.PurchaseID,PurchaseData.PurchaseNO,PurchasePart2.Specification,PurchasePart2.[Count],PurchaseData.InsertTime,PurchaseData.CaseID, CaseData.Place FROM PurchasePart2,PurchaseData,CaseData WHERE PurchasePart2.ProdPart2ID = @prodPart2ID AND PurchaseData.PurchaseID = PurchasePart2.PurchaseID AND caseData.CaseID = PurchaseData.CaseID ORDER BY PurchaseData.InsertTime DESC"
-    Protected listSuID As List(Of Integer) = New List(Of Integer)
-    Public Structure Prod
-        Dim ProdPartID As Integer
-        Dim ProdName As String
-        Dim SupplierName As String
-        Dim ProdNumber As String
-        Dim SuID As Integer
-    End Structure
-    Public Structure PuchaseData
-        Dim CaseID As Integer
-        Dim CaseName As String
-        Dim PurchaseID As Integer
-        Dim PurchaseNo As String
-        Dim Specification As String
-        Dim Count As Integer
-        Dim InsertTime As String
-    End Structure
-    Public Structure SupplierData
-        Dim SuID As Integer
-        Dim Name As String
-    End Structure
+﻿Imports System.ComponentModel
+
+Public Class Data_Product_Model
+    Protected Const SELECT_Supplier_SQL = "SELECT * FROM SupplierData"
+    Protected Const SELECT_ProdData_SQL = "SELECT * FROM ProdData"
+    Protected Const INSERT_ProdData_SQL = "INSERT INTO ProdData(ProdName,Unit) VALUES(N'@name',N'@unit'); SELECT @@IDENTITY"
+    Protected Const UPDATE_ProdData_SQL = "UPDATE ProdData SET @statement WHERE ProdID = @id"
+    Protected Const DELETE_ProdData_SQL = "DELETE FROM ProdData WHERE ProdID = @id"
+
+    Protected Const SELECT_ProdModel_SQL = "SELECT *,SupplierData.Name FROM ProdModel,SupplierData WHERE ProdID = @id AND ProdModel.SuID = SupplierData.SuID"
+    Protected Const INSERT_ProdModel_SQL = "INSERT INTO ProdModel(ProdID,SuID,Model,Price) VALUES(@id,@suId,N'@model',@price); SELECT @@IDENTITY "
+    Protected Const UPDATE_ProdModel_SQL = "UPDATE ProdModel SET @statement WHERE ProdModelID = @id"
+    Protected Const DELETE_ProdModel_SQL = "DELETE FROM ProdModel WHERE ProdModelID = @id"
+End Class
+Public Class ProdData
+    Private intProdID As Integer
+    Private strName As String
+    Private strUnit As String
+    Private changeProperty As Dictionary(Of String, String) = New Dictionary(Of String, String)
+    Property ProdID As Integer
+        Get
+            Return intProdID
+        End Get
+        Set(value As Integer)
+            If intProdID <> value Then
+                intProdID = value
+                If changeProperty.ContainsKey("ProdID") Then
+                    changeProperty("ProdID") = value
+                Else
+                    changeProperty.Add("ProdID", value)
+                End If
+            End If
+        End Set
+    End Property
+    Property ProdName As String
+        Get
+            Return strName
+        End Get
+        Set(value As String)
+            If strName <> value Then
+                strName = value
+                If changeProperty.ContainsKey("ProdName") Then
+                    changeProperty("ProdName") = value
+                Else
+                    changeProperty.Add("ProdName", value)
+                End If
+            End If
+        End Set
+    End Property
+    Property Unit As String
+        Get
+            Return strUnit
+        End Get
+        Set(value As String)
+            If strUnit <> value Then
+                strUnit = value
+                If changeProperty.ContainsKey("Unit") Then
+                    changeProperty("Unit") = value
+                Else
+                    changeProperty.Add("Unit", value)
+                End If
+            End If
+        End Set
+    End Property
+    Public Function GetChargedProperty() As Dictionary(Of String, String)
+        Return changeProperty
+    End Function
+    Public Sub ClearChangeProperty()
+        changeProperty.Clear()
+    End Sub
+End Class
+Public Class ProdModel
+    Private intModelID As Integer
+    Private intProdID As Integer
+    Private intSuID As Integer
+    Private strModel As String
+    Private intPrice As Integer
+    Private changeProperty As Dictionary(Of String, String) = New Dictionary(Of String, String)
+    Property ProdModelID As Integer
+        Get
+            Return intModelID
+        End Get
+        Set(value As Integer)
+            If intModelID <> value Then
+                intModelID = value
+                If changeProperty.ContainsKey("ProdModelID") Then
+                    changeProperty("ProdModelID") = value
+                Else
+                    changeProperty.Add("ProdModelID", value)
+                End If
+            End If
+        End Set
+    End Property
+    Property ProdID As Integer
+        Get
+            Return intProdID
+        End Get
+        Set(value As Integer)
+            If intProdID <> value Then
+                intProdID = value
+                If changeProperty.ContainsKey("ProdID") Then
+                    changeProperty("ProdID") = value
+                Else
+                    changeProperty.Add("ProdID", value)
+                End If
+            End If
+        End Set
+    End Property
+    Property Name As String 'SupplierData
+    Property SuID As Integer
+        Get
+            Return intSuID
+        End Get
+        Set(value As Integer)
+            If intSuID <> value Then
+                intSuID = value
+                If changeProperty.ContainsKey("SuID") Then
+                    changeProperty("SuID") = value
+                Else
+                    changeProperty.Add("SuID", value)
+                End If
+            End If
+        End Set
+    End Property
+    Property Model As String
+        Get
+            Return strModel
+        End Get
+        Set(value As String)
+            If strModel <> value Then
+                strModel = value
+                If changeProperty.ContainsKey("Model") Then
+                    changeProperty("Model") = value
+                Else
+                    changeProperty.Add("Model", value)
+                End If
+            End If
+        End Set
+    End Property
+    Property Price As Integer
+        Get
+            Return intPrice
+        End Get
+        Set(value As Integer)
+            If intPrice <> value Then
+                intPrice = value
+                If changeProperty.ContainsKey("Price") Then
+                    changeProperty("Price") = value
+                Else
+                    changeProperty.Add("Price", value)
+                End If
+            End If
+        End Set
+    End Property
+    Public Function GetChargedProperty() As Dictionary(Of String, String)
+        Return changeProperty
+    End Function
+    Public Sub ClearChangeProperty()
+        changeProperty.Clear()
+    End Sub
+End Class
+Public Class SupplierData
+    Property SuID As Integer
+    Property Name As String
 End Class

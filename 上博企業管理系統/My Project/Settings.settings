@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP-SNRFQUA\SQLEXPRESS;Initial Catalog=ERPShongPo;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SupplierCB</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
