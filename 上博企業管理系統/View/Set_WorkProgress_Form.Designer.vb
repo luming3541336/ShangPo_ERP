@@ -38,15 +38,15 @@ Partial Class Set_WorkProgress_Form
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.ProdText = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.SpecificationText = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.CountText = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.UnitText = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.CountText = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.SpecificationText = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.RemarkText = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -60,9 +60,9 @@ Partial Class Set_WorkProgress_Form
         Me.Panel2.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel7.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         Me.Panel6.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -136,7 +136,7 @@ Partial Class Set_WorkProgress_Form
         Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(354, 38)
-        Me.Panel5.TabIndex = 1
+        Me.Panel5.TabIndex = 0
         '
         'Label5
         '
@@ -166,7 +166,7 @@ Partial Class Set_WorkProgress_Form
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(355, 39)
-        Me.Panel2.TabIndex = 2
+        Me.Panel2.TabIndex = 1
         '
         'ClassCombo
         '
@@ -198,7 +198,7 @@ Partial Class Set_WorkProgress_Form
         Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(354, 40)
-        Me.Panel8.TabIndex = 3
+        Me.Panel8.TabIndex = 2
         '
         'SupplierText
         '
@@ -229,7 +229,7 @@ Partial Class Set_WorkProgress_Form
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(354, 40)
-        Me.Panel3.TabIndex = 4
+        Me.Panel3.TabIndex = 3
         '
         'ProdText
         '
@@ -250,68 +250,6 @@ Partial Class Set_WorkProgress_Form
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "品名："
         '
-        'Panel7
-        '
-        Me.Panel7.AutoSize = True
-        Me.Panel7.Controls.Add(Me.SpecificationText)
-        Me.Panel7.Controls.Add(Me.Label7)
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel7.Location = New System.Drawing.Point(2, 133)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(712, 152)
-        Me.Panel7.TabIndex = 5
-        '
-        'SpecificationText
-        '
-        Me.SpecificationText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.SpecificationText.Location = New System.Drawing.Point(98, 6)
-        Me.SpecificationText.Margin = New System.Windows.Forms.Padding(2)
-        Me.SpecificationText.Multiline = True
-        Me.SpecificationText.Name = "SpecificationText"
-        Me.SpecificationText.Size = New System.Drawing.Size(612, 144)
-        Me.SpecificationText.TabIndex = 5
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(2, 8)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(105, 24)
-        Me.Label7.TabIndex = 0
-        Me.Label7.Text = "規格尺寸："
-        '
-        'Panel4
-        '
-        Me.Panel4.AutoSize = True
-        Me.Panel4.Controls.Add(Me.CountText)
-        Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Location = New System.Drawing.Point(360, 89)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(354, 40)
-        Me.Panel4.TabIndex = 6
-        '
-        'CountText
-        '
-        Me.CountText.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.CountText.Location = New System.Drawing.Point(68, 6)
-        Me.CountText.Margin = New System.Windows.Forms.Padding(2)
-        Me.CountText.Name = "CountText"
-        Me.CountText.Size = New System.Drawing.Size(284, 32)
-        Me.CountText.TabIndex = 6
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(2, 8)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(67, 24)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "數量："
-        '
         'Panel6
         '
         Me.Panel6.AutoSize = True
@@ -321,7 +259,7 @@ Partial Class Set_WorkProgress_Form
         Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(354, 40)
-        Me.Panel6.TabIndex = 7
+        Me.Panel6.TabIndex = 4
         Me.Panel6.Visible = False
         '
         'UnitText
@@ -343,6 +281,68 @@ Partial Class Set_WorkProgress_Form
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "單價："
         '
+        'Panel4
+        '
+        Me.Panel4.AutoSize = True
+        Me.Panel4.Controls.Add(Me.CountText)
+        Me.Panel4.Controls.Add(Me.Label3)
+        Me.Panel4.Location = New System.Drawing.Point(360, 89)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(354, 40)
+        Me.Panel4.TabIndex = 5
+        '
+        'CountText
+        '
+        Me.CountText.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.CountText.Location = New System.Drawing.Point(68, 6)
+        Me.CountText.Margin = New System.Windows.Forms.Padding(2)
+        Me.CountText.Name = "CountText"
+        Me.CountText.Size = New System.Drawing.Size(284, 32)
+        Me.CountText.TabIndex = 6
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(2, 8)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(67, 24)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "數量："
+        '
+        'Panel7
+        '
+        Me.Panel7.AutoSize = True
+        Me.Panel7.Controls.Add(Me.SpecificationText)
+        Me.Panel7.Controls.Add(Me.Label7)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel7.Location = New System.Drawing.Point(2, 133)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(712, 152)
+        Me.Panel7.TabIndex = 6
+        '
+        'SpecificationText
+        '
+        Me.SpecificationText.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.SpecificationText.Location = New System.Drawing.Point(98, 6)
+        Me.SpecificationText.Margin = New System.Windows.Forms.Padding(2)
+        Me.SpecificationText.Multiline = True
+        Me.SpecificationText.Name = "SpecificationText"
+        Me.SpecificationText.Size = New System.Drawing.Size(612, 144)
+        Me.SpecificationText.TabIndex = 5
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(2, 8)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(105, 24)
+        Me.Label7.TabIndex = 0
+        Me.Label7.Text = "規格尺寸："
+        '
         'Panel9
         '
         Me.Panel9.AutoSize = True
@@ -352,7 +352,7 @@ Partial Class Set_WorkProgress_Form
         Me.Panel9.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(712, 152)
-        Me.Panel9.TabIndex = 8
+        Me.Panel9.TabIndex = 7
         '
         'RemarkText
         '
@@ -380,7 +380,7 @@ Partial Class Set_WorkProgress_Form
         Me.saveBtn.Margin = New System.Windows.Forms.Padding(2)
         Me.saveBtn.Name = "saveBtn"
         Me.saveBtn.Size = New System.Drawing.Size(74, 32)
-        Me.saveBtn.TabIndex = 11
+        Me.saveBtn.TabIndex = 8
         Me.saveBtn.Text = "存檔"
         Me.saveBtn.UseVisualStyleBackColor = True
         '
@@ -390,7 +390,7 @@ Partial Class Set_WorkProgress_Form
         Me.cancelBtn.Margin = New System.Windows.Forms.Padding(2)
         Me.cancelBtn.Name = "cancelBtn"
         Me.cancelBtn.Size = New System.Drawing.Size(74, 32)
-        Me.cancelBtn.TabIndex = 12
+        Me.cancelBtn.TabIndex = 9
         Me.cancelBtn.Text = "取消"
         Me.cancelBtn.UseVisualStyleBackColor = True
         '
@@ -425,12 +425,12 @@ Partial Class Set_WorkProgress_Form
         Me.Panel8.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
         Me.ResumeLayout(False)

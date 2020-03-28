@@ -177,27 +177,29 @@ Public Class Data_Order_Form
     End Sub
 
     Private Sub DelBtn_Click(sender As Object, e As EventArgs) Handles DelBtn.Click
-        MsgBox("若刪除訂單，將無法復原，確認要刪除嗎?", MsgBoxStyle.OkCancel, "注意")
-        Select Case controller.Get_Type
-            Case Data_Order_Model.TYPE_PURCHASE
-                Try
-                    controller.Delete_Purchase_Order(controller.Get_Order_Data(CInt(currentText.Text) - 1).ID)
-                    MsgBox("刪除完成", MsgBoxStyle.OkCancel, "注意")
-                    initiBackGround.RunWorkerAsync()
-                    updateCheck = True
-                Catch ex As Exception
-                    MsgBox("此訂單已有出貨紀錄，無法刪除", MsgBoxStyle.OkOnly, "錯誤")
-                End Try
-            Case Data_Order_Model.TYPE_SALE
-                Try
-                    controller.Delete_Sale_Order(controller.Get_Order_Data(CInt(currentText.Text) - 1).ID)
-                    MsgBox("刪除完成", MsgBoxStyle.OkCancel, "注意")
-                    initiBackGround.RunWorkerAsync()
-                    updateCheck = True
-                Catch ex As Exception
-                    MsgBox("此訂單無法刪除", MsgBoxStyle.OkOnly, "錯誤")
-                End Try
-        End Select
+        Dim result As MsgBoxResult = MsgBox("若刪除訂單，將無法復原，確認要刪除嗎?", MsgBoxStyle.OkCancel, "注意")
+        If result = MsgBoxResult.Ok Then
+            Select Case controller.Get_Type
+                Case Data_Order_Model.TYPE_PURCHASE
+                    Try
+                        controller.Delete_Purchase_Order(controller.Get_Order_Data(CInt(currentText.Text) - 1).ID)
+                        MsgBox("刪除完成", MsgBoxStyle.OkOnly, "注意")
+                        initiBackGround.RunWorkerAsync()
+                        updateCheck = True
+                    Catch ex As Exception
+                        MsgBox("此訂單已有出貨紀錄，無法刪除", MsgBoxStyle.OkOnly, "錯誤")
+                    End Try
+                Case Data_Order_Model.TYPE_SALE
+                    Try
+                        controller.Delete_Sale_Order(controller.Get_Order_Data(CInt(currentText.Text) - 1).ID)
+                        MsgBox("刪除完成", MsgBoxStyle.OkOnly, "注意")
+                        initiBackGround.RunWorkerAsync()
+                        updateCheck = True
+                    Catch ex As Exception
+                        MsgBox("此訂單無法刪除", MsgBoxStyle.OkOnly, "錯誤")
+                    End Try
+            End Select
+        End If
     End Sub
 
 End Class

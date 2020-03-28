@@ -119,6 +119,9 @@
   </resheader>
   <data name="BoardText.Text" xml:space="preserve">
     <value>更新公告:
+Ver 2.0.2.1 Update 2020/03/27
+    1.修正進貨/出貨訂單取消刪除依然會刪除的問題
+    2. 工作進度修正案下Tab時的順序
 Ver 2.0.2.0 Update 2020/03/23
     1. 新增產品(估價用)設定(測試)
     2. 視窗修正
